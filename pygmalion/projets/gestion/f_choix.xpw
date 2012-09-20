@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="manual" position="center">
+  <languages>
+    <language code="fr-FR">
+      <element key="f_choix.title">Quelle application voulez-vous lancer?</element>
+      <element key="f_choix.gestion.title">GestSEA Principal</element>
+      <element key="f_choix.gestion.description">Module de gestion commerciale</element>
+      <element key="f_choix.compta.title">GestSEA Comptabilité</element>
+      <element key="f_choix.compta.description">La compta.</element>
+      <element key="f_choix.banniere" type="image">images/gestsea_ban_fr.png</element>      
+    </language>
+    <language code="en-US">
+      <element key="f_choix.title">What do you want to do?</element>
+      <element key="f_choix.gestion.title">GestSEA Core</element>
+      <element key="f_choix.gestion.description">Commercial management gestion software</element>
+      <element key="f_choix.compta.title">GestSEA Comptability</element>
+      <element key="f_choix.compta.description">The compta</element>
+      <element key="f_choix.banniere" type="image">images/gestsea_ban_fr.png</element>      
+    </language>
+  </languages>
+  <content title="f_choix.title">
+    <vbox>
+      <stack flex="1" >
+        <image flex="1" height="58" width="496" src="f_choix.banniere"/>
+      </stack>
+      <separator flex="1" class="groove-thin"/>
+    </vbox>
+    <hbox flex="1" style="padding:10px" align="center" height="300">
+      <grid flex="1">
+        <columns>
+          <column flex="3" align="center" pack="center"/>
+          <column width="250"/>
+        </columns>
+        <rows>
+          <row align="center">
+            <button label="f_choix.gestion.title" oncommand="Renvoyer('gestion')"/>
+            <description>f_choix.gestion.description</description>
+          </row>
+          <separator class="groove"/>
+          <row align="center">
+            <button label="f_choix.compta.title" oncommand="Renvoyer('compta')"/>
+            <description>f_choix.compta.description</description>
+          </row>
+        </rows>
+      </grid>
+    </hbox>
+  </content>
+</window>
+

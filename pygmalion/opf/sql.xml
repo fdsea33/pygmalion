@@ -1,0 +1,84 @@
+  <element name="select">
+    <attribute name="option" type="unsignedInt" use="optional">
+      <choice name="all"      value="1"/>
+      <choice name="distinct" value="0"/>
+    </attribute>
+    <attribute name="limit" type="unsignedInt"/>
+    <attribute name="offset" type="unsignedInt"/>
+    <element name="distinct-on" minOccurs="0"/>
+    <element name="expressions" card="1"/>
+    <element name="from" minOccurs="0"/>
+<!--
+    <element name="where" minOccurs="0"/>
+    <element name="group-by" minOccurs="0"/>
+    <element name="having" minOccurs="0"/>
+    <element name="ens-operator" minOccurs="0"/>
+    <element name="order-by" minOccurs="0"/>
+-->
+  </element>
+
+  <element name="distinct-on">
+    <element name="expression" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="expressions">
+    <element name="expression" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="expression" type="string"/>
+
+  <element name="from">
+    <element name="from-element" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="from-element">
+    <element name="from-table" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="procedure" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="select" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="join" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="from-table">
+    <attribute name="only" type="boolean" use="optional"/>
+    <attribute name="name" type="string"/>
+    <element name="as" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="as" type="string">
+    <attribute name="type" type="string">
+      <choice name="simple" value="0"/>
+      <choice name="alias"  value="5"/>
+      <choice name="definition" value="10"/>
+      <choice name="only-definition" value="15"/>
+    </attribute>
+    <attribute name="name" type="string" use="optional"/>
+    <element name="column-alias" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="column-definition" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="alias" type="string">
+    <attribute name="type" type="string"/>
+  </element>
+
+  <element name="procedure">
+    <element name="expressions" minOccurs="0"/>
+    <element name="as" minOccurs="0"/>
+  </element>
+
+
+  <element name="join">
+    <attribute name="type" type="unsignedInt">
+      <choice name="join"             value="700"/>
+      <choice name="inner-join"       value="700"/>
+      <choice name="left-join"        value="710"/>
+      <choice name="left-outer-join"  value="710"/>
+      <choice name="right-join"       value="720"/>
+      <choice name="right-outer-join" value="720"/>
+      <choice name="full-join"        value="730"/>
+      <choice name="full-outer-join"  value="730"/>
+      <choice name="cross-join"       value="740"/>
+    </attribute>
+    <attribute name="natural" type="boolean" use="optional"/>
+    <element name="from-element" minOccurs="2" maxOccurs="2"/>
+  </element>
+

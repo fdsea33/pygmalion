@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languages>
+  <language code="fr-FR" default="true">
+    <phrase key="_.accept_">Valider</phrase>
+    <phrase key="_.back_">Précédent</phrase>
+    <phrase key="_.cancel_">Annuler</phrase>
+    <phrase key="_.delete_">Supprimer</phrase>
+    <phrase key="_.edit_">Modifier</phrase>
+    <phrase key="_.false_">Faux</phrase>
+    <phrase key="_.forward_">Suivant</phrase>
+    <phrase key="_.general_">Général</phrase>
+    <phrase key="_.home_">Accueil</phrase>
+    <phrase key="_.menu_">Menu</phrase>
+    <phrase key="_.new_">Nouveau</phrase>
+    <phrase key="_.ok_">OK</phrase>
+    <phrase key="_.quit_">Quitter</phrase>
+    <phrase key="_.search_">Recherche</phrase>
+    <phrase key="_.select_">Sélectionner</phrase>
+    <phrase key="_.true_">Vrai</phrase>
+  </language>
+  <language code="en-US">
+    <phrase key="_.accept_">Accept</phrase>
+    <phrase key="_.back_">Back</phrase>
+    <phrase key="_.cancel_">Cancel</phrase>
+    <phrase key="_.delete_">Delete</phrase>
+    <phrase key="_.edit_">Edit</phrase>
+    <phrase key="_.false_">False</phrase>
+    <phrase key="_.forward_">Forward</phrase>
+    <phrase key="_.general_">General</phrase>
+    <phrase key="_.home_">Home</phrase>
+    <phrase key="_.menu_">Menu</phrase>
+    <phrase key="_.new_">New</phrase>
+    <phrase key="_.ok_">OK</phrase>
+    <phrase key="_.quit_">Quit</phrase>
+    <phrase key="_.search_">Find</phrase>
+    <phrase key="_.select_">Select</phrase>
+    <phrase key="_.true_">True</phrase>
+  </language>
+</languages>

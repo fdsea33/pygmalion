@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="460"
+   height="200"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   version="1.0"
+   sodipodi:docbase="/home/brice/pygmalion/projets/images"
+   sodipodi:docname="part-menu.svg"
+   inkscape:export-filename="/home/brice/pygmalion/projets/images/f_gestion.png"
+   inkscape:export-xdpi="60"
+   inkscape:export-ydpi="60">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5798">
+      <stop
+         id="stop5800"
+         offset="0"
+         style="stop-color:#1c17c4;stop-opacity:1;" />
+      <stop
+         id="stop5802"
+         offset="1"
+         style="stop-color:#110547;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4020">
+      <stop
+         style="stop-color:#7fafe5;stop-opacity:1;"
+         offset="0"
+         id="stop4022" />
+      <stop
+         id="stop4913"
+         offset="0.5"
+         style="stop-color:#ddebfb;stop-opacity:0.41176471;" />
+      <stop
+         style="stop-color:#c4c8fd;stop-opacity:0.81512606;"
+         offset="0.78205127"
+         id="stop4915" />
+      <stop
+         style="stop-color:#7a9eff;stop-opacity:1;"
+         offset="1"
+         id="stop4024" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2184">
+      <stop
+         style="stop-color:#e84600;stop-opacity:1;"
+         offset="0"
+         id="stop2186" />
+      <stop
+         style="stop-color:#ffbc1b;stop-opacity:0;"
+         offset="1"
+         id="stop2188" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2184"
+       id="linearGradient2190"
+       x1="-44.546532"
+       y1="-2.0489578"
+       x2="249.50098"
+       y2="146.95105"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-44,-197)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4020"
+       id="radialGradient4911"
+       cx="-2.3079647e-14"
+       cy="-129.99988"
+       fx="-2.3079647e-14"
+       fy="-129.99988"
+       r="230"
+       gradientTransform="matrix(2.591304,1.127878e-7,-4.485038e-8,1.030435,-5.830544e-6,133.9564)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5798"
+       id="linearGradient5796"
+       x1="30.323999"
+       y1="54.571793"
+       x2="30.323999"
+       y2="63.331795"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="340.42553"
+     inkscape:cy="82.857143"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1280"
+     inkscape:window-height="939"
+     inkscape:window-x="0"
+     inkscape:window-y="64" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path3143"
+       d="M 0,167.38879 L 0,1.7267183e-06 L 459.37006,1.7267183e-06 C 459.37006,1.7267183e-06 460.20833,8.6364032 459.95087,12.729577 C 459.19822,24.69574 452.86438,34.316338 441.83266,40.249724 C 438.11714,42.248105 424.16613,45.601777 410.82441,43.905919 C 420.89363,53.465788 423.41094,60.766475 423.41094,72.429489 C 423.41094,81.052431 420.05412,94.264623 408.04072,101.41401 C 403.46744,104.13565 396.55873,105.9524 386.94721,106.37135 C 392.12455,114.17849 395.03046,124.16065 394.49988,133.59729 C 393.81075,145.85392 387.6243,155.38498 376.38268,161.50922 C 372.70182,163.5145 366.53099,164.61568 357.96097,164.61568 C 346.51852,164.61568 334.99804,152.80934 318.95736,142.80424 C 315.96645,152.30908 309.76243,161.34262 303.88426,164.20691 C 296.1753,167.9633 279.8318,167.66589 265.98731,156.16003 C 266.74319,172.91856 258.2536,186.35675 247.50514,192.6455 C 231.56537,201.97161 211.42901,192.16313 203.39836,188.54466 C 201.55234,191.15762 193.16131,192.51994 185.27376,188.37947 C 185.27376,188.37947 139.10407,161.9374 126.31349,153.65115 C 122.22134,166.24511 104.78747,172.08562 91.884747,165.66991 C 99.117975,182.53491 91.770883,206.11167 60.415355,198.54418 L 0,167.38879 z "
+       style="fill:url(#radialGradient4911);fill-opacity:1.0;opacity:0.5"
+       sodipodi:nodetypes="cccsscsscssscscscccccc" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2192"
+       transform="matrix(8.626882,0,0,8.092198,-232.6166,-412.9915)"
+       style="opacity:0.25072883;fill:url(#linearGradient5796);fill-opacity:1;stroke:none;stroke-width:0.37102357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.66767369"><flowRegion
+         id="flowRegion2194"
+         style="fill:url(#linearGradient5796);fill-opacity:1"><rect
+           id="rect2196"
+           width="276"
+           height="117"
+           x="30"
+           y="53"
+           style="fill:url(#linearGradient5796);fill-opacity:1;stroke:none;stroke-width:0.37102357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.66767369" /></flowRegion><flowPara
+         id="flowPara2198"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient5796);fill-opacity:1;stroke:none;stroke-width:0.37102357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.66767369;font-family:Meta-Bold">Gestx</flowPara></flowRoot>  </g>
+</svg>

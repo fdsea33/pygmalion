@@ -1,0 +1,26 @@
+DEPTH=../../../..
+topsrcdir=@top_srcdir@
+srcdir=@srcdir@
+VPATH=@srcdir@
+
+include $(DEPTH)/config/autoconf.mk
+
+MODULE = gestsea
+MODULE_NAME = mozGestseaModule
+LIBRARY_NAME = gestsea
+IS_COMPONENT = 1
+FORCE_SHARED_LIB = 1
+ifneq ($(OS_ARCH),WINNT)
+SHORT_LIBNAME = gsea
+endif
+MOZILLA_INTERNAL_API = 1
+ifdef MOZ_XUL_APP
+XPI_NAME = gestsea
+endif
+REQUIRES = xpcom string dom gfx layout content xul widget locale necko nspr docshell view webshell appcomps embed_base websrvcs windowwatcher xmlextras pref $(NULL)
+CPPSRCS = mozGestseaModule.cpp $(NULL) 
+LOCAL_INCLUDES = -I$(srcdir)/../../base/src
+SHARED_LIBRARY_LIBS = $(DIST)/lib/$(LIB_PREFIX)gestsea_s.$(LIB_SUFFIX) $(NULL)
+EXTRA_DSO_LDOPTS += $(LIBS_DIR) $(EXTRA_DSO_LIBS) $(MOZ_UNICHARUTIL_LIBS) $(MOZ_COMPONENT_LIBS) $(NULL)
+
+include $(topsrcdir)/config/rules.mk

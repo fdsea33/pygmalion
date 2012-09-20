@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Pygmalion"
+  targetNamespace="urn:Pygmalion"
+  xmlns:typens="urn:Pygmalion"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Pygmalion">
+      <xsd:complexType name="Ligne">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="valeurs" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Resultat">
+        <xsd:sequence> 
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="lignes" type="typens:Ligne"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="Identifiant">
+        <xsd:restriction base="xsd:int"/>
+      </xsd:simpleType>
+<!--
+      <xsd:complexType name="Identifiant">
+        <xsd:sequence>
+	  <xsd:element name="cle1" type="xsd:unsignedInt"/>
+	  <xsd:element name="cle2" type="xsd:unsignedInt"/>
+	  <xsd:element name="cle3" type="xsd:unsignedInt"/>
+	  <xsd:element name="cle4" type="xsd:unsignedInt"/>
+	</xsd:sequence>
+      </xsd:complexType>
+-->
+    </xsd:schema>
+  </types>
+
+  
+  <message name="PMConnexion">
+    <part name="login" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  
+  <message name="PMDeconnexion">
+    <part name="id" type="typens:Identifiant"/>  
+  </message>
+
+  <message name="PMRequete">
+    <part name="id" type="typens:Identifiant"/>  
+    <part name="query" type="xsd:string"/>
+  </message>
+  
+  <message name="PMRetour">
+    <part name="resultat" type="xsd:int"/>
+  </message>
+
+  <message name="PMRetourSelect">
+    <part name="resultat" type="typens:Resultat"/>
+  </message>
+  
+  <message name="PMRetourConnexion">
+    <part name="id" type="typens:Identifiant"/>  
+  </message>
+
+  <message name="PMRetourConnexion">
+    <part name="id" type="typens:Identifiant"/>  
+  </message>
+
+  <message name="PMCalculRequest">
+    <part name="taux" type="xsd:double"/>  
+    <part name="nb"   type="xsd:int"/>
+  </message>
+
+  <message name="PMCalculResponse">
+    <part name="return" type="xsd:double"/>
+  </message>
+  
+  <portType name="PMPortType">
+    <operation name="pmConnexion">
+      <input message="typens:PMConnexion"/>
+      <output message="typens:PMRetourConnexion"/>
+    </operation>
+    <operation name="pmDeconnexion">
+      <input message="typens:PMDeconnexion"/>
+      <output message="typens:PMRetour"/>
+    </operation>
+    <operation name="pmSelect">
+      <input message="typens:PMRequete"/>
+      <output message="typens:PMRetourSelect"/>
+    </operation>
+    <operation name="pmUpdate">
+      <input message="typens:PMRequete"/>
+      <output message="typens:PMRetour"/>
+    </operation>
+    <operation name="pmCalcul">
+      <input message="typens:PMCalculRequest"/>
+      <output message="typens:PMCalculResponse"/>
+    </operation>
+  </portType>
+  
+
+  <binding name="PMBinding" type="typens:PMPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="pmConnexion">
+      <soap:operation soapAction="urn:PygmalionAction" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="pmDeconnexion">
+      <soap:operation soapAction="urn:PygmalionAction" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="pmSelect">
+      <soap:operation soapAction="urn:PygmalionAction" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="pmUpdate">
+      <soap:operation soapAction="urn:PygmalionAction" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="pmCalcul">
+      <soap:operation soapAction="urn:PygmalionAction" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:Pygmalion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  
+
+  <service name="PygmalionService">
+    <port name="PygmalionPort" binding="typens:PMBinding">
+      <soap:address location="http://localhost"/>
+    </port>
+  </service>
+
+
+</definitions>

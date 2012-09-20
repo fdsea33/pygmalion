@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysis name="GestSEA" version="0.0.0" 
+  xmlns:typens="urn:Pygmalion"
+  xmlns="http://www.pygmalion.org/analysis/">
+
+  <types>
+    <type name="image">
+      <property name="contenu" type="bytea"/>
+      <property name="type"    type="varchar"/>
+    </type>
+  </types>
+
+  <classes>
+
+    <class name="Personne" abbr="PE">
+      <details>
+        <detail code="fr-FR">
+          <label>Personnes</label>
+	  <represent>une personne<represent>
+        </detail>
+        <detail code="en-US">
+          <label>Persons</label>
+	  <represent>a person<represent>
+        </detail>
+      <details>
+      <properties>
+        <property name="PE_Numero"    type="integer" size="8"  notnull="true">
+          <label code="fr-FR">Numéro</label>
+          <label code="en-US">Number</label>
+        </property>
+        <property name="PE_Nom"       type="varchar" size="64" notnull="true">
+          <label code="fr-FR">Nom</label>
+          <label code="en-US">Name</label>
+        </property>
+        <property name="PE_Prenom"    type="varchar" size="64">
+          <label code="fr-FR">Prénom</label>
+          <label code="en-US">First name</label>
+        </property>
+        <property name="PE_Titre"     type="varchar" size="16">
+          <label code="fr-FR">Titre</label>
+          <label code="en-US">Title</label>
+        </property>
+        <property name="PE_Naissance" type="date">
+          <label code="fr-FR">Date de naissance</label>
+          <label code="en-US">Birthday</label>
+        </property>
+        <property name="PE_Photo"     type="typens:image">
+          <label code="fr-FR">Photo</label>
+          <label code="en-US">Photograph</label>
+        </property>
+      </properties>
+      <constraints>
+        <constraint name="PK_Personne"        type="primary_key" columns="PE_Numero"/>
+	<constraint name="CK_NaissanceFuture" type="check"       expr="PE_Naissance<=CURRENT_DATE"/>
+      </constraints>
+      <methods>
+        <method name="FC_Validation">
+          <parameters>
+            </parameter name="Numero" type="integer" size="8"/>
+	  </parameters>
+	  <code type="PLPGSQL">
+          </code>
+	</method>
+      </methods>
+    </class>
+
+
+
+    <class name="Adresse" abbr="AD">
+      <details>
+        <detail code="fr-FR">
+          <label>Adresses</label>
+	  <represent>une adresse<represent>
+        </detail>
+        <detail code="en-US">
+          <label>Address</label>
+	  <represent>an address<represent>
+        </detail>
+      <details>
+      <properties>
+        <property name="AD_Numero"     type="integer" size="8"  notnull="true">
+          <label code="fr-FR">Numéro</label>
+          <label code="en-US">Number</label>
+        </property>
+        <property name="PE_Numero"     type="integer" size="8" >
+          <label code="fr-FR">Personne</label>
+          <label code="en-US">Person</label>
+        </property>
+        <property name="AD_Ligne1"     type="varchar" size="64" notnull="true">
+          <label code="fr-FR">Ligne 1</label>
+          <label code="en-US">Line 1</label>
+        </property>
+        <property name="AD_Ligne2"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 2</label>
+          <label code="en-US">Line 2</label>
+        </property>
+        <property name="AD_Ligne3"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 3</label>
+          <label code="en-US">Line 3</label>
+        </property>
+        <property name="CP_Numero"     type="integer" size="16">
+          <label code="fr-FR">Code postal</label>
+          <label code="en-US">Zip code</label>
+        </property>
+        <property name="VI_Numero"     type="integer" size="16">
+          <label code="fr-FR">Ville</label>
+          <label code="en-US">City</label>
+        </property>
+      </properties>
+      <constraints>
+<!--        <constraint name="FK_Personne_Numero" type="foreign_key" references="Personne(PE_Numero)"  columns="PE_Numero" match="simple" ondelete="cascade" onupdate="cascade"/>-->
+	<constraint name="CK_NaissanceFuture" type="check"       expr="PE_Naissance<=CURRENT_DATE"/>
+      </constraints>
+    </class>
+
+
+  </classes>
+
+  <links>
+    <link>
+  </links>
+
+</analysis>

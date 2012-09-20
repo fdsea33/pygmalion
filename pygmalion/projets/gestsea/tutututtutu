@@ -1,0 +1,558 @@
+<!--
+    <part-detail title="gestsea.gestseapartenaire.title_" class="base_partenaire" name="BasePartenaire">
+      <keyproperties>
+        <keyproperty name="id"/>
+        <keyproperty name="libelle"/>
+        <keyproperty name="nom"/>
+        <keyproperty name="prenom"/>
+        <keyproperty name="site_web"/>
+        <keyproperty name="ean13"/>
+      </keyproperties>
+
+      <plan-search>
+
+        <columns default-class="base_partenaire" target-part="BasePartenaire">
+          <column label="base_partenaire.id_"      value="id"/>
+          <column label="base_partenaire.titre_"   value="titre"/>
+          <column label="base_partenaire.nom_"     value="nom" flex="2"/>
+          <column label="base_partenaire.prenom_"  value="prenom" flex="2"/>
+          <column label="dico.codepostal_"         class="base_partenaire_contact" value="codepostal"/>
+          <column label="dico.commune_"            class="base_partenaire_contact" value="commune" flex="2"/>
+          <column label="dico.telephone_"          class="base_partenaire_contact" value="telephone"/>
+          <column label="dico.fax_"                class="base_partenaire_contact" value="fax"/>
+          <column label="dico.mobile_"             class="base_partenaire_contact" value="mobile"/>
+          <column label="dico.email_"              class="base_partenaire_contact" value="email" flex="2"/>
+        </columns>
+
+        <search-steps>
+          <search-step order-by="base_partenaire.nom">
+            <from>
+              <join type="left-join">
+                <from-table name="base_partenaire"/>
+                <from-table name="base_partenaire_contact"/>
+		<on>
+                  <logical-operation operator="and">
+                    <comparison value="partenaire_id" is="equals-to" target="base_partenaire.id"/>
+                    <comparison value="base_partenaire_contact.actif" is="true"/>
+                  </logical-operation>
+		</on>
+              </join>
+	    </from>
+	    <where>
+              <comparison value="base_partenaire.id" is="similar-to" target="$1"/>
+	    </where>
+          </search-step>
+	  
+          <search-step order-by="base_partenaire.nom">
+            <from>
+              <join type="left-join">
+                <from-table name="base_partenaire"/>
+                <from-table name="base_partenaire_contact"/>
+		<on>
+                  <logical-operation operator="and">
+                    <comparison value="partenaire_id" is="equals-to" target="base_partenaire.id"/>
+                    <comparison value="base_partenaire_contact.actif" is="true"/>
+                  </logical-operation>
+		</on>
+              </join>
+	    </from>
+	    <where>
+              <logical-operation operator="or">
+                <comparison value="base_partenaire.id" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.codepostal" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.telephone" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.mobile" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.fax" is="resembling-to" target="$1"/>
+              </logical-operation>
+	    </where>
+          </search-step>
+	  
+          <search-step order-by="base_partenaire.nom">
+            <from>
+              <join type="left-join">
+                <from-table name="base_partenaire"/>
+                <from-table name="base_partenaire_contact"/>
+		<on>
+                  <logical-operation operator="and">
+                    <comparison value="partenaire_id" is="equals-to" target="base_partenaire.id"/>
+                    <comparison value="base_partenaire_contact.actif" is="true"/>
+                  </logical-operation>
+		</on>
+              </join>
+	    </from>
+	    <where>
+              <logical-operation operator="or">
+                <comparison value="base_partenaire.nom" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire.prenom" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.commune" is="resembling-to" target="$1"/>
+                <comparison value="base_partenaire_contact.email" is="resembling-to" target="$1"/>
+              </logical-operation>
+	    </where>
+          </search-step>
+	  
+          <search-step order-by="base_partenaire.nom">
+            <from>
+              <join type="left-join">
+                <from-table name="base_partenaire"/>
+                <from-table name="base_partenaire_contact"/>
+		<on>
+                  <logical-operation operator="and">
+                    <comparison value="partenaire_id" is="equals-to" target="base_partenaire.id"/>
+                    <comparison value="base_partenaire_contact.actif" is="true"/>
+                  </logical-operation>
+		</on>
+              </join>
+	    </from>
+	    <where>
+              <comparison value="base_partenaire.nom_soundex2" is="equals-to" target="systeme.soundex2($1)"/>
+	    </where>
+          </search-step>
+	  
+        </search-steps>
+      </plan-search>
+
+
+      <plan-select>
+        <action type="print"  name="gspersonne"/>
+        <action type="export" name="gspersonne"/>
+        <action type="execute" name="gspersonne"/>
+        <detail-block label="_.general_">
+	  <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="1" value="titre" align="start"/>
+              <databox style="detail-title" flex="5" value="nom" align="start"/>
+              <databox style="detail-title" flex="4" value="prenom" align="start"/>
+              <databox style="detail-title" flex="1" value="id" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <box label="dico.contact_">
+                <databox label="gestsea.gestseapartenaire.telephone_"  class="base_partenaire_contact" value="telephone" align="end"/>
+                <databox label="gestsea.gestseapartenaire.fax_"        class="base_partenaire_contact" value="fax"       align="end"/>
+                <databox label="gestsea.gestseapartenaire.mobile_"     class="base_partenaire_contact" value="mobile"    align="end"/>
+                <databox label="gestsea.gestseapartenaire.email_"      class="base_partenaire_contact" value="email"     align="start"/>
+              </box>
+              <box label="dico.adresse_">
+                <databox class="base_partenaire_contact" value="complement" align="end"/>
+                <databox class="base_partenaire_contact" value="ligne3" align="end"/>
+		<box orient="horizontal">
+                  <databox class="base_partenaire_contact" value="numero" align="end"/>
+                  <databox class="base_partenaire_contact" value="voie" flex="5" align="end"/>
+                </box>
+		<box>
+                  <databox class="base_partenaire_contact" value="ligne5" align="end"/>
+		</box>
+		<box orient="horizontal">
+                  <databox class="base_partenaire_contact" value="codepostal"/>
+                  <databox class="base_partenaire_contact" value="commune" flex="5"/>
+		</box>
+              </box>
+            </box>
+          </box>
+            <from>
+              <join type="left-join">
+                <from-table name="base_partenaire"/>
+                <from-table name="base_partenaire_contact"/>
+		<on>
+                  <comparison value="partenaire_id" is="equals-to" target="base_partenaire.id"/>
+		</on>
+              </join>
+	    </from>
+        </detail-block>
+
+        <list label="gestsea.partenaire.observations_" target-part="ComptaCompte" target-property="parent_compte_id">
+          <columns default-class="compta_compte" target-part="ComptaCompte" local-key="fils.id">
+            <column label="gestsea.comptacompte.auxiliaires.numero_" class="compta_compte" alias="fils" value="numero"/>
+            <column label="gestsea.comptacompte.acces_" class="base_acces" value="nom"/>
+            <column label="gestsea.comptacompte.auxiliaires.nom_" class="compta_compte" alias="fils" value="nom" flex="6"/>
+            <column label="compta_compte.debit_"  class="compta_compte" alias="fils" value="debit"/>
+            <column label="compta_compte.credit_" class="compta_compte" alias="fils" value="credit"/>
+            <column label="compta_compte.solde_"  class="compta_compte" alias="fils" value="solde"/>
+          </columns>
+          <from>
+            <join type="join">
+              <join type="join">
+                <from-table name="compta_compte">
+                  <as-table name="parent"/>
+                </from-table>
+                <from-table name="compta_compte">
+                  <as-table name="fils"/>
+                </from-table>
+                <on>
+                  <comparison value="fils.parent_compte_id" is="equals-to" target="parent.id"/>
+                </on>
+              </join>
+              <from-table name="base_acces"/>
+              <on>
+                <comparison value="fils.acces_id" is="equals-to" target="base_acces.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="parent.id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+    
+
+	
+
+
+      </plan-select>
+
+
+      <plan-update>
+        <detail-block label="_.general_">
+          <box orient="vertical">
+            <box orient="horizontal">
+              <databox label="base_partenaire.nom_" flex="64" value="nom" type="textbox-phrase"/>
+            </box><!---->
+            <box orient="horizontal">
+              <databox label="base_partenaire.type_id_" flex="180" type="menulist" value="type_id" foreign-value="nom||', '||titre" foreign-key="id" foreign-table="base_partenaire_type"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.actif_" flex="17" value="actif" type="checkbox"/>
+              <databox label="base_partenaire.prenom_" flex="64" value="prenom" type="textbox-phrase"/>
+            </box><!--   -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.debit_limite_" flex="17" value="debit_limite" type="textbox-phrase"/>
+              <databox label="base_partenaire.credit_limite_" flex="17" value="credit_limite" type="textbox-phrase"/>
+            </box><!---->
+            <box orient="horizontal">
+              <databox label="base_partenaire.langue_id_" flex="180" type="menulist" value="langue_id" foreign-value="code||', '||nom" foreign-key="id" foreign-table="base_langue"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.site_web_" flex="128" value="site_web" type="textbox-phrase"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.parent_id_" flex="180" type="menulist" value="parent_id" foreign-value="id||', '||libelle" foreign-key="id" foreign-table="base_partenaire"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.responsable_id_" flex="180" type="menulist" value="responsable_id" foreign-value="utilisateur_login||', '||nom||', '||prenom||', '||initiales" foreign-key="id" foreign-table="base_societe_employe"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire.naissance_date_" flex="17" value="naissance_date" type="textbox-phrase"/>
+              <databox label="base_partenaire.ean13_" flex="17" value="ean13" type="textbox-phrase"/>
+            </box><!---->
+            <box orient="horizontal">
+              <databox label="base_partenaire.note_" flex="512" value="note" type="textbox-text" rows="8"/>
+            </box><!-- + -->
+          </box>
+        </detail-block>
+      </plan-update>
+      
+    </part-detail>
+
+
+
+-->
+
+
+    <part-detail title="gestsea.basepartenairecontact.base.partenaire.contact" class="base_partenaire_contact" name="BasePartenaireContact">
+
+      <keyproperties>
+        <keyproperty name="codepostal"/>
+        <keyproperty name="commune"/>
+        <keyproperty name="telephone"/>
+        <keyproperty name="mobile"/>
+        <keyproperty name="fax"/>
+        <keyproperty name="email"/>
+      </keyproperties>
+
+      <plan-search>
+        <columns default-class="base_partenaire_contact">
+          <column label="base_partenaire.id_" class="base_partenaire" alias="I000Bd" value="id"/>
+          <column label="base_partenaire.libelle_" class="base_partenaire" alias="I000Bd" value="libelle"/>
+          <column label="base_partenaire_contact_type.code_" class="base_partenaire_contact_type" alias="I000Cd" value="code"/>
+          <column label="base_partenaire_contact_type.nom_" class="base_partenaire_contact_type" alias="I000Cd" value="nom"/>
+          <column label="base_partenaire_contact.codepostal_" class="base_partenaire_contact" alias="I0000d" value="codepostal"/>
+          <column label="base_partenaire_contact.commune_" class="base_partenaire_contact" alias="I0000d" value="commune"/>
+          <column label="base_partenaire_contact.telephone_" class="base_partenaire_contact" alias="I0000d" value="telephone"/>
+        </columns>
+        <search-steps>
+          <search-step>
+            <from>
+              <join type="join">
+                <join type="join">
+                  <from-table name="base_partenaire_contact">
+                    <as-table name="I0000d"/>
+                  </from-table>
+                  <from-table name="base_partenaire">
+                    <as-table name="I000Bd"/>
+                  </from-table>
+                  <on>
+                    <comparison value="I000Bd.id" is="equals-to" target="I0000d.partenaire_id"/>
+                  </on>
+                </join>
+                <from-table name="base_partenaire_contact_type">
+                  <as-table name="I000Cd"/>
+                </from-table>
+                <on>
+                  <comparison value="I000Cd.id" is="equals-to" target="I0000d.type_id"/>
+                </on>
+              </join>
+            </from>
+            <where>
+              <logical-operation operator="or">
+                <comparison value="I000Bd.id" is="resembling-to" target="$1"/>
+                <comparison value="I000Cd.code" is="resembling-to" target="$1"/>
+                <comparison value="I0000d.codepostal" is="resembling-to" target="$1"/>
+                <comparison value="I0000d.commune" is="resembling-to" target="$1"/>
+                <comparison value="I0000d.telephone" is="resembling-to" target="$1"/>
+              </logical-operation>
+            </where>
+          </search-step>
+          <search-step>
+            <from>
+              <join type="join">
+                <join type="join">
+                  <from-table name="base_partenaire_contact">
+                    <as-table name="I0000d"/>
+                  </from-table>
+                  <from-table name="base_partenaire">
+                    <as-table name="I000Bd"/>
+                  </from-table>
+                  <on>
+                    <comparison value="I000Bd.id" is="equals-to" target="I0000d.partenaire_id"/>
+                  </on>
+                </join>
+                <from-table name="base_partenaire_contact_type">
+                  <as-table name="I000Cd"/>
+                </from-table>
+                <on>
+                  <comparison value="I000Cd.id" is="equals-to" target="I0000d.type_id"/>
+                </on>
+              </join>
+            </from>
+            <where>
+              <logical-operation operator="or">
+                <comparison value="I000Bd.libelle" is="resembling-to" target="$1"/>
+                <comparison value="I000Cd.nom" is="resembling-to" target="$1"/>
+              </logical-operation>
+            </where>
+          </search-step>
+        </search-steps>
+      </plan-search>
+
+      <plan-select>
+        <detail-block label="_.general_">
+          <box orient="vertical">
+            <box orient="horizontal">
+              <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.actif_" flex="17" value="actif" type="checkbox"/>
+              <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.date_fin_" flex="17" value="date_fin" type="textbox-phrase"/>
+            </box><!--   -->
+
+            <box orient="horizontal">
+              <box orient="vertical" flex="5" label="base_partenaire_contact.adresse">
+                <box orient="vertical">
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.complement_" flex="38" value="complement" type="textbox-phrase"/>
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.ligne3_" flex="38" value="ligne3" type="textbox-phrase"/>
+                </box><!--   -->
+                <box orient="horizontal">
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.numero_" flex="17" value="numero" type="textbox-phrase"/>
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.voie_" flex="128" value="voie" type="textbox-phrase"/>
+                </box><!--   -->
+                <box orient="horizontal">
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.ligne5_" flex="38" value="ligne5" type="textbox-phrase"/>
+                </box><!--   -->
+                <box orient="horizontal">
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.codepostal_" flex="17" value="codepostal" type="textbox-phrase"/>
+                  <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.commune_" flex="128" value="commune" type="textbox-phrase"/>
+                </box><!---->
+              </box>
+
+              <box orient="vertical" label="base_partenaire_contact.contact">
+                <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.telephone_" flex="128" value="telephone" type="textbox-phrase"/>
+                <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.fax_" flex="128" value="fax" type="textbox-phrase"/>
+                <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.mobile_" flex="128" value="mobile" type="textbox-phrase"/>
+                <databox alias="I0000d" class="base_partenaire_contact" label="base_partenaire_contact.email_" flex="128" value="email" type="textbox-phrase"/>
+              </box>
+            </box>
+
+            <box orient="horizontal">
+              <box orient="vertical" label="base_partenaire_contact.partenaire_id">
+                <box orient="horizontal">
+                  <databox style="detail-important" alias="I000Dd" class="base_partenaire" label="base_partenaire.id_" flex="17" value="id" type="textbox-phrase"/>
+                </box><!--   -->
+                <box orient="horizontal">
+                  <databox alias="I000Dd" class="base_partenaire" label="base_partenaire.libelle_" flex="38" value="libelle" type="textbox-phrase"/>
+                </box><!-- + -->
+              </box>
+
+              <box orient="vertical" label="base_partenaire_contact.type_id">
+                <box orient="horizontal">
+                  <databox style="detail-important" alias="I000Ed" class="base_partenaire_contact_type" label="base_partenaire_contact_type.code_" flex="17" value="code" type="textbox-phrase"/>
+                </box><!---->
+                <box orient="horizontal">
+                  <databox alias="I000Ed" class="base_partenaire_contact_type" label="base_partenaire_contact_type.nom_" flex="64" value="nom" type="textbox-phrase"/>
+                </box><!-- + -->
+              </box>
+            </box>
+          </box>
+          <from>
+            <join type="join">
+              <join type="join">
+                <from-table name="base_partenaire_contact">
+                  <as-table name="I0000d"/>
+                </from-table>
+                <from-table name="base_partenaire">
+                  <as-table name="I000Dd"/>
+                </from-table>
+                <on>
+                  <comparison value="I000Dd.id" is="equals-to" target="I0000d.partenaire_id"/>
+                </on>
+              </join>
+              <from-table name="base_partenaire_contact_type">
+                <as-table name="I000Ed"/>
+              </from-table>
+              <on>
+                <comparison value="I000Ed.id" is="equals-to" target="I0000d.type_id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="I0000d.id" is="equals-to" target="$1"/>
+          </where>
+        </detail-block>
+
+        <list label="list.base_partenaire_contact.gestion.ventes.commande" target-part="GestionVentesCommande" target-property="commande_contact_id">
+          <columns default-class="gestion_ventes_commande" target-part="GestionVentesCommande" local-key="I0000d.id">
+            <column label="gestion_ventes_commande.numero_" class="gestion_ventes_commande" alias="I0000d" value="numero"/>
+            <column label="gestion_ventes_commande.date_" class="gestion_ventes_commande" alias="I0000d" value="date"/>
+            <column label="gestion_ventes_commande.immodifiable_" class="gestion_ventes_commande" alias="I0000d" value="immodifiable"/>
+            <column label="base_partenaire.id_" class="base_partenaire" alias="I0012d" value="id"/>
+            <column label="base_partenaire.libelle_" class="base_partenaire" alias="I0012d" value="libelle"/>
+            <column label="gestion_ventes_commande.montant_ttc_" class="gestion_ventes_commande" alias="I0000d" value="montant_ttc"/>
+          </columns>
+          <from>
+            <join type="join">
+              <from-table name="gestion_ventes_commande">
+                <as-table name="I0000d"/>
+              </from-table>
+              <from-table name="base_partenaire">
+                <as-table name="I0012d"/>
+              </from-table>
+              <on>
+                <comparison value="I0012d.id" is="equals-to" target="I0000d.partenaire_id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="I0000d.commande_contact_id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+
+        <list label="list.base_partenaire_contact.gestsea.publication.abonnement.commande" target-part="GestseaPublicationAbonnementCommande" target-property="contact_id">
+          <columns default-class="gestsea_publication_abonnement_commande" target-part="GestseaPublicationAbonnementCommande" local-key="I0000d.id">
+            <column label="gestsea_publication_abonnement_commande.id_" class="gestsea_publication_abonnement_commande" alias="I0000d" value="id"/>
+            <column label="base_partenaire.id_" class="base_partenaire" alias="I0013d" value="id"/>
+            <column label="base_partenaire.libelle_" class="base_partenaire" alias="I0013d" value="libelle"/>
+          </columns>
+          <from>
+            <join type="join">
+              <from-table name="gestsea_publication_abonnement_commande">
+                <as-table name="I0000d"/>
+              </from-table>
+              <from-table name="base_partenaire">
+                <as-table name="I0013d"/>
+              </from-table>
+              <on>
+                <comparison value="I0013d.id" is="equals-to" target="I0000d.partenaire_id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="I0000d.contact_id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+
+        <list label="list.base_partenaire_contact.gestsea.publication.abonnement.routage" target-part="GestseaPublicationAbonnementRoutage" target-property="contact_id">
+          <columns default-class="gestsea_publication_abonnement_routage" target-part="GestseaPublicationAbonnementRoutage" local-key="I0000d.id">
+            <column label="gestsea_publication_abonnement_routage.id_" class="gestsea_publication_abonnement_routage" alias="I0000d" value="id"/>
+            <column label="base_partenaire.id_" class="base_partenaire" alias="I0014d" value="id"/>
+            <column label="base_partenaire.libelle_" class="base_partenaire" alias="I0014d" value="libelle"/>
+            <column label="gestsea_publication.code_" class="gestsea_publication" alias="I0015d" value="code"/>
+            <column label="gestsea_publication.nom_" class="gestsea_publication" alias="I0015d" value="nom"/>
+            <column label="gestsea_publication_abonnement_routage.nb_exemplaires_" class="gestsea_publication_abonnement_routage" alias="I0000d" value="nb_exemplaires"/>
+            <column label="gestsea_publication_abonnement_routage.numero_debut_" class="gestsea_publication_abonnement_routage" alias="I0000d" value="numero_debut"/>
+            <column label="gestsea_publication_abonnement_routage.numero_fin_" class="gestsea_publication_abonnement_routage" alias="I0000d" value="numero_fin"/>
+          </columns>
+          <from>
+            <join type="join">
+              <join type="join">
+                <from-table name="gestsea_publication_abonnement_routage">
+                  <as-table name="I0000d"/>
+                </from-table>
+                <from-table name="base_partenaire">
+                  <as-table name="I0014d"/>
+                </from-table>
+                <on>
+                  <comparison value="I0014d.id" is="equals-to" target="I0000d.partenaire_id"/>
+                </on>
+              </join>
+              <from-table name="gestsea_publication">
+                <as-table name="I0015d"/>
+              </from-table>
+              <on>
+                <comparison value="I0015d.id" is="equals-to" target="I0000d.publication_id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="I0000d.contact_id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+          <box orient="vertical">
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.actif_" flex="17" value="actif" type="checkbox"/>
+              <databox label="base_partenaire_contact.partenaire_id_" flex="180" type="menulist" value="partenaire_id" foreign-value="id||', '||libelle" foreign-key="id" foreign-table="base_partenaire"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.type_id_" flex="180" type="menulist" value="type_id" foreign-value="code||', '||nom" foreign-key="id"><!-- foreign-table="base_partenaire_contact_type"-->
+                <from>
+                  <from-table name="base_partenaire_contact_type"/>
+		</from>
+                <where>
+                  <comparison value="$1%2" is="equals-to" target="0"/>
+		</where>
+                <with-param>
+              </databox>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.complement_" flex="38" value="complement" type="textbox-phrase"/>
+            </box><!--   -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.ligne3_" flex="38" value="ligne3" type="textbox-phrase"/>
+            </box><!--   -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.numero_" flex="17" value="numero" type="textbox-phrase"/>
+              <databox label="base_partenaire_contact.voie_" flex="128" value="voie" type="textbox-phrase"/>
+            </box><!---->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.ligne5_" flex="38" value="ligne5" type="textbox-phrase"/>
+            </box><!---->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.codepostal_commune_id_" flex="180" type="menulist" value="codepostal_commune_id" foreign-value="nom" foreign-key="id" foreign-table="base_codepostal_commune_rel"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.telephone_" flex="128" value="telephone" type="textbox-phrase"/>
+              <databox label="base_partenaire_contact.fax_" flex="128" value="fax" type="textbox-phrase"/>
+              <databox label="base_partenaire_contact.mobile_" flex="128" value="mobile" type="textbox-phrase"/>
+            </box><!-- + -->
+            <box orient="horizontal">
+              <databox label="base_partenaire_contact.email_" flex="128" value="email" type="textbox-phrase"/>
+            </box><!-- + -->
+          </box>
+        </detail-block>
+      </plan-update>
+
+    </part-detail>
+
+
+
+
+
+
+    -->

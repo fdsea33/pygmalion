@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="g0000_debug.css" type="text/css"?>
+
+<window title="Liste" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" orient="vertical" xmlns:html="http://www.w3.org/1999/xhtml">
+<style>
+
+</style>
+<script>
+function updateFields(event)
+{
+
+  var row = {}, column = {}, part = {};
+  var tree = document.getElementById("thetree");
+
+  var boxobject = tree.boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  boxobject.getCellAt(event.clientX, event.clientY, row, column, part);
+
+//  if (typeof column.value != "string") column.value = column.id;
+
+  document.getElementById("row").value = row.value;
+  document.getElementById("column").value = column.value.index;
+  document.getElementById("part").value = part.value;
+}
+
+function lookFor(event)
+{
+
+  var row = {}, column = {}, part = {};
+  var tree = document.getElementById("thetree0521");
+
+  var boxobject = tree.boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  alert(boxobject.view);
+  boxobject.getCellAt(event.clientX, event.clientY, row, column, part);
+
+  document.getElementById("row").value = row.value;
+  document.getElementById("column").value = column.value.index;
+
+  alert(boxobject.view.getCellText(row.value, column.value));
+
+
+}
+</script>
+<radiogroup id="GroupTheTreeA10021F2725D"/>
+  <toolbar align="center">
+    <toolbarbutton id="back-button"    class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton pack="center" label="Nouveau"  class="test"/>
+    <image class="test2"/>
+    <label value="Nouveau" class="test2"/>
+    <textbox class="tititu" onblur="alert(this.getAttribute('value'));this.setAttribute('value',this.value);alert(this.getAttribute('value'));"/>
+    <checkbox oncommand="this.checked=!this.checked" checked="true" class="hyperlink value" key="tutut" />
+    <toolbarbutton group="GroupTheTreeA10021F2725D" label="f_compta.detail.compte.auxiliaires_;"/>
+    <toolbarbutton group="GroupTheTreeA10021F2725D" label="f_compta.detail.compte.ecritures_;"/>
+  </toolbar>
+  <menulist editable="true" label="toto" value="riri" onclick="alert(this.selectedItem.value+' '+this.selectedIndex)">
+    <menupopup>
+      <menuitem label="tut1" value="2"/>
+      <menuitem label="tut2" value="3"/>
+      <menuitem label="tut3" value="4"/>
+      <menuitem label="tutu" value="1"/>
+      <menuitem label="tut4" value="5"/>
+    </menupopup>
+  </menulist>
+ <hbox>
+
+ <textbox style="-moz-appearance:none; border:none; outline: 2px solid #D50; background-color:#FEB; color: #D50;" value="Valeur test"/>
+<label value="Ligne:" ondblclick="alert('Wouhou')"/>
+<label id="row"/>
+<label value="Colonne:"/>
+<label id="column"/>
+<label value="Type enfant:"/>
+<label id="part"/>
+ </hbox>
+<hbox>
+<hbox align="baseline" style="border:1px solid #AAA; margin :1px; background-color: #DDD; padding:2px;">
+  <label class="label" value="Une étiquette : "/>
+  <label class="value" value="Une valeur"/>
+</hbox>
+<hbox align="center" class="box-field">
+  <label class="label" value="Une étiquette : "/>
+  <label class="value hyperlink" value="Une valeur"/>
+</hbox>
+<hbox align="center" class="box-field">
+  <label class="label" value="Une étiquette : "/>
+  <label class="value hyperlink" value="Une valeur" key="15" onmousemove="document.getElementById('tututu').value='OK';" onmouseout="document.getElementById('tututu').value='-';"/>
+</hbox>
+<hbox align="center" class="box-field">
+  <label id="tututu" value="-"/>
+</hbox>
+
+</hbox>
+  <button label="Envoyer la carte" class="detail-list-button"/>
+
+ <tree id="thetree0521" oncommand="alert(this);" seltype="multiple"  flex="1" rows="14"
+  onselect="document.getElementById('toto').value+=' titi'"
+  onmousemove="//updateFields(event);"
+  onclick="alert(this); lookFor(event);"
+  ondblclick="doCommand();" allowevents="true" sortActive="true">
+  <treecols allowevents="true">
+    <treecol id="subject" label="cb" type="checkbox" editable="true">
+
+    </treecol>
+    <splitter class="tree-splitter"/>
+    <treecol id="sender" label="Sender" flex="3" fixed="false"  sortDirection="descending">
+    </treecol>
+<!--
+      <label value="Sender" flex="1"/>
+      <image class="treecol-image"/>
+    </treecol>
+-->
+    <splitter class="tree-splitter"/>
+    <treecol id="subject" label="Subject" flex="5" sortDirection="ascending"/>
+    <treecol id="seeee" label="-" width="20" properties="see"/>
+  </treecols>
+
+  <treechildren>
+    <treeitem>
+      <treerow>
+        <treecell value="true"/>
+        <treecell properties="hyperlink" label="joe@somewhere.com"/>
+        <treecell label="Top secret plans"/>
+        <treecell/>
+      </treerow>
+    </treeitem>
+    <treeitem allowevents="true">
+      <treerow >
+        <treecell value="true"/>
+        <treecell label="mel@whereever.com"/>
+        <treecell properties="hyperlink" label="Let's do lunch" onclick="alert('OK')"/>
+        <treecell/>
+      </treerow>
+    </treeitem>
+    <treeitem>
+      <treerow properties="hyperlink">
+        <treecell value="true"/>
+        <treecell label="mel@whereever.com"/>
+        <treecell properties="hyperlink" label="mel@whereever.com"/>
+        <treecell/>
+      </treerow>
+    </treeitem>
+    <treeitem>
+      <treerow properties="hyperlink">
+        <treecell value="true"/>
+        <treecell label="mel@whereever.com"/>
+        <treecell properties="hyperlink" label="mel@whereever.com"/>
+        <treecell/>
+      </treerow>
+    </treeitem>
+    <treeitem allowevents="true">
+      <treerow >
+        <treecell value="true"/>
+        <treecell label="mel@whereever.com"/>
+        <treecell properties="hyperlink" label="Let's do lunch" onclick="alert('OK')"/>
+        <treecell properties="edit"/>
+      </treerow>
+    </treeitem>
+    <treeitem>
+      <treerow properties="hyperlink">
+        <treecell value="true"/>
+        <treecell label="mel@whereever.com"/>
+        <treecell properties="hyperlink" label="mel@whereever.com"/>
+        <treecell properties="edit"><button label="toto"/></treecell>
+      </treerow>
+    </treeitem>
+  </treechildren>
+</tree>
+
+
+<vbox flex="1" style="overflow:auto;">
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <table>
+      <tr>
+        <td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+      <tr>
+        <td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+      <tr>
+        <td>jkbjkbjk</td><td><a href="fsdff">jkbjkbjk</a></td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+      <tr>
+        <td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+      <tr>
+        <td>jkbjkbjk</td><td>jkbjkbjk</td><td><xul:button icon="add" label="OK"/></td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+      <tr>
+        <td>jkbjkbjk</td><td>jkbjkbjk</td><td><xul:label value="xul:label" onclick="alert('78')"/></td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td><td>jkbjkbjk</td>
+      </tr>
+    </table>
+  </html>
+ <vbox class="toto">
+ <separator class="groove"/>
+<hbox class="titi" pack="center">
+<button class="buttt" icon="print" type="radio" checkState="1" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+<button class="buttt" icon="print" type="radio" group="gnangnan" label="toto"/>
+</hbox>
+</vbox>
+<label class="toto" value="slfsklsldkfjklsqfnsjkbqsmjkdfq"/>
+    <listbox  class="toto">
+      <listhead>
+        <listheader label="Nom"/>
+        <listheader label="Valeur"/>
+        <listheader label="Bouton"/>
+      </listhead>
+      <listcols>
+        <listcol flex="4"/>
+        <splitter/>
+        <listcol flex="2"/>
+        <splitter/>
+        <listcol/>
+      </listcols>
+      <listitem allowevents="true" >
+        <listcell label="MOZCONFIG"/>
+        <listcell label="~/mozilla/mozoconfig-firefox"/>
+        <listcell>
+          <button style="color : green; padding:0px; margin : 0px;" flex="1" label="Modifier" oncommand="alert('OK')"/>
+	</listcell>
+      </listitem>
+      <listitem allowevents="false" >
+        <listcell label="MOZCONFIG"/>
+        <listcell label="~/mozilla/mozoconfig-firefox"/>
+        <listcell>
+	</listcell>
+      </listitem>
+      <listitem allowevents="false" >
+        <listcell>
+          <label value="Je veux voir la personne"/>
+          <textbox flex="1"/>
+	</listcell>
+        <listcell>
+          <textbox flex="1"/>
+	</listcell>
+        <listcell>
+          <textbox flex="1"/>
+	</listcell>
+      </listitem>
+      <listitem allowevents="true" >
+        <listcell>
+	</listcell>
+        <listcell>
+          <textbox flex="1"/>
+	</listcell>
+        <listcell>
+          <textbox flex="1"/>
+	</listcell>
+      </listitem>
+    </listbox>
+<splitter/>
+ <textbox id="toto" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) alert('OK ça sort')"/>
+
+
+
+<vbox flex="1">
+  <tabbox flex="1"  orient="horizontal">
+    <tabs orient="vertical" class="tabs-left">
+      <tab class="tab-left" label="f_compta.detail.compte.auxiliaires_;"/>
+      <tab class="tab-left" label="f_compta.detail.compte.ecritures_;"/>
+    </tabs>
+    <tabpanels flex="1">
+      <tabpanel flex="1">
+        <tree flex="1" rows="7">
+          <treecols>
+            <treecol flex="1" label="f_compta.detail.compte.auxiliaires.cm_numcompte_;"/>
+            <splitter class="tree-splitter"/>
+            <treecol flex="1" label="f_compta.detail.compte.auxiliaires.cm_nom_;"/>
+          </treecols>
+          <treechildren/>
+        </tree>
+      </tabpanel>
+      <tabpanel flex="1">
+        <tree flex="1" rows="7">
+          <treecols>
+            <treecol flex="1" label="f_compta.detail.compte.ecritures.ec_libelle_;"/>
+            <splitter class="tree-splitter"/>
+            <treecol flex="1" label="f_compta.detail.compte.ecritures.ec_debit_;"/>
+            <splitter class="tree-splitter"/>
+            <treecol flex="1" label="f_compta.detail.compte.ecritures.ec_credit_;"/>
+          </treecols>
+          <treechildren/>
+        </tree>
+      </tabpanel>
+    </tabpanels>
+  </tabbox>
+</vbox>
+
+  <tabbox flex="1" >
+    <tabs style="display:inline;" flex="1">
+       <tab class="tabbb" label="Tabs"    />
+       <tab class="tabbb" label="on the"  />
+       <tab class="tabbb" label="Left"  />
+       <tab class="tabbb" label="Tabs"    />
+       <tab class="tabbb" label="on the"  />
+       <tab class="tabbb" label="Left"  />
+       <tab class="tabbb" label="Tabs"    />
+       <tab class="tabbb" label="on the"  />
+       <tab class="tabbb" label="Left"  />
+       <tab class="tabbb" label="Tabs"    />
+       <tab class="tabbb" label="on the"  />
+       <tab class="tabbb" label="Left"  />
+       <tab class="tabbb" label="Tabs"    />
+       <tab class="tabbb" label="on the"  />
+       <tab class="tabbb" label="Left"  />
+    </tabs>
+    <tabpanels flex="1" >
+       <label value="Tabs" />  
+       <label value="on the" />
+       <label value="left" />  
+       <label value="Tabs" />  
+       <label value="on the" />
+       <label value="left" />  
+       <label value="Tabs" />  
+       <label value="on the" />
+       <label value="left" />  
+       <label value="Tabs" />  
+       <label value="on the" />
+       <label value="left" />  
+       <label value="Tabs" />  
+       <label value="on the" />
+       <label value="left" />  
+    </tabpanels>
+  </tabbox>
+
+  <expander label="Toto 1">
+    <radiogroup>
+      <radio selected="true" label="tutu"/>
+      <radio label="Respecte un des critères."/>
+    </radiogroup>
+    <listbox rows="4"/>
+  </expander>
+  <expander label="Toto 1">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+  <expander label="Toto 2" onmouseover="document.getElementById('toto').value+='['" onmouseout="document.getElementById('toto').value+=']'">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+  <expander label="Toto 3" onmouseover="this.open=true" onmouseout="this.open=false">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+  <expander label="Toto 3" onmouseover="this.open=true" onmouseout="this.open=false">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+  <expander label="Toto 3" onmouseover="this.open=true" onmouseout="this.open=false">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+  <expander label="Toto 3" onmouseover="this.open=true" onmouseout="this.open=false">
+    <groupbox height="40">
+      <caption label="Roger"/>
+    </groupbox>
+  </expander>
+
+
+
+  <statusbar>
+    <statusbarpanel flex="1" id="p-state"/>
+  </statusbar>
+</vbox>
+
+</window>

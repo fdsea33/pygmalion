@@ -1,0 +1,21 @@
+tree
+{
+  -moz-binding: url("edittree.xml#edittree");
+//  -moz-user-focus: normal !important;
+  -moz-user-select: text;
+}
+
+textbox {
+//  -moz-appearance : none;
+  min-height: 1.8em;
+  -moz-user-focus: normal !important;
+  -moz-user-select: text !important;
+  background-color: #FFD;
+}
+
+tree[editing="true"] > treechildren::-moz-tree-row(selected)
+{
+  background-color: transparent;
+  border: none;
+}
+

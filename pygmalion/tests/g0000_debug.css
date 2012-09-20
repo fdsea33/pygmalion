@@ -1,0 +1,196 @@
+/* Pygmalion products */
+
+toolbarbutton[checked] {
+  font-weight:bold;
+}
+
+toolbarbutton {
+  color:red;
+}
+
+/* -------------------- */
+label {
+  padding-top:1px;
+  padding-left:1px;
+  padding-bottom:1px;
+  padding-right:1px;
+  margin-left:1px;
+  margin-right:1px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+/* -------------------- */
+.panel-action {
+  background-color:#DDF;
+  border-top:2px solid blue;
+  margin-top:4px;
+  padding:2px;
+}
+
+/* -------------------- */
+.panel-work {
+  padding:.5em;
+}
+
+/* -------------------- */
+.button-wrong {
+  color:red;
+  font-weight:bold;
+}
+
+/* -------------------- */
+.button-right {
+  color:green;
+  font-weight:bold;
+}
+
+/* -------------------- */
+.detail-name {
+  color:#FFB;
+  background-color:#007;
+  padding:0.2em;
+  font-size:150%;
+  font-weight:bold;
+}
+
+/* -------------------- */
+.detail-title {
+  color:#007;
+  font-size:150%;
+}
+
+/* -------------------- */
+.detail-list-menu {
+  padding:2px;
+  background-color:#DDF;
+}
+
+/* -------------------- */
+.detail-list-name {
+  color:#FFF;
+  background-color:#007;
+  padding:0.3em;
+  margin-bottom:0.1em;
+  font-size:120%;
+  font-weight:bold;
+}
+
+/* -------------------- */
+treechildren::-moz-tree-row(selected) {
+  background-color:#cccedf;
+}
+
+/* -------------------- */
+treechildren::-moz-tree-cell-text(selected), treechildren::-moz-tree-cell-text(odd, selected) {
+  color:#000213;
+}
+
+
+
+/* -------------------- */
+treechildren::-moz-tree-row(odd) {
+  background-color:#e7eeff;
+}
+
+/* -------------------- */
+treechildren::-moz-tree-row(odd, selected) {
+  background-color:#b8c0df;
+}
+
+/* -------------------- */
+
+
+/* -------------------- */
+treechildren::-moz-tree-cell-text(hyperlink), .hyperlink[key] {
+  color:#43F;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+
+/* -------------------- */
+treechildren::-moz-tree-cell-text(hyperlink, selected, focus) {
+  color:#362bdf !important;
+}
+
+
+/* -------------------- */
+.hyperlink [key]{
+  padding-left:0.1em;
+  padding-right:0.1em;
+}
+
+/* -------------------- */
+.label {
+  color: #224;
+}
+
+/* -------------------- */
+.value {
+  color:#06D;
+  font-weight:bold;
+}
+
+/* -------------------- */
+.detail-list-button {
+  color:#007;
+  font-size:100%;
+  //  font-weight:bold;
+  margin:2px;
+}
+
+.box-field {
+  border:1px solid threedshadow; 
+  margin :1px; 
+  background-color: threedhighlight; 
+  padding:2px;
+}
+
+.test {
+  list-style-image: url(projets/images/boutons.png);
+  -moz-image-region: rect(0px,  24px, 24px,   0px);
+}
+
+.test2 {
+  list-style-image: url(projets/images/boutons.png);
+  -moz-image-region: rect(0px,  96px, 24px,   72px);
+}
+
+
+.treecol-image {
+  margin-right: 1px;
+  list-style-image: url(projets/images/boutons16.png);
+  -moz-image-region: rect(16px,  208px, 32px,   192px);
+}
+
+image.checkbox {
+  width: 20px;
+  height: 20px;
+  background-image: url(chrome://global/skin/checkbox/cbox-check.gif);
+  background-repeat: no-repeat;
+  background-color: #FFF;
+}
+
+treecol {
+    color : red;
+}
+
+
+.titi{
+
+  display:inline;
+}
+
+treechildren::-moz-tree-image(see),treechildren::-moz-tree-image(edit) {
+  list-style-image: url(projets/images/boutons16.png);
+  cursor: pointer;
+}
+
+treechildren::-moz-tree-image(see) {
+  -moz-image-region: rect(0px,  16px, 16px,   0px);
+}
+
+treechildren::-moz-tree-image(edit) {
+  -moz-image-region: rect(0px,  32px, 16px,   16px);
+}

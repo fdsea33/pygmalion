@@ -1,0 +1,14 @@
+gestsea.jar:
+% content gestsea %content/gestsea/ xpcnativewrappers=no
+  content/gestsea/gestsea.xul                                         (resources/content/gestsea.xul)
+% skin gestsea classic/1.0  %skin/classic/gestsea/
+  skin/classic/gestsea/S00debug.css                                   (resources/skin/classic/S00debug.css)
+  skin/classic/gestsea/S01Menu.css                                    (resources/skin/classic/S01Menu.css)
+  skin/classic/gestsea/boutons16.png                                  (resources/skin/classic/boutons16.png)
+  skin/classic/gestsea/boutons24.png                                  (resources/skin/classic/boutons24.png)
+  skin/classic/gestsea/boutons48.png                                  (resources/skin/classic/boutons48.png)
+  skin/classic/gestsea/panel-action-bg.png                            (resources/skin/classic/panel-action-bg.png)
+  skin/classic/gestsea/f_gestsea.png                                  (resources/skin/classic/f_gestsea.png)
+  skin/classic/gestsea/f_gestx.png                                    (resources/skin/classic/f_gestx.png)
+  skin/classic/gestsea/f_comptax.png                                  (resources/skin/classic/f_comptax.png)
+  skin/classic/gestsea/f_admin.png                                    (resources/skin/classic/f_admin.png)

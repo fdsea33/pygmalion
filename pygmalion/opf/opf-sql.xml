@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<extend name="Pygmalion SQL Methods" version="0.2.1">
+
+  <method name="getQueryCode" element="from">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv=NS_OK;
+  PRUint32 pIndex;
+  nsAutoString pCode;
+
+  aCode = NS_LITERAL_STRING(" FROM ");
+  for(pIndex=0;pIndex<mFromElementArray.Count();pIndex++) {
+    switch(mFromElementArray_LID[pIndex]) {
+    case FROM_ELEMENT_FROM_TABLE_LID:  rv = NS_STATIC_CAST(nsIOPFFromTable*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+    case FROM_ELEMENT_JOIN_LID:        rv = NS_STATIC_CAST(nsIOPFJoin*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);      break;
+      /*
+    case FROM_ELEMENT_FROM_SELECT_LID: rv = NS_STATIC_CAST(nsIOPFSelect*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);    break;
+    case FROM_ELEMENT_PROCEDURE_LID:   rv = NS_STATIC_CAST(nsIOPFProcedure*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+      */
+    }
+    PM_TESTOUILLE(rv,rv);
+    if (pIndex>0)
+      aCode += NS_LITERAL_STRING(", ");
+    aCode += pCode;
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+  <method name="getQueryCode" element="from-table">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  if (mOnly) {
+    aCode = NS_LITERAL_STRING("ONLY ");
+  } else {
+    aCode = NS_LITERAL_STRING("");
+  }
+  aCode += mName;
+  
+  if (mTheAsTable) {
+    rv = mTheAsTable->GetQueryCode(pCode);
+    PM_TESTOUILLE(rv,rv);
+    aCode += pCode;
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+  <method name="getQueryCode" element="as-table">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  PRUint32 pIndex;
+  aCode += NS_LITERAL_STRING(" AS ")+mName;
+  if (mColumnNameArray.Count()>0) {
+    aCode += NS_LITERAL_STRING("(");
+    for(pIndex=0;pIndex<mColumnNameArray.Count();pIndex++) {
+      rv = mColumnNameArray[pIndex]->GetQueryCode(pCode);
+      PM_TESTOUILLE(rv,rv);
+      if (pIndex>0)
+	aCode += NS_LITERAL_STRING(", ");
+      aCode += pCode;
+    }
+    aCode += NS_LITERAL_STRING(")");
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+
+  <method name="getQueryCode" element="column-name">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  aCode = mName;
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+
+  <method name="getQueryCode" element="join">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  PRUint32 pIndex;
+  nsAutoString pCode;
+  pIndex=0;
+  switch(mFromElementArray_LID[pIndex]) {
+  case FROM_ELEMENT_FROM_TABLE_LID:  rv = NS_STATIC_CAST(nsIOPFFromTable*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+  case FROM_ELEMENT_JOIN_LID:        rv = NS_STATIC_CAST(nsIOPFJoin*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);      break;
+    /*
+      case FROM_ELEMENT_FROM_SELECT_LID: rv = NS_STATIC_CAST(nsIOPFSelect*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);    break;
+      case FROM_ELEMENT_PROCEDURE_LID:   rv = NS_STATIC_CAST(nsIOPFProcedure*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+    */
+  }
+  PM_TESTOUILLE(rv,rv);
+  aCode = pCode+NS_LITERAL_STRING(" ");
+  if (mNatural && mType!=TYPE_CROSS_JOIN){
+    aCode += NS_LITERAL_STRING("NATURAL ");
+  }
+  switch(mType) {
+  case TYPE_JOIN:
+  case TYPE_INNER_JOIN: pCode = NS_LITERAL_STRING("JOIN"); break;
+  case TYPE_LEFT_JOIN:
+  case TYPE_LEFT_OUTER_JOIN: pCode = NS_LITERAL_STRING("LEFT JOIN"); break;
+  case TYPE_RIGHT_JOIN:
+  case TYPE_RIGHT_OUTER_JOIN: pCode = NS_LITERAL_STRING("RIGHT JOIN"); break;
+  case TYPE_FULL_JOIN:
+  case TYPE_FULL_OUTER_JOIN: pCode = NS_LITERAL_STRING("FULL JOIN"); break;
+  case TYPE_CROSS_JOIN: pCode = NS_LITERAL_STRING("CROSS JOIN"); break;
+  }
+  aCode += pCode+NS_LITERAL_STRING(" ");
+  pIndex=1;
+  switch(mFromElementArray_LID[pIndex]) {
+  case FROM_ELEMENT_FROM_TABLE_LID:  rv = NS_STATIC_CAST(nsIOPFFromTable*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+  case FROM_ELEMENT_JOIN_LID:        rv = NS_STATIC_CAST(nsIOPFJoin*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);      break;
+    /*
+      case FROM_ELEMENT_FROM_SELECT_LID: rv = NS_STATIC_CAST(nsIOPFSelect*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode);    break;
+      case FROM_ELEMENT_PROCEDURE_LID:   rv = NS_STATIC_CAST(nsIOPFProcedure*,(nsIOPFElement*)mFromElementArray[pIndex])->GetQueryCode(pCode); break;
+    */
+  }
+  PM_TESTOUILLE(rv,rv);
+  aCode += pCode;
+  if (mTheJoinCondition) {
+    switch(mTheJoinCondition_LID) {
+    case JOIN_CONDITION_ON_LID:    rv = NS_STATIC_CAST(nsIOPFOn*,(nsIOPFElement*)mTheJoinCondition)->GetQueryCode(pCode);    break;
+    case JOIN_CONDITION_USING_LID: rv = NS_STATIC_CAST(nsIOPFUsing*,(nsIOPFElement*)mTheJoinCondition)->GetQueryCode(pCode); break;
+    }
+    PM_TESTOUILLE(rv,rv);
+    aCode += pCode;
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+  <method name="getQueryCode" element="on">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  aCode = NS_LITERAL_STRING(" ON ");
+  switch(mTheCondition_LID) {
+  case CONDITION_COMPARISON_LID:        rv = NS_STATIC_CAST(nsIOPFComparison*,(nsIOPFElement*)mTheCondition)->GetQueryCode(pCode);       break;
+  case CONDITION_LOGICAL_OPERATION_LID: rv = NS_STATIC_CAST(nsIOPFLogicalOperation*,(nsIOPFElement*)mTheCondition)->GetQueryCode(pCode); break;
+  }
+  PM_TESTOUILLE(rv,rv);
+  aCode += pCode;
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+  <method name="getQueryCode" element="using">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  PRUint32 pIndex;
+  nsAutoString pCode;
+  if (mColumnNameArray.Count()>0) {
+    aCode = NS_LITERAL_STRING(" USING (");
+    for(pIndex=0;pIndex<mColumnNameArray.Count();pIndex++) {
+      rv = mColumnNameArray[pIndex]->GetQueryCode(pCode);
+      PM_TESTOUILLE(rv,rv);
+      if (pIndex>0)
+	aCode += NS_LITERAL_STRING(", ");
+      aCode += pCode;
+    }
+    aCode += NS_LITERAL_STRING(")");
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+
+
+<!--
+  <method name="getQueryCode" element="procedure">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  aCode = mName+NS_LITERAL_STRING("(");
+  if (mTheExpressions) {
+    rv = mTheExpressions->GetQueryCode(pCode);
+    PM_TESTOUILLE(rv,rv);
+    aCode += pCode;    
+  }
+  aCode += NS_LITERAL_STRING(")");
+  rv = mTheAs->GetCode(pCode);
+  PM_TESTOUILLE(rv,rv);
+  aCode += pCode;
+  return NS_OK;
+]]></code>
+  </method>
+-->
+
+  <method name="getQueryCode" element="expressions">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  PRUint32 pIndex;
+  for(pIndex=0;pIndex<mExpressionArray.Count();pIndex++) {
+    rv = NS_STATIC_CAST(nsIOPFExpression*,(nsIOPFElement*)mExpressionArray[pIndex])->GetQueryCode(pCode);
+    PM_TESTOUILLE(rv,rv);
+    if (pIndex>0)
+      aCode += NS_LITERAL_STRING(",");
+    aCode += pCode;    
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+  <method name="getQueryCode" element="expression">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  aCode = mExpression;
+  if (mAs.Length()>0) {
+    aCode += NS_LITERAL_STRING(" AS \"")+mAs+NS_LITERAL_STRING("\"");
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+
+  <method name="getQueryCode" element="where" status="frozen">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  nsAutoString pCode;
+  pCode = NS_LITERAL_STRING("");
+  aCode = NS_LITERAL_STRING(" WHERE ");
+  switch(mTheCondition_LID) {
+  case CONDITION_COMPARISON_LID:
+    rv = NS_STATIC_CAST(nsIOPFComparison*,(nsIOPFElement*)mTheCondition)->GetQueryCode(pCode);
+    break;
+  case CONDITION_LOGICAL_OPERATION_LID:
+    rv = NS_STATIC_CAST(nsIOPFLogicalOperation*,(nsIOPFElement*)mTheCondition)->GetQueryCode(pCode);
+    break;
+  default:
+    pCode = NS_LITERAL_STRING("(Et ...!)");
+    rv = NS_OK;
+  }
+  PM_TESTOUILLE(rv,rv);
+  aCode += pCode;
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+  <method name="getQueryCode" element="comparison">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsAutoString pLike;
+  if (!mCaseSensitive || mIs==IS_RESEMBLING_TO) {
+    pLike=NS_LITERAL_STRING(" ILIKE ");
+  } else {
+    pLike=NS_LITERAL_STRING(" LIKE ");
+  }
+  aCode = mValue;
+  switch(mIs) {
+  case IS_TRUE: 
+    aCode = mValue;
+    break;
+  case IS_FALSE: 
+    aCode = NS_LITERAL_STRING("NOT ")+mValue;
+    break;
+  case IS_CONTAINING: 
+    aCode = NS_LITERAL_STRING("(")+mValue+NS_LITERAL_STRING(")::varchar")
+      +pLike+NS_LITERAL_STRING("'%'||")+mTarget+NS_LITERAL_STRING("||'%'");
+    break;
+  case IS_RESEMBLING_TO: 
+    aCode = NS_LITERAL_STRING("(")+mValue+NS_LITERAL_STRING(")::varchar")
+      +pLike+NS_LITERAL_STRING("'%'||REPLACE(")+mTarget+NS_LITERAL_STRING(",' ','%')||'%'");
+    break;
+  case IS_STARTING_WITH: 
+    aCode = NS_LITERAL_STRING("(")+mValue+NS_LITERAL_STRING(")::varchar")
+      +pLike+mTarget+NS_LITERAL_STRING("||'%'");
+    break;
+  case IS_ENDING_WITH: 
+    aCode = NS_LITERAL_STRING("(")+mValue+NS_LITERAL_STRING(")::varchar")
+      +pLike+NS_LITERAL_STRING("'%'||")+mTarget;
+    break;
+  case IS_SIMILAR_TO: 
+    aCode = NS_LITERAL_STRING("(")+mValue+NS_LITERAL_STRING(")::varchar")
+      +pLike+NS_LITERAL_STRING("(")+mTarget+NS_LITERAL_STRING(")::varchar");
+    break;
+  case IS_EQUALS_TO: 
+    aCode = mValue+NS_LITERAL_STRING("=")+mTarget;
+    break;
+  case IS_DIFFERENT_FROM: 
+    aCode = mValue+NS_LITERAL_STRING("!=")+mTarget;
+    break;
+  case IS_SUPERIOR_THAN: 
+    aCode = mValue+NS_LITERAL_STRING(">")+mTarget;
+    break;
+  case IS_INFERIOR_THAN: 
+    aCode = mTarget+NS_LITERAL_STRING(">")+mValue;
+    break;
+  case IS_SUPERIOR_OR_EQUALS_THAN: 
+    aCode = mValue+NS_LITERAL_STRING(">=")+mTarget;
+    break;
+  case IS_INFERIOR_OR_EQUALS_THAN: 
+    aCode = mTarget+NS_LITERAL_STRING(">=")+mValue;
+    break;
+  }
+
+  if (mNot) {
+    aCode = NS_LITERAL_STRING("NOT ")+aCode;
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+
+
+  <method name="getQueryCode" element="logical-operation" status="frozen">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  PRUint32 pIndex;
+  nsAutoString pOp, pCode;
+  switch(mOperator) {
+  case OPERATOR_AND: pOp = NS_LITERAL_STRING(" AND "); break;
+  case OPERATOR_OR:  pOp = NS_LITERAL_STRING(" OR "); break;
+  }
+  aCode  = NS_LITERAL_STRING("(");
+  for(pIndex=0;pIndex<mConditionArray.Count();pIndex++) {
+    if (pIndex>0)
+      aCode += pOp;
+    switch(mConditionArray_LID[pIndex]) {
+    case CONDITION_COMPARISON_LID:
+      rv = NS_STATIC_CAST(nsIOPFComparison*,(nsIOPFElement*)mConditionArray[pIndex])->GetQueryCode(pCode);
+      break;
+    case CONDITION_LOGICAL_OPERATION_LID:
+      rv = NS_STATIC_CAST(nsIOPFLogicalOperation*,(nsIOPFElement*)mConditionArray[pIndex])->GetQueryCode(pCode);
+      break;
+    default:
+      pCode = NS_LITERAL_STRING("(Et ...!)");
+      rv = NS_OK;
+    }
+    PM_TESTOUILLE(rv,rv);
+    aCode += pCode;
+  }
+  aCode += NS_LITERAL_STRING(")");
+  return NS_OK;
+]]></code>
+  </method>
+
+
+</extend>

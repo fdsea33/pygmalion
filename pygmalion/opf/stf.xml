@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<format name="Simple Test Format" shortname="STF" version="0.1">
+
+  <element name="author" type="string">
+    <attribute name="organization" type="string"/>
+    <attribute name="email" type="string"/>
+  </element>
+  
+  <element name="authors">
+    <element name="author" card="*"/>
+  </element>
+
+  <element name="description" type="string">
+    <attribute name="code" type="string">
+      <choice name="fr-FR" value="100"/>
+      <choice name="fr-CA" value="101"/>
+      <choice name="en-US" value="200"/>
+    </attribute>
+  </element>
+
+  <element name="descriptions">
+    <element name="description" card="*"/>
+  </element>
+
+  <element name="language" type="string"/>
+
+  <element name="languages">
+    <element name="language" card="*"/>
+  </element>
+
+  <element name="note" type="string"/>
+
+  <element name="project">
+    <attribute name="label" type="string"/>
+    <attribute name="name" type="string"/>
+    <attribute name="version" type="unsignedInt"/>
+    <attribute name="dir" type="string"/>
+    <attribute name="uuid" type="string"/>
+    <element name="authors" card="?"/>
+    <element name="languages" card="1"/>
+    <element name="descriptions" card="*"/>
+    <element name="note" card="+"/>
+  </element>
+
+</format>

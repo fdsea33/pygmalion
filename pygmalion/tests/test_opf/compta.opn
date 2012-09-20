@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<navigation version="0.0.4" guuid="7f9f82e9-af91-425d-bea0-22a57feadbd9" nuuid="a123d064-b144-4692-8199-053900d570fb">
+
+  <windows>
+    <window _load="compta.opi"/>
+  </windows>
+
+  <overlays>
+<!--    <overlay src="f_parametrage.opi" on="../base/f_parametrage.opi"/>-->
+  </overlays>
+
+</navigation>

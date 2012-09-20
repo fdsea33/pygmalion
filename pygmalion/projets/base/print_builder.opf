@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <function name="fc_build_printer" schema="systeme">
+      <parameters>
+        <parameter name="pfb_schema" type="text"/>
+        <parameter name="pfb_modele" type="text"/>
+        <parameter name="pfb_nom"    type="text"/>
+        <parameter name="pfb_tmpdir" type="text"/>
+      </parameters>
+      <return type="integer"/>
+      <code><![CDATA[
+  fonction     text;
+  query        text;
+  q_select     text;
+  q_suite      text;
+  q_as         text;
+  entete       text;
+  cond         text;
+  compteur     integer;
+  ligne        text;
+  number       integer;
+  plast        integer; -- prodondeur de bloc
+  last         integer[64]; -- 0 BEGIN  1 IF  2 ELSE
+  pparam       integer; -- profondeur parametrique
+  nbparam      integer[64]; -- nombre de param
+  numvar       integer[64]; -- numero des records
+  param        text;
+  nparam       integer;
+BEGIN
+  compteur:=0;
+  plast   :=0;
+  pparam  :=0;
+  entete:='CREATE OR REPLACE FUNCTION '||pfb_schema||'.'||pfb_nom||'(IN pkey INTEGER) RETURNS text AS \n \$\$\n DECLARE\n';
+  entete:=entete||'  doc    text;\n';
+  entete:=entete||'  source text;\n';
+  entete:=entete||'  cible  text;\n';
+  entete:=entete||'  res    integer;\n';
+  fonction:='';
+  fonction:=fonction||'BEGIN\n';
+  fonction:=fonction||'  doc:=\'\';\n';
+  fonction:=fonction||'  SELECT to_char(CURRENT_TIMESTAMP,\'YYYYMMDD_HH24MISSMS\') INTO source;\n';
+  fonction:=fonction||'  cible :=current_user||\'_'||pfb_nom||'_\'||source||\'.pdf\';\n';
+  fonction:=fonction||'  source:=current_user||\'_'||pfb_nom||'_\'||source||\'.tex\';\n';
+--  fonction:=fonction||'  RAISE NOTICE \'>> %\',source;\n';
+  ligne   :='\% Genere par Brice Texier';
+  number  :=1;
+  WHILE NOT ligne ILIKE '%\\end{document}%' LOOP
+-- traitement de la ligne
+--    ligne:=replace(ligne,':NUMBER:',number);
+    fonction:=fonction||repeat('  ',plast);
+    IF ligne LIKE '\%%BEGIN:%SELECT%' THEN
+      query   :=SUBSTRING(ligne FROM POSITION('BEGIN:' IN ligne)+6);
+            query   :=SUBSTRING(query FOR LENGTH(query)-1);
+      query   :=REPLACE(query,':KEY:','pkey');
+      q_select:=SUBSTRING(query FROM POSITION('SELECT' IN query)+6);
+      q_suite :='';
+      IF POSITION('FROM' IN q_select)>0 THEN
+        q_select:=SUBSTRING(q_select FOR POSITION('FROM' IN q_select)-1);
+        q_suite :=SUBSTRING(query FROM POSITION('FROM' IN query));
+      END IF;
+--      RAISE NOTICE 'q_select (%)',q_select;
+      nparam:=0;
+      q_as  :='';
+      LOOP
+        nparam := nparam+1;
+        param  := SPLIT_PART(q_select,',',nparam);
+        IF REPLACE(param,' ','')='' THEN
+          EXIT;
+        END IF;
+        IF q_as!='' THEN
+          q_as:=q_as||', ';
+        END IF;
+        IF POSITION('DISTINCT' IN param)>0 THEN
+          param:=SUBSTRING(param FROM POSITION('DISTINCT' IN param)+8);
+          q_as:=q_as||'DISTINCT ';
+        END IF;
+        q_as:=q_as||'REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(COALESCE(('||param||')::text,\'\'),\'$\',\'\\\\$\'),\'%\',\'\\\\%\'),\'[\',\'\$[\$\'),\']\',\'\$]\$\'),\'&\',\'\\\\&\') AS p'||nparam;
+      END LOOP;
+      query:='SELECT '||q_as||' '||q_suite;
+  --    RAISE NOTICE 'query %',query;
+      IF pparam>0 THEN
+        FOR i IN 1..nbparam[pparam] LOOP
+          query:=REPLACE(query,'<'||i-1||'>','record'||numvar[pparam]||'.p'||i);
+        END LOOP;
+      END IF;
+
+      compteur       := compteur+1;
+      plast          := plast+1;
+      last[plast]    := 0;
+      pparam         := pparam+1;
+      nbparam[pparam]:= nparam-1;
+      numvar[pparam] := compteur;
+
+      fonction:=fonction||'  FOR record'||compteur||' IN '||query||' LOOP\n';
+      entete:=entete||'  record'||compteur||' record;\n';
+    ELSIF ligne LIKE '\%%IF:%' THEN
+      cond:=SUBSTRING(ligne FROM POSITION('IF:' IN ligne)+3);
+      cond:=REPLACE(cond,':KEY:','pkey');
+      IF pparam>0 THEN
+        FOR i IN 1..nbparam[pparam] LOOP
+          cond:=REPLACE(cond,'<'||i-1||'>','record'||numvar[pparam]||'.p'||i);
+        END LOOP;
+      END IF;
+      fonction:=fonction||'  IF ('||cond||')::boolean THEN\n';
+      plast          := plast+1;
+      last[plast]    := 1;
+    ELSIF ligne LIKE '\%%ELSE' THEN
+      fonction:=fonction||'ELSE\n';
+    ELSIF ligne LIKE '\%%END%' THEN
+--      RAISE NOTICE 'END % %',plast,compteur;
+      IF plast<=0 THEN
+        RAISE EXCEPTION 'Le modèle est mal formaté. Un END est inattendu. Ligne %', number;
+      END IF;
+      IF last[plast]=0	 THEN
+        fonction:=fonction||'END LOOP;\n';
+        plast :=plast-1;
+        pparam:=pparam-1;
+      ELSIF last[plast]=1 THEN
+        fonction:=fonction||'END IF;\n';
+        plast :=plast-1;
+      ELSE
+        RAISE EXCEPTION 'Le modèle est mal formaté. Type de boucle inconnu. Ligne %', number;
+      END IF;
+    ELSE      
+      ligne:='  doc:=doc||'||quote_literal(ligne)||'||\'\\n\''||';\n';
+      IF pparam>0 THEN
+        FOR i IN 1..nbparam[pparam] LOOP
+          ligne:=REPLACE(ligne,'<'||i-1||'>','\'||record'||numvar[pparam]||'.p'||i||'||\'');
+        END LOOP;
+      END IF;
+      fonction:=fonction||ligne;
+      
+    END IF;    
+    ligne:=split_part(pfb_modele,'\n',number);
+    number:=number+1;
+  END LOOP;
+  fonction:=fonction||'  doc:=doc||\'\\\\end{document}\';\n';
+--  fonction:=fonction||'  RAISE NOTICE \'[%]\', doc;\n';
+ 
+  fonction:=fonction||'  SELECT writefile(\''||pfb_tmpdir||'/\'||source,doc) INTO res;\n';
+  fonction:=fonction||'  SELECT execution(\'chmod 777 '||pfb_tmpdir||'/\'||source) INTO res;\n';
+  fonction:=fonction||'  SELECT execution(\'cd '||pfb_tmpdir||' ; pdflatex \'||source||\' ; pdflatex \'||source||\' ; chmod 755 \'||cible||\' ;\') INTO res;\n';
+--    fonction:=fonction||'  SELECT execution(\'cd '||pfb_tmpdir||' ; pdflatex \'||source||\' ; pdflatex \'||source||\' ; chmod 755 \'||cible||\' ; rm -f \'||source) INTO res;\n';
+--    fonction=fonction||'  SELECT execution(\'rm -f '||pfb_tmpdir||'/\'||source) INTO res;\n';
+  fonction:=fonction||'  RETURN \'file://'||pfb_tmpdir||'/\'||cible;\n';
+  fonction:=fonction||'END;\n\$\$ LANGUAGE \'plpgsql\' VOLATILE;';
+  fonction:=entete||fonction;
+-- Execution de la requete
+--  RAISE NOTICE '=> %', pfb_modele;
+--  RAISE NOTICE '=>  %', fonction;
+  EXECUTE fonction;
+  
+  RETURN 0; 
+END;]]>
+       </code>
+    </function>

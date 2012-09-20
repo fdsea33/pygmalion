@@ -1,0 +1,81 @@
+.numeric
+{
+text-align:right;
+}
+
+
+.ghypertext
+{
+  color:#00F;
+}
+
+.ghypertext:hover
+{
+  color:#0B0;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.gsplit
+{
+  background-color:#FEB; 
+  border-style:none;
+}
+
+.gsplit:hover
+{
+  background-color:#0B0; 
+}
+
+.casetitle
+{
+  background-color:#FFFFCC;
+  font-weight:bold;
+}
+
+.gridtitle
+{
+  background-color:#FEB;  
+text-align:center;
+}
+
+.case
+{
+  background-color:#FFFFEE;
+}
+
+
+treechildren
+{
+background-color:#003366;
+color:#eee;
+}
+
+treechildren::-moz-tree-cell-text(principal)
+{
+  color:#f0f;
+  font-weight : bold; 
+}
+
+tree {
+  border : none;
+
+}
+
+treecol
+{
+  font-weight : bold;
+  //  text-align :  center;
+  color:#AA0000;
+  background-color:#FFFFAA; 
+  border-width: 0px;
+  border-color: #FFFF99;
+  padding: 5px;
+}
+/*
+treecol[datatype="numeric"]
+{
+  text-align :  right;
+}
+
+*/

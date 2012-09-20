@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysis name="System" version="1">
+ 
+  <infos>
+    <info type="author">Brice TEXIER</info>
+    <info type="version">0.0.1</info>
+  </infos>
+
+  <notes>
+    <note date="25/10/2006" title="Mise en place du format OPF 0.2.0.0" author-id="BT"/>
+  </notes>
+ 
+  <datatypes>
+    <datatype name="serial"    label="system.datatypes.serial.label_"    type="serial"  size="4"/>
+    <datatype name="id"        label="system.datatypes.id.label_"        type="integer" size="4"/>
+    <datatype name="word"      label="system.datatypes.word.label_"      type="varchar" size="32"/>
+    <datatype name="phrase"    label="system.datatypes.phrase.label_"    type="varchar" size="128"/>
+    <datatype name="paragraph" label="system.datatypes.paragraph.label_" type="varchar" size="512"/>
+    <datatype name="text"      label="system.datatypes.text.label_"      type="varchar"/>
+    <datatype name="boolean"   label="system.datatypes.boolean.label_"   type="boolean"/>
+    <datatype name="integer"   label="system.datatypes.integer.label_"   type="integer" size="4"/>
+    <datatype name="datetime"  label="system.datatypes.datetime.label_"  type="timestamp"/>
+    <datatype name="date"                                                type="date"/>
+  </datatypes>
+
+  <schemas>
+    <schema name="system" type="static" label="system" uuid="e80c1a94-224f-4e0d-9c39-c0c26fb9b014"/>
+  </schemas>
+
+  <classes>
+    <class name="SYS_User" schema="system" primary-key="USI4_Key" uuid="126058d4-711e-40a0-9d82-afdccd474bb1">
+      <property uid="1001" name="USI4_Key"         type="serial"   notnull="true"/>
+      <property uid="1002" name="USCV_Login"       type="word"     notnull="true" unique="true" index="default"/>
+      <property uid="1003" name="USCV_Password"    type="word"     notnull="true"/>
+      <property uid="1004" name="USBO_AlreadyUsed" type="boolean"  notnull="true" default="false" index="default"/>
+      <property uid="1005" name="USBO_Superuser"   type="boolean"  notnull="true" default="false" index="default"/>
+      <property uid="1006" name="USBO_CreateDB"    type="boolean"  notnull="true" default="false" index="default"/>
+      <property uid="1007" name="USBO_CreateRole"  type="boolean"  notnull="true" default="false" index="default"/>
+      <property uid="1008" name="USI4_MaxConn"     type="integer"  notnull="true" default="-1"/>
+      <property uid="1009" name="USTS_ValidUntil"  type="datetime" notnull="true" default="infinity"/>
+      <property uid="1010" name="USCV_Desc"        type="paragraph"/>
+      <constraint type="primary-key" columns="USI4_Key"/>
+      <record>
+        <field>1</field>
+        <field>gerard</field>
+        <field>********</field>
+        <field>false</field>
+        <field>false</field>
+        <field>false</field>
+        <field>false</field>
+        <field>-1</field>
+        <field>infinity</field>
+        <field null="true"/>
+      </record>
+    </class>
+
+    <class name="QM_Query_Group" schema="system" primary-key="QGI4_Key" uuid="89a99779-089e-4a41-a025-ab69da8693d0">
+      <property uid="1001" name="QGI4_Key"     type="serial"    notnull="true"/>
+      <property uid="1002" name="QGCV_Name"    type="word"      notnull="true" index="default"/>
+      <property uid="1003" name="QGCV_Label"   type="phrase"    notnull="true" index="default"/>
+      <property uid="1004" name="QGBO_System"  type="boolean"   notnull="true" default="false" index="default"/>
+      <property uid="1005" name="QGCV_Desc"    type="paragraph"/>
+      <constraint type="primary-key" columns="QGI4_Key"/>
+    </class>
+
+    <class name="QM_Query" schema="system" primary-key="QRI4_Key" uuid="c3d5335a-bcc5-4387-a06a-24c5850f7e83">
+      <property uid="1001" name="QRI4_Key"       type="serial"    notnull="true"/>
+      <property uid="1002" name="QRCV_Name"      type="word"      notnull="true" index="default"/>
+      <property uid="1003" name="QRCV_Label"     type="phrase"    notnull="true" index="default"/>
+      <property uid="1004" name="QRCV_Content"   type="text"      notnull="true" index="default"/>
+      <property uid="1005" name="QRI4_Type"      type="integer"   notnull="true" index="default"/>
+      <property uid="1006" name="QGI4_Key"       type="key"       notnull="true"/>
+      <property uid="1008" name="QRCV_Prototype" type="paragraph"/>
+      <property uid="1007" name="QRCV_Desc"      type="paragraph"/>
+      <constraint type="primary-key" columns="QRI4_Key"/>
+      <constraint type="foreign-key" references="QM_Query_Group(QGI4_Key)" columns="QGI4_Key" ondelete="cascade" onupdate="cascade"/>
+    </class>
+
+    <class name="QM_Query_Parameter" schema="system" primary-key="QPI4_Key" uuid="a6953658-f9db-4a32-8206-7f68af93c052">
+      <property uid="1001" name="QPI4_Key"     type="serial"    notnull="true"/>
+      <property uid="1002" name="QRI4_Key"     type="key"       notnull="true"/>
+      <property uid="1006" name="QPI4_Order"   type="integer"   notnull="true"/>
+      <property uid="1003" name="QTI4_Key"     type="integer"   notnull="true"/>
+      <property uid="1004" name="QPCV_Label"   type="phrase"    notnull="true" index="default"/>
+      <property uid="1005" name="QPCV_Desc"    type="paragraph"/>
+      <constraint type="primary-key" columns="QPI4_Key"/>
+      <constraint type="foreign-key" references="QM_Query(QRI4_Key)" columns="QRI4_Key" ondelete="cascade" onupdate="cascade"/>
+      <constraint type="foreign-key" references="QM_Query_Parameter_Type(QTI4_Key)" columns="QTI4_Key" ondelete="cascade" onupdate="cascade"/>
+    </class>
+
+    <class name="QM_Query_Parameter_Type" schema="system" primary-key="QTI4_Key" uuid="fbc08f3a-adc8-4c26-a1a6-46ff953f20ba">
+      <property uid="1001" name="QTI4_Key"         type="serial"    notnull="true"/>
+      <property uid="1003" name="QTCV_Name"        type="word"      notnull="true" unique="true" index="default"/>
+      <property uid="1002" name="QTCV_Declaration" type="phrase"    notnull="true" index="default"/>
+      <constraint type="primary-key" columns="QTI4_Key"/>
+    </class>
+  </classes>
+
+  <functions>
+
+    <function name="QM_Create_Procedure" schema="system" type="trigger" uuid="7cd78179-c5fa-4de8-b662-a3098d5a095c">
+      <code syntax="plpgsql">
+  proc  TEXT;
+  proto TEXT;
+  query TEXT;
+  r     RECORD;
+  first BOOLEAN;
+  selec BOOLEAN;
+  query_key INTEGER;
+BEGIN
+  
+  IF TG_OP='DELETE' THEN
+    query_key := OLD.QRI4_Key;
+  ELSE
+    query_key := NEW.QRI4_Key;
+  END IF;
+
+  SELECT 'pms_system.QM_'||COALESCE(QRCV_Name,'Error'||QRI4_Key::VARCHAR)||'(' FROM pms_system.QM_Query WHERE QRI4_Key=query_key INTO proto;
+  first:=true;
+  FOR r IN SELECT QPI4_Order, QTCV_Declaration FROM pms_system.QM_Query_Parameter JOIN pms_system.QM_Query_Parameter_Type USING (QTI4_Key) WHERE QRI4_Key=query_key ORDER BY 1 LOOP
+    IF NOT first THEN
+      proto:=proto||',';
+    ELSE 
+      first:=false;
+    END IF;
+    SELECT proto||COALESCE(r.QTCV_Declaration,'VARCHAR(73)') INTO proto;
+  END LOOP;
+  proto:=proto||')';
+
+  SELECT QRI4_Type=1  FROM pms_system.QM_Query WHERE QRI4_Key=query_key INTO selec;
+  SELECT QRCV_Content FROM pms_system.QM_Query WHERE QRI4_Key=query_key INTO query;
+
+  proc:='CREATE OR REPLACE FUNCTION '||proto||' RETURNS SETOF RECORD AS \$\$\n';
+  IF selec THEN
+    proc:=proc||'DECLARE\n';
+    proc:=proc||'  r RECORD;\n';
+    proc:=proc||'BEGIN\n';
+    proc:=proc||'  FOR r IN '||query||' LOOP\n';
+    proc:=proc||'    RETURN NEXT r;\n';
+    proc:=proc||'  END LOOP;\n';
+    proc:=proc||'  RETURN;\n';
+    proc:=proc||'END;\n';
+  ELSE
+    proc:=proc||'BEGIN\n';
+    proc:=proc||'  '||query||'\n';
+    proc:=proc||'END;\n';
+  END IF;
+  proc:=proc||'\$\$ LANGUAGE ''plpgsql'';';
+  EXECUTE proc;
+
+  IF TG_OP='DELETE' THEN
+    RETURN OLD;
+  ELSE
+    RETURN NEW;
+  END IF;
+END;
+      </code>
+    </function>
+
+
+
+    <function name="QM_Clean_Query" schema="system" type="trigger" uuid="63dd6d79-c297-402e-8d42-d92efa6552b2">
+      <code syntax="plpgsql">
+BEGIN
+  IF TG_OP='INSERT' OR TG_OP='UPDATE' THEN
+    NEW.QRCV_Content := RTRIM(NEW.QRCV_Content,' ');
+    NEW.QRCV_Content := LTRIM(NEW.QRCV_Content,' ');
+    IF NEW.QRCV_Content ILIKE 'SELECT %' OR NEW.QRCV_Content ILIKE 'SHOW %' THEN
+      NEW.QRI4_Type := 1;
+    ELSIF NEW.QRCV_Content ILIKE 'INSERT %' THEN
+      NEW.QRI4_Type := 2;
+    ELSIF NEW.QRCV_Content ILIKE 'UPDATE %' THEN
+      NEW.QRI4_Type := 3;
+    ELSIF NEW.QRCV_Content ILIKE 'DELETE %' THEN
+      NEW.QRI4_Type := 4;
+    ELSIF NEW.QRCV_Content ILIKE 'CREATE %' THEN
+      NEW.QRI4_Type := 10;
+    ELSIF NEW.QRCV_Content ILIKE 'DROP %' THEN
+      NEW.QRI4_Type := 11;
+    ELSE
+      NEW.QRI4_Type := 0;
+    END IF;
+  END IF;
+  RETURN NEW;
+END;
+      </code>
+    </function>
+
+
+
+    <function name="QM_Clean_Parameter" schema="system" type="trigger" uuid="d92eb2fb-6a4c-4c9a-a51b-5242ed59c4a9">
+      <code syntax="plpgsql">
+BEGIN
+  RETURN NEW;
+END;
+      </code>
+    </function>
+
+
+    <function name="SYS_Multiplicator" schema="system" type="normal" uuid="7cd78179-c5fa-4de8-b662-a3098d5a095c">
+      <parameters>
+        <parameter name="valeur" type="integer"/>
+        <parameter name="coeff"  type="integer"/>
+      </parameters>
+      <return type="integer"/>
+      <code syntax="plpgsql">
+BEGIN
+  RETURN valeur*coeff;
+END;
+      </code>
+    </function>
+  </functions>
+
+  <triggers>
+    <trigger name="QM_QTP01" schema="system" function="QM_Clean_Query">
+      <trigger-event moment="before" event="insert" for-each="row" on-schema="system" on-table="QM_Query"/>
+      <trigger-event moment="before" event="update" for-each="row" on-schema="system" on-table="QM_Query"/>
+    </trigger>
+
+    <trigger name="QM_QTP02" schema="system" function="QM_Clean_Parameter">
+      <trigger-event moment="before" event="insert" for-each="row" on-schema="system" on-table="QM_Query_Parameter"/>
+      <trigger-event moment="before" event="update" for-each="row" on-schema="system" on-table="QM_Query_Parameter"/>
+    </trigger>
+
+    <trigger name="QM_QTP03" schema="system" function="QM_Create_Procedure">
+      <trigger-event moment="after" event="insert" for-each="row" on-schema="system" on-table="QM_Query"/>
+      <trigger-event moment="after" event="update" for-each="row" on-schema="system" on-table="QM_Query"/>
+      <trigger-event moment="after" event="delete" for-each="row" on-schema="system" on-table="QM_Query"/>
+      <trigger-event moment="after" event="insert" for-each="row" on-schema="system" on-table="QM_Query_Parameter"/>
+      <trigger-event moment="after" event="update" for-each="row" on-schema="system" on-table="QM_Query_Parameter"/>
+      <trigger-event moment="after" event="delete" for-each="row" on-schema="system" on-table="QM_Query_Parameter"/>
+    </trigger>
+  </triggers>
+
+</analysis>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<theme name="debug">
+  <media>
+    <medium path="images/boutons16.png"/>
+    <medium path="images/boutons24.png"/>
+    <medium path="images/boutons48.png"/>
+    <medium path="images/panel-action-bg.png"/>
+  </media>
+
+<!--
+  <style target="vbox, box[orient='vertical']" >
+    <styledef name="border" value="2px solid blue"/>
+    <styledef name="margin" value="1px"/>
+    <styledef name="padding" value="1px"/>
+  </style>
+
+  <style target="hbox, box[orient='horizontal']" >
+    <styledef name="border" value="2px solid red"/>
+    <styledef name="margin" value="1px"/>
+    <styledef name="padding" value="1px"/>
+  </style>
+
+  <style target="vbox[flex], hbox[flex]" >
+    <styledef name="border-style" value="dashed"/>
+  </style>
+-->
+
+  <image-button name="standard">
+    <image-scale name="-button16" value="16" url="%%media-dir%%/boutons16.png"/>
+    <image-scale name="-button"   value="24" url="%%media-dir%%/boutons24.png"/>
+    <image-scale name="-button48" value="48" url="%%media-dir%%/boutons48.png"/>
+    <image-col name="new"     index="1"/>
+    <image-col name="edit"    index="2"/>
+    <image-col name="delete"  index="3"/>
+    <image-col name="cancel"  index="3"/>
+    <image-col name="close"   index="3"/>
+    <image-col name="find"    index="4"/>
+    <image-col name="back"    index="5"/>
+    <image-col name="forward" index="6"/>
+    <image-col name="home"    index="7"/>
+    <image-col name="menu"    index="8"/>
+    <image-col name="accept"  index="9"/>
+    <image-col name="action"  index="10"/>
+    <image-col name="list"    index="11"/>
+    <image-col name="goto"    index="11"/>
+    <image-col name="right"   index="11"/>
+    <image-col name="bottom"  index="12"/>
+    <image-col name="left"    index="13"/>
+    <image-col name="top"     index="14"/>
+    <image-col name="print"   index="15"/>
+    <image-col name="export"  index="16"/>
+  </image-button>
+
+
+  <style target="treechildren::-moz-tree-image(select),treechildren::-moz-tree-image(update),treechildren::-moz-tree-image(delete)">
+    <styledef name="list-style-image" value="url(%%media-dir%%/boutons16.png)"/>
+    <styledef name="cursor" value="pointer"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-image(select)">
+    <styledef name="-moz-image-region" value="rect(0px,144px,16px,128px)"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-image(update)">
+    <styledef name="-moz-image-region" value="rect(0px,32px,16px,16px)"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-image(delete)">
+    <styledef name="-moz-image-region" value="rect(0px,48px,16px,32px)"/>
+  </style>
+
+
+
+
+
+  <!-- Follow -->
+  <style target="label" >
+    <styledef name="padding-top" value="1px"/>
+    <styledef name="padding-left" value="1px"/>
+    <styledef name="padding-bottom" value="1px"/>
+    <styledef name="padding-right" value="1px"/>
+    <styledef name="margin-left" value="1px"/>
+    <styledef name="margin-right" value="1px"/>
+    <styledef name="margin-top" value="0px"/>
+    <styledef name="margin-bottom" value="0px"/>
+  </style>
+
+  <style target=".panel-work">
+    <styledef name="background-color" value="#FED"/>
+    <styledef name="padding" value=".4em"/>
+  </style>
+
+  <style target=".panel-work tree">
+    <styledef name="padding" value="0px"/>
+    <styledef name="margin" value="0px"/>
+  </style>
+
+  <style target=".panel-action">
+    <styledef name="background-image" value="url(%%media-dir%%/panel-action-bg.png)"/>
+    <styledef name="background-repeat" value="repeat-x"/>
+    <styledef name="background-position" value="top"/>
+    <styledef name="border-top" value="2px solid #CDF"/>
+    <styledef name="padding" value=".2em"/>
+  </style>
+
+  <style target=".button-wrong">
+    <styledef name="color" value="red"/>
+    <styledef name="font-weight" value="bold"/>
+  </style>
+
+  <style target=".button-right">
+    <styledef name="color" value="green"/>
+    <styledef name="font-weight" value="bold"/>
+  </style>
+
+<!--
+  <style target="groupbox">
+    <styledef name="border" value="2px dotted #4466FF"/>
+    <styledef name="background-color" value="#FFFFEE"/>
+  </style>
+
+
+  <style target="caption">
+    <styledef name="color" value="#4466FF"/>
+    <styledef name="background-color" value="white"/>
+    <styledef name="font-weight" value="bold"/>
+    <styledef name="-moz-border-radius" value="0.4em"/>
+  </style>
+
+  <style target="separator">
+    <styledef name="height" value="0.6em"/>
+    <styledef name="background-color" value="#9999CC"/>
+    <styledef name="margin-top" value="5px"/>
+  </style>
+-->
+<!--
+  <style target="splitter:hover">
+    <styledef name="border" value="0px solid red"/>
+    <styledef name="background-color" value="#6699FF"/>
+  </style>
+
+  <style target="splitter">
+    <styledef name="border" value="0px solid red"/>
+    <styledef name="background-color" value="#4466FF"/>
+  </style>
+-->
+  <style target=".detail-name-box">
+    <styledef name="background-color" value="#137"/>
+    <styledef name="padding" value="0em"/>
+  </style>
+
+  <style target=".detail-name-text">
+    <styledef name="color" value="#88F"/>
+    <styledef name="font-weight"  value="bold"/>
+    <styledef name="font-size" value="160%"/>
+    <styledef name="text-align" value="center"/>
+  </style>
+
+  <style target=".detail-title">
+    <styledef name="color" value="#007"/>
+    <styledef name="font-size" value="150%"/>
+  </style>
+
+  <style target=".detail-important">
+    <styledef name="color" value="#007"/>
+    <styledef name="font-size" value="120%"/>
+  </style>
+<!--
+  <style target=".detail-list-button">
+    <styledef name="color" value="#007"/>
+    <styledef name="font-size" value="100%"/>
+    <styledef name="margin" value="2px"/>
+  </style>
+
+  <style target=".detail-list-menu">
+    <styledef name="padding" value="2px"/>
+    <styledef name="background-color" value="#DDF"/>
+  </style>
+-->
+  <style target=".detail-list-name-box">
+    <styledef name="background-color" value="#137"/>
+    <styledef name="padding" value="0em"/>
+    <styledef name="margin-bottom" value="0.1em"/>
+  </style>
+
+  <style target=".detail-list-name-text">
+    <styledef name="color"        value="#88F"/>
+    <styledef name="font-weight"  value="bold"/>
+    <styledef name="text-align" value="center"/>
+  </style>
+
+
+
+  <style target="treechildren::-moz-tree-row(selected)">
+    <styledef name="background-color" value="#CCCEDF"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-cell-text(selected), treechildren::-moz-tree-cell-text(odd, selected)">
+    <styledef name="color" value="#000213"/>
+  </style>
+
+
+
+  <style target="treechildren::-moz-tree-row(odd)">
+    <styledef name="background-color" value="#E7EEFF"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-row(odd, selected)">
+    <styledef name="background-color" value="#B8C0DF"/>
+  </style>
+
+
+  <style target="treechildren::-moz-tree-cell-text(selected, hyperlink, focus)">
+    <styledef name="color" value="#362BDF !important"/>
+  </style>
+
+  <style target="treechildren::-moz-tree-cell-text(hyperlink), .hyperlink[key]">
+    <styledef name="color" value="#43F"/>
+    <styledef name="text-decoration" value="underline"/>
+    <styledef name="cursor" value="pointer"/>
+    <styledef name="visibilty" value="visible"/>
+  </style>
+
+  <style target=".hyperlink[key]">
+    <styledef name="padding-left" value="0.1em"/>
+    <styledef name="padding-right" value="0.1em"/>
+    <styledef name="visibilty" value="visible"/>
+  </style>
+
+  <style target=".hyperlink:not([key])">
+    <styledef name="padding-left" value="0.1em"/>
+    <styledef name="padding-right" value="0.1em"/>
+    <styledef name="cursor" value="default"/>
+  </style>
+
+  <style target=".label">
+    <styledef name="color" value="#420"/>
+    <styledef name="min-width" value="6em"/>
+  </style>
+
+  <style target=".state-label">
+    <styledef name="padding" value=".5em"/>
+    <styledef name="background-color" value="#495"/>
+    <styledef name="border-bottom" value="green"/>  
+  </style>
+
+  <style target=".state-label label">
+    <styledef name="font-weight" value="bold"/>
+    <styledef name="font-size" value="160%"/>
+    <styledef name="color" value="#BFC"/>
+    <styledef name="text-align" value="center"/>
+    <styledef name="font-variant" value="small-caps"/>
+  </style>
+
+  <style target=".value">
+    <styledef name="color" value="#06D"/>
+<!--    <styledef name="font-weight" value="bold"/>-->
+  </style>
+
+  <style target=".detail-center, .detail-list">
+    <styledef name="padding" value=".3em"/>
+  </style>
+
+  <style target=".box-field">
+<!--    <styledef name="border" value="1px solid #89D"/>-->
+    <styledef name="margin" value="1px"/>
+    <styledef name="background-color" value="#E7E7F2"/>
+    <styledef name="padding" value="2px"/>
+  </style>
+
+  <style target="caption">
+<!--    <styledef name="color" value="#12F"/>-->
+    <styledef name="color" value="green"/>
+    <styledef name="background-color" value="#DDE"/>
+  </style>
+
+  <style target="checkbox">
+    <styledef name="background-color" value="#DDE"/>
+  </style>
+
+  <style target="label.notnull">
+    <styledef name="color" value="#D50"/>
+<!--    <styledef name="font-weight" value="bold"/>-->
+  </style>
+
+  <style target="label.semi-auto">
+    <styledef name="color" value="#0D5 !important"/>
+  </style>
+
+  <style target="label.auto">
+    <styledef name="color" value="#0D5 !important"/>
+    <styledef name="font-weight" value="bold"/>
+  </style>
+
+  <style target=".maxlen">
+    <styledef name="font-family" value="monospace !important"/>
+  </style>
+
+  <style target="label.notnull:first-letter">
+    <styledef name="font-weight" value="bold"/>
+  </style>
+
+  <style target="textbox.notnull">
+    <styledef name="-moz-appearance" value="none !important"/>
+    <styledef name="border" value="none !important"/>
+    <styledef name="outline" value="2px solid #D50 !important"/>
+    <styledef name="background-color" value="#FEB !important"/>
+    <styledef name="color" value="#D50"/>
+  </style>
+
+
+  <style target=".list-button, .list-button16">
+    <styledef name="margin" value="1px"/>
+  </style>
+
+  <style target=".part-menu, .detail-center, .detail-list">
+    <styledef name="background-color" value="#DDE"/>
+  </style>
+
+</theme>

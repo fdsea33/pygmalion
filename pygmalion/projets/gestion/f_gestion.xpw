@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="master" position="center">
+  <languages>
+    <language code="fr-FR">
+      <element key="personne.label_"></element>
+      <element key="level1.index.titre_"></element>
+      <element key="level2.index.titre_"></element>
+      <element key="personne.plus_"></element>
+      <element key="personne.liens_"></element>
+      <element key="personne.devis_"></element>
+      <element key="personne.devis.numero_"></element>
+      <element key="personne.devis.date_"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.devis._"></element>
+      <element key="personne.estresponsable_"></element>
+      <element key="personne.estresponsable.responsabilite_"></element>
+      <element key="personne.estresponsable.debut_"></element>
+      <element key="personne.estresponsable.fin_"></element>
+      <element key="personne.estresponsable._"></element>
+      <element key="personne.estresponsable._"></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+      <element key=""></element>
+    </language>
+  </languages>
+  <content>
+    <tools>
+      <tool type="textbox"/>
+      <tool type="button">
+        <image src="images/nouvelle_personne.png" region=""/>
+        <help value=""/>
+      </tool>
+    </tools>
+    <simples>
+    </simples>
+    <parts>
+      <part>
+
+        <level depth="0">
+          <item>
+            <label value="personne.label"/>
+	  </item> 
+          <panel type="none">
+            <vbox>
+              <label class="c000001" value="project.name"/>
+              <label class="c000001" value="project.version"/>
+	    </vbox>
+          </panel>
+        </level>
+
+
+        <level depth="1">
+          <item>
+            <label value="PE_Libelle" operation="sPremiereLettre"/>
+          </item> 
+          <panel type="index" columns="5" label="level1.index.titre_">
+            <label value="PE_Libelle" operation="sTroisLettres"/>
+          </panel>
+        </level>
+
+
+        <level depth="2">
+	  <item>
+            <label value="PE_Libelle" operation="sTroisLettres"/>
+	  </item>
+          <panel type="index" columns="2" label="level2.index.titre_" >
+          </panel>
+        </level>
+
+
+        <level depth="3">
+          <item>
+            <label value="PE_Libelle"/>
+          </item>
+          <panel type="reader">
+            <general>
+              <first>
+                <hbox>
+                  <image data="PE_Image"/>
+                  <vbox>
+                    <hbox>
+                      <label value="PE_Libelle"/>
+                      <label value="PE_NumPersonne"/>
+                    </hbox>
+                    <label value="PE_Adhesion" adherent="PE_Adherent"/>
+                    <label value="PE_Telephone"/>
+                    <label value="PE_Fax"/>
+                    <label value="PE_Portable"/>
+                    <label value="PE_Email"/>
+                    <description>PE_Adresse</description>
+                    <label value="PE_Canton"/>
+                  </vbox>
+                </hbox>
+              </first>
+              <hidden label="personne.plus_">
+                <vbox>
+                  <label value="PE_Naissance"/>
+                  <label value="PE_Solde"/>
+                </vbox>
+              </hidden>
+              <from>
+              </from>
+            </general>
+
+            <attributes>
+
+              <attribute label="personne.devis_" localkey="PE_Numero" foreignkey="PE_Numero" foreigntable="Devis">
+                <columns>
+                  <column label="personne.devis.numero_" data="DE_NumDevis"/>
+                  <column label="personne.devis.date_" data="DE_Date"/>
+                  <column label="personne.devis.libelle_" data="DE_Libelle"/>
+                  <column label="personne.devis.montantttc_" data="DE_MontantTTC"/>
+                  <column label="personne.devis.montantht_" data="DE_MontantHT"/>
+                  <column label="personne.devis.agent_" data="AG_Libelle" indirect="true" localkey="AG_Numero" foreignkey="AG_Numero" foreigntable="Agent"/>
+                  <column label="personne.devis.agent_" data="DE_"/>
+                </columns>
+                <operations insert="true" update="true" delete="true"/>
+              </attribute>
+
+              <attribute label="personne.estresponsable_" localkey="PE_Numero" foreignkey="PE_Numero" foreigntable="EstResponsable">
+                <columns>
+                  <column label="personne.estresponsable.responsabilite_" data="RE_Libelle" indirect="true" localkey="RE_Numero" foreignkey="RE_Numero" foreigntable="Responsabilite"/>
+                  <column label="personne.estresponsable.debut" data=""/>
+                  <column label="personne.estresponsable.fin_" data=""/>
+                  <column label="personne.estresponsable._" data=""/>
+                </columns>
+                <operations insert="true" update="true" delete="true"/>
+              </attribute>
+
+              <attribute label="personne.adhesion_" localkey="PE_Numero" foreignkey="PE_Numero" foreigntable="Adhesion">
+                <columns>
+                  <column label="personne.adhesion.typeadhesion_" data="TH_Libelle" indirect="true" localkey="TH_Numero" foreignkey="TH_Numero" foreigntable="TypeAdhesion"/>
+                  <column label="personne.adhesion.debut" data=""/>
+                  <column label="personne.adhesion.fin_" data=""/>
+                  <column label="personne.adhesion._" data=""/>
+                </columns>
+                <operations/>
+              </attribute>
+
+            </attributes>
+
+          </panel>
+        </level>
+
+      </part>
+    </parts>
+  </content>
+</window>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension name="Open Project Format Methods">
+
+  <method name="getSQLCode" element="from">
+    <parameter name="code" dir="out" type="string"/>
+    <code>
+nsresult rv;
+aCode = NS_LITERAL_STRING(" FROM tutu ");
+return NS_OK;
+    </code>
+  </method>
+
+
+</extension>

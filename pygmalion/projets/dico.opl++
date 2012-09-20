@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languages>
+  <language code="fr-FR">
+    <phrase key="_.accept_">Valider</phrase>
+    <phrase key="_.back_">Précédent</phrase>
+    <phrase key="_.cancel_">Annuler</phrase>
+    <phrase key="_.delete_">Supprimer</phrase>
+    <phrase key="_.edit_">Modifier</phrase>
+    <phrase key="_.false_" unused="true">Faux</phrase>
+    <phrase key="_.forward_">Suivant</phrase>
+    <phrase key="_.general_">Général</phrase>
+    <phrase key="_.home_">Accueil</phrase>
+    <phrase key="_.menu_">Menu</phrase>
+    <phrase key="_.new_">Nouveau</phrase>
+    <phrase key="_.ok_" unused="true">OK</phrase>
+    <phrase key="_.quit_">Quitter</phrase>
+    <phrase key="_.search_">Recherche</phrase>
+    <phrase key="_.select_" unused="true">Sélectionner</phrase>
+    <phrase key="_.true_" unused="true">Vrai</phrase>
+    <phrase key="admin.home_"></phrase>
+    <phrase key="admin.home.societe.voir_"></phrase>
+    <phrase key="admin.home.utilisateur.voir_"></phrase>
+    <phrase key="admin.detail.societe.title_"></phrase>
+    <phrase key="admin.detail.societe.nom_"></phrase>
+    <phrase key="admin.detail.societe.siren_"></phrase>
+    <phrase key="admin.detail.societe.sequence_"></phrase>
+    <phrase key="admin.detail.societe.adresse_"></phrase>
+    <phrase key="admin.detail.societe.libelle_"></phrase>
+    <phrase key="admin.detail.societe.id_"></phrase>
+    <phrase key="admin.detail.societe.code_"></phrase>
+    <phrase key="_._number_of_records_"></phrase>
+    <phrase key="admin.detail.utilisateur.title_"></phrase>
+    <phrase key="admin.detail.utilisateur.superuser_"></phrase>
+    <phrase key="admin.detail.utilisateur.createdb_"></phrase>
+    <phrase key="admin.detail.utilisateur.createrole_"></phrase>
+    <phrase key="admin.detail.utilisateur.maxconn_"></phrase>
+    <phrase key="admin.detail.utilisateur.jusqua_"></phrase>
+    <phrase key="admin.detail.utilisateur.email_"></phrase>
+    <phrase key="admin.detail.utilisateur.login_"></phrase>
+    <phrase key="admin.detail.utilisateur.password_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_numero_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_login_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_superuser_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_email_"></phrase>
+    <phrase key="comptax.demarrage_">Comptabilité</phrase>
+    <phrase key="comptax.demarrage.journaux_">Gestion journalière</phrase>
+    <phrase key="comptax.demarrage.journaux.voir_">Je veux voir les journaux</phrase>
+    <phrase key="comptax.demarrage.comptes_">Gestion des comptes</phrase>
+    <phrase key="comptax.demarrage.comtpes.voir_" unused="true">Je veux voir les comptes</phrase>
+    <phrase key="comptax.comptacompte.title_"></phrase>
+    <phrase key="comptax.comptacompte.debit_"></phrase>
+    <phrase key="comptax.comptacompte.credit_"></phrase>
+    <phrase key="comptax.comptacompte.solde_"></phrase>
+    <phrase key="comptax.comptacompte.acces_">Access level: </phrase>
+    <phrase key="comptax.comptacompte.nbecritures_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.cm_numcompte_" unused="true"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.cm_nom_" unused="true"></phrase>
+    <phrase key="comptax.comptacompte.ecritures_"></phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_libelle_" unused="true"></phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_debit_" unused="true"></phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_credit_" unused="true"></phrase>
+    <phrase key="comptax.comptaacces.title_">Niveaux d'accès</phrase>
+    <phrase key="comptax.comptaacces.value_">Valeur</phrase>
+    <phrase key="comptax.navigation.journal_" unused="true">Mes journaux</phrase>
+    <phrase key="comptax.navigation.journal.level0.label_" unused="true">Journaux</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.journal_" unused="true">Type de journaux</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.debit_" unused="true">Débit</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.credit_" unused="true">Crédit</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.solde_" unused="true">Solde</phrase>
+    <phrase key="comptax.navigation.journal.level1.label_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.journal_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.debit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.credit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.solde_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level2.label_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.mois_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.debit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.credit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.solde_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.label_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.numero_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.libelle_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.debit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.credit_" unused="true"></phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.solde_" unused="true"></phrase>
+    <phrase key="comptax.demarrage.comptes.voir_"></phrase>
+    <phrase key="comptax.comptacompte.block1_"></phrase>
+    <phrase key="comptax.comptacompte.estdebit_"></phrase>
+    <phrase key="comptax.comptacompte.general_"></phrase>
+    <phrase key="comptax.comptacompte.acceptaux_"></phrase>
+    <phrase key="comptax.comptacompte.utilisable_"></phrase>
+    <phrase key="comptax.comptacompte.lettrable_"></phrase>
+    <phrase key="comptax.comptacompte.pointable_"></phrase>
+    <phrase key="comptax.comptacompte.groupable_"></phrase>
+    <phrase key="comptax.comptacompte.parent_"></phrase>
+    <phrase key="comptax.comptacompte.parent.nom_"></phrase>
+    <phrase key="comptax.comptacompte.parent.numcompte_"></phrase>
+    <phrase key="comptax.demarrage.acces.voir_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.numero_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.nom_"></phrase>
+    <phrase key="compta_compte.debit_"></phrase>
+    <phrase key="compta_compte.credit_"></phrase>
+    <phrase key="compta_compte.solde_"></phrase>
+    <phrase key="compta_piece.numero_"></phrase>
+    <phrase key="compta_piece.date_"></phrase>
+    <phrase key="compta_ecriture.libelle_"></phrase>
+    <phrase key="compta_ecriture.debit_"></phrase>
+    <phrase key="compta_ecriture.credit_"></phrase>
+    <phrase key="compta_ecriture.lettrage_"></phrase>
+    <phrase key="compta_pointage.code_"></phrase>
+    <phrase key="compta_compte.numero_"></phrase>
+    <phrase key="compta_compte.nom_"></phrase>
+    <phrase key="compta.acces.code_"></phrase>
+    <phrase key="compta.acces.nom_"></phrase>
+    <phrase key="compta.acces.valeur_"></phrase>
+    <phrase key="gestsea.home_"></phrase>
+    <phrase key="gestsea.home.personnes_"></phrase>
+    <phrase key="gestsea.home.personnes.voir_"></phrase>
+    <phrase key="gestsea.home.comptabilite_"></phrase>
+    <phrase key="gestsea.home.comptabilite.voir_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.title_"></phrase>
+    <phrase key="dico.contact_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.telephone_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.fax_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.mobile_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.email_"></phrase>
+    <phrase key="dico.adresse_"></phrase>
+    <phrase key="base_partenaire.id_"></phrase>
+    <phrase key="base_partenaire.titre_"></phrase>
+    <phrase key="base_partenaire.nom_"></phrase>
+    <phrase key="base_partenaire.prenom_"></phrase>
+    <phrase key="dico.codepostal_"></phrase>
+    <phrase key="dico.commune_"></phrase>
+    <phrase key="dico.telephone_"></phrase>
+    <phrase key="dico.mobile_"></phrase>
+    <phrase key="comptax.demarrage.compteperm.voir_"></phrase>
+    <phrase key="comptax.comptacompteperm.title_"></phrase>
+    <phrase key="comptax.comptacompteperm.estdebit_"></phrase>
+    <phrase key="comptax.comptacompteperm.general_"></phrase>
+    <phrase key="comptax.comptacompteperm.acceptaux_"></phrase>
+    <phrase key="comptax.comptacompteperm.utilisable_"></phrase>
+    <phrase key="comptax.comptacompteperm.lettrable_"></phrase>
+    <phrase key="comptax.comptacompteperm.pointable_"></phrase>
+    <phrase key="comptax.comptacompteperm.groupable_"></phrase>
+    <phrase key="comptax.comptacompteperm.parent.nom_"></phrase>
+    <phrase key="comptax.comptacompteperm.parent.numcompte_"></phrase>
+    <phrase key="comptax.comptacompteperm.parent_"></phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires_"></phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires.numero_"></phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires.nom_"></phrase>
+    <phrase key="compta_compteperm.numero_"></phrase>
+    <phrase key="compta_compteperm.nom_"></phrase>
+    <phrase key="comptax.comptaacces.nom_"></phrase>
+    <phrase key="comptax.comptaacces.valeur_"></phrase>
+  </language>
+  <language code="en-US">
+    <phrase key="_.accept_">Accept</phrase>
+    <phrase key="_.back_">Back</phrase>
+    <phrase key="_.cancel_">Cancel</phrase>
+    <phrase key="_.delete_">Delete</phrase>
+    <phrase key="_.edit_">Edit</phrase>
+    <phrase key="_.false_" unused="true">False</phrase>
+    <phrase key="_.forward_">Forward</phrase>
+    <phrase key="_.general_">General</phrase>
+    <phrase key="_.home_">Home</phrase>
+    <phrase key="_.menu_">Menu</phrase>
+    <phrase key="_.new_">New</phrase>
+    <phrase key="_.ok_" unused="true">OK</phrase>
+    <phrase key="_.quit_">Quit</phrase>
+    <phrase key="_.search_">Find</phrase>
+    <phrase key="_.select_" unused="true">Select</phrase>
+    <phrase key="_.true_" unused="true">True</phrase>
+    <phrase key="admin.home_"></phrase>
+    <phrase key="admin.home.societe.voir_"></phrase>
+    <phrase key="admin.home.utilisateur.voir_"></phrase>
+    <phrase key="admin.detail.societe.title_"></phrase>
+    <phrase key="admin.detail.societe.nom_"></phrase>
+    <phrase key="admin.detail.societe.siren_"></phrase>
+    <phrase key="admin.detail.societe.sequence_"></phrase>
+    <phrase key="admin.detail.societe.adresse_"></phrase>
+    <phrase key="admin.detail.societe.libelle_"></phrase>
+    <phrase key="admin.detail.societe.id_"></phrase>
+    <phrase key="admin.detail.societe.code_"></phrase>
+    <phrase key="_._number_of_records_"></phrase>
+    <phrase key="admin.detail.utilisateur.title_"></phrase>
+    <phrase key="admin.detail.utilisateur.superuser_"></phrase>
+    <phrase key="admin.detail.utilisateur.createdb_"></phrase>
+    <phrase key="admin.detail.utilisateur.createrole_"></phrase>
+    <phrase key="admin.detail.utilisateur.maxconn_"></phrase>
+    <phrase key="admin.detail.utilisateur.jusqua_"></phrase>
+    <phrase key="admin.detail.utilisateur.email_"></phrase>
+    <phrase key="admin.detail.utilisateur.login_"></phrase>
+    <phrase key="admin.detail.utilisateur.password_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_numero_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_login_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_superuser_"></phrase>
+    <phrase key="admin.detail.utilisateur.ut_email_"></phrase>
+    <phrase key="comptax.demarrage_">Accountancy</phrase>
+    <phrase key="comptax.demarrage.journaux_">Journals management</phrase>
+    <phrase key="comptax.demarrage.journaux.voir_">I want to see the journals</phrase>
+    <phrase key="comptax.demarrage.comptes_">Account management</phrase>
+    <phrase key="comptax.demarrage.comtpes.voir_" unused="true"></phrase>
+    <phrase key="comptax.comptacompte.title_">Accounts</phrase>
+    <phrase key="comptax.comptacompte.debit_">Flow: </phrase>
+    <phrase key="comptax.comptacompte.credit_">Credit: </phrase>
+    <phrase key="comptax.comptacompte.solde_">Balance: </phrase>
+    <phrase key="comptax.comptacompte.acces_">Access level: </phrase>
+    <phrase key="comptax.comptacompte.nbecritures_">Number of entries: </phrase>
+    <phrase key="comptax.comptacompte.auxiliaires_">Auxiliary accounts</phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.cm_numcompte_" unused="true">Number</phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.cm_nom_" unused="true">Name</phrase>
+    <phrase key="comptax.comptacompte.ecritures_">Entries</phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_libelle_" unused="true">Label</phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_debit_" unused="true">Flow</phrase>
+    <phrase key="comptax.comptacompte.ecritures.ec_credit_" unused="true">Credit</phrase>
+    <phrase key="comptax.comptaacces.title_">Access levels</phrase>
+    <phrase key="comptax.comptaacces.value_">Value</phrase>
+    <phrase key="comptax.navigation.journal_" unused="true">Journals management</phrase>
+    <phrase key="comptax.navigation.journal.level0.label_" unused="true">Journals</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.journal_" unused="true">(Type of) Journal</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.debit_" unused="true">Flow</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.credit_" unused="true">Credit</phrase>
+    <phrase key="comptax.navigation.journal.level0.columns.solde_" unused="true">Balance</phrase>
+    <phrase key="comptax.navigation.journal.level1.label_" unused="true">Journals</phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.journal_" unused="true">Journal</phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.debit_" unused="true">Flow</phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.credit_" unused="true">Credit</phrase>
+    <phrase key="comptax.navigation.journal.level1.columns.solde_" unused="true">Balance</phrase>
+    <phrase key="comptax.navigation.journal.level2.label_" unused="true">Months</phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.mois_" unused="true">Month</phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.debit_" unused="true">Flow</phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.credit_" unused="true">Credit</phrase>
+    <phrase key="comptax.navigation.journal.level2.columns.solde_" unused="true">Balance</phrase>
+    <phrase key="comptax.navigation.journal.level3.label_" unused="true">Accounting records</phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.numero_" unused="true">Number</phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.libelle_" unused="true">Label</phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.debit_" unused="true">Flow</phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.credit_" unused="true">Credit</phrase>
+    <phrase key="comptax.navigation.journal.level3.columns.solde_" unused="true">Balance</phrase>
+    <phrase key="comptax.demarrage.comptes.voir_">I want to see the accounts</phrase>
+    <phrase key="comptax.comptacompte.block1_">Rights/Access</phrase>
+    <phrase key="comptax.comptacompte.estdebit_">Flow account</phrase>
+    <phrase key="comptax.comptacompte.general_">General account</phrase>
+    <phrase key="comptax.comptacompte.acceptaux_">Accept auxiliary accounts</phrase>
+    <phrase key="comptax.comptacompte.utilisable_">Usable</phrase>
+    <phrase key="comptax.comptacompte.lettrable_">Can be 'lettered'</phrase>
+    <phrase key="comptax.comptacompte.pointable_">Can be pointed</phrase>
+    <phrase key="comptax.comptacompte.groupable_">Can be grouped</phrase>
+    <phrase key="comptax.comptacompte.parent_">Parent account</phrase>
+    <phrase key="comptax.comptacompte.parent.nom_">Name: </phrase>
+    <phrase key="comptax.comptacompte.parent.numcompte_">Number: </phrase>
+    <phrase key="comptax.demarrage.acces.voir_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.numero_"></phrase>
+    <phrase key="comptax.comptacompte.auxiliaires.nom_"></phrase>
+    <phrase key="compta_compte.debit_">Debit</phrase>
+    <phrase key="compta_compte.credit_">Credit</phrase>
+    <phrase key="compta_compte.solde_">Balance</phrase>
+    <phrase key="compta_piece.numero_">Number</phrase>
+    <phrase key="compta_piece.date_">Date</phrase>
+    <phrase key="compta_ecriture.libelle_"></phrase>
+    <phrase key="compta_ecriture.debit_"></phrase>
+    <phrase key="compta_ecriture.credit_"></phrase>
+    <phrase key="compta_ecriture.lettrage_"></phrase>
+    <phrase key="compta_pointage.code_"></phrase>
+    <phrase key="compta_compte.numero_"></phrase>
+    <phrase key="compta_compte.nom_"></phrase>
+    <phrase key="compta.acces.code_"></phrase>
+    <phrase key="compta.acces.nom_"></phrase>
+    <phrase key="compta.acces.valeur_"></phrase>
+    <phrase key="gestsea.home_">Main menu</phrase>
+    <phrase key="gestsea.home.personnes_"></phrase>
+    <phrase key="gestsea.home.personnes.voir_"></phrase>
+    <phrase key="gestsea.home.comptabilite_"></phrase>
+    <phrase key="gestsea.home.comptabilite.voir_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.title_"></phrase>
+    <phrase key="dico.contact_">Contact</phrase>
+    <phrase key="gestsea.gestseapartenaire.telephone_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.fax_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.mobile_"></phrase>
+    <phrase key="gestsea.gestseapartenaire.email_"></phrase>
+    <phrase key="dico.adresse_">Address</phrase>
+    <phrase key="base_partenaire.id_"></phrase>
+    <phrase key="base_partenaire.titre_"></phrase>
+    <phrase key="base_partenaire.nom_"></phrase>
+    <phrase key="base_partenaire.prenom_"></phrase>
+    <phrase key="dico.codepostal_">Postal code</phrase>
+    <phrase key="dico.commune_">City</phrase>
+    <phrase key="dico.telephone_">Phone</phrase>
+    <phrase key="dico.mobile_">Mobile</phrase>
+    <phrase key="comptax.demarrage.compteperm.voir_">I want to search for a permanent account</phrase>
+    <phrase key="comptax.comptacompteperm.title_">Permanent account</phrase>
+    <phrase key="comptax.comptacompteperm.estdebit_">Is a debit</phrase>
+    <phrase key="comptax.comptacompteperm.general_">General</phrase>
+    <phrase key="comptax.comptacompteperm.acceptaux_">Accepts auxiliary accounts</phrase>
+    <phrase key="comptax.comptacompteperm.utilisable_">Usable</phrase>
+    <phrase key="comptax.comptacompteperm.lettrable_">Can be 'lettered'</phrase>
+    <phrase key="comptax.comptacompteperm.pointable_">Can be reconciled</phrase>
+    <phrase key="comptax.comptacompteperm.groupable_">Can be grouped</phrase>
+    <phrase key="comptax.comptacompteperm.parent.nom_">Name</phrase>
+    <phrase key="comptax.comptacompteperm.parent.numcompte_">Number</phrase>
+    <phrase key="comptax.comptacompteperm.parent_">Parent permanent account</phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires_">Auxiliaries</phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires.numero_">Number</phrase>
+    <phrase key="comptax.comptacompteperm.auxiliaires.nom_">Name</phrase>
+    <phrase key="compta_compteperm.numero_">Number</phrase>
+    <phrase key="compta_compteperm.nom_">Name</phrase>
+    <phrase key="comptax.comptaacces.nom_">Name</phrase>
+    <phrase key="comptax.comptaacces.valeur_">Value</phrase>
+  </language>
+</languages>

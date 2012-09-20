@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="comptax.css" type="text/css"?>
+
+
+<window orient="vertical" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" sizemode="normal"  onload=" init_Trees(); " onclose="" title="Comptabilité générale">
+  <toolbox>
+    <menubar>
+      <menu label="Fichier">
+        <menupopup>
+          <menuitem label="Quitter"/> 
+        </menupopup>
+      </menu>
+      <menu label="Opérations">
+        <menupopup>
+          <menuitem label="Saisie d'écriture"/> 
+          <menuitem label="Lettrage"/> 
+          <menuitem label="Pointage"/> 
+          <menuitem label="Clotûre mensuelle"/> 
+          <menuitem label="Clotûre annuelle"/> 
+          <menuseparator/> 
+          <menuitem label="Importer..."/> 
+          <menuitem label="Exporter..."/> 
+        </menupopup>
+      </menu>
+      <menu label="États">
+        <menupopup>
+          <menuitem label="Gérér les états"/>
+          <menuitem label="Afficher un état"/>
+          <menuseparator/> 
+          <menuitem label="Liste des états désirés"/>
+        </menupopup>
+      </menu>
+      <menu label="Outils">
+        <menupopup>
+          <menuitem label="Gérer les comptes"/>
+          <menuitem label="Gérer les journaux"/>
+          <menuseparator/> 
+          <menuitem label="Options"/>
+        </menupopup>
+      </menu>
+      <menu label="?">
+        <menupopup>
+          <menuitem label="Aide"/> 
+          <menuitem label="À propos de..."/> 
+        </menupopup>
+      </menu>
+    </menubar>
+  </toolbox>
+
+  <vbox flex="1">
+    <tabbox flex="1"  class="taboverlay">
+      <tabs>
+        <tab label="Principal" flex="100" class="taboverlay-tab">
+          <deck>
+            <hbox align="center">
+              <label value="Principal"/>
+              <toolbarbutton label="x"/>
+            </hbox>
+          </deck> 
+	</tab>
+      </tabs>
+      <tabpanels flex="1">
+        <tabpanel>
+
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+  </vbox>
+
+  <statusbar>
+    <statusbarpanel label="Aide" flex="5"/>
+    <statusbarpanel label="Heure" flex="1"/>
+  </statusbar>
+
+</window>

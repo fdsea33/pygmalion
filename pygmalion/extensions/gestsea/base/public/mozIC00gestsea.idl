@@ -1,0 +1,29 @@
+#include "nsISupports.idl"
+#include "nsIDOMElement.idl"
+[scriptable, uuid(ba708d04-634c-47ba-a3fa-02d455ad77bc)]
+interface mozIC00gestsea : nsISupports
+{
+  void load(in AString key);
+  void setTransportURI(in AString transportURI);
+  void getTransportURI(out AString transportURI);
+  void connect(in AString login, in AString password, in AString database, out AString key);
+  void finish(in AString key, out unsigned long result);
+  void setup(in AString key, out AString name, out AString uuid, out AString version, out AString state, out AString userType);
+  void prepare(in AString key, in AString query, in AString name, in unsigned long arity, out unsigned long result);
+  void prepareList(in AString key, in nsIDOMElement queries, out unsigned long result);
+  void execPreparedSelect(in AString key, in AString name, in nsIDOMElement params, out nsIDOMElement result);
+  void execPreparedUpdate(in AString key, in AString name, in nsIDOMElement params, out AString result);
+  void execSelect(in AString key, in AString query, in nsIDOMElement params, out nsIDOMElement result);
+  void execUpdate(in AString key, in AString query, in nsIDOMElement params, out AString result);
+  void init(in AString key, in AString database, in boolean force, out unsigned long result);
+
+};
+
+%{C++
+
+// {7f555b14-3b84-4733-947d-91e9fc7e0279}
+#define MOZ_C00GESTSEA_CID { 0x7f555b14, 0x3b84, 0x4733, { 0x94, 0x7d, 0x91, 0xe9, 0xfc, 0x7e, 0x02, 0x79 } }
+#define MOZ_C00GESTSEA_CONTRACTID "@brice.fr/gestsea/C00gestsea;1"
+#define MOZ_C00GESTSEA_CLASSNAME "C00gestsea"
+
+%}

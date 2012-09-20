@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<_load>
+  <record type="partial">
+    <field property="id">6</field>
+    <field property="nom">Comptes de charges</field>
+    <field property="numero">6</field>
+    <field property="parent_compteperm_id" null="true"/>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">7</field>
+    <field property="nom">Comptes de produits</field>
+    <field property="numero">7</field>
+    <field property="parent_compteperm_id" null="true"/>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">60</field>
+    <field property="nom">Achats (sauf 603)</field>
+    <field property="numero">60</field>
+    <field property="general">true</field>
+    <field property="parent_compteperm_id">6</field>
+    <field property="acces_id">2</field>
+  </record>
+  <record type="partial">
+    <field property="id">607</field>
+    <field property="nom">Achats de marchandises</field>
+    <field property="numero">607</field>
+    <field property="parent_compteperm_id">60</field>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">70</field>
+    <field property="nom">Ventes de produits fabriqués, prestations de services, marchandises</field>
+    <field property="numero">70</field>
+    <field property="parent_compteperm_id">7</field>
+    <field property="general">true</field>
+    <field property="acces_id">2</field>
+  </record>
+  <record type="partial">
+    <field property="id">706</field>
+    <field property="nom">Prestations de services</field>
+    <field property="numero">706</field>
+    <field property="parent_compteperm_id">70</field>
+    <field property="general">true</field>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">709</field>
+    <field property="nom">Rabais, remises et ristournes accordés par l'entreprise</field>
+    <field property="numero">709</field>
+    <field property="parent_compteperm_id">70</field>
+    <field property="general">true</field>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">71</field>
+    <field property="nom">Production stockée (ou déstockage)</field>
+    <field property="numero">71</field>
+    <field property="parent_compteperm_id">7</field>
+    <field property="general">true</field>
+    <field property="acces_id">1</field>
+  </record>
+  <record type="partial">
+    <field property="id">713</field>
+    <field property="nom">Variation des stocks (en-cours de production, produits)</field>
+    <field property="numero">713</field>
+    <field property="parent_compteperm_id">71</field>
+    <field property="acces_id">1</field>
+  </record>
+</_load>

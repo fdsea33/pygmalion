@@ -1,0 +1,88 @@
+CREATE OR REPLACE FUNCTION tg_complete_ventes_commande_ligne() RETURNS TRIGGER AS $$
+DECLARE
+
+  commande_date gestion_ventes_commande.date%TYPE;
+  commande_reduction gestion_ventes_commande.reduction_taux%TYPE;
+  total integer;
+  sans_stock boolean;
+BEGIN
+  IF TG_OP='UPDATE' OR TG_OP='DELETE' THEN
+    IF OLD.immodifiable THEN
+      IF TG_OP='DELETE' THEN
+        RAISE EXCEPTION 'Une ligne d''une commande passée en facture est immodifiable et ineffaçable.';
+      END IF;
+      NEW.immodifiable  := true;
+      NEW.nom           := OLD.nom;
+      NEW.commande_id   := OLD.commande_id;
+      NEW.produit_id    := OLD.produit_id;
+      NEW.prix_id       := OLD.prix_id;
+      NEW.stock_id      := OLD.stock_id;
+      NEW.stock_mouvement_id   := OLD.stock_mouvement_id;
+      NEW.reduction            := OLD.reduction;
+      NEW.montant_unitaire_ttc := OLD.montant_unitaire_ttc;
+      NEW.montant_unitaire_ht  := OLD.montant_unitaire_ht;
+      NEW.quantite             := OLD.quantite;
+      NEW.montant_brut_ttc     := OLD.montant_brut_ttc;
+      NEW.montant_brut_ht      := OLD.montant_brut_ht;
+      NEW.montant_ttc          := OLD.montant_ttc;
+      NEW.montant_ht           := OLD.montant_ht;
+      NEW.description          := OLD.description;
+    END IF;
+  END IF;
+  IF TG_OP='INSERT' THEN
+    NEW.inclus    := FALSE;
+  ELSIF TG_OP='UPDATE' THEN
+    IF NEW.inclus AND NOT NEW.a_inclure THEN
+      NEW.inclus  := FALSE;
+    END IF;
+  END IF;
+  SELECT date, reduction FROM gestion_ventes_commande WHERE id=NEW.commande_id INTO commande_date, commande_reduction;
+  SELECT nom, reduction, sans_stock FROM gestion_produit WHERE id=NEW.produit_id INTO NEW.nom, NEW.reduction, sans_stock;
+  SELECT count(*) FROM gestion_produit WHERE id=NEW.produit_id  AND COALESCE(date_fin,'31/12/9999')>=commande_date AND commande_date>=date_debut INTO total;
+  IF total!=1 THEN
+    RAISE EXCEPTION 'Le produit ''%'' n''est pas en service au moment de l''établissement du commande.',NEW.nom;
+  END IF;
+  IF NEW.prix_id IS NULL THEN
+    SELECT count(*) FROM gestion_produit_prix WHERE produit_id=NEW.produit_id AND NOT achat AND COALESCE(date_fin,'31/12/9999')>=commande_date AND commande_date>=date_debut INTO total;
+    IF 0>=total THEN
+      RAISE EXCEPTION 'Le produit ''%'' n''a pas de tarifs disponibles au moment de l''etablissement du commande.',NEW.nom;
+    END IF;
+    SELECT id FROM gestion_produit_prix WHERE produit_id=NEW.produit_id AND NOT achat AND COALESCE(date_fin,'31/12/9999')>=commande_date AND commande_date>=date_debut INTO NEW.prix_id;
+  ELSE
+    SELECT count(*) FROM gestion_produit_prix WHERE id=NEW.prix_id AND NOT achat AND COALESCE(date_fin,'31/12/9999')>=commande_date AND commande_date>=date_debut INTO total;
+    IF total!=1 THEN
+      RAISE EXCEPTION 'Le produit ''%'' ne possède pas de tarifs au moment l''établissement du commande.',NEW.nom;
+    END IF;
+  END IF;
+  IF sans_stock THEN
+    NEW.stock_id := NULL;
+    NEW.stock_mouvement_id := NULL;
+  ELSE
+    SELECT count(*) FROM gestion_stock WHERE id=NEW.stock_id AND produit_id=NEW.produit_id INTO total;
+    IF 0>=total THEN
+      NEW.stock_id := NULL;
+    END IF;
+    IF NEW.stock_id IS NULL THEN
+      SELECT count(*) FROM gestion_stock WHERE produit_id=NEW.produit_id AND actif INTO total;
+      IF 0>=total THEN
+        RAISE EXCEPTION 'Le produit ''%'' qui est déclaré comme possédant un stock, n''en possède pas en réalité.',NEW.nom;
+      ELSE
+        SELECT id FROM gestion_stock WHERE produit_id=NEW.produit_id AND actif ORDER BY defaut DESC INTO NEW.stock_id;
+      END IF;
+    END IF;
+  END IF;
+
+  SELECT montant_ht, montant_ttc FROM gestion_produit_prix WHERE id=NEW.prix_id INTO NEW.montant_unitaire_ht, NEW.montant_unitaire_ttc;
+  IF 0>=NEW.quantite THEN
+    RAISE EXCEPTION 'La quantité du produit doit être supérieure ou égale à 1.';
+  END IF;
+  NEW.montant_brut_ht  := NEW.quantite*NEW.montant_unitaire_ht;
+  NEW.montant_brut_ttc := NEW.quantite*NEW.montant_unitaire_ttc;
+  IF NOT NEW.reduction THEN
+    commande_reduction := 0;
+  END IF;
+  NEW.montant_ht  := NEW.montant_brut_ht*(1-commande_reduction);
+  NEW.montant_ttc := NEW.montant_brut_ttc*(1-commande_reduction);
+  RETURN NEW;
+
+$$ LANGUAGE 'plpgsql' VOLATILE;

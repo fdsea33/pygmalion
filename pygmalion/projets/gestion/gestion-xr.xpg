@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<generation name="Pour XulRunner">
+  <description>Pour faire un XPCOM avec un serveur gSOAP. Mais en anglais et pour XulRunner</description>
+  <language code="en-US"/>
+  <builder id="@fdsea33.fr/pygmalion/generator;1" mode="xulrunner">
+    <option name="extension-directory">/home/brice/xulrunner/gestsea</option>
+    <option name="server-directory">/home/brice/xulrunner/gestsea/server</option>
+  </builder>
+</generation>

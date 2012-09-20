@@ -1,0 +1,2302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysis name="">
+  <table name="table_acces" label="">
+    <column name="ac_numero" type="INTEGER" notnull="true"/>
+    <column name="ac_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="ac_niveau" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_facture" label="">
+    <column name="fa_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="ag_numero" type="INTEGER"/>
+    <column name="fa_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="fa_reduction" type="NUMERIC"/>
+    <column name="fa_montantht" type="NUMERIC"/>
+    <column name="fa_montantttc" type="NUMERIC"/>
+    <column name="fa_accompte" type="NUMERIC" default="0"/>
+    <column name="fa_annotation" type="VARCHAR(64)"/>
+    <column name="fa_libelle" type="VARCHAR(64)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="de_numero" type="INTEGER"/>
+    <column name="fa_numfact" type="INTEGER"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+  </table>
+  <table name="table_lignefacture" label="">
+    <column name="lf_numero" type="INTEGER" notnull="true"/>
+    <column name="fa_numero" type="INTEGER" notnull="true"/>
+    <column name="px_numero" type="INTEGER"/>
+    <column name="pd_numero" type="INTEGER"/>
+    <column name="lf_quantite" type="NUMERIC" notnull="true" default="0"/>
+    <column name="lf_montantht" type="NUMERIC"/>
+    <column name="lf_montantttc" type="NUMERIC"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_personne" label="">
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="tp_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_nom" type="VARCHAR(512)" notnull="true"/>
+    <column name="pe_regimefiscal" type="VARCHAR(32)" notnull="true" default="'NON RENSEIGNE'::character varying"/>
+    <column name="ep_numero" type="INTEGER"/>
+    <column name="pe_morale" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="pe_prenom" type="VARCHAR(32)"/>
+    <column name="pe_complement" type="VARCHAR(512)"/>
+    <column name="pe_naissance" type="DATE"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="pe_titre" type="VARCHAR(32)"/>
+  </table>
+  <table name="table_prix" label="">
+    <column name="px_numero" type="INTEGER" notnull="true"/>
+    <column name="tv_numero" type="INTEGER" notnull="true"/>
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="px_tarifht" type="NUMERIC" notnull="true"/>
+    <column name="px_tarifttc" type="NUMERIC" notnull="true"/>
+    <column name="px_datedebut" type="DATE"/>
+    <column name="px_actif" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+  </table>
+  <table name="table_produit" label="">
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="jo_numero" type="INTEGER" notnull="true"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="pd_libelle" type="VARCHAR" notnull="true"/>
+    <column name="pd_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="pd_reduction" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="pd_sansquantite" type="BOOLEAN" notnull="true" default="false"/>
+  </table>
+  <table name="table_societe" label="">
+    <column name="so_numero" type="INTEGER" notnull="true"/>
+    <column name="so_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="so_detail" type="VARCHAR"/>
+    <column name="so_sequence" type="VARCHAR(32)" notnull="true"/>
+    <column name="ts_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="so_abbrev" type="VARCHAR(3)" notnull="true"/>
+  </table>
+  <table name="table_activite" label="">
+    <column name="za_numero" type="INTEGER" notnull="true" default="nextval(('seq_activite'::text)::regclass)"/>
+    <column name="za_duree" type="INTEGER" default="0"/>
+    <column name="zt_numero" type="INTEGER" notnull="true"/>
+    <column name="zs_numero" type="INTEGER" notnull="true"/>
+    <column name="zl_numero" type="INTEGER" notnull="true"/>
+    <column name="za_qui" type="INTEGER" notnull="true"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="de_numero" type="INTEGER"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="zg_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="em_numero" type="INTEGER" notnull="true" default="current_employe()"/>
+    <column name="za_pour" type="VARCHAR(256)"/>
+    <column name="za_heuredebut" type="TIME WITHOUT TIME ZONE"/>
+    <column name="za_heurefin" type="TIME WITHOUT TIME ZONE"/>
+    <column name="za_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="za_champ" type="VARCHAR" notnull="true"/>
+  </table>
+  <table name="table_periode" label="">
+    <column name="po_numero" type="INTEGER" notnull="true"/>
+    <column name="po_debut" type="DATE" notnull="true"/>
+    <column name="po_fin" type="DATE" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_adherence" label="">
+    <column name="ah_numero" type="INTEGER" notnull="true"/>
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="ah_libelle" type="VARCHAR" notnull="true"/>
+    <column name="ah_reduction" type="NUMERIC" notnull="true" default="0"/>
+    <column name="ah_quantite" type="NUMERIC"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_adhesion" label="">
+    <column name="as_numero" type="INTEGER" notnull="true"/>
+    <column name="as_reductionmax" type="NUMERIC"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="po_numero" type="INTEGER" notnull="true"/>
+    <column name="ah_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_adresse" label="">
+    <column name="ad_numero" type="INTEGER" notnull="true"/>
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ad_addr2" type="VARCHAR(128)"/>
+    <column name="ad_addr3" type="VARCHAR(128)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ad_type" type="VARCHAR(32)"/>
+    <column name="ad_addr1" type="VARCHAR(128)"/>
+    <column name="ad_active" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="ad_datestop" type="DATE"/>
+  </table>
+  <table name="table_codepostal" label="">
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="cp_codepostal" type="INTEGER" notnull="true"/>
+    <column name="cp_bureau" type="VARCHAR(128)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_ville" label="">
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="ct_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="vi_nom" type="VARCHAR(128)"/>
+  </table>
+  <table name="table_agent" label="">
+    <column name="ag_numero" type="INTEGER" notnull="true"/>
+    <column name="ag_nom" type="VARCHAR(64)" notnull="true"/>
+    <column name="ag_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="eq_numero" type="INTEGER"/>
+    <column name="ag_role" type="VARCHAR(128)"/>
+    <column name="ag_telephone" type="VARCHAR(16)"/>
+    <column name="ag_mobile" type="VARCHAR(16)"/>
+    <column name="ag_email" type="VARCHAR(64)"/>
+    <column name="ag_commentaire" type="VARCHAR(128)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ag_prenom" type="VARCHAR(32)"/>
+    <column name="ag_initiales" type="VARCHAR(10)"/>
+  </table>
+  <table name="table_appartienta" label="">
+    <column name="ct_numero" type="INTEGER" notnull="true"/>
+    <column name="gc_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_appel" label="">
+    <column name="ap_numero" type="INTEGER" notnull="true"/>
+    <column name="ap_libelle" type="VARCHAR" notnull="true"/>
+    <column name="ap_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="ap_description" type="VARCHAR"/>
+    <column name="ap_duree" type="NUMERIC"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="th_numero" type="INTEGER" notnull="true" default="1"/>
+  </table>
+  <table name="table_attribut" label="">
+    <column name="at_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ta_numero" type="INTEGER" notnull="true"/>
+    <column name="at_valeur" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="cr_numero" type="INTEGER" notnull="true"/>
+  </table>
+  <table name="table_avoir" label="">
+    <column name="av_numero" type="INTEGER" notnull="true"/>
+    <column name="av_numfact" type="INTEGER" notnull="true"/>
+    <column name="av_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="av_montantht" type="NUMERIC"/>
+    <column name="av_montantttc" type="NUMERIC"/>
+    <column name="av_reduction" type="NUMERIC"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="fa_numero" type="INTEGER"/>
+  </table>
+  <table name="table_ligneavoir" label="">
+    <column name="la_numero" type="INTEGER" notnull="true"/>
+    <column name="pd_numero" type="INTEGER"/>
+    <column name="av_numero" type="INTEGER"/>
+    <column name="la_quantite" type="NUMERIC" notnull="true" default="0"/>
+    <column name="la_montantht" type="NUMERIC"/>
+    <column name="la_montantttc" type="NUMERIC"/>
+    <column name="px_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_canton" label="">
+    <column name="ct_numero" type="INTEGER" notnull="true"/>
+    <column name="ct_nom" type="VARCHAR(128)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_categorie" label="">
+    <column name="cr_numero" type="INTEGER" notnull="true"/>
+    <column name="cr_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="ta_numero" type="INTEGER" notnull="true"/>
+    <column name="cr_description" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_classe" label="">
+    <column name="cl_numero" type="INTEGER" notnull="true"/>
+    <column name="cl_nom" type="VARCHAR(32)" notnull="true"/>
+    <column name="cl_represente" type="VARCHAR(64)" notnull="true"/>
+    <column name="cl_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="cl_societe" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="cl_mere" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="cl_ordre" type="INTEGER" notnull="true" default="0"/>
+    <column name="cl_assoc" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_colonnetype" label="">
+    <column name="cy_numero" type="INTEGER" notnull="true"/>
+    <column name="cy_typepropriete" type="INTEGER" notnull="true"/>
+    <column name="cy_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="cy_nom" type="VARCHAR" notnull="true"/>
+    <column name="cy_estclef" type="BOOLEAN" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="cy_ordre" type="INTEGER" notnull="true" default="nextval(('seq_colonnetype'::text)::regclass)"/>
+  </table>
+  <table name="table_compteaux" label="">
+    <column name="ca_numero" type="INTEGER" notnull="true"/>
+    <column name="cg_numero" type="INTEGER" notnull="true"/>
+    <column name="ca_numcompte" type="VARCHAR" notnull="true"/>
+    <column name="ca_libelle" type="VARCHAR" notnull="true"/>
+    <column name="ac_numero" type="INTEGER" notnull="true"/>
+    <column name="ca_debit" type="BOOLEAN"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_comptegen" label="">
+    <column name="cg_numero" type="INTEGER" notnull="true"/>
+    <column name="cg_numcompte" type="INTEGER" notnull="true"/>
+    <column name="cg_libelle" type="VARCHAR" notnull="true"/>
+    <column name="ac_numero" type="INTEGER" notnull="true"/>
+    <column name="cg_accepteaux" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="cg_utilisable" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="cg_lettrable" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="cg_pointable" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="cg_groupable" type="BOOLEAN"/>
+    <column name="cg_debit" type="BOOLEAN"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_ecriture" label="">
+    <column name="ec_numero" type="INTEGER" notnull="true"/>
+    <column name="pi_numero" type="INTEGER" notnull="true"/>
+    <column name="cg_numero" type="INTEGER"/>
+    <column name="ca_numero" type="INTEGER"/>
+    <column name="ec_aux" type="BOOLEAN" notnull="true"/>
+    <column name="pf_numero" type="INTEGER" notnull="true"/>
+    <column name="ec_libelle" type="VARCHAR" notnull="true"/>
+    <column name="ec_debit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="ec_credit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="pt_numero" type="INTEGER"/>
+    <column name="av_numero" type="INTEGER"/>
+    <column name="lt_numero" type="INTEGER"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ex_numero" type="INTEGER"/>
+    <column name="ec_numecriture" type="INTEGER"/>
+    <column name="ec_compte" type="VARCHAR(16)"/>
+    <column name="rg_numero" type="INTEGER"/>
+    <column name="CONSTRAINT" type="TABLE_ECRITURE_CHECK" notnull="true"/>
+  </table>
+  <table name="table_employe" label="">
+    <column name="em_numero" type="INTEGER" notnull="true"/>
+    <column name="em_emploi" type="VARCHAR" notnull="true"/>
+    <column name="em_service" type="INTEGER" notnull="true"/>
+    <column name="em_agent" type="INTEGER" notnull="true"/>
+    <column name="em_login" type="VARCHAR" notnull="true"/>
+    <column name="em_acces" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="em_password" type="VARCHAR"/>
+    <column name="em_super" type="BOOLEAN" default="false"/>
+    <column name="dp_numero" type="INTEGER"/>
+  </table>
+  <table name="table_compteproduit" label="">
+    <column name="ci_numero" type="INTEGER" notnull="true"/>
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="cg_numero" type="INTEGER" notnull="true"/>
+    <column name="ci_actif" type="BOOLEAN" default="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_constante" label="">
+    <column name="cs_numero" type="INTEGER" notnull="true" default="nextval(('seq_constante'::text)::regclass)"/>
+    <column name="cs_type" type="INTEGER" notnull="true"/>
+    <column name="cs_valeur" type="VARCHAR" notnull="true"/>
+  </table>
+  <table name="table_contact" label="">
+    <column name="cn_numero" type="INTEGER" notnull="true"/>
+    <column name="cn_coordonnee" type="VARCHAR" notnull="true"/>
+    <column name="cn_type" type="VARCHAR(128)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_routage" label="">
+    <column name="ro_numero" type="INTEGER" notnull="true"/>
+    <column name="ad_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ro_dernierroute" type="INTEGER"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ro_dernier" type="INTEGER"/>
+    <column name="ro_debutservice" type="INTEGER"/>
+    <column name="ro_quantite" type="INTEGER"/>
+    <column name="ro_finservice" type="INTEGER"/>
+    <column name="ro_suspendu" type="BOOLEAN" default="false"/>
+  </table>
+  <table name="table_devis" label="">
+    <column name="de_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="de_date" type="DATE" default="('now'::text)::date"/>
+    <column name="de_libelle" type="VARCHAR"/>
+    <column name="de_reduction" type="NUMERIC"/>
+    <column name="de_montantht" type="NUMERIC"/>
+    <column name="de_montantttc" type="NUMERIC"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="de_locked" type="BOOLEAN" default="false"/>
+    <column name="ag_numero" type="INTEGER"/>
+    <column name="de_acompte" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="de_lettre" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="de_introduction" type="VARCHAR"/>
+    <column name="de_civilites" type="VARCHAR"/>
+    <column name="em_numero" type="INTEGER"/>
+  </table>
+  <table name="table_ligne" label="">
+    <column name="l_numero" type="INTEGER" notnull="true"/>
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="de_numero" type="INTEGER" notnull="true"/>
+    <column name="l_quantite" type="NUMERIC" default="1"/>
+    <column name="l_montantht" type="NUMERIC"/>
+    <column name="l_montantttc" type="NUMERIC"/>
+    <column name="px_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="l_notes" type="VARCHAR"/>
+  </table>
+  <table name="table_donneesbancaires" label="">
+    <column name="db_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="db_libellebanque" type="VARCHAR(32)"/>
+    <column name="db_numerocompte" type="VARCHAR(32)"/>
+    <column name="db_modereglement" type="VARCHAR(10)"/>
+    <column name="db_reference" type="VARCHAR(32)"/>
+    <column name="db_bordereaux" type="VARCHAR(32)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_droit" label="">
+    <column name="dr_numero" type="INTEGER" notnull="true"/>
+    <column name="em_numero" type="INTEGER"/>
+    <column name="gt_numero" type="INTEGER" notnull="true"/>
+    <column name="dr_select" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="dr_insert" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="dr_update" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="dr_delete" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="dp_numero" type="INTEGER"/>
+  </table>
+  <table name="table_droitprofil" label="">
+    <column name="dp_numero" type="INTEGER" notnull="true" default="nextval(('seq_droitprofil'::text)::regclass)"/>
+    <column name="dp_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="dp_notes" type="VARCHAR"/>
+  </table>
+  <table name="table_service" label="">
+    <column name="se_numero" type="INTEGER" notnull="true"/>
+    <column name="se_nom" type="VARCHAR" notnull="true"/>
+    <column name="se_societe" type="INTEGER" notnull="true"/>
+    <column name="se_agent" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_equipe" label="">
+    <column name="eq_numero" type="INTEGER" notnull="true"/>
+    <column name="eq_nom" type="VARCHAR(64)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_estjoignable" label="">
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="cn_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ej_numero" type="INTEGER" notnull="true" default="nextval(('seq_estjoignable'::text)::regclass)"/>
+    <column name="ej_actif" type="BOOLEAN" notnull="true" default="true"/>
+  </table>
+  <table name="table_estlie" label="">
+    <column name="el_personne1" type="INTEGER" notnull="true"/>
+    <column name="el_personne2" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="el_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="tl_numero" type="INTEGER"/>
+    <column name="el_debut" type="DATE"/>
+    <column name="el_fin" type="DATE"/>
+  </table>
+  <table name="table_estresponsable" label="">
+    <column name="re_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="peac_numero" type="INTEGER" notnull="true"/>
+    <column name="peac_periodedebut" type="DATE"/>
+    <column name="peac_periodefin" type="DATE"/>
+    <column name="peac_titre" type="VARCHAR(32)"/>
+    <column name="peac_fini" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_etatpersonne" label="">
+    <column name="ep_numero" type="INTEGER" notnull="true"/>
+    <column name="ep_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_exercice" label="">
+    <column name="ex_numero" type="INTEGER" notnull="true"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="ex_datedebut" type="DATE" notnull="true"/>
+    <column name="ex_datefin" type="DATE" notnull="true"/>
+    <column name="ex_cloture" type="BOOLEAN"/>
+    <column name="ex_compteattente" type="INTEGER"/>
+    <column name="ex_actif" type="BOOLEAN"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ex_password" type="VARCHAR" notnull="true" default="md5('root'::text)"/>
+  </table>
+  <table name="table_facturereglement" label="">
+    <column name="fr_numero" type="INTEGER" notnull="true"/>
+    <column name="rg_numero" type="INTEGER" notnull="true"/>
+    <column name="fa_numero" type="INTEGER" notnull="true"/>
+    <column name="fr_partiel" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="fr_montant" type="NUMERIC"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="fr_acompte" type="BOOLEAN" notnull="true" default="false"/>
+  </table>
+  <table name="table_groupe" label="">
+    <column name="zg_numero" type="INTEGER" notnull="true" default="nextval(('seq_groupe'::text)::regclass)"/>
+    <column name="zg_libelle" type="VARCHAR(128)" notnull="true"/>
+    <column name="zg_notes" type="VARCHAR(1024)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_groupecanton" label="">
+    <column name="gc_numero" type="INTEGER" notnull="true"/>
+    <column name="gc_nom" type="VARCHAR(128)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_groupetable" label="">
+    <column name="gt_numero" type="INTEGER" notnull="true"/>
+    <column name="gt_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="gt_tables" type="VARCHAR" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="imp_relance" label="">
+    <column name="pe_numero" type="INTEGER"/>
+  </table>
+  <table name="imp_relance2" label="">
+    <column name="pe_numero" type="INTEGER"/>
+  </table>
+  <table name="imp_routage_740" label="">
+    <column name="ncli" type="VARCHAR"/>
+    <column name="titr" type="VARCHAR"/>
+    <column name="nomp" type="VARCHAR"/>
+    <column name="cide" type="VARCHAR"/>
+    <column name="ad1" type="VARCHAR"/>
+    <column name="ad2" type="VARCHAR"/>
+    <column name="cpos" type="VARCHAR"/>
+    <column name="burd" type="VARCHAR"/>
+    <column name="nbex" type="VARCHAR"/>
+    <column name="pe_numero" type="INTEGER"/>
+  </table>
+  <table name="imp_routage_excel" label="">
+    <column name="ncli" type="VARCHAR"/>
+    <column name="titr" type="VARCHAR"/>
+    <column name="nomp" type="VARCHAR"/>
+    <column name="cide" type="VARCHAR"/>
+    <column name="ad1" type="VARCHAR"/>
+    <column name="ad2" type="VARCHAR"/>
+    <column name="cpos" type="VARCHAR"/>
+    <column name="burd" type="VARCHAR"/>
+    <column name="nbex" type="VARCHAR"/>
+  </table>
+  <table name="table_impression" label="">
+    <column name="im_numero" type="INTEGER" notnull="true"/>
+    <column name="im_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="im_nom" type="VARCHAR(32)" notnull="true"/>
+    <column name="im_societe" type="INTEGER" notnull="true"/>
+    <column name="im_modele" type="VARCHAR" notnull="true"/>
+    <column name="im_keytable" type="VARCHAR(32)" notnull="true"/>
+    <column name="im_keycle" type="VARCHAR(32)" notnull="true"/>
+    <column name="im_keydate" type="VARCHAR(32)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="im_defaut" type="BOOLEAN" default="false"/>
+  </table>
+  <table name="table_journal" label="">
+    <column name="jo_numero" type="INTEGER" notnull="true"/>
+    <column name="jo_abbrev" type="VARCHAR(4)" notnull="true"/>
+    <column name="jo_moisminimum" type="INTEGER"/>
+    <column name="jo_libelle" type="VARCHAR" notnull="true"/>
+    <column name="jo_contrepartie" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="tj_numero" type="INTEGER"/>
+    <column name="ex_numero" type="INTEGER"/>
+    <column name="cg_numero" type="INTEGER"/>
+    <column name="jo_sequence" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="jo_mois" type="INTEGER" notnull="true" default="1"/>
+    <column name="jo_annee" type="INTEGER" notnull="true" default="1900"/>
+    <column name="jo_provisoire" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="jo_visible" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="jo_debit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="jo_credit" type="NUMERIC" notnull="true" default="0"/>
+  </table>
+  <table name="table_lettrage" label="">
+    <column name="lt_numero" type="INTEGER" notnull="true"/>
+    <column name="lt_lettre" type="VARCHAR(10)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+  </table>
+  <table name="table_lieu" label="">
+    <column name="zl_numero" type="INTEGER" notnull="true" default="nextval(('seq_lieu'::text)::regclass)"/>
+    <column name="zl_libelle" type="VARCHAR(128)" notnull="true"/>
+    <column name="zl_notes" type="VARCHAR(1024)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_lignemodele" label="">
+    <column name="pd_numero" type="INTEGER" notnull="true"/>
+    <column name="mo_numero" type="INTEGER" notnull="true"/>
+    <column name="lm_quantite" type="NUMERIC"/>
+    <column name="lm_montantht" type="NUMERIC"/>
+    <column name="lm_montantttc" type="NUMERIC"/>
+    <column name="lm_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_listechoix" label="">
+    <column name="lc_numero" type="INTEGER" notnull="true"/>
+    <column name="lc_typepropriete" type="INTEGER" notnull="true"/>
+    <column name="lc_libelle" type="VARCHAR" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_modele" label="">
+    <column name="mo_numero" type="INTEGER" notnull="true"/>
+    <column name="mo_libelle" type="VARCHAR(50)"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+  </table>
+  <table name="table_modereglement" label="">
+    <column name="mr_numero" type="INTEGER" notnull="true"/>
+    <column name="mr_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="cg_numero" type="INTEGER" notnull="true"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="mr_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="mr_description" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_moderepartition" label="">
+    <column name="mp_numero" type="INTEGER" notnull="true"/>
+    <column name="mp_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="cg_numero" type="INTEGER" notnull="true"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="mp_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="mp_societe" type="INTEGER"/>
+    <column name="mp_description" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_observation" label="">
+    <column name="ob_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ob_observation" type="VARCHAR" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="ob_niveau" type="INTEGER"/>
+  </table>
+  <table name="old_abonnement" label="">
+    <column name="ab_numero" type="INTEGER" notnull="true"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="tab_numero" type="INTEGER"/>
+    <column name="tyab_numero" type="INTEGER"/>
+    <column name="as_numero" type="INTEGER"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ab_categorie" type="VARCHAR(100)"/>
+    <column name="ab_tiers" type="VARCHAR(100)"/>
+    <column name="ab_reabonne" type="DATE"/>
+    <column name="ab_facture" type="INTEGER"/>
+    <column name="ab_montant" type="DOUBLE"/>
+    <column name="ab_banque" type="VARCHAR"/>
+    <column name="ab_modereglement" type="VARCHAR"/>
+    <column name="ab_numcheque" type="VARCHAR"/>
+    <column name="ab_debutservice" type="INTEGER"/>
+    <column name="ab_finservice" type="INTEGER"/>
+    <column name="ab_reste" type="INTEGER"/>
+    <column name="ab_dernierrouter" type="INTEGER"/>
+    <column name="ab_nbrexemplaire" type="INTEGER"/>
+    <column name="ab_suspendu" type="BOOLEAN"/>
+    <column name="ab_datesuspension" type="DATE"/>
+    <column name="ab_famille" type="INTEGER"/>
+    <column name="ab_origine" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_adresse" label="">
+    <column name="ad_numero" type="INTEGER" notnull="true"/>
+    <column name="ab_numero" type="INTEGER"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="ad_addr1" type="VARCHAR(128)"/>
+    <column name="ad_addr2" type="VARCHAR(128)"/>
+    <column name="ad_addr3" type="VARCHAR(128)"/>
+    <column name="el_type" type="VARCHAR(50)"/>
+    <column name="de_nom" type="VARCHAR(128)"/>
+    <column name="de_nombre" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_agent" label="">
+    <column name="ag_numero" type="INTEGER" notnull="true"/>
+    <column name="eq_numero" type="INTEGER" notnull="true"/>
+    <column name="ag_nom" type="VARCHAR(75)"/>
+    <column name="ag_prenom" type="VARCHAR(75)"/>
+    <column name="ag_initiale" type="VARCHAR(5)"/>
+    <column name="ag_login" type="VARCHAR(8)"/>
+    <column name="ag_role" type="VARCHAR(75)"/>
+    <column name="ag_telfede" type="VARCHAR(15)"/>
+    <column name="ag_telportable" type="VARCHAR(15)"/>
+    <column name="ag_mail" type="VARCHAR(75)"/>
+    <column name="ag_commentaire" type="VARCHAR(128)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_aproduction" label="">
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="pr_numero" type="INTEGER" notnull="true"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_article" label="">
+    <column name="ar_numero" type="INTEGER" notnull="true"/>
+    <column name="ar_article" type="VARCHAR(128)"/>
+    <column name="ar_code" type="CHARACTER(20)"/>
+    <column name="ar_actif" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_assolocale" label="">
+    <column name="as_numero" type="INTEGER" notnull="true"/>
+    <column name="ca_numero" type="INTEGER"/>
+    <column name="as_nom" type="VARCHAR(256)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_canton" label="">
+    <column name="ca_numero" type="INTEGER" notnull="true"/>
+    <column name="ca_nom" type="VARCHAR(128)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_codepostal" label="">
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="cp_codepostal" type="INTEGER"/>
+    <column name="cp_bureaudistributeur" type="VARCHAR(128)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_contact" label="">
+    <column name="cont_numero" type="INTEGER" notnull="true"/>
+    <column name="cont_coordonnees" type="VARCHAR"/>
+    <column name="cont_type" type="VARCHAR(128)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_convention" label="">
+    <column name="conv_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="conv_libel" type="VARCHAR(50)"/>
+    <column name="conv_annee" type="INTEGER"/>
+  </table>
+  <table name="old_cotisation" label="">
+    <column name="co_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="as_numero" type="INTEGER"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="tc_numero" type="INTEGER"/>
+    <column name="ts_numero" type="INTEGER"/>
+    <column name="tco_numero" type="INTEGER"/>
+    <column name="co_annee" type="INTEGER"/>
+    <column name="co_etat" type="VARCHAR(20)"/>
+    <column name="co_echeance" type="DATE"/>
+    <column name="co_appeldate" type="DATE"/>
+    <column name="co_appelmontant" type="DOUBLE"/>
+    <column name="co_montantcotis" type="DOUBLE"/>
+    <column name="co_montantregle" type="DOUBLE"/>
+    <column name="co_adhesion" type="DATE"/>
+    <column name="co_numfacture" type="INTEGER"/>
+    <column name="co_numfacturesacea" type="INTEGER"/>
+    <column name="co_clpayeur" type="VARCHAR(128)"/>
+    <column name="co_modereglement" type="VARCHAR(50)"/>
+    <column name="co_banque" type="VARCHAR(50)"/>
+    <column name="co_numcheque" type="VARCHAR(50)"/>
+    <column name="co_nbremploye" type="INTEGER"/>
+    <column name="co_donneeproduction" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_cpville" label="">
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_donneebancaire" label="">
+    <column name="db_numero" type="INTEGER" notnull="true"/>
+    <column name="db_numcompte" type="VARCHAR(50)"/>
+    <column name="db_banque" type="VARCHAR(512)"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_donneproduction" label="">
+    <column name="dp_numero" type="INTEGER" notnull="true"/>
+    <column name="tp_numero" type="INTEGER"/>
+    <column name="co_numero" type="INTEGER"/>
+    <column name="dp_valeur" type="DOUBLE"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_dossier" label="">
+    <column name="do_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="ld_numero" type="INTEGER"/>
+    <column name="do_libelle" type="VARCHAR(128)"/>
+    <column name="do_etat" type="CHARACTER(20)"/>
+    <column name="do_type" type="CHARACTER(75)"/>
+    <column name="do_annee" type="INTEGER"/>
+    <column name="do_facture" type="INTEGER"/>
+    <column name="do_dateemissionfacture" type="DATE"/>
+    <column name="do_reduction" type="DOUBLE"/>
+    <column name="do_dateordre" type="DATE"/>
+    <column name="do_dateouverture" type="DATE"/>
+    <column name="do_datefermeture" type="DATE"/>
+    <column name="do_annotation" type="VARCHAR(512)"/>
+    <column name="do_accompte" type="BOOLEAN"/>
+    <column name="do_mntaccompte" type="DOUBLE"/>
+    <column name="do_factureacc" type="INTEGER"/>
+    <column name="do_factureavoir" type="INTEGER"/>
+    <column name="do_montant" type="DOUBLE"/>
+    <column name="do_montantttc" type="DOUBLE"/>
+    <column name="do_paiement" type="DOUBLE"/>
+    <column name="do_ajoutmont" type="DOUBLE"/>
+    <column name="do_datefacture" type="DATE"/>
+    <column name="do_dateecheance" type="VARCHAR"/>
+    <column name="do_annuler" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_droit" label="">
+    <column name="dt_numero" type="INTEGER" notnull="true"/>
+    <column name="dt_user" type="VARCHAR" notnull="true"/>
+    <column name="dt_abonnement" type="BOOLEAN" default="false"/>
+    <column name="dt_cotisation" type="BOOLEAN" default="false"/>
+    <column name="dt_personne" type="BOOLEAN" default="false"/>
+    <column name="dt_travaux" type="BOOLEAN" default="false"/>
+    <column name="dt_ventes" type="BOOLEAN" default="false"/>
+    <column name="dt_fede" type="BOOLEAN" default="false"/>
+    <column name="dt_uabonnement" type="BOOLEAN" default="false"/>
+    <column name="dt_ufede" type="BOOLEAN" default="false"/>
+    <column name="dt_ucotisation" type="BOOLEAN" default="false"/>
+    <column name="dt_utravaux" type="BOOLEAN" default="false"/>
+    <column name="dt_udossier" type="BOOLEAN" default="false"/>
+    <column name="dt_uventes" type="BOOLEAN" default="false"/>
+    <column name="dt_upersonne" type="BOOLEAN" default="false"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR"/>
+  </table>
+  <table name="old_equipe" label="">
+    <column name="eq_numero" type="INTEGER" notnull="true"/>
+    <column name="eq_nom" type="CHARACTER(75)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_est_joignable" label="">
+    <column name="cont_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_est_lie" label="">
+    <column name="per_pe_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_est_responsable" label="">
+    <column name="peac_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="re_numero" type="INTEGER" notnull="true"/>
+    <column name="peac_periodedebut" type="DATE"/>
+    <column name="peac_periodefin" type="DATE"/>
+    <column name="peac_titre" type="VARCHAR(50)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_famille" label="">
+    <column name="fa_numero" type="INTEGER" notnull="true"/>
+    <column name="fa_famille" type="VARCHAR" notnull="true"/>
+  </table>
+  <table name="old_fraisport" label="">
+    <column name="fp_numero" type="INTEGER" notnull="true"/>
+    <column name="ar_numero" type="INTEGER"/>
+    <column name="fp_montant" type="DOUBLE"/>
+    <column name="fp_quantitemin" type="INTEGER"/>
+    <column name="fp_quantitemax" type="INTEGER"/>
+    <column name="fp_annee" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_imp_cotisation" label="">
+    <column name="dmaj" type="VARCHAR"/>
+    <column name="nsta" type="VARCHAR"/>
+    <column name="ncli" type="INTEGER"/>
+    <column name="anne" type="INTEGER"/>
+    <column name="ntad" type="INTEGER"/>
+    <column name="mapp" type="DOUBLE"/>
+    <column name="nass" type="INTEGER"/>
+    <column name="etat" type="VARCHAR"/>
+    <column name="dapp" type="VARCHAR"/>
+    <column name="dadh" type="VARCHAR"/>
+    <column name="madh" type="DOUBLE"/>
+    <column name="nfac" type="INTEGER"/>
+    <column name="tpad" type="VARCHAR"/>
+    <column name="dech" type="VARCHAR"/>
+    <column name="reco" type="VARCHAR"/>
+    <column name="rann" type="VARCHAR"/>
+    <column name="rtad" type="VARCHAR"/>
+    <column name="rasl" type="VARCHAR"/>
+    <column name="tabo" type="VARCHAR"/>
+    <column name="nfab" type="VARCHAR"/>
+    <column name="mabt" type="VARCHAR"/>
+    <column name="nbex" type="VARCHAR"/>
+    <column name="nbco" type="VARCHAR"/>
+    <column name="tpab" type="VARCHAR"/>
+  </table>
+  <table name="old_imp_donnepaiement" label="">
+    <column name="dmaj" type="VARCHAR"/>
+    <column name="ncli" type="INTEGER"/>
+    <column name="nope" type="INTEGER"/>
+    <column name="modr" type="INTEGER"/>
+    <column name="cbqr" type="INTEGER"/>
+    <column name="lban" type="VARCHAR"/>
+    <column name="nrib" type="VARCHAR"/>
+    <column name="dchq" type="VARCHAR"/>
+    <column name="refr" type="VARCHAR"/>
+    <column name="nbor" type="VARCHAR"/>
+  </table>
+  <table name="old_imp_infocotis" label="">
+    <column name="dmaj" type="DATE"/>
+    <column name="nsta" type="INTEGER"/>
+    <column name="ncli" type="INTEGER"/>
+    <column name="anne" type="INTEGER"/>
+    <column name="tbas" type="CHARACTER(1)"/>
+    <column name="nbas" type="INTEGER"/>
+    <column name="vale" type="DOUBLE"/>
+  </table>
+  <table name="old_imp_produit" label="">
+    <column name="un" type="DATE"/>
+    <column name="deux" type="VARCHAR"/>
+    <column name="clef_produit" type="INTEGER"/>
+    <column name="code_produit" type="VARCHAR"/>
+    <column name="nom_produit" type="VARCHAR"/>
+    <column name="nom_produit2" type="VARCHAR"/>
+    <column name="q_min" type="VARCHAR"/>
+    <column name="q_max" type="VARCHAR"/>
+    <column name="code" type="VARCHAR"/>
+    <column name="compte" type="VARCHAR"/>
+  </table>
+  <table name="old_imp_tarifproduit" label="">
+    <column name="numero_tarif" type="INTEGER"/>
+    <column name="anne" type="INTEGER"/>
+    <column name="numero_prod" type="INTEGER"/>
+    <column name="ntra" type="VARCHAR"/>
+    <column name="ttra" type="VARCHAR"/>
+    <column name="bco1" type="VARCHAR"/>
+    <column name="tco1" type="VARCHAR"/>
+    <column name="tarif_prod" type="NUMERIC"/>
+    <column name="bco2" type="VARCHAR"/>
+    <column name="tco2" type="VARCHAR"/>
+    <column name="vco2" type="VARCHAR"/>
+    <column name="bco3" type="VARCHAR"/>
+    <column name="tco3" type="VARCHAR"/>
+    <column name="vco3" type="VARCHAR"/>
+    <column name="bco4" type="VARCHAR"/>
+    <column name="tco4" type="VARCHAR"/>
+    <column name="vco4" type="VARCHAR"/>
+    <column name="bco5" type="VARCHAR"/>
+    <column name="tco5" type="VARCHAR"/>
+    <column name="vco5" type="VARCHAR"/>
+    <column name="bco6" type="VARCHAR"/>
+    <column name="tco6" type="VARCHAR"/>
+    <column name="vco6" type="VARCHAR"/>
+    <column name="bco7" type="VARCHAR"/>
+    <column name="tco7" type="VARCHAR"/>
+    <column name="vco7" type="VARCHAR"/>
+    <column name="bco8" type="VARCHAR"/>
+    <column name="tco8" type="VARCHAR"/>
+    <column name="vco8" type="VARCHAR"/>
+    <column name="bco9" type="VARCHAR"/>
+    <column name="tco9" type="VARCHAR"/>
+    <column name="vco9" type="VARCHAR"/>
+  </table>
+  <table name="old_libeldossier" label="">
+    <column name="ld_numero" type="INTEGER" notnull="true"/>
+    <column name="ld_libelle" type="VARCHAR(128)"/>
+  </table>
+  <table name="old_libeltravaux" label="">
+    <column name="lt_numero" type="INTEGER" notnull="true"/>
+    <column name="lt_libelle" type="VARCHAR(120)" notnull="true"/>
+    <column name="lt_libelle2" type="VARCHAR(120)"/>
+    <column name="lt_facturable" type="BOOLEAN"/>
+    <column name="lt_remise" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_lignevente" label="">
+    <column name="lv_numero" type="INTEGER" notnull="true"/>
+    <column name="ve_numero" type="INTEGER" notnull="true"/>
+    <column name="ar_numero" type="INTEGER" notnull="true"/>
+    <column name="ta_numero" type="INTEGER" notnull="true"/>
+    <column name="lv_quantite" type="INTEGER" notnull="true"/>
+    <column name="lv_montantht" type="DOUBLE"/>
+    <column name="lv_montantttc" type="DOUBLE"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_observation" label="">
+    <column name="ob_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="ob_observation" type="VARCHAR(512)"/>
+    <column name="ob_niveau" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_origine" label="">
+    <column name="or_numero" type="INTEGER" notnull="true"/>
+    <column name="or_origine" type="VARCHAR" notnull="true"/>
+  </table>
+  <table name="old_paiementdossier" label="">
+    <column name="pad_numero" type="INTEGER" notnull="true"/>
+    <column name="do_numero" type="INTEGER" notnull="true"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="pad_montant" type="DOUBLE"/>
+    <column name="pad_datereglement" type="DATE"/>
+    <column name="pad_modereglement" type="VARCHAR(128)"/>
+    <column name="pad_banqueremise" type="VARCHAR(150)"/>
+    <column name="pad_numcheque" type="VARCHAR(50)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_personne" label="">
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="typ_numero" type="INTEGER"/>
+    <column name="pe_numerofede" type="INTEGER"/>
+    <column name="pe_nom" type="VARCHAR(512)"/>
+    <column name="pe_prenom" type="VARCHAR(50)"/>
+    <column name="pe_titre" type="VARCHAR(50)"/>
+    <column name="pe_complement" type="VARCHAR(512)"/>
+    <column name="pe_naissance" type="DATE"/>
+    <column name="pe_regimefiscal" type="VARCHAR(50)"/>
+    <column name="pe_position" type="VARCHAR(50)"/>
+    <column name="pe_morale" type="BOOLEAN"/>
+    <column name="pe_etat" type="VARCHAR(50)"/>
+    <column name="pe_montantdoss" type="DOUBLE"/>
+    <column name="pe_paiemendoss" type="DOUBLE"/>
+    <column name="pe_montantart" type="DOUBLE"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_production" label="">
+    <column name="pr_numero" type="INTEGER" notnull="true"/>
+    <column name="pr_nom" type="VARCHAR(150)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_question" label="">
+    <column name="qu_numero" type="INTEGER" notnull="true"/>
+    <column name="qu_famille" type="INTEGER"/>
+    <column name="qu_question" type="VARCHAR"/>
+  </table>
+  <table name="old_questionreponse" label="">
+    <column name="rep_numero" type="INTEGER" notnull="true"/>
+    <column name="qu_numero" type="INTEGER" notnull="true"/>
+    <column name="tr_numero" type="INTEGER" notnull="true"/>
+  </table>
+  <table name="old_reponse" label="">
+    <column name="rep_numero" type="INTEGER" notnull="true"/>
+    <column name="qu_numero" type="INTEGER" notnull="true"/>
+    <column name="rep_reponse" type="VARCHAR"/>
+  </table>
+  <table name="old_responsabilite" label="">
+    <column name="re_numero" type="INTEGER" notnull="true"/>
+    <column name="re_nom" type="CHARACTER(50)"/>
+    <column name="re_famille" type="CHARACTER(50)"/>
+    <column name="re_code" type="CHARACTER(50)"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tarifabonnement" label="">
+    <column name="tab_numero" type="INTEGER" notnull="true"/>
+    <column name="tyab_numero" type="INTEGER"/>
+    <column name="tab_tarif" type="DOUBLE"/>
+    <column name="tab_dateapp" type="DATE"/>
+    <column name="tab_actif" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tarifarticle" label="">
+    <column name="ta_numero" type="INTEGER" notnull="true"/>
+    <column name="ar_numero" type="INTEGER" notnull="true"/>
+    <column name="ta_tarifht" type="DOUBLE"/>
+    <column name="ta_tarifttc" type="DOUBLE"/>
+    <column name="ta_type" type="VARCHAR(50)"/>
+    <column name="ta_annee" type="DATE" notnull="true"/>
+    <column name="ta_codetva" type="INTEGER" notnull="true"/>
+    <column name="ta_actif" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tarifcotisation" label="">
+    <column name="tc_numero" type="INTEGER" notnull="true"/>
+    <column name="tc_annee" type="INTEGER"/>
+    <column name="tc_tarif" type="DOUBLE"/>
+    <column name="tc_actif" type="BOOLEAN"/>
+    <column name="tco_numero" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tarifproduction" label="">
+    <column name="tp_numero" type="INTEGER" notnull="true"/>
+    <column name="tp_annee" type="INTEGER"/>
+    <column name="tp_tarif" type="DOUBLE"/>
+    <column name="tp_type" type="VARCHAR"/>
+    <column name="tp_actif" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+    <column name="tp_numtyp" type="INTEGER"/>
+  </table>
+  <table name="old_tarifsacea" label="">
+    <column name="ts_numero" type="INTEGER" notnull="true"/>
+    <column name="ts_nbrmin" type="INTEGER" notnull="true"/>
+    <column name="ts_nbrmax" type="INTEGER" notnull="true"/>
+    <column name="ts_tarif" type="DOUBLE" notnull="true"/>
+    <column name="ts_tarifttc" type="DOUBLE"/>
+    <column name="ts_annee" type="INTEGER" notnull="true"/>
+    <column name="ts_codetva" type="INTEGER" notnull="true"/>
+    <column name="ts_actif" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tariftravaux" label="">
+    <column name="tt_numero" type="INTEGER" notnull="true"/>
+    <column name="lt_numero" type="INTEGER"/>
+    <column name="tt_prix" type="DOUBLE"/>
+    <column name="tt_annee" type="INTEGER"/>
+    <column name="tt_type" type="VARCHAR(50)"/>
+    <column name="tt_codetva" type="INTEGER"/>
+    <column name="tt_actif" type="BOOLEAN"/>
+    <column name="tt_unitetemps" type="DOUBLE"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_travaux" label="">
+    <column name="tr_numero" type="INTEGER" notnull="true"/>
+    <column name="do_numero" type="INTEGER" notnull="true"/>
+    <column name="ag_numero" type="INTEGER" notnull="true"/>
+    <column name="lt_numero" type="INTEGER" notnull="true"/>
+    <column name="tt_numero" type="INTEGER"/>
+    <column name="tr_periodedebut" type="DATE"/>
+    <column name="tr_periodefin" type="DATE"/>
+    <column name="tr_temps" type="DOUBLE"/>
+    <column name="tr_annule" type="BOOLEAN" default="false"/>
+    <column name="tr_montant" type="DOUBLE"/>
+    <column name="tr_montantttc" type="DOUBLE"/>
+    <column name="tr_commentaire" type="VARCHAR"/>
+    <column name="tr_remise" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_tva" label="">
+    <column name="tva_code" type="INTEGER" notnull="true"/>
+    <column name="tva_montant" type="DOUBLE" notnull="true"/>
+    <column name="tva_actif" type="BOOLEAN" notnull="true"/>
+    <column name="tva_annee" type="INTEGER" notnull="true"/>
+  </table>
+  <table name="old_typeabonnement" label="">
+    <column name="tyab_numero" type="INTEGER" notnull="true"/>
+    <column name="tyab_libelle" type="VARCHAR"/>
+    <column name="tyab_nbrjournaux" type="INTEGER"/>
+    <column name="tyab_actif" type="BOOLEAN"/>
+  </table>
+  <table name="old_typeadherent" label="">
+    <column name="typ_numero" type="INTEGER" notnull="true"/>
+    <column name="typ_type" type="VARCHAR(20)"/>
+  </table>
+  <table name="old_typecotisation" label="">
+    <column name="tco_numero" type="INTEGER" notnull="true"/>
+    <column name="tco_typecotisation" type="VARCHAR"/>
+  </table>
+  <table name="old_ventes" label="">
+    <column name="ve_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="ve_date" type="DATE"/>
+    <column name="ve_numfacture" type="INTEGER"/>
+    <column name="ve_modereglement" type="VARCHAR(50)"/>
+    <column name="ve_montantht" type="DOUBLE"/>
+    <column name="ve_montantttc" type="DOUBLE"/>
+    <column name="ve_paiement" type="DOUBLE"/>
+    <column name="ve_banque" type="VARCHAR(50)"/>
+    <column name="ve_numcheque" type="VARCHAR(50)"/>
+    <column name="ve_annule" type="BOOLEAN"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="old_ville" label="">
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="ca_numero" type="INTEGER"/>
+    <column name="vi_nom" type="VARCHAR(128)"/>
+    <column name="vi_departement" type="INTEGER"/>
+    <column name="time_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="user_update" type="VARCHAR(50)"/>
+  </table>
+  <table name="table_periodeadherence" label="">
+    <column name="po_numero" type="INTEGER" notnull="true"/>
+    <column name="ah_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_personneupdate" label="">
+    <column name="pu_numero" type="INTEGER" notnull="true" default="nextval(('seq_personneupdate'::text)::regclass)"/>
+    <column name="pu_action" type="VARCHAR(10)"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="tp_numero" type="INTEGER"/>
+    <column name="pe_titre" type="VARCHAR(32)"/>
+    <column name="pe_nom" type="VARCHAR(512)"/>
+    <column name="pe_regimefiscal" type="VARCHAR(32)" default="'NON RENSEIGNE'::character varying"/>
+    <column name="ep_numero" type="INTEGER"/>
+    <column name="pe_morale" type="BOOLEAN" default="false"/>
+    <column name="pe_prenom" type="VARCHAR(32)"/>
+    <column name="pe_complement" type="VARCHAR(512)"/>
+    <column name="pe_naissance" type="DATE"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="pu_bilan" type="VARCHAR"/>
+  </table>
+  <table name="table_piece" label="">
+    <column name="pi_numero" type="INTEGER" notnull="true"/>
+    <column name="jo_numero" type="INTEGER" notnull="true"/>
+    <column name="pi_libelle" type="VARCHAR" notnull="true"/>
+    <column name="pi_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="pi_numseq" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="pi_numpiece" type="INTEGER" notnull="true"/>
+    <column name="ex_numero" type="INTEGER" notnull="true"/>
+    <column name="pi_debit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="pi_credit" type="NUMERIC" notnull="true" default="0"/>
+  </table>
+  <table name="table_pointage" label="">
+    <column name="pt_numero" type="INTEGER" notnull="true"/>
+    <column name="pt_date" type="DATE" notnull="true" default="('now'::text)::date"/>
+    <column name="pt_releve" type="VARCHAR" notnull="true"/>
+    <column name="pt_debit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="pt_credit" type="NUMERIC" notnull="true" default="0"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+  </table>
+  <table name="table_prefixe" label="">
+    <column name="pf_numero" type="INTEGER" notnull="true"/>
+    <column name="pf_nom" type="VARCHAR(8)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_propriete" label="">
+    <column name="pr_numero" type="INTEGER" notnull="true"/>
+    <column name="pr_classe" type="INTEGER" notnull="true"/>
+    <column name="pr_type" type="INTEGER" notnull="true"/>
+    <column name="pr_nom" type="VARCHAR(32)" notnull="true"/>
+    <column name="pr_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="pr_obligatoire" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="pr_colonne" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="pr_colesclave" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="pr_ordre" type="INTEGER" notnull="true" default="0"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_reglement" label="">
+    <column name="rg_numero" type="INTEGER" notnull="true"/>
+    <column name="pe_numero" type="INTEGER" notnull="true"/>
+    <column name="rg_libellebanque" type="VARCHAR(32)"/>
+    <column name="rg_numerocompte" type="VARCHAR(32)"/>
+    <column name="rg_montant" type="NUMERIC" notnull="true"/>
+    <column name="rg_date" type="DATE" notnull="true"/>
+    <column name="rg_reference" type="VARCHAR(32)"/>
+    <column name="mr_numero" type="INTEGER" notnull="true"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="rg_encompta" type="BOOLEAN" notnull="true" default="false"/>
+  </table>
+  <table name="table_repartition" label="">
+    <column name="rp_numero" type="INTEGER" notnull="true"/>
+    <column name="rg_numero" type="INTEGER" notnull="true"/>
+    <column name="mp_numero" type="INTEGER" notnull="true"/>
+    <column name="rp_montant" type="NUMERIC" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_responsabilite" label="">
+    <column name="re_numero" type="INTEGER" notnull="true"/>
+    <column name="re_code" type="VARCHAR(32)" notnull="true"/>
+    <column name="re_nom" type="VARCHAR(32)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="re_famille" type="VARCHAR(32)"/>
+  </table>
+  <table name="table_sujet" label="">
+    <column name="zs_numero" type="INTEGER" notnull="true" default="nextval(('seq_sujet'::text)::regclass)"/>
+    <column name="zs_libelle" type="VARCHAR(128)" notnull="true"/>
+    <column name="zu_numero" type="INTEGER" notnull="true"/>
+    <column name="zs_notes" type="VARCHAR(1024)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_cpville" label="">
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+  </table>
+  <table name="table_nouv_adhesion" label="">
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="po_numero" type="INTEGER"/>
+  </table>
+  <table name="table_tache" label="">
+    <column name="zt_numero" type="INTEGER" notnull="true" default="nextval(('seq_tache'::text)::regclass)"/>
+    <column name="zt_libelle" type="VARCHAR(128)" notnull="true"/>
+    <column name="zt_phrase" type="VARCHAR(128)" notnull="true"/>
+    <column name="zt_notes" type="VARCHAR(1024)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_tva" label="">
+    <column name="tv_numero" type="INTEGER" notnull="true"/>
+    <column name="tv_code" type="INTEGER" notnull="true"/>
+    <column name="tv_taux" type="NUMERIC" notnull="true" default="0"/>
+    <column name="tv_actif" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="so_numero" type="INTEGER" notnull="true" default="current_societe()"/>
+    <column name="cg_numero" type="INTEGER"/>
+  </table>
+  <table name="table_typeattribut" label="">
+    <column name="ta_numero" type="INTEGER" notnull="true"/>
+    <column name="ta_nom" type="VARCHAR" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typejournal" label="">
+    <column name="tj_numero" type="INTEGER" notnull="true"/>
+    <column name="tj_libelle" type="VARCHAR(32)"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+  </table>
+  <table name="table_typelien" label="">
+    <column name="tl_numero" type="INTEGER" notnull="true" default="nextval(('seq_typelien'::text)::regclass)"/>
+    <column name="tl_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="tl_description" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typepersonne" label="">
+    <column name="tp_numero" type="INTEGER" notnull="true"/>
+    <column name="tp_type" type="VARCHAR(16)" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typepropriete" label="">
+    <column name="tr_numero" type="INTEGER" notnull="true"/>
+    <column name="tr_libelle" type="VARCHAR(64)" notnull="true"/>
+    <column name="tr_sql" type="VARCHAR(128)" notnull="true" default="'VARCHAR'::character varying"/>
+    <column name="tr_systeme" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="tr_estclef" type="BOOLEAN" notnull="true" default="false"/>
+    <column name="tr_liste" type="BOOLEAN" notnull="true" default="true"/>
+    <column name="tr_code" type="INTEGER" notnull="true" default="1"/>
+    <column name="tr_classe" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typesociete" label="">
+    <column name="ts_numero" type="INTEGER" notnull="true"/>
+    <column name="ts_libelle" type="VARCHAR" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typesujet" label="">
+    <column name="zu_numero" type="INTEGER" notnull="true" default="nextval(('seq_typesujet'::text)::regclass)"/>
+    <column name="zu_libelle" type="VARCHAR(128)" notnull="true"/>
+    <column name="zu_notes" type="VARCHAR(1024)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_typetache" label="">
+    <column name="th_numero" type="INTEGER" notnull="true"/>
+    <column name="th_libelle" type="VARCHAR" notnull="true"/>
+    <column name="th_description" type="VARCHAR"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="table_villecp" label="">
+    <column name="vi_numero" type="INTEGER" notnull="true"/>
+    <column name="cp_numero" type="INTEGER" notnull="true"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE" default="('now'::text)::timestamp(6) with time zone"/>
+    <column name="update_user" type="VARCHAR(32)" default="current_user()"/>
+  </table>
+  <table name="tmp2_ecriture" label="">
+    <column name="ec_numero" type="INTEGER"/>
+    <column name="pi_numero" type="INTEGER"/>
+    <column name="cg_numero" type="INTEGER"/>
+    <column name="ca_numero" type="INTEGER"/>
+    <column name="ec_aux" type="BOOLEAN"/>
+    <column name="pf_numero" type="INTEGER"/>
+    <column name="ec_libelle" type="VARCHAR"/>
+    <column name="ec_debit" type="NUMERIC"/>
+    <column name="ec_credit" type="NUMERIC"/>
+    <column name="pt_numero" type="INTEGER"/>
+    <column name="av_numero" type="INTEGER"/>
+    <column name="lt_numero" type="INTEGER"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+    <column name="ex_numero" type="INTEGER"/>
+    <column name="ec_numecriture" type="INTEGER"/>
+    <column name="ec_compte" type="VARCHAR(16)"/>
+    <column name="rg_numero" type="INTEGER"/>
+  </table>
+  <table name="tmp2_piece" label="">
+    <column name="pi_numero" type="INTEGER"/>
+    <column name="jo_numero" type="INTEGER"/>
+    <column name="pi_libelle" type="VARCHAR"/>
+    <column name="pi_date" type="DATE"/>
+    <column name="pi_numseq" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+    <column name="pi_numpiece" type="INTEGER"/>
+    <column name="ex_numero" type="INTEGER"/>
+    <column name="pi_debit" type="NUMERIC"/>
+    <column name="pi_credit" type="NUMERIC"/>
+  </table>
+  <table name="tmp_ecriture" label="">
+    <column name="ec_numero" type="INTEGER"/>
+    <column name="pi_numero" type="INTEGER"/>
+    <column name="cg_numero" type="INTEGER"/>
+    <column name="ca_numero" type="INTEGER"/>
+    <column name="ec_aux" type="BOOLEAN"/>
+    <column name="pf_numero" type="INTEGER"/>
+    <column name="ec_libelle" type="VARCHAR"/>
+    <column name="ec_debit" type="NUMERIC"/>
+    <column name="ec_credit" type="NUMERIC"/>
+    <column name="pt_numero" type="INTEGER"/>
+    <column name="av_numero" type="INTEGER"/>
+    <column name="lt_numero" type="INTEGER"/>
+    <column name="db_numero" type="INTEGER"/>
+    <column name="fa_numero" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+  </table>
+  <table name="tmp_estresponsable" label="">
+    <column name="re_numero" type="INTEGER"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="peac_numero" type="INTEGER"/>
+    <column name="peac_periodedebut" type="DATE"/>
+    <column name="peac_periodefin" type="DATE"/>
+    <column name="peac_titre" type="VARCHAR(32)"/>
+    <column name="peac_fini" type="BOOLEAN"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+  </table>
+  <table name="tmp_majcc" label="">
+    <column name="de_numero" type="INTEGER"/>
+    <column name="de_date" type="DATE"/>
+    <column name="de_montant" type="NUMERIC"/>
+    <column name="pe_numero" type="INTEGER"/>
+    <column name="pe_nom" type="VARCHAR"/>
+    <column name="rg_banque" type="VARCHAR"/>
+    <column name="rg_compte" type="VARCHAR"/>
+    <column name="rg_cheque" type="VARCHAR"/>
+    <column name="rg_date" type="DATE"/>
+  </table>
+  <table name="tmp_pdts" label="">
+    <column name="civ" type="TEXT"/>
+    <column name="nom" type="TEXT"/>
+    <column name="prenom" type="TEXT"/>
+    <column name="adresse" type="TEXT"/>
+    <column name="cp" type="INTEGER"/>
+    <column name="commune" type="TEXT"/>
+    <column name="nh" type="INTEGER"/>
+  </table>
+  <table name="tmp_piece" label="">
+    <column name="pi_numero" type="INTEGER"/>
+    <column name="jo_numero" type="INTEGER"/>
+    <column name="pi_libelle" type="VARCHAR"/>
+    <column name="pi_date" type="DATE"/>
+    <column name="pi_numseq" type="INTEGER"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+  </table>
+  <table name="tmp_responsabilite" label="">
+    <column name="re_numero" type="INTEGER"/>
+    <column name="re_code" type="VARCHAR(32)"/>
+    <column name="re_nom" type="VARCHAR(32)"/>
+    <column name="update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <column name="update_user" type="VARCHAR(32)"/>
+    <column name="re_famille" type="VARCHAR(32)"/>
+  </table>
+  <constraint table="old_convention"
+    type="primarykey" column="conv_numero)"/>
+  <constraint table="old_droit"
+    type="primarykey" column="dt_numero)"/>
+  <constraint table="old_abonnement"
+    type="primarykey" column="ab_numero)"/>
+  <constraint table="old_adresse"
+    type="primarykey" column="ad_numero)"/>
+  <constraint table="old_agent"
+    type="primarykey" column="ag_numero)"/>
+  <constraint table="old_aproduction"
+    type="primarykey" column="pe_numero"/>
+  <constraint table="old_article"
+    type="primarykey" column="ar_numero)"/>
+  <constraint table="old_assolocale"
+    type="primarykey" column="as_numero)"/>
+  <constraint table="old_canton"
+    type="primarykey" column="ca_numero)"/>
+  <constraint table="old_codepostal"
+    type="primarykey" column="cp_numero)"/>
+  <constraint table="old_contact"
+    type="primarykey" column="cont_numero)"/>
+  <constraint table="old_cotisation"
+    type="primarykey" column="co_numero)"/>
+  <constraint table="old_cpville"
+    type="primarykey" column="cp_numero"/>
+  <constraint table="old_donneebancaire"
+    type="primarykey" column="db_numero)"/>
+  <constraint table="old_donneproduction"
+    type="primarykey" column="dp_numero)"/>
+  <constraint table="old_dossier"
+    type="primarykey" column="do_numero)"/>
+  <constraint table="old_equipe"
+    type="primarykey" column="eq_numero)"/>
+  <constraint table="old_est_joignable"
+    type="primarykey" column="cont_numero"/>
+  <constraint table="old_est_lie"
+    type="primarykey" column="per_pe_numero"/>
+  <constraint table="old_est_responsable"
+    type="primarykey" column="peac_numero)"/>
+  <constraint table="old_fraisport"
+    type="primarykey" column="fp_numero)"/>
+  <constraint table="old_libeldossier"
+    type="primarykey" column="ld_numero)"/>
+  <constraint table="old_libeltravaux"
+    type="primarykey" column="lt_numero)"/>
+  <constraint table="old_lignevente"
+    type="primarykey" column="lv_numero)"/>
+  <constraint table="old_observation"
+    type="primarykey" column="ob_numero)"/>
+  <constraint table="old_paiementdossier"
+    type="primarykey" column="pad_numero)"/>
+  <constraint table="old_personne"
+    type="primarykey" column="pe_numero)"/>
+  <constraint table="old_production"
+    type="primarykey" column="pr_numero)"/>
+  <constraint table="old_question"
+    type="primarykey" column="qu_numero)"/>
+  <constraint table="old_questionreponse"
+    type="primarykey" column="rep_numero"/>
+  <constraint table="old_reponse"
+    type="primarykey" column="rep_numero)"/>
+  <constraint table="old_responsabilite"
+    type="primarykey" column="re_numero)"/>
+  <constraint table="table_cpville"
+    type="primarykey" column="cp_numero"/>
+  <constraint table="table_estresponsable"
+    type="primarykey" column="re_numero"/>
+  <constraint table="table_modele"
+    type="primarykey" column="mo_numero)"/>
+  <constraint table="old_tarifabonnement"
+    type="primarykey" column="tab_numero)"/>
+  <constraint table="old_tarifarticle"
+    type="primarykey" column="ta_numero)"/>
+  <constraint table="old_tarifcotisation"
+    type="primarykey" column="tc_numero)"/>
+  <constraint table="old_tarifproduction"
+    type="primarykey" column="tp_numero)"/>
+  <constraint table="old_tarifsacea"
+    type="primarykey" column="ts_numero)"/>
+  <constraint table="old_tariftravaux"
+    type="primarykey" column="tt_numero)"/>
+  <constraint table="old_travaux"
+    type="primarykey" column="tr_numero)"/>
+  <constraint table="old_typeabonnement"
+    type="primarykey" column="tyab_numero)"/>
+  <constraint table="old_typeadherent"
+    type="primarykey" column="typ_numero)"/>
+  <constraint table="old_typecotisation"
+    type="primarykey" column="tco_numero)"/>
+  <constraint table="old_ventes"
+    type="primarykey" column="ve_numero)"/>
+  <constraint table="old_ville"
+    type="primarykey" column="vi_numero)"/>
+  <constraint table="table_acces"
+    type="primarykey" column="ac_numero)"/>
+  <constraint table="table_activite"
+    type="primarykey" column="za_numero)"/>
+  <constraint table="table_adherence"
+    type="primarykey" column="ah_numero)"/>
+  <constraint table="table_adhesion"
+    type="primarykey" column="as_numero)"/>
+  <constraint table="table_adresse"
+    type="primarykey" column="ad_numero)"/>
+  <constraint table="table_agent"
+    type="primarykey" column="ag_numero)"/>
+  <constraint table="table_appartienta"
+    type="primarykey" column="ct_numero"/>
+  <constraint table="table_appel"
+    type="primarykey" column="ap_numero)"/>
+  <constraint table="table_attribut"
+    type="primarykey" column="at_numero)"/>
+  <constraint table="table_avoir"
+    type="primarykey" column="av_numero)"/>
+  <constraint table="table_canton"
+    type="primarykey" column="ct_numero)"/>
+  <constraint table="table_categorie"
+    type="primarykey" column="cr_numero)"/>
+  <constraint table="table_classe"
+    type="unique" column="cl_nom"/>
+  <constraint table="table_classe"
+    type="primarykey" column="cl_numero)"/>
+  <constraint table="table_codepostal"
+    type="primarykey" column="cp_numero)"/>
+  <constraint table="table_colonnetype"
+    type="primarykey" column="cy_numero)"/>
+  <constraint table="table_compteaux"
+    type="primarykey" column="ca_numero)"/>
+  <constraint table="table_comptegen"
+    type="primarykey" column="cg_numero)"/>
+  <constraint table="table_compteproduit"
+    type="primarykey" column="ci_numero)"/>
+  <constraint table="table_constante"
+    type="unique" column="cs_type"/>
+  <constraint table="table_constante"
+    type="primarykey" column="cs_numero)"/>
+  <constraint table="table_contact"
+    type="primarykey" column="cn_numero)"/>
+  <constraint table="table_devis"
+    type="primarykey" column="de_numero)"/>
+  <constraint table="table_donneesbancaires"
+    type="primarykey" column="db_numero)"/>
+  <constraint table="table_droit"
+    type="primarykey" column="dr_numero)"/>
+  <constraint table="table_droitprofil"
+    type="unique" column="dp_libelle"/>
+  <constraint table="table_droitprofil"
+    type="primarykey" column="dp_numero)"/>
+  <constraint table="table_ecriture"
+    type="primarykey" column="ec_numero)"/>
+  <constraint table="table_employe"
+    type="primarykey" column="em_numero)"/>
+  <constraint table="table_equipe"
+    type="primarykey" column="eq_numero)"/>
+  <constraint table="table_estjoignable"
+    type="primarykey" column="ej_numero)"/>
+  <constraint table="table_estlie"
+    type="primarykey" column="el_personne1"/>
+  <constraint table="table_etatpersonne"
+    type="unique" column="ep_libelle"/>
+  <constraint table="table_etatpersonne"
+    type="primarykey" column="ep_numero)"/>
+  <constraint table="table_exercice"
+    type="primarykey" column="ex_numero)"/>
+  <constraint table="table_facture"
+    type="primarykey" column="fa_numero)"/>
+  <constraint table="table_facturereglement"
+    type="primarykey" column="fr_numero)"/>
+  <constraint table="table_groupe"
+    type="primarykey" column="zg_numero)"/>
+  <constraint table="table_groupe"
+    type="unique" column="zg_libelle"/>
+  <constraint table="table_groupecanton"
+    type="primarykey" column="gc_numero)"/>
+  <constraint table="table_groupetable"
+    type="primarykey" column="gt_numero)"/>
+  <constraint table="table_impression"
+    type="primarykey" column="im_numero)"/>
+  <constraint table="table_journal"
+    type="primarykey" column="jo_numero)"/>
+  <constraint table="table_lettrage"
+    type="primarykey" column="lt_numero)"/>
+  <constraint table="table_lieu"
+    type="primarykey" column="zl_numero)"/>
+  <constraint table="table_lieu"
+    type="unique" column="zl_libelle"/>
+  <constraint table="table_ligne"
+    type="primarykey" column="l_numero)"/>
+  <constraint table="table_ligneavoir"
+    type="primarykey" column="la_numero)"/>
+  <constraint table="table_lignefacture"
+    type="primarykey" column="lf_numero)"/>
+  <constraint table="table_lignemodele"
+    type="primarykey" column="lm_numero)"/>
+  <constraint table="table_listechoix"
+    type="primarykey" column="lc_numero)"/>
+  <constraint table="table_modereglement"
+    type="primarykey" column="mr_numero)"/>
+  <constraint table="table_moderepartition"
+    type="primarykey" column="mp_numero)"/>
+  <constraint table="table_observation"
+    type="primarykey" column="ob_numero)"/>
+  <constraint table="table_periode"
+    type="primarykey" column="po_numero)"/>
+  <constraint table="table_periodeadherence"
+    type="primarykey" column="po_numero"/>
+  <constraint table="table_personne"
+    type="primarykey" column="pe_numero)"/>
+  <constraint table="table_personneupdate"
+    type="primarykey" column="pu_numero)"/>
+  <constraint table="table_piece"
+    type="primarykey" column="pi_numero)"/>
+  <constraint table="table_pointage"
+    type="primarykey" column="pt_numero)"/>
+  <constraint table="table_prefixe"
+    type="primarykey" column="pf_numero)"/>
+  <constraint table="table_prix"
+    type="primarykey" column="px_numero)"/>
+  <constraint table="table_produit"
+    type="primarykey" column="pd_numero)"/>
+  <constraint table="table_propriete"
+    type="primarykey" column="pr_numero)"/>
+  <constraint table="table_reglement"
+    type="primarykey" column="rg_numero)"/>
+  <constraint table="table_repartition"
+    type="primarykey" column="rp_numero)"/>
+  <constraint table="table_responsabilite"
+    type="primarykey" column="re_numero)"/>
+  <constraint table="table_responsabilite"
+    type="unique" column="re_code"/>
+  <constraint table="table_routage"
+    type="primarykey" column="ro_numero)"/>
+  <constraint table="table_service"
+    type="primarykey" column="se_numero)"/>
+  <constraint table="table_societe"
+    type="primarykey" column="so_numero)"/>
+  <constraint table="table_societe"
+    type="unique" column="so_abbrev"/>
+  <constraint table="table_societe"
+    type="unique" column="so_libelle"/>
+  <constraint table="table_sujet"
+    type="primarykey" column="zs_numero)"/>
+  <constraint table="table_sujet"
+    type="unique" column="zs_libelle"/>
+  <constraint table="table_tache"
+    type="primarykey" column="zt_numero)"/>
+  <constraint table="table_tache"
+    type="unique" column="zt_libelle"/>
+  <constraint table="table_tache"
+    type="unique" column="zt_phrase"/>
+  <constraint table="table_tva"
+    type="primarykey" column="tv_numero)"/>
+  <constraint table="table_typeattribut"
+    type="primarykey" column="ta_numero)"/>
+  <constraint table="table_typejournal"
+    type="primarykey" column="tj_numero)"/>
+  <constraint table="table_typelien"
+    type="primarykey" column="tl_numero)"/>
+  <constraint table="table_typelien"
+    type="unique" column="tl_libelle"/>
+  <constraint table="table_typepersonne"
+    type="primarykey" column="tp_numero)"/>
+  <constraint table="table_typepropriete"
+    type="primarykey" column="tr_numero)"/>
+  <constraint table="table_typesociete"
+    type="primarykey" column="ts_numero)"/>
+  <constraint table="table_typesujet"
+    type="primarykey" column="zu_numero)"/>
+  <constraint table="table_typesujet"
+    type="unique" column="zu_libelle"/>
+  <constraint table="table_typetache"
+    type="primarykey" column="th_numero)"/>
+  <constraint table="table_ville"
+    type="primarykey" column="vi_numero)"/>
+  <constraint table="table_villecp"
+    type="primarykey" column="vi_numero"/>
+  <index table="old_ventes" column="pe_numero"/>
+  <index table="old_cotisation" column="as_numero"/>
+  <index table="old_dossier" column="pe_numero"/>
+  <index table="old_observation" column="pe_numero"/>
+  <index table="old_abonnement" column="db_numero"/>
+  <index table="old_dossier" column="ld_numero"/>
+  <index table="old_agent" column="eq_numero"/>
+  <index table="old_aproduction" column="pr_numero"/>
+  <index table="old_aproduction" column="pe_numero"/>
+  <index table="old_assolocale" column="ca_numero"/>
+  <index table="old_tarifarticle" column="ar_numero"/>
+  <index table="old_cotisation" column="tc_numero"/>
+  <index table="old_cotisation" column="ts_numero"/>
+  <index table="old_tariftravaux" column="lt_numero"/>
+  <index table="old_cotisation" column="tco_numero"/>
+  <index table="old_travaux" column="do_numero"/>
+  <index table="old_cotisation" column="db_numero"/>
+  <index table="old_cotisation" column="pe_numero"/>
+  <index table="old_adresse" column="cp_numero"/>
+  <index table="old_cpville" column="vi_numero"/>
+  <index table="old_cpville" column="cp_numero"/>
+  <index table="old_adresse" column="ab_numero"/>
+  <index table="old_donneebancaire" column="pe_numero"/>
+  <index table="old_donneproduction" column="co_numero"/>
+  <index table="old_donneproduction" column="tp_numero"/>
+  <index table="old_ventes" column="db_numero"/>
+  <index table="old_abonnement" column="pe_numero"/>
+  <index table="old_abonnement" column="as_numero"/>
+  <index table="old_est_joignable" column="pe_numero"/>
+  <index table="old_est_joignable" column="cont_numero"/>
+  <index table="old_est_lie" column="pe_numero"/>
+  <index table="old_est_lie" column="per_pe_numero"/>
+  <index table="old_adresse" column="pe_numero"/>
+  <index table="old_travaux" column="ag_numero"/>
+  <index table="old_est_responsable" column="re_numero"/>
+  <index table="old_est_responsable" column="pe_numero"/>
+  <index table="old_fraisport" column="ar_numero"/>
+  <index table="table_activite" column="de_numero"/>
+  <index table="table_activite" column="em_numero"/>
+  <index table="table_activite" column="fa_numero"/>
+  <index table="table_activite" column="pe_numero"/>
+  <index table="table_activite" column="zg_numero"/>
+  <index table="table_activite" column="zl_numero"/>
+  <index table="table_activite" column="zs_numero"/>
+  <index table="table_activite" column="zt_numero"/>
+  <index table="table_adherence" column="pd_numero"/>
+  <index table="table_adhesion" column="ah_numero"/>
+  <index table="table_adhesion" column="pe_numero"/>
+  <index table="table_adhesion" column="po_numero"/>
+  <index table="table_adresse" column="cp_numero"/>
+  <index table="table_adresse" column="pe_numero"/>
+  <index table="table_adresse" column="vi_numero"/>
+  <index table="table_agent" column="eq_numero"/>
+  <index table="table_appartienta" column="ct_numero"/>
+  <index table="table_appartienta" column="gc_numero"/>
+  <index table="table_appel" column="pe_numero"/>
+  <index table="table_appel" column="th_numero"/>
+  <index table="table_attribut" column="cr_numero"/>
+  <index table="table_attribut" column="pe_numero"/>
+  <index table="table_attribut" column="ta_numero"/>
+  <index table="table_avoir" column="fa_numero"/>
+  <index table="table_categorie" column="ta_numero"/>
+  <index table="table_classe" column="cl_societe"/>
+  <index table="table_colonnetype" column="cy_typepropriete"/>
+  <index table="table_compteaux" column="ac_numero"/>
+  <index table="table_compteaux" column="cg_numero"/>
+  <index table="table_comptegen" column="ac_numero"/>
+  <index table="table_comptegen" column="so_numero"/>
+  <index table="table_compteproduit" column="cg_numero"/>
+  <index table="table_compteproduit" column="pd_numero"/>
+  <index table="table_devis" column="em_numero"/>
+  <index table="table_devis" column="pe_numero"/>
+  <index table="table_donneesbancaires" column="pe_numero"/>
+  <index table="table_droit" column="dp_numero"/>
+  <index table="table_droit" column="em_numero"/>
+  <index table="table_droit" column="gt_numero"/>
+  <index table="table_ecriture" column="av_numero"/>
+  <index table="table_ecriture" column="ca_numero"/>
+  <index table="table_ecriture" column="cg_numero"/>
+  <index table="table_ecriture" column="db_numero"/>
+  <index table="table_ecriture" column="ex_numero"/>
+  <index table="table_ecriture" column="fa_numero"/>
+  <index table="table_ecriture" column="lt_numero"/>
+  <index table="table_ecriture" column="pf_numero"/>
+  <index table="table_ecriture" column="pi_numero"/>
+  <index table="table_ecriture" column="pt_numero"/>
+  <index table="table_ecriture" column="rg_numero"/>
+  <index table="table_employe" column="dp_numero"/>
+  <index table="table_employe" column="em_acces"/>
+  <index table="table_employe" column="em_agent"/>
+  <index table="table_employe" column="em_service"/>
+  <index table="table_estjoignable" column="cn_numero"/>
+  <index table="table_estjoignable" column="pe_numero"/>
+  <index table="table_estlie" column="el_personne1"/>
+  <index table="table_estlie" column="el_personne2"/>
+  <index table="table_estlie" column="tl_numero"/>
+  <index table="table_estresponsable" column="pe_numero"/>
+  <index table="table_estresponsable" column="re_numero"/>
+  <index table="table_exercice" column="so_numero"/>
+  <index table="table_facture" column="ag_numero"/>
+  <index table="table_facture" column="de_numero"/>
+  <index table="table_facture" column="fa_numfact"/>
+  <index table="table_facture" column="pe_numero"/>
+  <index table="table_facture" column="so_numero"/>
+  <index table="table_facturereglement" column="fa_numero"/>
+  <index table="table_facturereglement" column="rg_numero"/>
+  <index table="table_impression" column="im_societe"/>
+  <index table="table_journal" column="cg_numero"/>
+  <index table="table_journal" column="ex_numero"/>
+  <index table="table_journal" column="so_numero"/>
+  <index table="table_journal" column="tj_numero"/>
+  <index table="table_ligne" column="de_numero"/>
+  <index table="table_ligne" column="pd_numero"/>
+  <index table="table_ligne" column="px_numero"/>
+  <index table="table_ligneavoir" column="av_numero"/>
+  <index table="table_ligneavoir" column="pd_numero"/>
+  <index table="table_ligneavoir" column="px_numero"/>
+  <index table="table_lignefacture" column="fa_numero"/>
+  <index table="table_lignefacture" column="pd_numero"/>
+  <index table="table_lignefacture" column="px_numero"/>
+  <index table="table_lignemodele" column="mo_numero"/>
+  <index table="table_lignemodele" column="pd_numero"/>
+  <index table="table_listechoix" column="lc_typepropriete"/>
+  <index table="table_modele" column="so_numero"/>
+  <index table="table_modereglement" column="cg_numero"/>
+  <index table="table_modereglement" column="so_numero"/>
+  <index table="table_moderepartition" column="cg_numero"/>
+  <index table="table_moderepartition" column="mp_societe"/>
+  <index table="table_moderepartition" column="so_numero"/>
+  <index table="table_observation" column="pe_numero"/>
+  <index table="table_periodeadherence" column="ah_numero"/>
+  <index table="table_periodeadherence" column="po_numero"/>
+  <index table="table_periodeadherence" column="po_numero"/>
+  <index table="table_personne" column="ep_numero"/>
+  <index table="table_personne" column="tp_numero"/>
+  <index table="table_piece" column="ex_numero"/>
+  <index table="table_piece" column="jo_numero"/>
+  <index table="table_prix" column="pd_numero"/>
+  <index table="table_prix" column="tv_numero"/>
+  <index table="table_produit" column="jo_numero"/>
+  <index table="table_produit" column="so_numero"/>
+  <index table="table_propriete" column="pr_classe"/>
+  <index table="table_propriete" column="pr_type"/>
+  <index table="table_reglement" column="mr_numero"/>
+  <index table="table_reglement" column="pe_numero"/>
+  <index table="table_reglement" column="so_numero"/>
+  <index table="table_repartition" column="mp_numero"/>
+  <index table="table_repartition" column="rg_numero"/>
+  <index table="table_routage" column="ad_numero"/>
+  <index table="table_routage" column="fa_numero"/>
+  <index table="table_routage" column="pe_numero"/>
+  <index table="table_service" column="se_agent"/>
+  <index table="table_service" column="se_societe"/>
+  <index table="table_societe" column="pe_numero"/>
+  <index table="table_societe" column="ts_numero"/>
+  <index table="table_sujet" column="zu_numero"/>
+  <index table="table_tva" column="cg_numero"/>
+  <index table="table_tva" column="so_numero"/>
+  <index table="table_typepropriete" column="tr_classe"/>
+  <index table="table_ville" column="ct_numero"/>
+  <index table="table_villecp" column="cp_numero"/>
+  <index table="table_villecp" column="vi_numero"/>
+  <index table="old_imp_infocotis" column="anne"/>
+  <index table="old_imp_infocotis" column="nbas"/>
+  <index table="old_imp_infocotis" column="ncli"/>
+  <index table="old_imp_cotisation" column="ncli"/>
+  <index table="old_imp_cotisation" column="anne"/>
+  <index table="old_imp_cotisation" column="etat"/>
+  <index table="old_imp_tarifproduit" column="anne"/>
+  <index table="old_imp_tarifproduit" column="numero_prod"/>
+  <index table="old_imp_tarifproduit" column="tarif_prod"/>
+  <index table="old_travaux" column="lt_numero"/>
+  <index table="table_lignemodele" column="mo_numero"/>
+  <index table="table_lignemodele" column="pd_numero"/>
+  <index table="old_lignevente" column="ar_numero"/>
+  <index table="old_lignevente" column="ta_numero"/>
+  <index table="old_lignevente" column="ve_numero"/>
+  <index table="old_paiementdossier" column="do_numero"/>
+  <index table="old_questionreponse" column="rep_numero"/>
+  <index table="old_questionreponse" column="qu_numero"/>
+  <index table="old_questionreponse" column="tr_numero"/>
+  <index table="old_reponse" column="qu_numero"/>
+  <index table="old_abonnement" column="tab_numero"/>
+  <index table="old_tarifabonnement" column="tyab_numero"/>
+  <index table="old_tva" column="tva_code"/>
+  <index table="old_personne" column="typ_numero"/>
+  <index table="old_paiementdossier" column="db_numero"/>
+  <index table="old_adresse" column="vi_numero"/>
+  <index table="old_ville" column="ca_numero"/>
+  <constraint table="old_abonnement"
+    type="foreignkey" column="db_numero" references="old_donneebancaire(db_numero)" opt="odrour"/>
+  <constraint table="old_abonnement"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_abonnement"
+    type="foreignkey" column="as_numero" references="old_assolocale(as_numero)" opt="odrour"/>
+  <constraint table="old_abonnement"
+    type="foreignkey" column="tab_numero" references="old_tarifabonnement(tab_numero)" opt="odrour"/>
+  <constraint table="old_abonnement"
+    type="foreignkey" column="tyab_numero" references="old_typeabonnement(tyab_numero)" opt="odrour"/>
+  <constraint table="old_adresse"
+    type="foreignkey" column="cp_numero" references="old_codepostal(cp_numero)" opt="odrour"/>
+  <constraint table="old_adresse"
+    type="foreignkey" column="ab_numero" references="old_abonnement(ab_numero)" opt="odrour"/>
+  <constraint table="old_adresse"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_adresse"
+    type="foreignkey" column="vi_numero" references="old_ville(vi_numero)" opt="odrour"/>
+  <constraint table="old_agent"
+    type="foreignkey" column="eq_numero" references="old_equipe(eq_numero)" opt="odrour"/>
+  <constraint table="old_aproduction"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_aproduction"
+    type="foreignkey" column="pr_numero" references="old_production(pr_numero)" opt="odrour"/>
+  <constraint table="old_assolocale"
+    type="foreignkey" column="ca_numero" references="old_canton(ca_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="as_numero" references="old_assolocale(as_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="tc_numero" references="old_tarifcotisation(tc_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="ts_numero" references="old_tarifsacea(ts_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="db_numero" references="old_donneebancaire(db_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_cotisation"
+    type="foreignkey" column="tco_numero" references="old_typecotisation(tco_numero)" opt="odrour"/>
+  <constraint table="old_cpville"
+    type="foreignkey" column="vi_numero" references="old_ville(vi_numero)" opt="odrour"/>
+  <constraint table="old_cpville"
+    type="foreignkey" column="cp_numero" references="old_codepostal(cp_numero)" opt="odrour"/>
+  <constraint table="old_donneebancaire"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_donneproduction"
+    type="foreignkey" column="co_numero" references="old_cotisation(co_numero)" opt="odrour"/>
+  <constraint table="old_donneproduction"
+    type="foreignkey" column="tp_numero" references="old_tarifproduction(tp_numero)" opt="odrour"/>
+  <constraint table="old_dossier"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_dossier"
+    type="foreignkey" column="ld_numero" references="old_libeldossier(ld_numero)" opt="odrour"/>
+  <constraint table="old_est_joignable"
+    type="foreignkey" column="cont_numero" references="old_contact(cont_numero)" opt="odrour"/>
+  <constraint table="old_est_joignable"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_est_lie"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_est_lie"
+    type="foreignkey" column="per_pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_est_responsable"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_est_responsable"
+    type="foreignkey" column="re_numero" references="old_responsabilite(re_numero)" opt="odrour"/>
+  <constraint table="table_avoir"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odrour"/>
+  <constraint table="table_facture"
+    type="foreignkey" column="de_numero" references="table_devis(de_numero)" opt="odrour"/>
+  <constraint table="old_fraisport"
+    type="foreignkey" column="ar_numero" references="old_article(ar_numero)" opt="odrour"/>
+  <constraint table="old_lignevente"
+    type="foreignkey" column="ar_numero" references="old_article(ar_numero)" opt="odrour"/>
+  <constraint table="old_lignevente"
+    type="foreignkey" column="ta_numero" references="old_tarifarticle(ta_numero)" opt="odrour"/>
+  <constraint table="old_lignevente"
+    type="foreignkey" column="ve_numero" references="old_ventes(ve_numero)" opt="odrour"/>
+  <constraint table="old_observation"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_paiementdossier"
+    type="foreignkey" column="do_numero" references="old_dossier(do_numero)" opt="odrour"/>
+  <constraint table="old_paiementdossier"
+    type="foreignkey" column="db_numero" references="old_donneebancaire(db_numero)" opt="odrour"/>
+  <constraint table="old_personne"
+    type="foreignkey" column="typ_numero" references="old_typeadherent(typ_numero)" opt="odrour"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="de_numero" references="table_devis(de_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="zg_numero" references="table_groupe(zg_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="zl_numero" references="table_lieu(zl_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="zs_numero" references="table_sujet(zs_numero)" opt="odcouc"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="zt_numero" references="table_tache(zt_numero)" opt="odcouc"/>
+  <constraint table="table_adherence"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero)" opt="odrour"/>
+  <constraint table="table_adhesion"
+    type="foreignkey" column="ah_numero" references="table_adherence(ah_numero)" opt="odrour"/>
+  <constraint table="table_adhesion"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_adhesion"
+    type="foreignkey" column="po_numero" references="table_periode(po_numero)" opt="odrour"/>
+  <constraint table="table_adresse"
+    type="foreignkey" column="cp_numero" references="table_codepostal(cp_numero)" opt="odrour"/>
+  <constraint table="table_adresse"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_adresse"
+    type="foreignkey" column="vi_numero" references="table_ville(vi_numero)" opt="odrour"/>
+  <constraint table="table_agent"
+    type="foreignkey" column="eq_numero" references="table_equipe(eq_numero)" opt="odrour"/>
+  <constraint table="table_appartienta"
+    type="foreignkey" column="ct_numero" references="table_canton(ct_numero)" opt="odcouc"/>
+  <constraint table="table_appartienta"
+    type="foreignkey" column="gc_numero" references="table_groupecanton(gc_numero)" opt="odcouc"/>
+  <constraint table="table_appel"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero);" opt=""/>
+  <constraint table="table_attribut"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_attribut"
+    type="foreignkey" column="ta_numero" references="table_typeattribut(ta_numero)" opt="odrour"/>
+  <constraint table="table_classe"
+    type="foreignkey" column="cl_societe" references="table_societe(so_numero)" opt="odcouc"/>
+  <constraint table="table_colonnetype"
+    type="foreignkey" column="cy_typepropriete" references="table_typepropriete(tr_numero)" opt="odcouc"/>
+  <constraint table="table_compteaux"
+    type="foreignkey" column="ac_numero" references="table_acces(ac_numero)" opt="odrour"/>
+  <constraint table="table_compteaux"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_comptegen"
+    type="foreignkey" column="ac_numero" references="table_acces(ac_numero)" opt="odrour"/>
+  <constraint table="table_comptegen"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_compteproduit"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_compteproduit"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero)" opt="odrour"/>
+  <constraint table="table_devis"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_donneesbancaires"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_droit"
+    type="foreignkey" column="em_numero" references="table_employe(em_numero)" opt="odcouc"/>
+  <constraint table="table_droit"
+    type="foreignkey" column="gt_numero" references="table_groupetable(gt_numero)" opt="odcouc"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="av_numero" references="table_avoir(av_numero);" opt=""/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="ca_numero" references="table_compteaux(ca_numero)" opt="odrour"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="db_numero" references="table_donneesbancaires(db_numero);" opt=""/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero);" opt=""/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="lt_numero" references="table_lettrage(lt_numero);" opt=""/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="pf_numero" references="table_prefixe(pf_numero)" opt="odrour"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="pi_numero" references="table_piece(pi_numero)" opt="odrour"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="pt_numero" references="table_pointage(pt_numero)" opt="odrour"/>
+  <constraint table="table_employe"
+    type="foreignkey" column="em_acces" references="table_acces(ac_numero)" opt="odrour"/>
+  <constraint table="table_employe"
+    type="foreignkey" column="em_agent" references="table_agent(ag_numero)" opt="odrour"/>
+  <constraint table="table_employe"
+    type="foreignkey" column="em_service" references="table_service(se_numero)" opt="odrour"/>
+  <constraint table="table_estjoignable"
+    type="foreignkey" column="cn_numero" references="table_contact(cn_numero)" opt="odrour"/>
+  <constraint table="table_estjoignable"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_estlie"
+    type="foreignkey" column="el_personne1" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_estlie"
+    type="foreignkey" column="el_personne2" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_exercice"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero);" opt=""/>
+  <constraint table="table_facture"
+    type="foreignkey" column="ag_numero" references="table_agent(ag_numero)" opt="odrour"/>
+  <constraint table="table_facture"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_facturereglement"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odcouc"/>
+  <constraint table="table_facturereglement"
+    type="foreignkey" column="rg_numero" references="table_reglement(rg_numero)" opt="odcouc"/>
+  <constraint table="table_impression"
+    type="foreignkey" column="im_societe" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_journal"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_journal"
+    type="foreignkey" column="ex_numero" references="table_exercice(ex_numero)" opt="odrour"/>
+  <constraint table="table_journal"
+    type="foreignkey" column="tj_numero" references="table_typejournal(tj_numero)" opt="odrouc"/>
+  <constraint table="table_lignemodele"
+    type="foreignkey" column="mo_numero" references="table_modele(mo_numero)" opt="odrour"/>
+  <constraint table="table_ligne"
+    type="foreignkey" column="de_numero" references="table_devis(de_numero)" opt="odcouc"/>
+  <constraint table="table_ligne"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero)" opt="odrour"/>
+  <constraint table="table_ligne"
+    type="foreignkey" column="px_numero" references="table_prix(px_numero)" opt="odrour"/>
+  <constraint table="table_ligneavoir"
+    type="foreignkey" column="av_numero" references="table_avoir(av_numero)" opt="odrour"/>
+  <constraint table="table_ligneavoir"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero)" opt="odrour"/>
+  <constraint table="table_ligneavoir"
+    type="foreignkey" column="px_numero" references="table_prix(px_numero)" opt="odrour"/>
+  <constraint table="table_lignefacture"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odrour"/>
+  <constraint table="table_lignefacture"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero)" opt="odrour"/>
+  <constraint table="table_lignefacture"
+    type="foreignkey" column="px_numero" references="table_prix(px_numero)" opt="odrour"/>
+  <constraint table="table_listechoix"
+    type="foreignkey" column="lc_typepropriete" references="table_typepropriete(tr_numero)" opt="odcouc"/>
+  <constraint table="table_modereglement"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_modereglement"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_moderepartition"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odrour"/>
+  <constraint table="table_moderepartition"
+    type="foreignkey" column="mp_societe" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_moderepartition"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_observation"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_periodeadherence"
+    type="foreignkey" column="ah_numero" references="table_adherence(ah_numero)" opt="odrour"/>
+  <constraint table="table_periodeadherence"
+    type="foreignkey" column="po_numero" references="table_periode(po_numero)" opt="odrour"/>
+  <constraint table="table_personne"
+    type="foreignkey" column="ep_numero" references="table_etatpersonne(ep_numero)" opt="odrour"/>
+  <constraint table="table_personne"
+    type="foreignkey" column="tp_numero" references="table_typepersonne(tp_numero)" opt="odrour"/>
+  <constraint table="table_piece"
+    type="foreignkey" column="jo_numero" references="table_journal(jo_numero)" opt="odrour"/>
+  <constraint table="table_prix"
+    type="foreignkey" column="pd_numero" references="table_produit(pd_numero);" opt=""/>
+  <constraint table="table_prix"
+    type="foreignkey" column="tv_numero" references="table_tva(tv_numero);" opt=""/>
+  <constraint table="table_produit"
+    type="foreignkey" column="jo_numero" references="table_journal(jo_numero);" opt=""/>
+  <constraint table="table_produit"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero);" opt=""/>
+  <constraint table="table_propriete"
+    type="foreignkey" column="pr_classe" references="table_classe(cl_numero)" opt="odcouc"/>
+  <constraint table="table_propriete"
+    type="foreignkey" column="pr_type" references="table_typepropriete(tr_numero)" opt="odcouc"/>
+  <constraint table="table_reglement"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odrour"/>
+  <constraint table="table_reglement"
+    type="foreignkey" column="mr_numero" references="table_modereglement(mr_numero)" opt="odrour"/>
+  <constraint table="table_reglement"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_reglement"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_repartition"
+    type="foreignkey" column="mp_numero" references="table_moderepartition(mp_numero)" opt="odrour"/>
+  <constraint table="table_repartition"
+    type="foreignkey" column="rg_numero" references="table_reglement(rg_numero)" opt="odcouc"/>
+  <constraint table="table_routage"
+    type="foreignkey" column="ad_numero" references="table_adresse(ad_numero)" opt="odrour"/>
+  <constraint table="table_routage"
+    type="foreignkey" column="fa_numero" references="table_facture(fa_numero)" opt="odrour"/>
+  <constraint table="table_routage"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_service"
+    type="foreignkey" column="se_agent" references="table_agent(ag_numero)" opt="odrour"/>
+  <constraint table="table_service"
+    type="foreignkey" column="se_societe" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_societe"
+    type="foreignkey" column="pe_numero" references="table_personne(pe_numero)" opt="odrour"/>
+  <constraint table="table_societe"
+    type="foreignkey" column="ts_numero" references="table_typesociete(ts_numero);" opt=""/>
+  <constraint table="table_sujet"
+    type="foreignkey" column="zu_numero" references="table_typesujet(zu_numero)" opt="odcouc"/>
+  <constraint table="table_typepropriete"
+    type="foreignkey" column="tr_classe" references="table_classe(cl_numero)" opt="odcouc"/>
+  <constraint table="table_ville"
+    type="foreignkey" column="ct_numero" references="table_canton(ct_numero)" opt="odrour"/>
+  <constraint table="table_villecp"
+    type="foreignkey" column="cp_numero" references="table_codepostal(cp_numero)" opt="odrour"/>
+  <constraint table="table_villecp"
+    type="foreignkey" column="vi_numero" references="table_ville(vi_numero)" opt="odrour"/>
+  <constraint table="old_tarifabonnement"
+    type="foreignkey" column="tyab_numero" references="old_typeabonnement(tyab_numero)" opt="odrour"/>
+  <constraint table="old_tarifarticle"
+    type="foreignkey" column="ar_numero" references="old_article(ar_numero)" opt="odrour"/>
+  <constraint table="old_tarifcotisation"
+    type="foreignkey" column="tco_numero" references="old_typecotisation(tco_numero)" opt="odrour"/>
+  <constraint table="old_tariftravaux"
+    type="foreignkey" column="lt_numero" references="old_libeltravaux(lt_numero)" opt="odrour"/>
+  <constraint table="old_travaux"
+    type="foreignkey" column="do_numero" references="old_dossier(do_numero)" opt="odrour"/>
+  <constraint table="old_travaux"
+    type="foreignkey" column="ag_numero" references="old_agent(ag_numero)" opt="odrour"/>
+  <constraint table="old_travaux"
+    type="foreignkey" column="lt_numero" references="old_libeltravaux(lt_numero)" opt="odrour"/>
+  <constraint table="old_travaux"
+    type="foreignkey" column="tt_numero" references="old_tariftravaux(tt_numero)" opt="odrour"/>
+  <constraint table="old_ventes"
+    type="foreignkey" column="pe_numero" references="old_personne(pe_numero)" opt="odrour"/>
+  <constraint table="old_ventes"
+    type="foreignkey" column="db_numero" references="old_donneebancaire(db_numero)" opt="odrour"/>
+  <constraint table="old_ville"
+    type="foreignkey" column="ca_numero" references="old_canton(ca_numero)" opt="odrour"/>
+  <constraint table="old_questionreponse"
+    type="foreignkey" column="qu_numero" references="old_question(qu_numero)" opt="odrour"/>
+  <constraint table="old_questionreponse"
+    type="foreignkey" column="rep_numero" references="old_reponse(rep_numero)" opt="odrour"/>
+  <constraint table="old_questionreponse"
+    type="foreignkey" column="tr_numero" references="old_travaux(tr_numero)" opt="odrour"/>
+  <constraint table="old_reponse"
+    type="foreignkey" column="qu_numero" references="old_question(qu_numero)" opt="odrour"/>
+  <constraint table="table_activite"
+    type="foreignkey" column="em_numero" references="table_employe(em_numero);" opt=""/>
+  <constraint table="table_appel"
+    type="foreignkey" column="th_numero" references="table_typetache(th_numero)" opt="odrouc"/>
+  <constraint table="table_attribut"
+    type="foreignkey" column="cr_numero" references="table_categorie(cr_numero)" opt="odrouc"/>
+  <constraint table="table_devis"
+    type="foreignkey" column="ag_numero" references="table_agent(ag_numero)" opt="odrour"/>
+  <constraint table="table_devis"
+    type="foreignkey" column="em_numero" references="table_employe(em_numero);" opt=""/>
+  <constraint table="table_droit"
+    type="foreignkey" column="dp_numero" references="table_droitprofil(dp_numero)" opt="odcouc"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="ex_numero" references="table_exercice(ex_numero)" opt="odrour"/>
+  <constraint table="table_ecriture"
+    type="foreignkey" column="rg_numero" references="table_reglement(rg_numero)" opt="odrour"/>
+  <constraint table="table_employe"
+    type="foreignkey" column="dp_numero" references="table_droitprofil(dp_numero);" opt=""/>
+  <constraint table="table_estlie"
+    type="foreignkey" column="tl_numero" references="table_typelien(tl_numero)" opt="odrouc"/>
+  <constraint table="table_facture"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero);" opt=""/>
+  <constraint table="table_journal"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_lettrage"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_modele"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odcouc"/>
+  <constraint table="table_piece"
+    type="foreignkey" column="ex_numero" references="table_exercice(ex_numero);" opt=""/>
+  <constraint table="table_pointage"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odrour"/>
+  <constraint table="table_tva"
+    type="foreignkey" column="cg_numero" references="table_comptegen(cg_numero)" opt="odcouc"/>
+  <constraint table="table_tva"
+    type="foreignkey" column="so_numero" references="table_societe(so_numero)" opt="odcouc"/>
+</analysis>

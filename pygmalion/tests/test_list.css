@@ -1,0 +1,93 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+treechildren::-moz-tree-checkbox(checked)
+{
+    /* css for checked cells */
+    list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
+
+treechildren::-moz-tree-cell-text(makeItBlue)
+{
+  color : blue;
+  cursor : pointer;
+  text-decoration : underline;
+}
+
+
+treechildren::-moz-tree-cell-text(makeItBlue, selected,focus)
+{
+  color : #AAF !important;
+  cursor : pointer;
+  text-decoration : underline;
+}
+
+treechildren::-moz-tree-cell-text(makeItBlue, selected)
+{
+  color : blue;
+  cursor : pointer;
+  text-decoration : underline;
+}
+
+/*
+treechildren:hover::-moz-tree-cell-text(makeItBlue)
+{
+  -moz-appearance : tab;
+  color : white !important;
+  cursor : pointer;
+  text-decoration : underline;
+}
+*/
+treechildren[class]::-moz-tree-cell-text
+{
+  color: red;
+}
+
+* {
+  font-size : 9pt;
+}
+
+.tabbb
+{
+  min-width : 80px;
+
+  text-align : center;
+}
+.buttt
+{
+  //  -moz-appearance: none;
+ margin : 1px;
+ -moz-border-radius : 5px;
+ //    -moz-border-top-colors: blue white red;
+ // border-width : 3px;
+ background-color: transparent;
+}
+
+.buttt[checked="true"]
+{
+ margin : 1px;
+ border-color : blue;
+ border-width : 1px;
+ border-style : dotted;
+    -moz-border-top-colors: blue white red;
+ border-width : 3px;
+}
+
+.titi 
+{
+  display:inline;
+
+}
+
+.toto
+{
+  padding : 1px;
+  //  background-color: #FD6;
+  border-width : 3px;
+    -moz-border-top-colors: blue white red;
+
+    //-moz-border-top-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-right-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow transparent;
+-moz-border-left-colors: ThreeDDarkShadow ThreeDShadow transparent;
+
+}

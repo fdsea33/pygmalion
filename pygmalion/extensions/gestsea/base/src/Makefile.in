@@ -1,0 +1,19 @@
+DEPTH=../../../..
+topsrcdir=@top_srcdir@
+srcdir=@srcdir@
+VPATH=@srcdir@
+
+ include $(DEPTH)/config/autoconf.mk
+
+MODULE=gestsea
+LIBRARY_NAME=gestsea_s
+MOZILLA_INTERNAL_API = 1
+ifdef MOZ_XUL_APP
+XPI_NAME = gestsea
+endif
+REQUIRES = xpcom string dom gfx layout content xul widget locale necko nspr docshell view webshell appcomps embed_base websrvcs windowwatcher xmlextras pref $(NULL)
+CPPSRCS = mozC00gestsea.cpp mozC01step.cpp mozC02gestsea.cpp mozC02gestseaP00DD.cpp mozC00gestsea00012.cpp mozC01step00001.cpp mozC02gestsea00652.cpp $(NULL)
+FORCE_STATIC_LIB = 1
+FORCE_USE_PIC = 1
+
+include $(topsrcdir)/config/rules.mk

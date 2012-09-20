@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<navigation>
+
+  <windows>
+    <window src="f_choix.xpw" name="f_choix"/>
+    <window src="f_gestion.xpw" name="f_gestion"/>
+<!--    <window src="f_devis.xpw" name="f_devis">-->
+<!--    <window src="../compta/f_compta.xpw" name="f_compta"/>-->
+  </windows>
+
+  <correspondence>
+    <sd table="Personne" select="f_gestion" insert="default" update="default" delete="default"/>
+    <sd table="Devis" select="f_devis" insert="f_devis" update="f_devis" delete="default"/>
+    <sd table="LigneDevis" select="none" insert="none" update="none" delete="default"/>
+<!--
+    <sd table="Responsabilite" select="default" insert="default" update="default" delete="default"/>
+    <sd table="EstResponsable" select="default" insert="default" update="default" delete="default"/>
+    <sd table="Attribut" select="default" insert="default" update="default" delete="default"/>
+-->
+  </correspondence>
+
+  <overlays>
+    <overlay src="../compta/f_parametrage.xpw" on="../base/f_parametrage.xpw"/>
+    <overlay src="f_parametrage.xpw" on="../compta/f_parametrage.xpw"/>
+  </overlays>
+
+  <steps>
+
+
+    <step id="10" type="start" from="toolmenu">
+      <goto>
+        <otherwise id="20"/>
+      </goto>
+    </step>
+
+
+    <step id="20">
+      <actions>
+        <action type="procedure" name="Connecte"/>
+      </actions>
+      <goto>
+        <when value="true" id="30"/>
+        <otherwise id="0"/>
+      </goto>
+    </step>
+
+  <!--
+    <step id="21">
+      <actions>
+        <action type="procedure" name="Connecte"/>
+      </actions>
+      <goto>
+        <when value="true" id="40"/>
+        <otherwise id="0"/>
+      </goto>
+    </step>
+
+
+    <step id="22">
+      <actions>
+        <action type="procedure" name="Connecte"/>
+      </actions>
+      <goto>
+        <when value="true" id="41"/>
+        <otherwise id="0"/>
+      </goto>
+    </step>
+-->
+
+    <step id="30">
+      <actions>
+        <action type="window" name="f_choix"/>
+      </actions>
+      <goto>
+        <otherwise id="0"/>
+      </goto>
+    </step>
+
+  <!--
+    <step id="30">
+      <actions>
+        <action type="window" name="f_choix"/>
+      </actions>
+      <goto>
+        <when value="compta" id="3"/>
+        <when value="gestion" id="4"/>
+        <otherwise id="0"/>
+      </goto>
+    </step>
+-->
+
+    <step id="40">
+      <actions>
+        <action type="window" name="f_compta"/>
+      </actions>
+    </step>
+
+
+    <step id="41">
+      <actions>
+        <action type="window" name="f_gestion"/>
+      </actions>
+    </step>
+
+  </steps>
+
+</navigation>

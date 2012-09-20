@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:fauna="urn:fauna/rdf#">
+
+   <Description about="urn:fauna">
+     <fauna:name>Fauna</fauna:name>
+     <fauna:species>Fauna</fauna:species>
+   </Description>
+
+
+
+   <Description about="urn:fauna/arachnids">
+     <fauna:name>Arachnids</fauna:name>
+     <fauna:species>Avicularia</fauna:species>
+   </Description>
+
+       <Description about="urn:fauna/arachnids/tarantula" fauna:specimens="0">
+         <fauna:name>Tarantula</fauna:name>
+         <fauna:species>Avicularia avicularia</fauna:species>
+       </Description>
+
+   <Description about="urn:fauna/birds">
+     <fauna:name>Birds</fauna:name>
+   </Description>
+
+       <Description about="urn:fauna/birds/emu" fauna:specimens="12">
+         <fauna:name>Emu</fauna:name>
+         <fauna:species>Dromaius novaehollandiae</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/birds/barnowl" fauna:specimens="4">
+         <fauna:name>Barn Owl</fauna:name>
+         <fauna:species>Tyto alba</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/birds/raven" fauna:specimens="0">
+         <fauna:name>Raven</fauna:name>
+         <fauna:species>Corvus corax</fauna:species>
+       </Description>
+
+   <Description about="urn:fauna/fish">
+     <fauna:name>Fish</fauna:name>
+   </Description>
+
+       <Description about="urn:fauna/fish/cod" fauna:specimens="0">
+         <fauna:name>Cod</fauna:name>
+         <fauna:species>Gadus morhua</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/fish/swordfish" fauna:specimens="3">
+         <fauna:name>Swordfish</fauna:name>
+         <fauna:species>Xiphias gladius</fauna:species>
+       </Description>
+
+   <Description about="urn:fauna/mammals">
+     <fauna:name>Mammals</fauna:name>
+   </Description>
+
+       <Description about="urn:fauna/mammals/lion" fauna:specimens="4">
+         <fauna:name>Lion</fauna:name>
+         <fauna:species>Panthera leo</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/hippopotamus" fauna:specimens="2">
+         <fauna:name>Hippopotamus</fauna:name>
+         <fauna:species>Hippopotamus amphibius</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/africanelephant" fauna:specimens="4">
+         <fauna:name>African Elephant</fauna:name>
+         <fauna:species>Loxodonta africana</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/llama" fauna:specimens="3">
+         <fauna:name>Llama</fauna:name>
+         <fauna:species>Lama glama</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/polarbear" fauna:specimens="0">
+         <fauna:name>Polar Bear</fauna:name>
+         <fauna:species>Thalarctos maritimus</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/aardvark" fauna:specimens="2">
+         <fauna:name>Aardvark</fauna:name>
+         <fauna:species>Orycteropus afer</fauna:species>
+       </Description>
+
+       <Description about="urn:fauna/mammals/ninebandedarmadillo" fauna:specimens="0">
+         <fauna:name>Nine-banded Armadillo</fauna:name>
+         <fauna:species>Dasypus novemcinctus</fauna:species>
+       </Description>
+
+   <Description about="urn:fauna/reptiles">
+     <fauna:name>Reptiles</fauna:name>
+   </Description>
+ 
+       <Description about="urn:fauna/reptiles/snakes">
+         <fauna:name>Snakes</fauna:name>
+         <fauna:species>Eunectes</fauna:species>
+       </Description>
+
+          <Description about="urn:fauna/reptiles/snakes/anaconda" fauna:specimens="1">
+            <fauna:name>Anaconda</fauna:name>
+            <fauna:species>Eunectes murinus</fauna:species>
+          </Description>
+
+       <Description about="urn:fauna/reptiles/chameleon" fauna:specimens="2">
+         <fauna:name>Chameleon</fauna:name>
+         <fauna:species>Chamaeleo chamaelon</fauna:species>
+       </Description>
+
+  <Seq about="urn:fauna">
+    <li>
+      <Seq about="urn:fauna/arachnids">
+        <li resource="urn:fauna/arachnids/tarantula"/>
+      </Seq>
+    </li>
+    <li>
+      <Seq about="urn:fauna/birds">
+        <li resource="urn:fauna/birds/emu"/>
+        <li resource="urn:fauna/birds/barnowl"/>
+        <li resource="urn:fauna/birds/raven"/>
+      </Seq>
+    </li>
+    <li>
+      <Seq about="urn:fauna/fish">
+        <li resource="urn:fauna/fish/cod"/>
+        <li resource="urn:fauna/fish/swordfish"/>
+      </Seq>
+    </li>
+    <li>
+      <Seq about="urn:fauna/mammals">
+        <li resource="urn:fauna/mammals/lion"/>
+        <li resource="urn:fauna/mammals/hippopotamus"/>
+        <li resource="urn:fauna/mammals/africanelephant"/>
+        <li resource="urn:fauna/mammals/llama"/>
+        <li resource="urn:fauna/mammals/polarbear"/>
+        <li resource="urn:fauna/mammals/aardvark"/>
+        <li resource="urn:fauna/mammals/ninebandedarmadillo"/>
+      </Seq>
+    </li>
+    <li>
+      <Seq about="urn:fauna/reptiles">
+        <li>
+          <Seq about="urn:fauna/reptiles/snakes">
+            <li resource="urn:fauna/reptiles"/>
+          </Seq>
+        </li>
+        <li resource="urn:fauna/reptiles/chameleon"/>
+      </Seq>
+    </li>
+  </Seq>
+
+</RDF>

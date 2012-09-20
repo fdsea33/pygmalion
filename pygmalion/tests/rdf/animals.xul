@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+
+<window title="XUL Animals" xmlns:html="http://www.w3.org/1999/xhtml"
+ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+ orient="vertical">
+
+<menubar datasources="animals.rdf" ref="urn:fauna">
+  <template>
+    <rule>
+      <conditions>
+      </conditions>
+      
+    </rule>
+  </template>
+</menubar>
+
+
+<tree flex="1" datasources="animals.rdf" ref="urn:fauna">
+
+  <treecols>
+    <treecol id="name" label="Nom" primary="true" flex="1" sortActive="true" sortRessource="rdf:urn:fauna/rdf#name"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="species" label="Espèces" flex="1" sortActive="true" sortRessource="rdf:urn:fauna/rdf#species"/>
+  </treecols>
+
+  <template>
+    <rule>
+      <treechildren>
+       <treeitem uri="rdf:*">
+         <treerow>
+           <treecell label="rdf:urn:fauna/rdf#name"/>
+           <treecell label="rdf:urn:fauna/rdf#species"/>
+         </treerow>
+       </treeitem>
+      </treechildren>
+    </rule>
+
+  </template>
+</tree>
+
+</window>

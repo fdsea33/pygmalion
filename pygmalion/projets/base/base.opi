@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<window type="master" name="systeme" parts-file="base_parts.opp" rad-target="base systeme" uuid1="aa93eaed-3f07-4144-930a-7a00fb417659" uuid2="3b6d2561-5fd6-4a47-b2cf-0bd1b8ef15f4">
+
+  <parts>
+    <part-menu title="systeme.home_" name="MenuSysteme">
+      <menugroup title="_.general_">
+        <menuitem title="systeme.home.societe.voir_" action="search-detail">
+          <with-param name="detail-name" value="SystemeSociete"/>
+        </menuitem> />
+        <menuitem title="systeme.home.utilisateur.voir_" action="search-detail">
+          <with-param name="detail-name" value="SystemeUtilisateur"/>
+        </menuitem> />
+      </menugroup>
+    </part-menu>
+
+
+    <part-detail title="systeme.detail.societe.title_" class="base_societe" name="SystemeSociete">
+      <keyproperties>
+        <keyproperty name="code"/>
+        <keyproperty name="nom"/>
+        <keyproperty name="siren"/>
+        <keyproperty name="id"/>
+      </keyproperties>
+
+      <plan-search>
+        <columns default-class="base_societe" target-part="SystemeSociete">
+          <column label="systeme.detail.societe.id_"    value="id"/>
+          <column label="systeme.detail.societe.code_"  value="code"/>
+          <column label="systeme.detail.societe.nom_"   value="nom"/>
+          <column label="systeme.detail.societe.siren_" value="siren"/>
+        </columns>
+
+        <search-steps>
+          <search-step orderby="1">
+            <where>
+              <comparison value="code" is="containing" target="$1" />
+            </where>
+          </search-step>
+          <search-step orderby="2">
+            <where>
+              <comparison value="nom" is="containing" target="$1" />
+            </where>
+          </search-step>
+          <search-step orderby="1">
+            <where>
+              <comparison value="siren" is="containing" target="$1" />
+            </where>
+          </search-step>
+          <search-step orderby="1">
+            <where>
+              <comparison value="id" is="containing" target="$1" />
+            </where>
+          </search-step>
+
+        </search-steps>
+      </plan-search>
+
+      <plan-select>
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="6" class="base_societe" value="nom" align="end"/>
+              <databox style="detail-title" flex="1" class="base_societe" value="id" align="start"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.societe.nom_" class="base_societe" value="code" align="start"/>
+              <databox label="systeme.detail.societe.siren_" class="base_societe" value="siren" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.societe.adresse_" type="textbox-text" class="base_societe" value="adresse" align="end"/>
+            </box>
+          </box>
+        </detail-block>
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.societe.nom_" class="base_societe" value="code" align="start"/>
+              <databox label="systeme.detail.societe.libelle_" flex="2" class="base_societe" value="nom" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.societe.siren_" class="base_societe" value="siren" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.societe.adresse_" type="textbox-text" class="base_societe" value="adresse" align="end"/>
+            </box>
+          </box>
+        </detail-block>
+      </plan-update>
+
+    </part-detail>
+
+
+
+    <part-detail title="systeme.detail.utilisateur.title_" class="systeme_utilisateur" name="SystemeUtilisateur">
+      <keyproperties>
+        <keyproperty name="id"/>
+        <keyproperty name="login"/>
+      </keyproperties>
+
+      <plan-search>
+        <columns default-class="systeme_utilisateur" target-part="SystemeUtilisateur">
+          <column label="systeme.detail.utilisateur.ut_numero_"    class="systeme_utilisateur" value="id"/>
+          <column label="systeme.detail.utilisateur.ut_login_"     class="systeme_utilisateur" value="login"/>
+          <column label="systeme.detail.utilisateur.ut_superuser_" class="systeme_utilisateur" value="superuser" type="boolean"/>
+          <column label="systeme.detail.utilisateur.ut_email_"     class="systeme_utilisateur" value="email"/>
+        </columns>
+
+        <search-steps>
+          <search-step orderby="2">
+            <where>
+              <comparison value="login" is="containing" target="$1" />
+            </where>
+          </search-step>
+          <search-step orderby="4">
+            <where>
+              <comparison value="email" is="containing" target="$1" />
+            </where>
+          </search-step>
+
+        </search-steps>
+      </plan-search>
+
+      <plan-select>
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="5" value="login" align="start"/>
+              <databox style="detail-title" value="id" align="start"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.utilisateur.superuser_"  value="superuser" align="end"/>
+              <databox label="systeme.detail.utilisateur.createrole_" value="createrole" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.utilisateur.maxconn_" value="MaxConn" align="end"/>
+              <databox label="systeme.detail.utilisateur.jusqua_"  value="Jusqua"  align="end"/>
+              <databox label="systeme.detail.utilisateur.email_"   value="Email"   align="end"/>
+            </box>
+          </box>
+        </detail-block>
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.utilisateur.login_" value="login" align="start"/>
+              <databox label="systeme.detail.utilisateur.password_" value="password" align="start"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.utilisateur.superuser_"  value="superuser" align="end"/>
+              <databox label="systeme.detail.utilisateur.createrole_" value="createrole" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="systeme.detail.utilisateur.maxconn_" value="MaxConn" align="end"/>
+              <databox label="systeme.detail.utilisateur.jusqua_"  value="Jusqua"  align="end"/>
+              <databox label="systeme.detail.utilisateur.email_"   value="Email"   align="end"/>
+            </box>
+          </box>
+        </detail-block>
+      </plan-update>
+
+    </part-detail>
+
+
+
+  </parts>
+</window>

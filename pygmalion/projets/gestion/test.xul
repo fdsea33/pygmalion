@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<?xml-stylesheet href="test.css" type="text/css"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+        xmlns:html="http://www.w3.org/1999/xhtml"
+orient="vertical" flex="1">
+
+<listbox rows="3">
+  <listcols>
+    <listcol flex="1"/>
+    <listcol flex="3"/>
+    <listcol flex="1"/>
+  </listcols>
+  <listitem>
+    <listcell><deck><html:a href="tutu">Tutu</html:a></deck>
+    </listcell>
+    <listcell label="test">
+    </listcell>
+    <listcell>
+    </listcell>
+  </listitem>
+</listbox>
+<script>
+function actualise()
+{
+ document.getElementById('col1').width = document.getElementById('colonne1').width;
+ document.getElementById('col2').width = document.getElementById('colonne2').width;
+ document.getElementById('col3').width = document.getElementById('colonne3').width;
+}
+</script>
+<vbox style="padding:30px" flex="1">
+    <grid>
+      <columns>
+        <column/>
+        <column id="colonne1" flex="1"/>
+        <splitter class="gsplit" oncommand="actualise();"/>
+        <column id="colonne2" flex="1"/>
+        <splitter class="gsplit" oncommand="actualise();"/>
+        <column id="colonne3" flex="1"/>
+      </columns>
+      <rows>
+        <row class="gridtitle">
+          <vbox/>
+          <label value="Colonne 1"/>
+          <label value="Colonne 2"/>
+          <label value="Colonne 3"/>
+        </row>
+      </rows>
+    </grid>
+
+
+  <hbox flex="1" mousethrough="always" align="start">
+<!--    <button class="expanderButton" type="disclosure" mousethrough="always"  open="false"/>-->
+    <grid flex="1" style="overflow:auto">
+      <columns>
+        <column/>
+        <column id="col1" flex="1"/>
+<!--        <splitter class="gsplit"/>-->
+        <column id="col2" flex="1"/>
+<!--        <splitter class="gsplit"/>-->
+        <column id="col3" flex="1" style="text-align:right;"/>
+      </columns>
+      <rows>
+        <row class="gridtitle">
+          <vbox/>
+          <label value="Toto 1"/>
+          <label class="ghypertext" value="Toto 2"/>
+          <label value="Toto 3"/>
+        </row>
+        <row class="casetitle">
+          <button class="expanderButton" type="disclosure" mousethrough="always"  open="true" onclick="open=!open; document.getElementById('toto').setAttribute('hidden',!open);"/>
+          <label value="Toto 1"/>
+          <label class="ghypertext" value="Toto 2"/>
+          <label value="Toto 3"/>
+        </row>
+        <row class="case" id="toto">
+	  <vbox/>
+          <label value="Toto 1"/>
+          <label class="ghypertext" value="Toto 2"/>
+          <label class="ghypertext numeric" value="Toto 3"/>
+        </row>
+        <row class="case" id="toto">
+	  <vbox/>
+          <label value="Toto 1"/>
+          <label value="Toto 2"/>
+          <label value="Toto 3"/>
+        </row>
+        <row class="casetitle">
+          <button class="expanderButton" type="disclosure" mousethrough="always"  open="false"/>
+          <label value="Toto 1"/>
+          <label value="Toto 2"/>
+          <label value="Toto 3"/>
+        </row>
+        <row class="case" id="toto">
+	  <vbox/>
+          <label value="Toto 1"/>
+          <label class="ghypertext" value="Toto 2"/>
+          <label class="ghypertext numeric" value="Toto 3"/>
+        </row>
+        <row class="case" id="toto">
+	  <vbox/>
+          <label value="Toto 1"/>
+          <label value="Toto 2"/>
+          <label value="Toto 3"/>
+        </row>
+      </rows>
+    </grid>
+  </hbox>
+</vbox>
+
+<expander label="ExpanderLabel" clearhidden="true">
+<caption>
+  <label value="My expander"/>
+</caption>
+<html:html>
+<html:a href="http://www.xulplanet.com">Oh yéh</html:a>
+</html:html>
+<button label="Test"/>
+<html:html>
+<html:a href="http://www.xulplanet.com">Oh yeah</html:a>
+</html:html>
+</expander>
+
+<!--
+<listbox rows="3">
+  <listitem label="Butter Pecan" value="bpecan">
+<deck flex="1">
+<vbox flex="1">
+<hbox>
+<menulist label="Buscc" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+<menulist label="Bus" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+</hbox>
+<expander label="tutu" cancelhidden="true">
+<menulist label="Buscc" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+<menulist label="Bus" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+
+</expander>
+<expander label="tutu" cancelhidden="true">
+<menulist label="Buscc" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+<menulist label="Bus" flex="1">
+  <menupopup>
+    <menuitem label="Car"/>
+    <menuitem label="Taxi"/>
+    <menuitem label="Bus" selected="true"/>
+    <menuitem label="Train"/>
+  </menupopup>
+</menulist>
+
+</expander>
+</vbox>
+</deck>
+    
+  </listitem>
+  <listitem label="Chocolate Chip" value="chocchip"/>
+  <listitem label="Raspberry Ripple" value="raspripple"/>
+  <listitem label="Squash Swirl" value="squash"/>
+</listbox>
+
+
+
+-->
+
+
+<tree flex="1" allowevents="true" editable="true" ondblclick="alert('ok');">
+  <treecols align="center" >
+    <treecol id="date" label="Date" flex="2"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="agent" label="Agent" flex="2"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="numero" label="Num." flex="2" primary="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="quantite" label="Qté." flex="1" datatype="numeric"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="libelle" label="Libellé" flex="5"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="montantht" label="HT" flex="1" datatype="numeric" editable="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol id="montantttc" label="TTC" flex="1" datatype="numeric"/>
+  </treecols>
+
+  <treechildren allowevents="true">
+
+    <treeitem container="true" open="true" class="principal" allowevents="true">
+      <treerow properties="principal" allowevents="true">
+        <treecell label="05/05/2005"/>
+        <treecell label="Brice" onclick="alert('');"/>
+        <treecell label="15123"/>
+        <treecell label=""/>
+        <treecell label="Ventes"/>
+        <treecell label="100.00"/>
+        <treecell label="119.60" properties="principal"/>
+      </treerow>
+      <treechildren>
+        <treeitem >
+          <treerow>
+            <treecell/>
+            <treecell/>
+	    <treecell label="010059"/>
+            <treecell label="3.00"/>
+            <treecell label="Registre horaire"/>
+            <treecell label="90.00"/>
+	    <treecell label="107.64"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow properties="makeItBlue">
+            <treecell/>
+            <treecell/>
+	    <treecell label="010060"/>
+            <treecell label="1.00"/>
+            <treecell label="Carnet de paye"/>
+            <treecell label="10.00"/>
+	    <treecell label="11.96"/>
+          </treerow>
+        </treeitem>
+      </treechildren>
+    </treeitem>
+
+
+    <treeitem container="true" open="true">
+      <treerow properties="principal" style="color:#FF00FF;">
+        <treecell style="color:#FF00FF;" label="08/05/2005"/>
+        <treecell label="Brice"/>
+        <treecell label="15148"/>
+        <treecell label=""/>
+        <treecell label="Ventes Spéciales"/>
+        <treecell label="250.00"/>
+        <treecell label="269.60"/>
+      </treerow>
+      <treechildren>
+        <treeitem >
+          <treerow>
+            <treecell/>
+            <treecell/>
+	    <treecell label="010059"/>
+            <treecell label="3.00"/>
+            <treecell label="Registre horaires"/>
+            <treecell label="90.00"/>
+	    <treecell label="107.64"/>
+          </treerow>
+        </treeitem>
+        <treeitem >
+          <treerow>
+            <treecell/>
+            <treecell/>
+	    <treecell label="010074"/>
+            <treecell label="15.00"/>
+            <treecell label="Stylos anniversaires"/>
+            <treecell label="150.00"/>
+	    <treecell label="150.00"/>
+          </treerow>
+        </treeitem>
+        <treeitem>
+          <treerow>
+            <treecell/>
+            <treecell/>
+	    <treecell label="010060"/>
+            <treecell label="1.00"/>
+            <treecell label="Carnet de paye"/>
+            <treecell label="10.00"/>
+	    <treecell label="11.96"/>
+          </treerow>
+        </treeitem>
+      </treechildren>
+    </treeitem>
+
+
+  </treechildren>
+</tree>
+
+<statusbar>
+  <statusbarpanel flex="23" label="Test"/>
+  <statusbarpanel flex="100">
+    <progressmeter flex="1" mode="determined" value="50%"/>
+  </statusbarpanel>
+</statusbar>
+
+
+
+
+</window>

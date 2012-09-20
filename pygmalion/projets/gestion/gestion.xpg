@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<generation name="Celle que je préfère">
+  <description>Pour faire un XPCOM avec un serveur gSOAP</description>
+  <language code="fr-FR"/>
+  <generator id="@fdsea33.fr/pygmalion/generator;1">
+    <option name="icon">gestsea.png</option>  
+    <option name="extension-directory">/home/brice/mozilla/ff-1501/mozilla/extensions</option>
+    <option name="server-directory">/home/brice/gestsea/server</option>
+    <option name="xpcom-prefix">@fdsea33.fr</option>
+    <option name="short-name">gestsea</option>
+    <option name="project-module">Gestsea</option>
+  </generator>
+</generation>

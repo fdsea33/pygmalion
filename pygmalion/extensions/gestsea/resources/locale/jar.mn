@@ -1,0 +1,5 @@
+#filter substitution
+
+gestsea.jar:
+% locale gestsea @AB_CD@ %locale/@AB_CD@/gestsea/
+  locale/@AB_CD@/gestsea/gestsea.dtd           (@AB_CD@/gestsea.dtd)

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modules>
+  <module name="GseaTest"  file="test.opp">
+    <module-class name="base_partenaire"/>  
+  </module>
+  <module name="GseaPrincipal"    file="gestsea_principal.opp">
+<!--    <module-class name="base_partenaire_type" use="hidden"/>-->
+<!--    <module-class name="base_partenaire"/>-->
+    <module-class name="base_partenaire_contact" use="hidden"/>
+    <module-class name="base_partenaire_observation" use="hidden"/>
+    <module-class name="base_partenaire_attribut" use="hidden"/>
+    <module-class name="gestion_ventes_commande"/>
+    <module-class name="gestion_ventes_commande_ligne" use="hidden"/>
+<!--
+    <module-class name="gestion_lien" use="hidden"/>
+    <module-class name="gestion_lien_role" use="hidden"/>
+    <module-class name="gestion_lien_type" use="hidden"/>
+    <module-class name="gestion_ventes_facture"/>
+    <module-class name="gestion_ventes_facture_ligne" use="hidden"/>
+-->
+<!--
+    <module-class name="gestion_ventes_relance_mode"/>
+    <module-class name="gestion_ventes_relance_mode_etape" use="hidden"/>
+-->
+<!--
+    <module-class name="gestion_ventes_facture_reglement_echeance" use="hidden"/>
+    <module-class name="gestion_ventes_reglement"/>
+    <module-class name="gestion_ventes_reglement_mode" use="hidden"/>
+    <module-class name="gestion_ventes_reversement"/>
+    <module-class name="gestion_ventes_reversement_mode" use="hidden"/>
+-->
+<!--
+    <module-class name="gestsea_structure"/>
+    <module-class name="gestsea_structure_commune_rel" use="hidden"/>
+-->
+<!--
+    <module-class name="gestsea_juridique_procedure_commande_rel" use="hidden"/>
+    <module-class name="gestsea_juridique_procedure" use="hidden"/>
+    <module-class name="gestsea_juridique_tache" use="hidden"/>
+    <module-class name="gestsea_juridique_dossier"/>
+    <module-class name="gestsea_juridique_dossier_commande" use="hidden"/>
+    <module-class name=""/>
+    <module-class name=""/>
+    <module-class name=""/>
+    <module-class name=""/>
+-->
+  </module>
+  <module name="GseaParametrage"  file="gestsea_parametrage.opp">
+  
+  </module>
+  <module name="GseaCotisation"   file="gestsea_cotisation.opp">
+    <module-class name="gestsea_cotisation"/>
+    <module-class name="gestsea_cotisation_ligne" use="hidden"/>
+    <module-class name="gestsea_cotisation_produit"/>
+    <module-class name="gestsea_cotisation_parametrage"/>
+  </module>
+  <module name="GseaComptabilite" file="gestsea_comptabilite.opp">
+  </module>
+</modules>

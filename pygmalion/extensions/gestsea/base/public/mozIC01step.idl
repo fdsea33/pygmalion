@@ -1,0 +1,17 @@
+#include "nsISupports.idl"
+[scriptable, uuid(7ac7b9b7-0965-494a-bdd7-f2e5b4ba2204)]
+interface mozIC01step : nsISupports
+{
+  void get(out AString masterIndex, out unsigned long index,out AString detailKey);
+  void set(in AString masterIndex, in unsigned long index,in AString detailKey);
+
+};
+
+%{C++
+
+// {f2985d41-5446-4df8-ab90-824fea5376f1}
+#define MOZ_C01STEP_CID { 0xf2985d41, 0x5446, 0x4df8, { 0xab, 0x90, 0x82, 0x4f, 0xea, 0x53, 0x76, 0xf1 } }
+#define MOZ_C01STEP_CONTRACTID "@brice.fr/gestsea/C01step;1"
+#define MOZ_C01STEP_CLASSNAME "C01step"
+
+%}

@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="schemax-html.xsl"?>
+
+<schemax name="Open Project Format" shortname="OPF" version="0.6.2.1" authors="Brice TEXIER" copyright="2006 - Brice TEXIER">
+
+  <element name="select">
+    <attribute name="option" type="unsignedInt" use="optional">
+      <enumeration name="all"      value="1"/>
+      <enumeration name="distinct" value="0"/>
+    </attribute>
+    <attribute name="limit" type="unsignedInt"/>
+    <attribute name="offset" type="unsignedInt"/>
+    <element name="distinct-on" minOccurs="0"/>
+    <element name="expressions"/>
+    <element name="from" minOccurs="0"/>
+    <element name="where" minOccurs="0"/>
+    <element name="group-by" minOccurs="0"/>
+    <element name="having" minOccurs="0"/>
+    <element name="set-operation" minOccurs="0"/>
+    <element name="order-by" minOccurs="0"/>
+  </element>
+
+  <element name="distinct-on">
+    <element name="expression" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="expressions">
+    <element name="expression" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="expression" type="string">
+    <attribute name="as" type="string" use="optional"/>
+  </element>
+
+  <element name="from">
+    <choice name="from-element" maxOccurs="unbounded"/>
+  </element>
+
+  <choice name="from-element">
+    <element name="from-table"/>
+    <element name="from-select"/>
+    <element name="join"/>
+    <element name="procedure"/>
+  </choice>
+
+  <element name="from-table">
+    <attribute name="only" type="boolean" use="optional"/>
+    <attribute name="name" type="string"/>
+    <element name="as-table" minOccurs="0"/>
+  </element>
+
+  <element name="from-select">
+    <element name="as-table"/>
+    <element name="select"/>
+  </element>
+
+  <element name="join" type="string">
+    <attribute name="type" type="unsignedInt" use="optional">
+      <enumeration name="join"             value="700"/>
+      <enumeration name="inner-join"       value="705"/>
+      <enumeration name="left-join"        value="710"/>
+      <enumeration name="left-outer-join"  value="715"/>
+      <enumeration name="right-join"       value="720"/>
+      <enumeration name="right-outer-join" value="725"/>
+      <enumeration name="full-join"        value="730"/>
+      <enumeration name="full-outer-join"  value="735"/>
+      <enumeration name="cross-join"       value="740"/>
+    </attribute>
+    <attribute name="natural" type="boolean" use="optional"/>
+    <choice name="from-element" minOccurs="2" maxOccurs="2"/>
+    <choice name="join-condition"/>
+  </element>
+
+  <choice name="join-condition">
+    <element name="on"/>
+    <element name="using"/>
+  </choice>
+
+  <element name="on">
+    <choice name="condition"/>
+  </element>
+
+  <element name="using">
+    <element name="column-name" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="as-table" type="string">
+    <attribute name="name" type="string"/>
+    <element name="column-name" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="column-name" type="string">
+    <attribute name="name" type="string"/>
+  </element>
+
+  <element name="procedure">
+    <attribute name="name" type="string"/>
+    <element name="arguments" minOccurs="0"/>
+    <choice name="as-procedure"/>
+  </element>
+
+  <element name="arguments">
+    <element name="argument" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="argument" type="string"/>
+
+  <choice name="as-procedure">
+    <element name="as-table"/>
+    <element name="as-record"/>
+  </choice>
+
+  <element name="as-record" type="string">
+    <attribute name="name" type="string"/>
+    <element name="column-def" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="column-def" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="type" type="string"/>
+  </element>
+
+
+  <element name="where">
+    <choice name="condition"/>
+  </element>
+
+  <choice name="condition">
+    <element name="logical-operation"/>    
+    <element name="comparison"/>
+  </choice>
+
+  <element name="logical-operation">
+    <attribute name="operator" type="unsignedInt" use="optional">
+      <enumeration name="and"  value="1"/>
+      <enumeration name="or"   value="2"/>
+    </attribute>
+    <choice name="condition" minOccurs="2" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="comparison" type="string">
+    <attribute name="value" type="string"/>
+    <attribute name="not" type="boolean" use="optional"/>
+    <attribute name="is" type="unsignedInt" use="optional">
+      <enumeration name="true"                    value="959"/>
+      <enumeration name="false"                   value="960"/>
+      <enumeration name="equals-to"               value="961"/>
+      <enumeration name="similar-to"              value="962"/>
+      <enumeration name="different-from"          value="963"/>
+      <enumeration name="containing"              value="964"/>
+      <enumeration name="resembling-to"           value="965"/>
+      <enumeration name="starting-with"           value="966"/>
+      <enumeration name="ending-with"             value="967"/>
+      <enumeration name="superior-than"           value="968"/>
+      <enumeration name="inferior-than"           value="969"/>
+      <enumeration name="superior-or-equals-than" value="970"/>
+      <enumeration name="inferior-or-equals-than" value="971"/>
+    </attribute>
+    <attribute name="case-sensitive" type="boolean" use="optional"/>
+    <attribute name="target" type="string" use="optional"/>
+  </element>
+
+
+  <element name="group-by">
+    <element name="expression" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="having">
+    <choice name="condition"/>
+  </element>
+
+  <element name="set-operation">
+    <attribute name="operator" type="unsignedInt" use="optional">
+      <enumeration name="union"     value="0"/>
+      <enumeration name="intersect" value="1"/>
+      <enumeration name="except"    value="2"/>
+    </attribute>
+    <attribute name="all" type="boolean" use="optional"/>    
+    <element name="select"/>    
+  </element>
+
+  <element name="order-by">
+    <element name="sort-criterion" maxOccurs="unbounded"/>
+  </element>
+  
+  <element name="sort-criterion" type="string">
+    <attribute name="direction" type="unsignedInt" use="optional">
+      <enumeration name="asc"            value="3"/>
+      <enumeration name="desc"           value="7"/>
+      <enumeration name="using-operator" value="13"/>
+    </attribute>
+    <attribute name="operator" type="string" use="optional"/>
+    <attribute name="column-index" type="unsignedInt" use="optional"/>
+  </element>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <element name="analyses">
+    <attribute name="version" type="unsignedInt"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="analysis" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="modules" minOccurs="0"/>
+  </element>
+
+  <element name="analysis" type="string">  
+    <attribute name="name" type="string"/>
+    <attribute name="version" type="unsignedInt" use="optional"/>
+    <element name="infos"     minOccurs="0"/>
+    <element name="notes"     minOccurs="0"/>
+    <element name="languages" minOccurs="0"/>
+    <element name="datatypes" minOccurs="0"/>
+    <element name="functions" minOccurs="0"/>
+    <element name="schemas"   minOccurs="0"/>
+    <element name="classes"   minOccurs="0"/>
+    <element name="triggers"  minOccurs="0"/>
+<!--    <element name="tasks"     minOccurs="0"/>-->
+  </element>
+
+  <element name="modules">
+    <element name="module" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="module">
+    <attribute name="name" type="string"/>
+    <attribute name="file" type="path"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="module-class" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="module-class" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="use" type="unsignedInt" use="optional">
+      <enumeration name="standard"  value="0"/>
+      <enumeration name="hidden"    value="1"/>
+      <enumeration name="disabled"  value="2"/>
+    </attribute>
+  </element>
+
+
+
+  <element name="author" type="string">
+    <attribute name="id" type="string"/>
+    <attribute name="organization" type="string" use="optional"/>
+    <attribute name="email" type="string" use="optional"/>
+  </element>
+  
+  <element name="authors">
+    <element name="author" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="class" type="string">  
+    <attribute name="schema" type="string"/>
+    <attribute name="name" type="string"/>
+    <attribute name="primary-key" type="string"/>
+    <attribute name="generate" type="boolean" use="optional"/>
+    <attribute name="type" type="unsignedInt" use="optional">
+      <enumeration name="normal"     value="0"/>
+      <enumeration name="link"       value="1"/>
+    </attribute>
+<!--    <attribute name="uuid" type="string"/>-->
+    <element name="infos" minOccurs="0"/>
+    <element name="property" maxOccurs="unbounded"/>
+    <element name="constraint" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="record" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="classes" type="string">  
+    <element name="class" minOccurs="0" maxOccurs="unbounded"/>  
+  </element>
+
+  <element name="code" type="string">
+    <attribute name="syntax" type="unsignedInt" use="optional">
+      <enumeration name="plpgsql" value="17"/>
+      <enumeration name="sql"     value="18"/>
+    </attribute>
+  </element>
+
+  <element name="column" type="string">  
+    <attribute name="label" type="string"/>
+    <attribute name="calculated" type="boolean" use="optional"/>
+    <attribute name="class" type="string" use="optional"/>
+    <attribute name="alias" type="string" use="optional"/>
+    <attribute name="value" type="string"/>
+    <attribute name="key" type="string" use="optional"/>
+    <attribute name="flex" type="unsignedInt" use="optional"/>
+    <attribute name="hidden" type="boolean" use="optional"/>
+    <attribute name="type" type="unsignedInt" use="optional">
+      <enumeration name="text"    value="17"/>
+      <enumeration name="boolean" value="18"/>
+    </attribute>
+<!--    <attribute name="master" type="boolean" use="optional"/>-->
+<!--    <element name="string" minOccurs="0" maxOccurs="unbounded"/>  -->
+  </element>
+
+  <element name="columns">
+    <attribute name="default-class" type="string"/>
+    <attribute name="target-part" type="string" use="optional"/>
+    <attribute name="local-key" type="string" use="optional"/>
+    <attribute name="update-hidden" type="boolean" use="optional"/>
+    <attribute name="delete-hidden" type="boolean" use="optional"/>
+    <attribute name="dont-confirm-before-delete" type="boolean" use="optional"/>
+    <element name="column" minOccurs="0" maxOccurs="unbounded"/>  
+  </element>
+
+  <element name="constraint" type="string">
+    <attribute name="name" type="string" use="optional"/>
+    <attribute name="type" type="unsignedInt">
+<!--      <enumeration name="primary-key" value="773"/>-->
+      <enumeration name="foreign-key" value="774"/>
+      <enumeration name="unique"      value="775"/>
+      <enumeration name="check"       value="776"/>
+    </attribute>
+    <attribute name="expr" type="string" use="optional"/>
+    <attribute name="schema" type="string" use="optional"/>
+    <attribute name="references" type="string" use="optional"/>
+    <attribute name="column" type="string" use="optional"/>
+    <attribute name="match" type="unsignedInt" use="optional">
+      <enumeration name="simple"  value="977"/>    
+      <enumeration name="partial" value="979"/>    
+      <enumeration name="full"    value="981"/>    
+    </attribute>
+    <attribute name="on-delete" type="unsignedInt" use="optional">
+      <enumeration name="no action"   value="1197"/>
+      <enumeration name="restrict"    value="1199"/>
+      <enumeration name="cascade"     value="1201"/>
+      <enumeration name="set null"    value="1203"/>
+      <enumeration name="set default" value="1205"/>
+    </attribute>
+    <attribute name="on-update" type="unsignedInt" use="optional">
+      <enumeration name="no action"   value="1197"/>
+      <enumeration name="restrict"    value="1199"/>
+      <enumeration name="cascade"     value="1201"/>
+      <enumeration name="set null"    value="1203"/>
+      <enumeration name="set default" value="1205"/>
+    </attribute>
+  </element>
+
+  <element name="databox">
+    <attribute name="name"     type="string"/>
+    <attribute name="label"    type="string" use="optional"/>
+    <attribute name="calculated" type="boolean" use="optional"/>
+    <attribute name="class"    type="string" use="optional"/>
+    <attribute name="alias"    type="string" use="optional"/>
+    <attribute name="value"    type="string"/>
+    <attribute name="default-value" type="string" use="optional"/>
+    <attribute name="type" type="unsignedInt" use="optional">
+      <enumeration name="undefined"        value="0"/>
+      <enumeration name="textbox-phrase"   value="17"/>
+      <enumeration name="textbox-text"     value="18"/>
+      <enumeration name="textbox-date"     value="19"/>
+      <enumeration name="textbox-password" value="20"/>
+      <enumeration name="textbox-number"   value="21"/>
+      <enumeration name="textbox-money"    value="22"/>
+      <enumeration name="checkbox"         value="23"/>
+      <enumeration name="image"            value="24"/>
+      <enumeration name="option"           value="25"/>
+      <enumeration name="option-static"    value="26"/>
+      <enumeration name="menulist"         value="27"/>
+      <enumeration name="menulist-static"  value="28"/>
+    </attribute>
+    <attribute name="orient" type="unsignedInt" use="optional">
+      <enumeration name="horizontal" value="7"/>
+      <enumeration name="vertical" value="13"/>
+    </attribute>
+    <attribute name="flex"     type="unsignedInt" use="optional"/>
+    <attribute name="align" type="unsignedInt" use="optional">
+      <enumeration name="start"  value="17"/>
+      <enumeration name="center" value="18"/>
+      <enumeration name="end"    value="19"/>
+    </attribute>
+    <attribute name="style" type="string" use="optional"/>
+    <attribute name="height" type="unsignedInt" use="optional"/>
+    <attribute name="width"  type="unsignedInt" use="optional"/>
+    <attribute name="rows"  type="unsignedInt" use="optional"/>
+    <attribute name="foreign-value" type="string" use="optional"/>
+    <attribute name="foreign-key"   type="string" use="optional"/>
+    <attribute name="foreign-table" type="string" use="optional"/>
+    <element name="choice" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="from"  minOccurs="0"/>
+    <element name="where" minOccurs="0"/>
+    <element name="depend-on" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="depend-on" type="string">
+    <attribute name="databox"    type="string"/>
+  </element>
+
+  <element name="choice" type="string">
+    <attribute name="label"    type="string"/>
+    <attribute name="value"    type="string"/>
+  </element>
+
+  <element name="box">
+    <attribute name="label" type="string" use="optional"/>
+    <attribute name="orient" type="unsignedInt" use="optional">
+      <enumeration name="vertical" value="13"/>
+      <enumeration name="horizontal" value="7"/>
+    </attribute>
+    <attribute name="flex"  type="unsignedInt" use="optional"/>
+    <element name="databox" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="box" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+<!--
+  <element name="box1">
+    <attribute name="orient" type="unsignedInt" use="optional">
+      <enumeration name="vertical" value="13"/>
+      <enumeration name="horizontal" value="7"/>
+    </attribute>
+    <attribute name="flex"  type="unsignedInt" use="optional"/>
+    <element name="box2" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="box2">
+    <attribute name="orient" type="unsignedInt" use="optional">
+      <enumeration name="horizontal" value="7"/>
+      <enumeration name="vertical" value="13"/>
+    </attribute>
+    <attribute name="flex"  type="unsignedInt" use="optional"/>
+    <element name="databox" maxOccurs="unbounded"/>
+  </element>
+-->
+
+  <element name="datatype" type="string">
+    <attribute name="name"  type="string"/>
+    <attribute name="label" type="string" use="optional"/>
+    <attribute name="type"  type="unsignedInt">
+      <enumeration name="complex"     value="0"/>
+      <enumeration name="bit"         value="67"/>
+      <enumeration name="varbit"      value="68"/>
+      <enumeration name="boolean"     value="69"/>
+      <enumeration name="varchar"     value="70"/>
+      <enumeration name="char"        value="71"/>
+      <enumeration name="date"        value="72"/>
+      <enumeration name="float"       value="73"/>
+      <enumeration name="integer"     value="74"/>
+      <enumeration name="interval"    value="75"/>
+      <enumeration name="numeric"     value="76"/>
+      <enumeration name="time"        value="77"/>
+      <enumeration name="timetz"      value="78"/>
+      <enumeration name="timestamp"   value="79"/>
+      <enumeration name="timestamptz" value="80"/>
+      <enumeration name="serial"      value="81"/>
+    </attribute>
+    <attribute name="size"       type="unsignedInt" use="optional"/>
+    <attribute name="precision"  type="unsignedInt" use="optional"/>
+    <attribute name="scale"      type="unsignedInt" use="optional"/>
+    <attribute name="array-dims" type="string"      use="optional"/>
+  </element>
+
+  <element name="datatypes">
+    <element name="datatype" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="description" type="string">
+    <attribute name="code" type="string"/>
+  </element>
+
+  <element name="descriptions">
+    <element name="description" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="phrase" type="string">
+    <attribute name="key" type="string"/>
+  </element>
+
+  <element name="event" type="string">
+    <attribute name="on" type="string" use="optional"/>
+    <attribute name="execute" type="string" use="optional"/>
+  </element>
+
+  <element name="events">
+    <element name="event" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="field" type="string">
+    <attribute name="property" type="string" use="optional"/>
+    <attribute name="null"    type="boolean" use="optional"/>
+  </element>
+
+  <element name="function" type="string">
+    <attribute name="name"   type="string"/>
+    <attribute name="schema" type="string"/>
+    <attribute name="type"   type="unsignedInt" use="optional">
+      <enumeration name="normal"    value="20"/>
+      <enumeration name="trigger"   value="40"/>
+      <enumeration name="aggregate" value="50"/>
+    </attribute>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="parameters" minOccurs="0"/>
+    <element name="return" minOccurs="0"/>
+    <element name="code"/>
+  </element>
+
+  <element name="functions">
+    <element name="function" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="generation">
+    <attribute name="name" type="string"/>
+    <attribute name="generator" type="string"/>
+    <attribute name="language-code" type="string"/>
+    <element name="infos" minOccurs="0"/>
+    <element name="descriptions" minOccurs="0"/>
+    <element name="option" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="generations">
+    <element name="generation" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="info" type="string">
+    <attribute name="type" type="unsignedInt">
+      <enumeration name="label"         value="187"/>
+      <enumeration name="represents"    value="188"/>
+      <enumeration name="creation-date" value="189"/>
+      <enumeration name="version"       value="191"/>
+      <enumeration name="author"        value="192"/>
+      <enumeration name="copyrigth"     value="193"/>
+    </attribute>
+  </element>
+
+  <element name="infos">
+    <element name="info" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="item" type="string">
+    <attribute name="label" type="string"/>
+  </element>
+
+  <element name="keyproperty" type="string">
+    <attribute name="name" type="string"/>
+  </element>
+
+  <element name="keyproperties">
+    <element name="keyproperty" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="language">
+    <attribute name="code" type="string"/>
+    <element name="phrase" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="languages">
+    <element name="language" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="level">
+    <attribute name="type" type="unsignedInt">
+      <enumeration name="index" value="14"/>
+      <enumeration name="list"  value="16"/>
+    </attribute>
+    <attribute name="depth" type="unsignedInt"/>
+    <attribute name="treehidden" type="boolean" use="optional"/>
+    <element name="item"/>
+    <element name="tree" minOccurs="0"/>
+  </element>
+
+<!--
+  <element name="library">
+    <attribute name="name"  type="string"/>
+    <attribute name="uuid"  type="string"/>
+    <attribute name="label" type="string" use="optional"/>
+    <attribute name="type"  type="unsignedInt">
+      <enumeration name="analysis"   value="7"/>
+      <enumeration name="navigation" value="13"/>
+    </attribute>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="datatypes" minOccurs="0"/>
+    <element name="function" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+-->
+
+  <element name="list">
+    <attribute name="label" type="string"/>
+    <attribute name="target-part" type="string" use="optional"/>
+    <attribute name="target-property" type="string" use="optional"/>
+    <element name="action" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="columns"/>
+    <element name="from"/>
+    <element name="where" minOccurs="0"/>
+  </element>
+
+<!--
+  <element name="action" type="string">
+    <attribute name="type"  type="unsignedInt">
+      <enumeration name="new"    value="1"/>
+      <enumeration name="edit"   value="3"/>
+      <enumeration name="delete" value="7"/>
+      <enumeration name="other"  value="15"/>
+    </attribute>
+    <attribute name="label" type="string"/>
+    <attribute name="work" type="unsignedInt">
+      <enumeration name="execute" value="43"/>
+      <enumeration name="search-detail" value="45"/>
+      <enumeration name="show-detail" value="47"/>
+    </attribute>
+    <element name="with-param" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="actions">
+    <element name="action" maxOccurs="unbounded"/>
+  </element>
+-->
+
+  <element name="menu" type="string">
+  </element>
+
+  <element name="menuitem">
+    <attribute name="title" type="string"/>
+    <attribute name="action" type="unsignedInt">
+      <enumeration name="execute" value="43"/>
+      <enumeration name="search-detail" value="45"/>
+      <enumeration name="goto-menu" value="47"/>
+    </attribute>
+    <attribute name="param" type="string" use="optional"/>
+    <element name="with-param" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="menugroup">
+    <attribute name="title" type="string"/>
+    <element name="menuitem" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="navigation">
+    <attribute name="version" type="string"/>
+    <attribute name="guuid"   type="string"/>
+    <attribute name="nuuid"   type="string"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="windows" minOccurs="0"/>
+    <element name="overlays" minOccurs="0"/>
+  </element>
+
+  <element name="note" type="string">
+    <attribute name="date"      type="string"/>
+    <attribute name="author-id" type="string"/>
+    <attribute name="title"     type="string"/>
+  </element>
+
+  <element name="notes">
+    <element name="note" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="option" type="string">
+    <attribute name="name" type="string"/>
+  </element>
+
+  <element name="overlays">
+    <element name="overlay" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="overlay" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="type" type="string"/>
+    <attribute name="uuid1" type="string"/>
+    <attribute name="uuid2" type="string"/>
+    <element name="infos" minOccurs="0"/>
+  </element>
+
+  <element name="parameter" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="type" type="string"/>
+    <attribute name="direction" type="unsignedInt" use="optional">
+      <enumeration name="in"    value="1"/>
+      <enumeration name="out"   value="2"/>
+      <enumeration name="inout" value="3"/>
+    </attribute>
+    <attribute name="default-value" type="string" use="optional"/>
+    <attribute name="description" type="string" use="optional"/>
+  </element>
+
+  <element name="parameters">
+    <element name="parameter" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="part-detail">
+    <attribute name="title" type="string"/>
+    <attribute name="name"  type="string"/>
+    <attribute name="class" type="string"/>
+    <attribute name="autogenerated" type="boolean" use="optional"/>
+<!--    <element name="actions" minOccurs="0"/>-->
+    <element name="keyproperties" minOccurs="0"/>
+    <element name="plan-search" minOccurs="0"/>
+    <element name="plan-select"/>
+    <element name="plan-insert" minOccurs="0"/>
+    <element name="plan-update" minOccurs="0"/>
+    <element name="plan-delete" minOccurs="0"/>
+  </element>
+
+  <element name="action" type="string">
+    <attribute name="label"  type="string" use="optional"/>
+    <attribute name="type"  type="unsignedInt">
+      <enumeration name="execute" value="0"/>
+      <enumeration name="print"   value="1"/>
+      <enumeration name="export"  value="2"/>
+    </attribute>
+    <attribute name="name" type="string"/>
+  </element>
+
+
+  <element name="plan-search">
+    <element name="search-steps"/>
+    <element name="columns"/>
+  </element>
+
+  <element name="plan-select">
+    <element name="action" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="detail-block" maxOccurs="unbounded"/>
+    <element name="list" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="plan-insert">
+    <element name="detail-block"/>
+  </element>
+
+  <element name="plan-update">
+    <element name="detail-block"/>
+  </element>
+
+  <element name="plan-delete" type="string">
+  </element>
+
+  <element name="part-menu">
+    <attribute name="name" type="string"/>
+    <attribute name="title" type="string"/>
+    <element name="menugroup" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="part-navigation">
+    <attribute name="title" type="string"/>
+    <element name="level" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="parts">
+    <element name="part-menu" maxOccurs="unbounded"/>
+    <element name="part-detail" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="part-navigation" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="detail-block">
+    <attribute name="label" type="string"/>
+    <element name="box"/>
+    <element name="from" minOccurs="0"/>
+    <element name="where" minOccurs="0"/>
+  </element>
+
+  <element name="project">
+    <attribute name="label" type="string"/>
+    <attribute name="name" type="string"/>
+    <attribute name="version" type="string"/>
+    <attribute name="uuid" type="string"/>
+    <attribute name="languages-file" type="path" use="optional"/>
+    <element name="authors" minOccurs="0"/>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="languages" minOccurs="0"/>
+    <element name="descriptions" minOccurs="0"/>
+    <element name="navigation" minOccurs="0"/>
+    <element name="analyses" minOccurs="0"/>
+    <element name="generations" minOccurs="0"/>
+    <element name="themes" minOccurs="0"/>
+  </element>
+
+  <element name="property" type="string">
+    <attribute name="label" type="string" use="optional"/>
+    <attribute name="uid"   type="unsignedInt"/>
+    <attribute name="name"  type="string"/>
+    <attribute name="type"  type="string"/>
+    <attribute name="index" type="unsignedInt" use="optional">
+      <enumeration name="none"    value="0"/>
+      <enumeration name="default" value="1"/>
+      <enumeration name="btree"   value="2"/>
+      <enumeration name="hash"    value="3"/>
+      <enumeration name="rtree"   value="4"/>
+      <enumeration name="gist"    value="5"/>
+    </attribute>
+    <attribute name="mode" type="unsignedInt" use="optional">
+      <enumeration name="normal"      value="0"/>
+      <enumeration name="auto-update" value="1"/>
+      <enumeration name="auto-insert" value="2"/>
+      <enumeration name="auto"        value="3"/>
+    </attribute>
+    <attribute name="meaning" type="unsignedInt" use="optional">
+      <enumeration name="normal"      value="0"/>
+      <enumeration name="interesting" value="1"/>
+      <enumeration name="significant" value="2"/>
+      <enumeration name="major"       value="3"/>
+    </attribute>
+    <attribute name="identifier" type="boolean" use="optional"/>
+    <attribute name="unique"     type="boolean" use="optional"/>
+    <attribute name="notnull"    type="boolean" use="optional"/>
+    <attribute name="nevernull"  type="boolean" use="optional"/>
+    <attribute name="default"    type="string"  use="optional"/>
+  </element>
+
+  <element name="record">
+    <attribute name="with-triggers" type="boolean" use="optional"/>
+    <attribute name="type" type="unsignedInt" use="optional">
+      <enumeration name="full"    value="0"/>
+      <enumeration name="partial" value="1"/>
+    </attribute>
+    <element name="field" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="return" type="string">
+    <attribute name="type" type="string"/>    
+  </element>
+
+  <element name="schema">
+    <attribute name="name"   type="string"/>
+    <attribute name="label"  type="string"/>
+    <attribute name="uuid" type="string"/>
+    <attribute name="type"   type="unsignedInt">
+      <enumeration name="dynamic" value="0"/>
+      <enumeration name="static"  value="1"/>
+    </attribute>
+    <attribute name="use" type="unsignedInt" use="optional">
+      <enumeration name="one-at-once" value="0"/>
+      <enumeration name="all-at-once" value="1"/>
+    </attribute>
+    <attribute name="image-schema"   type="string" use="optional"/>
+    <attribute name="image-class"    type="string" use="optional"/>
+    <attribute name="image-property" type="string" use="optional"/>
+    <element name="from" minOccurs="0"/>
+    <element name="where" minOccurs="0"/>
+  </element>
+
+  <element name="schemas">
+    <element name="schema" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="search-step">
+    <attribute name="orderby"  type="string" use="optional"/>
+    <element name="from" minOccurs="0"/>
+    <element name="where"/>
+  </element>
+
+  <element name="search-steps">
+    <element name="search-step" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="string" type="string">
+    <attribute name="value"   type="string"/>
+    <attribute name="data"    type="boolean" use="optional"/>
+    <attribute name="onclick" type="string" use="optional"/>
+    <attribute name="key"     type="string" use="optional"/>
+    <attribute name="param"   type="string" use="optional"/>
+  </element>
+
+  <element name="style">
+    <attribute name="target"    type="string"/>
+    <attribute name="disabled"  type="boolean" use="optional"/>
+    <element name="styledef" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="styledef" type="string">
+    <attribute name="name"     type="string"/>
+    <attribute name="value"    type="string"/>
+    <attribute name="disabled" type="boolean" use="optional"/>
+  </element>
+<!--
+  <element name="tasks">
+    <element name="task" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="task" type="string">
+    <attribute name="name" type="string">
+    <attribute>
+    <attribute name="moment" type="unsignedInt" use="optional">
+      <enumeration name="install-after-triggers"  value="853"/>
+      <enumeration name="install-before-triggers" value="855"/>
+      <enumeration name="before-event"            value="857"/>
+      <enumeration name="after-event"             value="859"/>
+    </attribute>
+    <element name="event" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+-->
+
+  <element name="medium">
+    <attribute name="path" type="path"/>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+  </element>
+
+  <element name="media">
+    <element name="medium" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="theme">
+    <attribute name="name" type="string"/>
+    <attribute name="disabled" type="boolean" use="optional"/>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="media" minOccurs="0"/>
+    <element name="image-button" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="style" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="image-button">
+    <attribute name="name" type="string" use="optional"/>
+    <element name="image-scale" maxOccurs="unbounded"/>
+    <element name="image-col" maxOccurs="unbounded"/>    
+  </element>
+
+  <element name="image-scale" type="string">
+    <attribute name="name"  type="string"/>
+    <attribute name="value" type="unsignedInt"/>
+    <attribute name="url"  type="string"/>
+  </element>
+
+  <element name="image-col" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="index" type="unsignedInt"/>
+  </element>
+
+  <element name="themes">
+    <element name="notes" minOccurs="0"/>
+    <element name="theme" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="tools" type="string">
+  </element>
+
+  <element name="tree">
+    <element name="treecolumns"/>
+    <element name="treerows"/>
+  </element>
+
+  <element name="treecell" type="string">
+    <attribute name="disabled" type="boolean" use="optional"/>
+    <element name="string" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="treecolumn" type="string">
+    <attribute name="label" type="string"/>
+  </element>
+
+  <element name="treecolumns">
+    <element name="treecolumn" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="treerows">
+    <element name="treerow" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="treerow">
+    <attribute name="depth" type="unsignedInt"/>
+    <element name="treecell" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="trigger">
+    <attribute name="name"     type="string"/>
+    <attribute name="schema"   type="string"/>
+    <attribute name="function" type="string"/>
+    <element name="trigger-event" minOccurs="0" maxOccurs="unbounded"/>
+    <element name="trigger-param" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="trigger-event" type="string">
+    <attribute name="moment" type="unsignedInt">
+      <enumeration name="before"    value="857"/>
+      <enumeration name="after"     value="859"/>
+    </attribute>
+    <attribute name="event" type="unsignedInt">
+      <enumeration name="insert"    value="423"/>
+      <enumeration name="update"    value="424"/>
+      <enumeration name="delete"    value="425"/>
+    </attribute>
+    <attribute name="for-each" type="unsignedInt" use="optional">
+      <enumeration name="row"       value="5"/>
+      <enumeration name="statement" value="12"/>
+    </attribute>
+    <attribute name="on-schema" type="string"/>
+    <attribute name="on-table"  type="string"/>
+  </element>
+
+  <element name="trigger-param" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="value" type="string"/>
+  </element>
+
+  <element name="triggers">
+    <element name="trigger" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="window">
+    <attribute name="name" type="string"/>
+    <attribute name="type" type="unsignedInt">
+      <enumeration name="manual" value="145"/>
+      <enumeration name="master" value="147"/>
+    </attribute>
+    <attribute name="uuid1" type="string"/>
+    <attribute name="uuid2" type="string"/>
+    <element name="infos" minOccurs="0"/>
+    <element name="notes" minOccurs="0"/>
+    <element name="languages" minOccurs="0"/>
+    <element name="menu" minOccurs="0"/>
+    <element name="tools" minOccurs="0"/>
+    <element name="events" minOccurs="0"/>
+    <element name="parts"/>
+  </element>
+
+  <element name="windows">
+    <element name="window" minOccurs="0" maxOccurs="unbounded"/>
+  </element>
+
+  <element name="with-param" type="string">
+    <attribute name="name" type="string"/>
+    <attribute name="value" type="string"/>
+  </element>
+
+</schemax>

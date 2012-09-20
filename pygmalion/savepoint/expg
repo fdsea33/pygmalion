@@ -1,0 +1,21 @@
+psql $1 -f $2 2> LOG.txt;
+cat LOG.txt | grep "FATAL" > erreur.txt;
+cat LOG.txt | grep "ERREUR" >> erreur.txt;
+cat LOG.txt | grep "ATTENTION" >> erreur.txt;
+echo "-------------------------------------"
+echo -n "Fatals     : ";
+f=`cat erreur.txt | grep FATAL | wc -l | cut -f 1 -d ' ';`
+echo $f
+echo -n "Erreurs    : ";
+err=`cat erreur.txt | grep "ERREUR" | wc -l | cut -f 1 -d ' ';`
+echo $err
+echo -n "Attentions : ";
+a=`cat erreur.txt | grep ATTENTION | wc -l | cut -f 1 -d ' ';`
+echo $a
+echo "-------------------------------------"
+more erreur.txt;
+if [ $f -eq 0 ]; then
+  if [ $err -eq 0 ]; then
+    rm LOG.txt 
+  fi
+fi

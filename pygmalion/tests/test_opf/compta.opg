@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<generation name="Celle que je préfère" generator="@fdsea33.fr/pygmalion/pygen;1" language-code="fr-FR">
+  <descriptions>
+    <description code="fr-FR">Pour faire un XPCOM avec un serveur gSOAP</description>
+    <description code="en-US">To do a beautiful extension with a powerful Web Service</description>
+  </descriptions>
+  <option name="icon">gestsea.png</option>
+  <option name="extension-directory">/home/brice/Moz/extensions</option>
+  <option name="server-directory">/home/brice/pygmalion/servers</option>
+  <option name="xpcom-prefix">@brice.fr</option>
+  <option name="short-name">comptax</option>
+  <option name="project-module">Comptax</option>
+  <option name="uuid1">bfd5a92a-7b1e-4038-90af-47ce151d4e37</option>
+  <option name="uuid2">d1abdb8f-3948-4b2d-aa47-b36bc432e795</option>
+  <option name="uuid2-cpp">{ 0xd1abdb8f, 0x3948, 0x4b2d, {0xaa, 0x47, 0xb3, 0x6b, 0xc4, 0x32, 0xe7, 0x95} }</option>
+  <option name="soapcpp-dir">/home/brice/gsoap/gsoap-2.7/soapcpp2</option>
+</generation>

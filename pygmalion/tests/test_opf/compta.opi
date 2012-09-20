@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<window type="master" name="comptax" uuid1="8acc0ddc-76d2-48a2-98bf-49b872aeef31" uuid2="b36a704e-4fed-4e14-86da-0938feb9b70d">
+  <languages>
+    <language code="fr-FR">
+      <phrase key="f_compta.demarrage_">Comptabilité</phrase>
+      <phrase key="f_compta.demarrage.journaux_">Gestion journalière</phrase>
+      <phrase key="f_compta.demarrage.journaux.voir_">Je veux voir les journaux</phrase>
+      <phrase key="f_compta.demarrage.comptes_">Gestion des comptes</phrase>
+      <phrase key="f_compta.demarrage.comtpes.voir_">Je veux voir les comptes</phrase>
+      <phrase key="f_compta.detail.compte.title_"></phrase>
+      <phrase key="f_compta.detail.compte.debit_"></phrase>
+      <phrase key="f_compta.detail.compte.credit_"></phrase>
+      <phrase key="f_compta.detail.compte.solde_"></phrase>
+      <phrase key="f_compta.detail.compte.acces_">Access level: </phrase>
+      <phrase key="f_compta.detail.compte.nbecritures_"></phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires_"></phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires.cm_numcompte_"></phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires.cm_nom_"></phrase>
+      <phrase key="f_compta.detail.compte.ecritures_"></phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_libelle_"></phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_debit_"></phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_credit_"></phrase>
+      <phrase key="f_compta.detail.acces.title_">Niveaux d'accès</phrase>
+      <phrase key="f_compta.detail.acces.value_">Valeur</phrase>
+
+      <phrase key="f_compta.navigation.journal_">Mes journaux</phrase>
+      <phrase key="f_compta.navigation.journal.level0.label_">Journaux</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.journal_">Type de journaux</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.debit_">Débit</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.credit_">Crédit</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.solde_">Solde</phrase>
+      <phrase key="f_compta.navigation.journal.level1.label_"></phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.journal_"></phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.debit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.credit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.solde_"></phrase>
+      <phrase key="f_compta.navigation.journal.level2.label_"></phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.mois_"></phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.debit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.credit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.solde_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.label_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.numero_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.libelle_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.debit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.credit_"></phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.solde_"></phrase>
+    </language>
+
+    <language code="en-US">
+      <phrase key="f_compta.demarrage_">Accountancy</phrase>
+      <phrase key="f_compta.demarrage.journaux_">Journals management</phrase>
+      <phrase key="f_compta.demarrage.journaux.voir_">I want to see the journals</phrase>
+      <phrase key="f_compta.demarrage.comptes_">Account management</phrase>
+      <phrase key="f_compta.demarrage.comptes.voir_">I want to see the accounts</phrase>
+      <phrase key="f_compta.detail.compte.block1_">Rights/Access</phrase>
+      <phrase key="f_compta.detail.compte.title_">Accounts</phrase>
+      <phrase key="f_compta.detail.compte.debit_">Flow: </phrase>
+      <phrase key="f_compta.detail.compte.credit_">Credit: </phrase>
+      <phrase key="f_compta.detail.compte.solde_">Balance: </phrase>
+      <phrase key="f_compta.detail.compte.acces_">Access level: </phrase>
+      <phrase key="f_compta.detail.compte.nbecritures_">Number of entries: </phrase>
+      <phrase key="f_compta.detail.compte.estdebit_">Flow account</phrase>
+      <phrase key="f_compta.detail.compte.general_">General account</phrase>
+      <phrase key="f_compta.detail.compte.acceptaux_">Accept auxiliary accounts</phrase>
+      <phrase key="f_compta.detail.compte.utilisable_">Usable</phrase>
+      <phrase key="f_compta.detail.compte.lettrable_">Can be 'lettered'</phrase>
+      <phrase key="f_compta.detail.compte.pointable_">Can be pointed</phrase>
+      <phrase key="f_compta.detail.compte.groupable_">Can be grouped</phrase>
+
+      <phrase key="f_compta.detail.compte.parent_">Parent account</phrase>
+      <phrase key="f_compta.detail.compte.parent.nom_">Name: </phrase>
+      <phrase key="f_compta.detail.compte.parent.numcompte_">Number: </phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires_">Auxiliary accounts</phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires.cm_numcompte_">Number</phrase>
+      <phrase key="f_compta.detail.compte.auxiliaires.cm_nom_">Name</phrase>
+      <phrase key="f_compta.detail.compte.ecritures_">Entries</phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_libelle_">Label</phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_debit_">Flow</phrase>
+      <phrase key="f_compta.detail.compte.ecritures.ec_credit_">Credit</phrase>
+
+      <phrase key="f_compta.detail.acces.title_">Access levels</phrase>
+      <phrase key="f_compta.detail.acces.value_">Value</phrase>
+      
+      <phrase key="f_compta.navigation.journal_">Journals management</phrase>
+      <phrase key="f_compta.navigation.journal.level0.label_">Journals</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.journal_">(Type of) Journal</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.debit_">Flow</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.credit_">Credit</phrase>
+      <phrase key="f_compta.navigation.journal.level0.columns.solde_">Balance</phrase>
+      <phrase key="f_compta.navigation.journal.level1.label_">Journals</phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.journal_">Journal</phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.debit_">Flow</phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.credit_">Credit</phrase>
+      <phrase key="f_compta.navigation.journal.level1.columns.solde_">Balance</phrase>
+      <phrase key="f_compta.navigation.journal.level2.label_">Months</phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.mois_">Month</phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.debit_">Flow</phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.credit_">Credit</phrase>
+      <phrase key="f_compta.navigation.journal.level2.columns.solde_">Balance</phrase>
+      <phrase key="f_compta.navigation.journal.level3.label_">Accounting records</phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.numero_">Number</phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.libelle_">Label</phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.debit_">Flow</phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.credit_">Credit</phrase>
+      <phrase key="f_compta.navigation.journal.level3.columns.solde_">Balance</phrase>
+    </language>
+
+  </languages>
+
+    <menu>
+    </menu>
+    <tools>
+    </tools>
+    <events>
+      <event on="load" execute="Connect"/>
+    </events>
+    <parts>
+
+      <part-menu title="f_compta.demarrage_" image="images/f_compta.png">
+        <menugroup title="f_compta.demarrage.journaux_">
+          <menuitem title="f_compta.demarrage.journaux.voir_" action="execute"/>
+          <menuitem title="f_compta.demarrage.journaux.voir_" action="search-detail">
+	    <with-param name="detail-name" value="compta_journal"/>
+	  </menuitem> />
+        </menugroup>
+        <menugroup title="f_compta.demarrage.comptes_">
+<!--          <menuitem title="f_compta.demarrage.comptes.voir_" action="execute"/>-->
+<!--
+          <menuitem title="f_compta.demarrage.comptes.voir_" action="show-detail">
+	    <with-param name="detail-name" value="ComptaCompte"/>
+	  </menuitem>
+-->
+          <menuitem title="f_compta.demarrage.comptes.voir_" action="search-detail">
+	    <with-param name="detail-name" value="ComptaCompte"/>
+	  </menuitem> />
+        </menugroup>
+      </part-menu>
+
+
+      <part-detail title="f_compta.detail.compte.title_" class="2ea329d6-d3bf-4866-8979-611dbf7a8706" name="ComptaCompte">
+        <keyproperties>
+          <keyproperty name="CM_Numero"/>
+          <keyproperty name="CM_NumCompte"/>
+          <keyproperty name="CM_Nom"/>
+        </keyproperties>
+
+
+        <plan-search>
+
+          <columns target-part="ComptaCompte">
+            <column label="compta.compte.cm_numcompte_" value="CM_NumCompte" flex="2"/>
+            <column label="compta.compte.cm_nom_"       value="CM_Nom" flex="5"/>
+            <column label="compta.compte.cm_debit_"     value="CM_Debit"/>
+            <column label="compta.compte.cm_credit_"    value="CM_Credit"/>
+          </columns>
+
+          <search-steps>
+            <search-step orderby="1">
+              <where>
+                <comparison value="CM_NumCompte" is="starting-with" target="$1" />
+              </where>
+	    </search-step>
+
+            <search-step orderby="1">
+              <where>
+                <comparison value="CM_NumCompte" is="equals-to" target="$1"/>
+              </where>
+	    </search-step>
+
+            <search-step orderby="1">
+              <where>
+                <comparison value="CM_NumCompte" is="containing" target="$1"/>
+              </where>
+	    </search-step>
+
+            <search-step orderby="2">
+              <where>
+                <comparison value="LOWER(CM_Nom)" is="containing" target="LOWER($1)" />
+              </where>
+	    </search-step>
+          </search-steps>
+        </plan-search>
+
+        <plan-select>   
+          <detail-block label="_.general_" orient="vertical">
+            <box1 orient="vertical">
+              <box2 orient="horizontal">
+                <databox class="detail-title" flex="7" value="CM_Nom" align="start"/>
+                <databox class="detail-title" flex="1" value="CM_NumCompte" align="end"/>
+              </box2>
+            </box1>
+	    <box1 orient="horizontal">
+              <box2 orient="vertical" flex="2">
+                <databox mode="ro" label="f_compta.detail.compte.debit_"  value="CM_Debit"  flex="1" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.credit_" value="CM_Credit" flex="1" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.solde_"  value="CM_Credit-CM_Debit" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.nbecritures_" value="CM_NbEcritures" align="start"/>
+              </box2>
+              <box2 orient="vertical">
+                <databox label="f_compta.detail.compte.estdebit_"   type="checkbox" value="CM_EstDebit" align="end"/>
+                <databox label="f_compta.detail.compte.general_"    type="checkbox" value="CM_General" align="end"/>
+                <databox label="f_compta.detail.compte.acceptaux_"  type="checkbox" value="CM_Acceptaux" align="end"/>
+                <databox label="f_compta.detail.compte.utilisable_" type="checkbox" value="CM_Utilisable" align="start"/>
+              </box2>
+              <box2 orient="vertical">
+                <databox label="f_compta.detail.compte.lettrable_"  type="checkbox" value="CM_Lettrable" align="start"/>
+                <databox label="f_compta.detail.compte.pointable_"  type="checkbox" value="CM_Pointable" align="start"/>
+                <databox label="f_compta.detail.compte.groupable_"  type="checkbox" value="CM_Groupable" align="start"/>
+              </box2>
+            </box1>
+          </detail-block>
+
+
+          <detail-block label="f_compta.detail.compte.block1_">
+            <box1>
+              <box2>
+                <databox label="f_compta.detail.compte.acces_" value="AC_Nom" flex="5" align="start"/>
+              </box2>
+            </box1>
+            <from>
+              <join type="left-join">
+                <from-table name="compta_compte"/>
+                <from-table name="compta_acces"/>
+                <using>
+                  <column-name name="AC_Numero"/>
+                </using>
+              </join>
+            </from>
+          </detail-block>
+
+
+          <detail-block label="f_compta.detail.compte.parent_" orient="horizontal">
+            <box1 orient="vertical" flex="3">
+              <box2>
+                <databox label="f_compta.detail.compte.parent.nom_" prefix="parent" value="CM_Nom" flex="5" align="start"/>
+              </box2>
+              <box2 orient="horizontal">
+                <databox mode="ro" label="f_compta.detail.compte.debit_" prefix="parent"  value="CM_Debit"  flex="1" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.credit_" prefix="parent" value="CM_Credit" flex="1" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.solde_"  value="parent.CM_Credit-parent.CM_Debit" align="end"/>
+              </box2>
+            </box1>
+            <box1 orient="vertical">
+              <box2 orient="vertical">
+                <databox label="f_compta.detail.compte.parent.numcompte_" prefix="parent" value="CM_NumCompte" align="end"/>
+                <databox mode="ro" label="f_compta.detail.compte.nbecritures_" prefix="parent" value="CM_NbEcritures" align="start"/>
+              </box2>            
+	    </box1>
+            <from>
+              <join type="left-join">
+                <from-table name="compta_compte">
+                  <as-table name="fils"/>
+                </from-table>
+                <from-table name="compta_compte">
+                  <as-table name="parent"/>
+                </from-table>
+                <on>
+                  <comparison value="fils.CM_Parent" is="equals-to" target="parent.CM_Numero"/>
+                </on>
+              </join>
+            </from>
+            <where>
+              <comparison value="fils.CM_Numero" is="equals-to" target="$1"/>
+            </where>
+          </detail-block>
+    
+          <list label="f_compta.detail.compte.auxiliaires_" target-part="ComptaCompte" target-property="CM_Parent">
+            <columns target-part="ComptaCompte" local-key="fils.CM_Numero">
+              <column label="f_compta.detail.compte.auxiliaires.cm_numcompte_" prefix="fils" value="CM_NumCompte"/>
+              <column label="f_compta.detail.compte.acces_" prefix="compta_acces" value="AC_Nom"/>
+              <column label="f_compta.detail.compte.auxiliaires.cm_nom_" prefix="fils" value="CM_Nom" flex="6"/>
+              <column label="compta.compte.cm_debit_" prefix="fils" value="CM_Debit"/>
+              <column label="compta.compte.cm_credit_" prefix="fils" value="CM_Credit"/>
+            </columns>
+            <from>
+              <join type="join">
+                <join type="join">
+                  <from-table name="compta_compte">
+                    <as-table name="principal"/>
+                  </from-table>
+                  <from-table name="compta_compte">
+                    <as-table name="fils"/>
+                  </from-table>
+                  <on>
+                    <comparison value="fils.CM_Parent" is="equals-to" target="principal.CM_Numero"/>
+                  </on>
+                </join>
+                <from-table name="compta_acces"/>
+                <on>
+                  <comparison value="fils.AC_Numero" is="equals-to" target="compta_acces.AC_Numero"/>
+                </on>
+              </join>
+            </from>
+            <where>
+              <comparison value="$1" is="equals-to" target="principal.CM_Numero"/>
+            </where>
+          </list>
+    
+          <list label="f_compta.detail.compte.ecritures_">
+            <columns>
+              <column label="compta.piece.pi_numpiece_"    value="PI_NumPiece"/>
+              <column label="compta.piece.pi_date_"        value="PI_Date" flex="2"/>
+              <column label="compta.ecriture.ec_libelle_"  value="EC_Libelle" flex="5"/>
+              <column label="compta.ecriture.ec_debit_"    value="EC_Debit"/>
+              <column label="compta.ecriture.ec_credit_"   value="EC_Credit"/>
+              <column label="compta.ecriture.ec_lettrage_" value="EC_Lettrage"/>
+              <column label="compta.pointage.pt_releve_"   value="PT_Releve" flex="2"/>
+            </columns>
+            <from>
+              <join type="join">
+                <join type="join">
+                  <from-table name="compta_ecriture"/>
+                  <from-table name="compta_pointage"/>
+                  <using>
+                    <column-name name="PT_Numero"/>
+                  </using>
+                </join>
+                <from-table name="compta_piece"/>
+                <using>
+                  <column-name name="PI_Numero"/>
+                </using>
+              </join>
+            </from>
+            <where>
+              <comparison value="CM_Numero" is="equals-to" target="$1" />
+            </where>
+          </list>
+        </plan-select>
+
+	<plan-update>
+          <detail-block label="_.general_" orient="vertical">
+            <box1 orient="vertical">
+              <box2 orient="horizontal">
+                <databox label="f_compta.detail.compte.parent.nom_" flex="7" value="CM_Nom" align="start"/>
+                <databox label="f_compta.detail.compte.parent.numcompte_" flex="1" value="CM_NumCompte" align="end"/>
+              </box2>
+              <box2 orient="horizontal">
+                <databox label="f_compta.detail.compte.parent_"  type="menulist" value="CM_Parent" foreign-value="CM_Nom||' ('||CM_NumCompte||')'" align="start" foreign-key="CM_Numero" foreign-table="compta_compte"/>
+              </box2>
+              <box2 orient="horizontal">
+                <databox label="f_compta.detail.compte.parent_"  type="menulist" value="AC_Numero" foreign-value="AC_Nom||' ('||AC_Valeur||')'" align="start" foreign-key="AC_Numero" foreign-table="compta_acces"/>
+                <databox label="f_compta.detail.compte.parent_"  type="menulist" value="EX_Numero" foreign-value="EX_DateDebut||' - '||EX_DateFin" align="start" foreign-key="EX_Numero" foreign-table="compta_exercice"/>
+              </box2>
+            </box1>
+            <box1 orient="horizontal">
+              <box2 orient="vertical">
+                <databox label="f_compta.detail.compte.estdebit_"   type="checkbox" value="CM_EstDebit" align="end"/>
+                <databox label="f_compta.detail.compte.general_"    type="checkbox" value="CM_General" align="end"/>
+                <databox label="f_compta.detail.compte.acceptaux_"  type="checkbox" value="CM_Acceptaux" align="end"/>
+                <databox label="f_compta.detail.compte.utilisable_" type="checkbox" value="CM_Utilisable" align="start"/>
+              </box2>
+              <box2 orient="vertical">
+                <databox label="f_compta.detail.compte.lettrable_"  type="checkbox" value="CM_Lettrable" align="start"/>
+                <databox label="f_compta.detail.compte.pointable_"  type="checkbox" value="CM_Pointable" align="start"/>
+                <databox label="f_compta.detail.compte.groupable_"  type="checkbox" value="CM_Groupable" align="start"/>
+              </box2>
+            </box1>
+
+          </detail-block>
+	
+	</plan-update>
+
+      </part-detail>
+
+
+
+
+
+      <part-detail title="f_compta.detail.acces.title_" class="f609c614-1aab-4e3f-8d7e-547caa183775" name="ComptaAcces">
+        <keyproperties>
+          <keyproperty name="AC_Numero"/>
+          <keyproperty name="AC_Nom"/>
+        </keyproperties>
+
+        <plan-search>
+          <columns>
+            <column label="compta.acces.ac_nom_"    value="AC_Nom" flex="5"/>
+            <column label="compta.acces.ac_valeur_" value="AC_Valeur"/>
+          </columns>
+
+          <search-steps>
+            <search-step orderby="1">
+              <where>
+                <comparison value="AC_Nom" is="containing" target="$1" />
+              </where>
+            </search-step>
+
+            <search-step orderby="2">
+              <where>
+                <comparison value="AC_Valeur" is="containing" target="$1" />
+              </where>
+            </search-step>
+
+          </search-steps>
+        </plan-search>
+
+        <plan-select>
+          <detail-block label="_.general_">
+            <box1 orient="vertical">
+              <box2 orient="horizontal">
+                <databox class="detail-title" flex="7" value="AC_Nom" align="start"/>
+              </box2>
+              <box2 orient="horizontal">
+                <databox label="f_compta.detail.acces.value_" flex="1" value="AC_Valeur" align="end"/>
+              </box2>
+            </box1>
+          </detail-block>
+        </plan-select>
+
+        <plan-update>
+          <detail-block label="_.general_">
+            <box1 orient="vertical">
+              <box2 orient="horizontal">
+                <databox class="detail-title" flex="7" value="AC_Nom" align="start"/>
+              </box2>
+              <box2 orient="horizontal">
+                <databox label="f_compta.detail.acces.value_" flex="1" value="AC_Valeur" align="end"/>
+              </box2>
+            </box1>
+          </detail-block>
+        </plan-update>
+
+      </part-detail>
+
+      
+
+      <part-navigation title="f_compta.navigation.journal_">
+
+        <level depth="0" type="index" treehidden="true">
+          <item label="f_compta.navigation.journal.level0.label_"/>
+          <tree>
+            <treecolumns>
+              <treecolumn label="f_compta.navigation.journal.level0.columns.journal_"/>
+              <treecolumn label="f_compta.navigation.journal.level0.columns.debit_"/>
+              <treecolumn label="f_compta.navigation.journal.level0.columns.credit_"/>
+              <treecolumn label="f_compta.navigation.journal.level0.columns.solde_"/>
+            </treecolumns>
+            <treerows number="2">
+              <treerow depth="1">
+                <treecell>
+                  <string value="TJ_Nom" data="true" onclick="select" table="TypeJournal"/>
+                  <string value=" ("/>
+                  <string value="TJ_Numero" data="true"/>
+                  <string value=")"/>
+                </treecell>
+                <treecell label="TJ_Debit"  data="true"/>
+                <treecell label="TJ_Credit" data="true"/>
+                <treecell label="TJ_Credit-TJ_Debit" data="true"/>
+              </treerow>
+
+              <treerow depth="2" using="TJ_Numero">
+                <treecell label="JO_Libelle" data="true" onclick=""/>
+                <treecell label="JO_Debit"  data="true"/>
+                <treecell label="JO_Credit" data="true"/>
+                <treecell label="JO_Credit-JO_Debit" data="true"/>
+              </treerow>
+            </treerows>
+          </tree>
+        </level>
+
+        <level depth="1" type="index" treehidden="true">
+          <item label="f_compta.navigation.journal.level1.label_"/>
+          <tree>
+            <treecolumns>
+              <treecolumn label="f_compta.navigation.journal.level1.columns.journal_"/>
+              <treecolumn label="f_compta.navigation.journal.level1.columns.debit_"/>
+              <treecolumn label="f_compta.navigation.journal.level1.columns.credit_"/>
+              <treecolumn label="f_compta.navigation.journal.level1.columns.solde_"/>
+            </treecolumns>
+            <treerows number="2">
+              <treerow depth="1">
+                <treecell label="JO_Libelle" data="true" onclick="select" table="Journal"/>
+                <treecell label="JO_Debit"  data="true"/>
+                <treecell label="JO_Credit" data="true"/>
+                <treecell label="JO_Credit-JO_Debit" data="true"/>
+              </treerow>
+              <treerow depth="2" using="JO_Numero">
+                <treecell label="MoisEnLettre(((EXTRACT(MONTH FROM PI_Date))-1)::INTEGER)" data="true" onclick=""/>
+                <treecell label="SUM(PI_Debit)"  data="true"/>
+                <treecell label="SUM(PI_Credit)" data="true"/>
+                <treecell label="SUM(PI_Credit-PI_Debit)" data="true"/>
+              </treerow>
+            </treerows>
+          </tree>
+        </level>
+
+        <level depth="2" type="index" treehidden="true">
+          <item label="f_compta.navigation.journal.level2.label_"/>
+          <tree>
+            <treecolumns>
+              <treecolumn label="f_compta.navigation.journal.level2.columns.mois_"/>
+              <treecolumn label="f_compta.navigation.journal.level2.columns.debit_"/>
+              <treecolumn label="f_compta.navigation.journal.level2.columns.credit_"/>
+              <treecolumn label="f_compta.navigation.journal.level2.columns.solde_"/>
+            </treecolumns>
+            <treerows number="1">
+              <treerow depth="1">
+                <treecell label="MoisEnLettre(((EXTRACT(MONTH FROM PI_Date))-1)::INTEGER)" data="true" onclick=""/>
+                <treecell label="SUM(PI_Debit)"  data="true"/>
+                <treecell label="SUM(PI_Credit)" data="true"/>
+                <treecell label="SUM(PI_Credit-PI_Debit)" data="true"/>
+              </treerow>
+              <treerow depth="2">
+                <treecell label="PI_Libelle" data="true" onclick="select" table="Piece"/>
+                <treecell label="PI_Debit"  data="true"/>
+                <treecell label="PI_Credit" data="true"/>
+                <treecell label="PI_Credit-PI_Debit" data="true"/>
+              </treerow>
+            </treerows>
+          </tree>
+        </level>
+
+
+        <level depth="3" type="index" treehidden="true">
+          <item label="f_compta.navigation.journal.level3.label_"/>
+          <tree>
+            <treecolumns>
+              <treecolumn label="f_compta.navigation.journal.level3.columns.numero_"/>
+              <treecolumn label="f_compta.navigation.journal.level3.columns.libelle_"/>
+              <treecolumn label="f_compta.navigation.journal.level3.columns.debit_"/>
+              <treecolumn label="f_compta.navigation.journal.level3.columns.credit_"/>
+              <treecolumn label="f_compta.navigation.journal.level3.columns.solde_"/>
+            </treecolumns>
+            <treerows number="2">
+              <treerow depth="1">
+                <treecell label="PI_NumPiece" data="true" onclick=""/>
+                <treecell label="PI_Libelle" data="true" onclick=""/>
+                <treecell label="PI_Debit"  data="true"/>
+                <treecell label="PI_Credit" data="true"/>
+                <treecell label="PI_Credit-PI_Debit" data="true"/>
+              </treerow>
+              <treerow depth="2">
+                <treecell label="EC_NumEcriture" data="true" onclick="select" table="Ecriture"/>
+                <treecell label="EC_Libelle" data="true" onclick="select" table="Ecriture"/>
+                <treecell label="EC_Debit"  data="true"/>
+                <treecell label="EC_Credit" data="true"/>
+                <treecell label="EC_Credit-EC_Debit" data="true"/>
+              </treerow>
+            </treerows>
+          </tree>
+        </level>
+
+      </part-navigation>
+
+    </parts>
+
+</window>

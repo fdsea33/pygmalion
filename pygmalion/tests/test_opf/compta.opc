@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project label="Comptax" name="comptax" version="0.0.3" dir="/home/brice/pygmalion/projets/compta" uuid="cfdfbea4-9b5a-4d70-b844-5bd4302d3742">
+  <authors>
+    <author id="BT" organization="FDSEA 33" email="brice@fdsea33.fr">Brice Texier</author>
+  </authors>
+  <languages _load="../standard.opl"/>
+  <descriptions>
+    <description code="fr-FR">Comptabilité multi-societes et multi-utilisateurs.</description>
+    <description code="en-US">Multi-user and multi-firm comptability.</description>
+  </descriptions>
+  <navigation _load="compta.opn"/>
+  <analyses version="1">
+    <analysis _load="../system.opa"/>
+    <analysis _load="../base/base.opa"/>
+    <analysis _load="compta.opa"/>
+  </analyses>
+  <generations>
+    <generation _load="compta.opg"/>
+  </generations>
+  <themes>
+    <theme _load="../standard.opt"/>
+    <theme _load="compta.opt"/>
+  </themes>
+
+</project>
+

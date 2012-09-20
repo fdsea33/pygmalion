@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<window type="master" name="comptax" uuid1="8acc0ddc-76d2-48a2-98bf-49b872aeef31" uuid2="b36a704e-4fed-4e14-86da-0938feb9b70d">
+  <languages>
+    <language code="fr-FR">
+      <phrase key="comptax.demarrage_">Comptabilité</phrase>
+      <phrase key="comptax.demarrage.journaux_">Gestion journalière</phrase>
+      <phrase key="comptax.demarrage.journaux.voir_">Je veux voir les journaux</phrase>
+      <phrase key="comptax.demarrage.comptes_">Gestion des comptes</phrase>
+      <phrase key="comptax.demarrage.comtpes.voir_">Je veux voir les comptes</phrase>
+      <phrase key="comptax.comptacompte.title_"></phrase>
+      <phrase key="comptax.comptacompte.debit_"></phrase>
+      <phrase key="comptax.comptacompte.credit_"></phrase>
+      <phrase key="comptax.comptacompte.solde_"></phrase>
+      <phrase key="comptax.comptacompte.acces_">Access level: </phrase>
+      <phrase key="comptax.comptacompte.nbecritures_"></phrase>
+      <phrase key="comptax.comptacompte.auxiliaires_"></phrase>
+      <phrase key="comptax.comptacompte.auxiliaires.cm_numcompte_"></phrase>
+      <phrase key="comptax.comptacompte.auxiliaires.cm_nom_"></phrase>
+      <phrase key="comptax.comptacompte.ecritures_"></phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_libelle_"></phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_debit_"></phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_credit_"></phrase>
+      <phrase key="comptax.comptaacces.title_">Niveaux d'accès</phrase>
+      <phrase key="comptax.comptaacces.value_">Valeur</phrase>
+
+      <phrase key="comptax.navigation.journal_">Mes journaux</phrase>
+      <phrase key="comptax.navigation.journal.level0.label_">Journaux</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.journal_">Type de journaux</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.debit_">Débit</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.credit_">Crédit</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.solde_">Solde</phrase>
+      <phrase key="comptax.navigation.journal.level1.label_"></phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.journal_"></phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.debit_"></phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.credit_"></phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.solde_"></phrase>
+      <phrase key="comptax.navigation.journal.level2.label_"></phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.mois_"></phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.debit_"></phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.credit_"></phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.solde_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.label_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.numero_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.libelle_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.debit_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.credit_"></phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.solde_"></phrase>
+    </language>
+
+    <language code="en-US">
+      <phrase key="comptax.demarrage_">Accountancy</phrase>
+      <phrase key="comptax.demarrage.journaux_">Journals management</phrase>
+      <phrase key="comptax.demarrage.journaux.voir_">I want to see the journals</phrase>
+      <phrase key="comptax.demarrage.comptes_">Account management</phrase>
+      <phrase key="comptax.demarrage.comptes.voir_">I want to see the accounts</phrase>
+      <phrase key="comptax.comptacompte.block1_">Rights/Access</phrase>
+      <phrase key="comptax.comptacompte.title_">Accounts</phrase>
+      <phrase key="comptax.comptacompte.debit_">Flow: </phrase>
+      <phrase key="comptax.comptacompte.credit_">Credit: </phrase>
+      <phrase key="comptax.comptacompte.solde_">Balance: </phrase>
+      <phrase key="comptax.comptacompte.acces_">Access level: </phrase>
+      <phrase key="comptax.comptacompte.nbecritures_">Number of entries: </phrase>
+      <phrase key="comptax.comptacompte.estdebit_">Flow account</phrase>
+      <phrase key="comptax.comptacompte.general_">General account</phrase>
+      <phrase key="comptax.comptacompte.acceptaux_">Accept auxiliary accounts</phrase>
+      <phrase key="comptax.comptacompte.utilisable_">Usable</phrase>
+      <phrase key="comptax.comptacompte.lettrable_">Can be 'lettered'</phrase>
+      <phrase key="comptax.comptacompte.pointable_">Can be pointed</phrase>
+      <phrase key="comptax.comptacompte.groupable_">Can be grouped</phrase>
+
+      <phrase key="comptax.comptacompte.parent_">Parent account</phrase>
+      <phrase key="comptax.comptacompte.parent.nom_">Name: </phrase>
+      <phrase key="comptax.comptacompte.parent.numcompte_">Number: </phrase>
+      <phrase key="comptax.comptacompte.auxiliaires_">Auxiliary accounts</phrase>
+      <phrase key="comptax.comptacompte.auxiliaires.cm_numcompte_">Number</phrase>
+      <phrase key="comptax.comptacompte.auxiliaires.cm_nom_">Name</phrase>
+      <phrase key="comptax.comptacompte.ecritures_">Entries</phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_libelle_">Label</phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_debit_">Flow</phrase>
+      <phrase key="comptax.comptacompte.ecritures.ec_credit_">Credit</phrase>
+
+      <phrase key="comptax.comptaacces.title_">Access levels</phrase>
+      <phrase key="comptax.comptaacces.value_">Value</phrase>
+      
+      <phrase key="comptax.navigation.journal_">Journals management</phrase>
+      <phrase key="comptax.navigation.journal.level0.label_">Journals</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.journal_">(Type of) Journal</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.debit_">Flow</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.credit_">Credit</phrase>
+      <phrase key="comptax.navigation.journal.level0.columns.solde_">Balance</phrase>
+      <phrase key="comptax.navigation.journal.level1.label_">Journals</phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.journal_">Journal</phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.debit_">Flow</phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.credit_">Credit</phrase>
+      <phrase key="comptax.navigation.journal.level1.columns.solde_">Balance</phrase>
+      <phrase key="comptax.navigation.journal.level2.label_">Months</phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.mois_">Month</phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.debit_">Flow</phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.credit_">Credit</phrase>
+      <phrase key="comptax.navigation.journal.level2.columns.solde_">Balance</phrase>
+      <phrase key="comptax.navigation.journal.level3.label_">Accounting records</phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.numero_">Number</phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.libelle_">Label</phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.debit_">Flow</phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.credit_">Credit</phrase>
+      <phrase key="comptax.navigation.journal.level3.columns.solde_">Balance</phrase>
+    </language>
+
+  </languages>
+
+  <parts>
+    <_load file="compta_parts.opp"/>
+  </parts>
+
+</window>

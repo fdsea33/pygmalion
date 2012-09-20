@@ -1,0 +1,15 @@
+
+
+tab {
+//  -moz-binding : url(chrome://global/content/bindings/tabbrowser.xml#tabbrowser-tab);
+//  -moz-appearance : button;
+  padding-right : 10px;
+  max-width : 150px;
+  color: red;
+ height : 22px;
+}
+
+tab[selected="true"] {
+  color:blue;
+
+}

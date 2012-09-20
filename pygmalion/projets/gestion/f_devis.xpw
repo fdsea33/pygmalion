@@ -1,0 +1,55 @@
+
+
+<window title="" type="standard" table="Devis">
+  <simples>
+    <simple data="DE_Date"/>
+    <simple data="DE_Libelle"/>
+    <simple data="DE_Texte"/>
+    <simple data="MD_Libelle">
+      <join table="ModeleDevis" using="MD_Numero"/>
+    </simple>
+    <simple data="SP_Libelle" type="radio">
+      <join table="Transport" using="SP_Numero"/>
+    </simple>
+    <simple data="DE_FraisFacturation"/>
+  </simples>
+  <complexes>
+    <complex table="LigneDevis" using="DE_Numero">
+      <tree table="Produit">
+        <labels>
+          <label code="fr-FR">Produits</label>
+          <label code="en-US">Products</label>
+        </labels>
+        <level data="SE_Libelle">
+          <join table="Service" using="SE_Numero"/>
+          <level data="GP_Libelle">
+	    <join table="GroupeProduit" using="SE_Numero"/>
+	    <level data="PD_Libelle"/>
+	  </level>
+	</level>
+	<column data="PX_TarifTTC" hidden="true"/>
+	<column data="PX_TarifHT" hidden="true"/>
+      </tree>
+      <list>
+        <column data="LD_Quantite"/>
+        <column data="PD_NumProduit"/>
+        <column data="PD_Libelle"/>
+        <column data="">
+	  <labels>
+	    <label code="fr-FR">Poids (%)</label>
+	    <label code="en-US">Weight (%)</label>
+	  </labels>
+	</column>
+        <column data="LD_TarifHT"/>
+        <column data="LD_TarifTTC"/>
+	</list>
+	<infos>
+        <info>
+	</info>
+
+	</infos>
+    </complex>
+  </complexes>
+  <actions>
+  </actions>
+</window>

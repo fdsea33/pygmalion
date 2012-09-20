@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languages>
+  <language code="fr-FR">
+    <phrase key="_.general_">Général</phrase>
+    <phrase key="gestsea.menu_">Menu principal</phrase>
+    <phrase key="gestsea.menu.suivi_">Suivi des clients</phrase>
+    <phrase key="gestsea.menu.personnes.voir_">Recherche d'une personne</phrase>
+    <phrase key="gestsea.menu.dossier.voir_">Recherche d'un dossier</phrase>
+    <phrase key="gestsea.menu.facturation_">Facturation</phrase>
+    <phrase key="gestsea.menu.commande.voir_">Recherche d'un devis (ou d'une commande)</phrase>
+    <phrase key="gestsea.menu.facture.voir_">Recherche d'une facture</phrase>
+    <phrase key="menu.gseaprincipal_">Menu</phrase>
+    <phrase key="gseaprincipal.voir_base.partenaire" unused="true">Personnes/Sociétés</phrase>
+    <phrase key="gseaprincipal.voir_base.partenaire.attribut" unused="true">Attributs</phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.commande">Commandes</phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.facture">Factures</phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.reglement">Réglements</phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.reversement">Reversements</phrase>
+    <phrase key="gseaprincipal.voir_gestsea.juridique.dossier">Dossiers</phrase>
+    <phrase key="_.new_">Nouveau</phrase>
+    <phrase key="_.edit_">Modifier</phrase>
+    <phrase key="_.delete_">Supprimer</phrase>
+    <phrase key="gseaprincipal.basepartenairetype.base.partenaire.type" unused="true">Type</phrase>
+    <phrase key="_.search_">Rechercher</phrase>
+    <phrase key="base_partenaire_type.nom_"></phrase>
+    <phrase key="base_partenaire_type.morale_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.masculin_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.actif_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.titre_"></phrase>
+    <phrase key="base_partenaire_type.civilites_" unused="true">Civilités</phrase>
+    <phrase key="list.base_partenaire_type.base.partenaire" unused="true"></phrase>
+    <phrase key="base_partenaire.id_">Numéro</phrase>
+    <phrase key="base_partenaire.libelle_">Libellé</phrase>
+    <phrase key="_.accept_">Valider</phrase>
+    <phrase key="_.cancel_">Annuler</phrase>
+    <phrase key="_._number_of_records_">Nombre d'enregistrements</phrase>
+    <phrase key="gseaprincipal.basepartenaire.base.partenaire"></phrase>
+    <phrase key="base_partenaire.nom_"></phrase>
+    <phrase key="base_partenaire.actif_"></phrase>
+    <phrase key="base_partenaire.prenom_"></phrase>
+    <phrase key="base_partenaire.morale_">Entité morale</phrase>
+    <phrase key="base_partenaire.titre_"></phrase>
+    <phrase key="base_partenaire.debit_limite_">Limite de débit</phrase>
+    <phrase key="base_partenaire.credit_limite_">Limite de crédit</phrase>
+    <phrase key="base_partenaire.site_web_">Site Web</phrase>
+    <phrase key="base_partenaire.naissance_date_">Date de naissance</phrase>
+    <phrase key="base_partenaire.ean13_">EAN 13</phrase>
+    <phrase key="base_partenaire.nom_soundex2_" unused="true"></phrase>
+    <phrase key="base_partenaire.nom_phonex_" unused="true"></phrase>
+    <phrase key="base_partenaire.note_"></phrase>
+    <phrase key="base_langue.code_" unused="true"></phrase>
+    <phrase key="base_langue.nom_" unused="true"></phrase>
+    <phrase key="base_partenaire.langue_id_">Langue</phrase>
+    <phrase key="base_partenaire.parent_id_">Personne/Société parente</phrase>
+    <phrase key="systeme_utilisateur.login_"></phrase>
+    <phrase key="base_societe_employe.utilisateur_login_">Login</phrase>
+    <phrase key="base_societe_employe.nom_"></phrase>
+    <phrase key="base_societe_employe.prenom_">Prénom</phrase>
+    <phrase key="base_societe_employe.initiales_"></phrase>
+    <phrase key="base_partenaire.responsable_id_">Responsable</phrase>
+    <phrase key="base_partenaire.type_id_">Type</phrase>
+    <phrase key="list.base_partenaire.base.partenaire" unused="true">Partenaires</phrase>
+    <phrase key="list.base_partenaire.base.partenaire.contact">Contact</phrase>
+    <phrase key="base_partenaire_contact_type.code_"></phrase>
+    <phrase key="base_partenaire_contact_type.nom_"></phrase>
+    <phrase key="base_partenaire_contact.codepostal_">C.P.</phrase>
+    <phrase key="base_partenaire_contact.commune_"></phrase>
+    <phrase key="base_partenaire_contact.telephone_">Tél.</phrase>
+    <phrase key="list.base_partenaire.base.partenaire.observation"></phrase>
+    <phrase key="base_partenaire_observation.contenu_"></phrase>
+    <phrase key="list.base_partenaire.base.partenaire.attribut">Attributs</phrase>
+    <phrase key="base_partenaire_attribut.type_nom_">Type</phrase>
+    <phrase key="base_partenaire_attribut.categorie_nom_">Catégorie</phrase>
+    <phrase key="list.base_partenaire.compta.compteperm.partenaire.rel">Comptes</phrase>
+    <phrase key="compta_compteperm.nom_"></phrase>
+    <phrase key="compta_compteperm.numero_"></phrase>
+    <phrase key="list.base_partenaire.compta.banque" unused="true">Comptes bancaires</phrase>
+    <phrase key="compta_banque.code_" unused="true"></phrase>
+    <phrase key="compta_banque.nom_" unused="true"></phrase>
+    <phrase key="list.base_partenaire.gestion.produit.prix" unused="true">Prix d'achat</phrase>
+    <phrase key="gestion_produit_prix.nom_" unused="true">Prix</phrase>
+    <phrase key="gestion_produit.code_">Code Prod.</phrase>
+    <phrase key="gestion_produit.nom_">Produit</phrase>
+    <phrase key="gestion_produit_prix.achat_">Prix Achat</phrase>
+    <phrase key="list.base_partenaire.gestion.lien">Liens</phrase>
+    <phrase key="gestion_lien.libelle_">Libellé</phrase>
+    <phrase key="list.base_partenaire.gestion.adhesion">Adhésions</phrase>
+    <phrase key="gestion_adhesion.id_">Numéro</phrase>
+    <phrase key="gestion_adhesion.type_nom_">Type</phrase>
+    <phrase key="gestion_adhesion.produit_nom_">Produit</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.commande">Commandes</phrase>
+    <phrase key="gestion_ventes_commande.numero_">Numéro</phrase>
+    <phrase key="gestion_ventes_commande.date_"></phrase>
+    <phrase key="gestion_ventes_commande.montant_ttc_">TTC</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.facture">Factures</phrase>
+    <phrase key="gestion_ventes_facture.numero_">N°</phrase>
+    <phrase key="gestion_ventes_facture.montant_ttc_">TTC</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.avoir">Avoirs</phrase>
+    <phrase key="gestion_ventes_avoir.numero_">N°</phrase>
+    <phrase key="gestion_ventes_avoir.montant_ttc_">TTC</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.relance.lettre" unused="true">Relances</phrase>
+    <phrase key="gestion_ventes_relance_lettre.id_">N°</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.facture.reglement.echeance">Echéancier</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.id_">N°</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.prevision_montant_">Montant prévisionnel</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.date_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.part_montant_">Montant réel</phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.reglement">Réglements</phrase>
+    <phrase key="gestion_ventes_reglement.id_">N°</phrase>
+    <phrase key="gestion_ventes_reglement.date_reglement_">Date</phrase>
+    <phrase key="gestion_ventes_reglement.montant_"></phrase>
+    <phrase key="list.base_partenaire.gestion.achats.facture" unused="true">Factures Achats</phrase>
+    <phrase key="gestion_achats_facture.numero_" unused="true">N°</phrase>
+    <phrase key="gestion_achats_facture.date_" unused="true"></phrase>
+    <phrase key="gestion_achats_facture.montant_ttc_" unused="true">TTC</phrase>
+    <phrase key="list.base_partenaire.gestion.achats.reglement" unused="true">Réglements Achats</phrase>
+    <phrase key="gestion_achats_reglement.id_" unused="true">N°</phrase>
+    <phrase key="gestion_achats_reglement.date_reglement_" unused="true">Date</phrase>
+    <phrase key="gestion_achats_reglement.montant_" unused="true"></phrase>
+    <phrase key="list.base_partenaire.gestsea.structure" unused="true">Structures</phrase>
+    <phrase key="gestsea_structure.code_etendu_">Code</phrase>
+    <phrase key="gestsea_structure.nom_"></phrase>
+    <phrase key="list.base_partenaire.gestsea.juridique.tache">Tâches</phrase>
+    <phrase key="gestsea_juridique_tache.id_">N°</phrase>
+    <phrase key="gestsea_juridique_tache.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.date_"></phrase>
+    <phrase key="gestsea_juridique_tache.duree_">Durée</phrase>
+    <phrase key="list.base_partenaire.gestsea.publication.abonnement.commande" unused="true">Abonnements</phrase>
+    <phrase key="gestsea_publication_abonnement_commande.id_">N°</phrase>
+    <phrase key="list.base_partenaire.gestsea.publication.abonnement.routage">Routages</phrase>
+    <phrase key="gestsea_publication_abonnement_routage.id_">N°</phrase>
+    <phrase key="gestsea_publication.code_"></phrase>
+    <phrase key="gestsea_publication.nom_"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.nb_exemplaires_"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.numero_debut_">Premier N°</phrase>
+    <phrase key="gestsea_publication_abonnement_routage.numero_fin_">Dernier N°</phrase>
+    <phrase key="gseaprincipal.basepartenairecontact.base.partenaire.contact">Contacts</phrase>
+    <phrase key="base_partenaire_contact.actif_"></phrase>
+    <phrase key="base_partenaire_contact.date_fin_">Fini le</phrase>
+    <phrase key="base_partenaire_contact.complement_">Complément</phrase>
+    <phrase key="base_partenaire_contact.ligne3_">Bâtiment - Résidence...</phrase>
+    <phrase key="base_partenaire_contact.numero_">N°</phrase>
+    <phrase key="base_partenaire_contact.voie_"></phrase>
+    <phrase key="base_partenaire_contact.ligne5_">Mention spéciale / BP</phrase>
+    <phrase key="base_partenaire_contact.fax_"></phrase>
+    <phrase key="base_partenaire_contact.email_"></phrase>
+    <phrase key="base_partenaire_contact.mobile_"></phrase>
+    <phrase key="base_partenaire_contact.partenaire_id">Personne</phrase>
+    <phrase key="base_partenaire_contact.type_id">Type</phrase>
+    <phrase key="base_codepostal_commune_rel.nom_"></phrase>
+    <phrase key="base_partenaire_contact.codepostal_commune_id_">Localité</phrase>
+    <phrase key="base_codepostal.numero_">C.P.</phrase>
+    <phrase key="base_partenaire_contact.codepostal_id_">C.P.</phrase>
+    <phrase key="base_commune.nom_"></phrase>
+    <phrase key="base_partenaire_contact.commune_id_">Ville</phrase>
+    <phrase key="list.base_partenaire_contact.base.societe.etablissement" unused="true">Etablissement</phrase>
+    <phrase key="base_societe_etablissement.code_" unused="true"></phrase>
+    <phrase key="base_societe_etablissement.nom_" unused="true"></phrase>
+    <phrase key="list.base_partenaire_contact.gestion.ventes.commande">Commandes</phrase>
+    <phrase key="list.base_partenaire_contact.gestsea.publication.abonnement.commande">Abonnements</phrase>
+    <phrase key="list.base_partenaire_contact.gestsea.publication.abonnement.routage">Routages</phrase>
+    <phrase key="base_partenaire_contact.partenaire_id_">Personne</phrase>
+    <phrase key="base_partenaire_contact.type_id_">Type</phrase>
+    <phrase key="gseaprincipal.basepartenaireobservation.base.partenaire.observation"></phrase>
+    <phrase key="base_partenaire_observation.niveau_" unused="true"></phrase>
+    <phrase key="base_partenaire_observation.partenaire_id">Personne</phrase>
+    <phrase key="base_partenaire_observation.partenaire_id_">Personne</phrase>
+    <phrase key="gseaprincipal.basepartenaireattribut.base.partenaire.attribut"></phrase>
+    <phrase key="base_partenaire_attribut.note_"></phrase>
+    <phrase key="base_partenaire_attribut_categorie.code_"></phrase>
+    <phrase key="base_partenaire_attribut_categorie.nom_"></phrase>
+    <phrase key="base_partenaire_attribut.categorie_id_">N° Catégorie</phrase>
+    <phrase key="base_partenaire_attribut.partenaire_id_">N° Personne</phrase>
+    <phrase key="base_partenaire_attribut_type.code_"></phrase>
+    <phrase key="base_partenaire_attribut_type.nom_"></phrase>
+    <phrase key="base_partenaire_attribut.type_id_">N°Type</phrase>
+    <phrase key="gseaprincipal.gestionlien.gestion.lien">Liens</phrase>
+    <phrase key="gestion_lien.date_debut_">Début</phrase>
+    <phrase key="gestion_lien.date_fin_">Fin</phrase>
+    <phrase key="gestion_lien.note_"></phrase>
+    <phrase key="gestion_lien.partenaire1_id_">Personne 1</phrase>
+    <phrase key="gestion_lien.partenaire2_id_">Personne 2</phrase>
+    <phrase key="gestion_lien_role.code_"></phrase>
+    <phrase key="gestion_lien_role.nom_etendu_">Nom</phrase>
+    <phrase key="gestion_lien.role_id_">Role</phrase>
+    <phrase key="gestion_lien_type.code_"></phrase>
+    <phrase key="gestion_lien_type.nom_"></phrase>
+    <phrase key="gestion_lien.type_id_">Type</phrase>
+    <phrase key="gseaprincipal.gestionventescommande.gestion.ventes.commande">Commandes/Devis</phrase>
+    <phrase key="gestion_ventes_commande.delai_date_" unused="true"></phrase>
+    <phrase key="gestion_ventes_commande.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_commande.avec_bons_livraison_">Avec bons de livraisons</phrase>
+    <phrase key="gestion_ventes_commande.reduction_taux_">Taux de réduction</phrase>
+    <phrase key="gestion_ventes_commande.montant_ht_">Montant HT</phrase>
+    <phrase key="gestion_ventes_commande.acompte_"></phrase>
+    <phrase key="gestion_ventes_commande.objet_"></phrase>
+    <phrase key="gestion_ventes_commande.civilites_"></phrase>
+    <phrase key="gestion_ventes_commande.introduction_"></phrase>
+    <phrase key="gestion_ventes_commande.conclusion_"></phrase>
+    <phrase key="gestion_ventes_commande.note_"></phrase>
+    <phrase key="gestion_ventes_commande.partenaire_id">Client</phrase>
+    <phrase key="gestion_ventes_commande.commande_contact_id_">Adresse de commande</phrase>
+    <phrase key="gestion_ventes_commande.delai_id_" unused="true">Délai</phrase>
+    <phrase key="gestion_ventes_commande.employe_id_">Responsable</phrase>
+    <phrase key="gestion_ventes_commande.facture_contact_id_">Adresse de facturation</phrase>
+    <phrase key="base_impression.code_"></phrase>
+    <phrase key="base_impression.nom_"></phrase>
+    <phrase key="gestion_ventes_commande.impression_id_">Impression</phrase>
+    <phrase key="gestion_ventes_commande.livraison_contact_id_">Adresse de livraison</phrase>
+    <phrase key="base_impression_modele.id_"></phrase>
+    <phrase key="gestion_ventes_commande.modele_id_">Modèle d'impression</phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.commande.ligne">Lignes</phrase>
+    <phrase key="gestion_ventes_commande_ligne.nom_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.quantite_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_ttc_">TTC</phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.facture"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.avoir"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestsea.juridique.procedure.commande.rel">Procédures juridiques</phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.id_">Numéro</phrase>
+    <phrase key="list.gestion_ventes_commande.gestsea.juridique.dossier.commande">Dossiers</phrase>
+    <phrase key="gestsea_juridique_dossier_commande.id_"></phrase>
+    <phrase key="gestion_ventes_commande.partenaire_id_">Personne</phrase>
+    <phrase key="gseaprincipal.gestionventescommandeligne.gestion.ventes.commande.ligne">Lignes de commande/devis</phrase>
+    <phrase key="gestion_ventes_commande_ligne.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.a_inclure_">À inclure</phrase>
+    <phrase key="gestion_ventes_commande_ligne.inclus_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.reduction_">Produit soumis à réduction</phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_unitaire_ttc_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_unitaire_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_brut_ttc_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_brut_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.description_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.note_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.commande_id_">Commande</phrase>
+    <phrase key="gestion_ventes_commande_ligne.prix_id_">Prix</phrase>
+    <phrase key="gestion_ventes_commande_ligne.produit_id_">Produit</phrase>
+    <phrase key="gestion_stock.nom_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.stock_id_">Stock</phrase>
+    <phrase key="gestion_stock_mouvement.id_"></phrase>
+    <phrase key="gestion_stock_mouvement.quantite_"></phrase>
+    <phrase key="gestion_stock_mouvement.date_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.stock_mouvement_id_">Mouvement de stock</phrase>
+    <phrase key="list.gestion_ventes_commande_ligne.gestion.ventes.facture.ligne">Lignes de factures</phrase>
+    <phrase key="gestion_ventes_facture_ligne.nom_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.quantite_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_ttc_"></phrase>
+    <phrase key="list.gestion_ventes_commande_ligne.gestsea.publication.abonnement.commande">Commande d'abonnements</phrase>
+    <phrase key="gseaprincipal.gestionventesfacture.gestion.ventes.facture">Factures de ventes</phrase>
+    <phrase key="gestion_ventes_facture.date_"></phrase>
+    <phrase key="gestion_ventes_facture.delai_date_" unused="true">Date de fin de délai</phrase>
+    <phrase key="gestion_ventes_facture.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_facture.reduction_taux_">Taux de réduction</phrase>
+    <phrase key="gestion_ventes_facture.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_facture.objet_"></phrase>
+    <phrase key="gestion_ventes_facture.civilites_"></phrase>
+    <phrase key="gestion_ventes_facture.message_"></phrase>
+    <phrase key="gestion_ventes_facture.note_"></phrase>
+    <phrase key="gestion_ventes_facture.partenaire_id">Personne</phrase>
+    <phrase key="gestion_ventes_facture.commande_id_">Commande</phrase>
+    <phrase key="gestion_ventes_facture.employe_id_">Responsable</phrase>
+    <phrase key="gestion_ventes_facture.impression_id_">Impression</phrase>
+    <phrase key="gestion_ventes_facture.modele_id_">Modèle</phrase>
+    <phrase key="compta_piece.date_"></phrase>
+    <phrase key="compta_piece.libelle_">Libellé</phrase>
+    <phrase key="compta_piece.debit_">Débit</phrase>
+    <phrase key="compta_piece.credit_">Crédit</phrase>
+    <phrase key="gestion_ventes_facture.piece_id_">Pièce</phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.adhesion">Adhésions</phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.facture.ligne">Lignes</phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.avoir">Avoirs</phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.facture.reglement.echeance">Échéances</phrase>
+    <phrase key="list.gestion_ventes_facture.gestsea.publication.abonnement.routage">Routages</phrase>
+    <phrase key="gestion_ventes_facture.partenaire_id_">Client</phrase>
+    <phrase key="gseaprincipal.gestionventesfactureligne.gestion.ventes.facture.ligne">Lignes de factures</phrase>
+    <phrase key="gestion_ventes_facture_ligne.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.a_inclure_">À inclure</phrase>
+    <phrase key="gestion_ventes_facture_ligne.inclus_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.reduction_">Produit soumis à réduction</phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_unitaire_ttc_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_unitaire_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_brut_ttc_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_brut_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.description_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.note_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.commande_ligne_id_">Ligne de commande</phrase>
+    <phrase key="compta_ecriture.libelle_">Libellé</phrase>
+    <phrase key="compta_ecriture.debit_">Débit</phrase>
+    <phrase key="compta_ecriture.credit_">Crédit</phrase>
+    <phrase key="compta_ecriture.compte_numero_">Compte</phrase>
+    <phrase key="gestion_ventes_facture_ligne.ecriture_id_">Ecriture</phrase>
+    <phrase key="gestion_ventes_facture_ligne.facture_id_">Facture</phrase>
+    <phrase key="gestion_ventes_facture_ligne.prix_id_">Prix</phrase>
+    <phrase key="gestion_ventes_facture_ligne.produit_id_">Produit</phrase>
+    <phrase key="gestion_ventes_facture_ligne.stock_mouvement_id_">Mouvement de stock</phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestion.adhesion">Adhésions</phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestsea.publication.abonnement.routage">Routages</phrase>
+    <phrase key="gseaprincipal.gestionventesfacturereglementecheance.gestion.ventes.facture.reglement.echeance">Échéances</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.partiel_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.facture_id_">Facture</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.partenaire_id_">Client</phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.reglement_id_">Réglement</phrase>
+    <phrase key="gestion_ventes_relance_mode.code_"></phrase>
+    <phrase key="gestion_ventes_relance_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.relance_mode_id_">Mode</phrase>
+    <phrase key="list.gestion_ventes_facture_reglement_echeance.gestion.ventes.relance.lettre">Lettres de relance</phrase>
+    <phrase key="gseaprincipal.gestionventesreglement.gestion.ventes.reglement">Réglements de ventes</phrase>
+    <phrase key="gestion_ventes_reglement.banque_"></phrase>
+    <phrase key="gestion_ventes_reglement.numero_compte_"></phrase>
+    <phrase key="gestion_ventes_reglement.reference_"></phrase>
+    <phrase key="gestion_ventes_reglement.date_saisie_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_reglement.mode_id_">Mode</phrase>
+    <phrase key="gestion_ventes_reglement.partenaire_id_">Client</phrase>
+    <phrase key="list.gestion_ventes_reglement.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="list.gestion_ventes_reglement.gestion.ventes.reversement"></phrase>
+    <phrase key="gestion_ventes_reversement.id_"></phrase>
+    <phrase key="gestion_ventes_reversement.montant_"></phrase>
+    <phrase key="gseaprincipal.gestionventesreversement.gestion.ventes.reversement"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.code_"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_reversement.mode_id_">Mode</phrase>
+    <phrase key="gestion_ventes_reversement.reglement_id_">Réglement</phrase>
+    <phrase key="gseaprincipal.gestseajuridiqueprocedurecommanderel.gestsea.juridique.procedure.commande.rel">Lien entre commandes/devis et procédures</phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.ordre_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.complement_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.commande_id_">Commande</phrase>
+    <phrase key="gestsea_juridique_procedure.code_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.procedure_id_">Procédure</phrase>
+    <phrase key="gseaprincipal.gestseajuridiqueprocedure.gestsea.juridique.procedure">Procédures juridiques</phrase>
+    <phrase key="gestsea_juridique_procedure.description_"></phrase>
+    <phrase key="list.gestsea_juridique_procedure.gestsea.juridique.procedure.commande.rel">Commandes</phrase>
+    <phrase key="gseaprincipal.gestseajuridiquetache.gestsea.juridique.tache">Tâches</phrase>
+    <phrase key="gestsea_juridique_tache.description_"></phrase>
+    <phrase key="gestsea_juridique_tache.employe_id">Responsable</phrase>
+    <phrase key="gestsea_juridique_tache.partenaire_id">Personne</phrase>
+    <phrase key="gestsea_juridique_dossier.nom_"></phrase>
+    <phrase key="gestsea_juridique_dossier_etat.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.dossier_id_">Dossier</phrase>
+    <phrase key="gestsea_juridique_tache_type.code_"></phrase>
+    <phrase key="gestsea_juridique_tache_type.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.type_id_">Type</phrase>
+    <phrase key="gestsea_juridique_tache.partenaire_id_">Personne</phrase>
+    <phrase key="gestsea_juridique_tache.employe_id_">Responsable</phrase>
+    <phrase key="gseaprincipal.gestseajuridiquedossier.gestsea.juridique.dossier">Dossier juridique</phrase>
+    <phrase key="gestsea_juridique_dossier.complement_">Complément</phrase>
+    <phrase key="gestsea_juridique_dossier.date_ouverture_">Ouverture</phrase>
+    <phrase key="gestsea_juridique_dossier.date_cloture_">Clôture</phrase>
+    <phrase key="gestsea_juridique_dossier.description_"></phrase>
+    <phrase key="gestsea_juridique_dossier.employe_id">Employé</phrase>
+    <phrase key="gestsea_juridique_dossier.etat_id">État</phrase>
+    <phrase key="gestsea_juridique_dossier_type.nom_"></phrase>
+    <phrase key="gestsea_juridique_dossier.type_id_">Type</phrase>
+    <phrase key="list.gestsea_juridique_dossier.gestsea.juridique.tache">Tâches</phrase>
+    <phrase key="list.gestsea_juridique_dossier.gestsea.juridique.dossier.commande">Commandes/Devis</phrase>
+    <phrase key="gestsea_juridique_dossier.employe_id_">Employé</phrase>
+    <phrase key="gestsea_juridique_dossier.etat_id_">État</phrase>
+    <phrase key="gseaprincipal.gestseajuridiquedossiercommande.gestsea.juridique.dossier.commande">Commandes/devis de dossier</phrase>
+    <phrase key="gestsea_juridique_dossier_commande.ordre_"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.note_"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.commande_id_">Commande</phrase>
+    <phrase key="gestsea_juridique_dossier_commande.dossier_id_">Dossier</phrase>
+    <phrase key="_.menu_">Menu</phrase>
+    <phrase key="_.quit_">Quit</phrase>
+    <phrase key="_.back_">Précédent</phrase>
+    <phrase key="_.forward_">Suivant</phrase>
+    <phrase key="_.home_">Accueil</phrase>
+    <phrase key="base_delai.nom_"></phrase>
+    <phrase key="_.print_" unused="true"></phrase>
+    <phrase key="_.export_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.title_" unused="true"></phrase>
+    <phrase key="dico.contact_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.telephone_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.fax_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.mobile_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.email_" unused="true"></phrase>
+    <phrase key="dico.adresse_" unused="true"></phrase>
+    <phrase key="gestsea.partenaire.observations_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.auxiliaires.numero_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.acces_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.auxiliaires.nom_" unused="true"></phrase>
+    <phrase key="compta_compte.debit_" unused="true"></phrase>
+    <phrase key="compta_compte.credit_" unused="true"></phrase>
+    <phrase key="compta_compte.solde_" unused="true"></phrase>
+    <phrase key="dico.titre_" unused="true"></phrase>
+    <phrase key="dico.nom_" unused="true"></phrase>
+    <phrase key="dico.prenom_" unused="true"></phrase>
+    <phrase key="dico.codepostal_"></phrase>
+    <phrase key="dico.commune_"></phrase>
+    <phrase key="dico.telephone_"></phrase>
+    <phrase key="dico.fax_"></phrase>
+    <phrase key="dico.mobile_"></phrase>
+    <phrase key="dico.email_"></phrase>
+    <phrase key="base_partenaire_observation.importance_id"></phrase>
+    <phrase key="base_partenaire_observation_importance.code_"></phrase>
+    <phrase key="base_partenaire_observation_importance.nom_"></phrase>
+    <phrase key="base_partenaire_observation.importance_id_"></phrase>
+    <phrase key="gestsea.basepartenairecontact.base.partenaire.contact" unused="true"></phrase>
+    <phrase key="base_partenaire_contact.adresse" unused="true"></phrase>
+    <phrase key="base_partenaire_contact.contact" unused="true"></phrase>
+    <phrase key="base_partenaire_contact_version.codepostal_"></phrase>
+    <phrase key="base_partenaire_contact_version.commune_"></phrase>
+    <phrase key="base_partenaire_contact_version.telephone_"></phrase>
+    <phrase key="base_partenaire_contact_version.fax_"></phrase>
+    <phrase key="gestion_ventes_commande.commande_version_id_"></phrase>
+    <phrase key="gestion_produit_prix.libelle_"></phrase>
+    <phrase key="gestion_produit_prix.actif_"></phrase>
+    <phrase key="gestion_produit_prix.date_debut_"></phrase>
+    <phrase key="gestion_produit_prix.date_fin_"></phrase>
+    <phrase key="gestion_ventes_commande.validite_date_"></phrase>
+    <phrase key="gestion_ventes_commande.avec_signature_"></phrase>
+    <phrase key="gestion_ventes_commande.signature_client_"></phrase>
+    <phrase key="gestion_ventes_commande_type.nom_"></phrase>
+    <phrase key="gestion_ventes_commande.type_id_"></phrase>
+    <phrase key="gestion_ventes_commande.validite_delai_id_"></phrase>
+    <phrase key="list.base_partenaire_contact.base.partenaire.contact.version"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.relance.mode" unused="true"></phrase>
+    <phrase key="gseaprincipal.voir_gestsea.structure" unused="true"></phrase>
+    <phrase key="gseaprincipal.gestionlienrole.gestion.lien.role"></phrase>
+    <phrase key="gestion_lien_role.prefixe_"></phrase>
+    <phrase key="gestion_lien_role.suffixe_"></phrase>
+    <phrase key="gestion_lien_role.nom_"></phrase>
+    <phrase key="gestion_lien_role.type_id_"></phrase>
+    <phrase key="list.gestion_lien_role.gestion.lien"></phrase>
+    <phrase key="gseaprincipal.gestionlientype.gestion.lien.type"></phrase>
+    <phrase key="gestion_lien_type.phrase_directe_"></phrase>
+    <phrase key="gestion_lien_type.phrase_inverse_"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.lien"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.lien.role"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.adhesion.transmission"></phrase>
+    <phrase key="gestion_adhesion_transmission.id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.paiement_date_"></phrase>
+    <phrase key="gestion_ventes_facture.facture_version_id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.livraison_version_id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.paiement_delai_id_"></phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestion.ventes.avoir.ligne"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.nom_" unused="true"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.quantite_" unused="true"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.montant_ttc_" unused="true"></phrase>
+    <phrase key="gseaprincipal.gestionventesrelancemode.gestion.ventes.relance.mode"></phrase>
+    <phrase key="gestion_ventes_relance_mode.defaut_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode.gestion.ventes.relance.mode.etape"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.nb_jours_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="gseaprincipal.gestionventesrelancemodeetape.gestion.ventes.relance.mode.etape"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.message_"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.relance_mode_id_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode_etape.gestion.ventes.relance.lettre"></phrase>
+    <phrase key="gseaprincipal.gestionventesreglementmode.gestion.ventes.reglement.mode"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.actif_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.note_"></phrase>
+    <phrase key="compta_banque_compte.numero_" unused="true"></phrase>
+    <phrase key="compta_banque_compte.nom_" unused="true"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.banque_compte_id_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.compteperm_id_"></phrase>
+    <phrase key="list.gestion_ventes_reglement_mode.gestion.ventes.reglement"></phrase>
+    <phrase key="gseaprincipal.gestionventesreversementmode.gestion.ventes.reversement.mode"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.actif_"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.compteperm_id_"></phrase>
+    <phrase key="base_societe.code_" unused="true"></phrase>
+    <phrase key="base_societe.nom_" unused="true"></phrase>
+    <phrase key="base_societe.nui_" unused="true"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.societe_id_"></phrase>
+    <phrase key="list.gestion_ventes_reversement_mode.gestion.ventes.reversement"></phrase>
+    <phrase key="gseaprincipal.gestseastructure.gestsea.structure"></phrase>
+    <phrase key="gestsea_structure.code_"></phrase>
+    <phrase key="gestsea_structure.externe_"></phrase>
+    <phrase key="gestsea_structure.parent_structure_id_"></phrase>
+    <phrase key="gestsea_structure.partenaire_id_"></phrase>
+    <phrase key="list.gestsea_structure.gestsea.structure"></phrase>
+    <phrase key="list.gestsea_structure.gestsea.structure.commune.rel"></phrase>
+    <phrase key="gestsea_structure_commune_rel.id_"></phrase>
+    <phrase key="gseaprincipal.gestseastructurecommunerel.gestsea.structure.commune.rel"></phrase>
+    <phrase key="gestsea_structure_commune_rel.commune_id_"></phrase>
+    <phrase key="gestsea_structure_commune_rel.structure_id_"></phrase>
+  </language>
+  <language code="en-US">
+    <phrase key="_.general_"></phrase>
+    <phrase key="gestsea.menu_"></phrase>
+    <phrase key="gestsea.menu.suivi_"></phrase>
+    <phrase key="gestsea.menu.personnes.voir_"></phrase>
+    <phrase key="gestsea.menu.dossier.voir_"></phrase>
+    <phrase key="gestsea.menu.facturation_"></phrase>
+    <phrase key="gestsea.menu.commande.voir_"></phrase>
+    <phrase key="gestsea.menu.facture.voir_"></phrase>
+    <phrase key="menu.gseaprincipal_"></phrase>
+    <phrase key="gseaprincipal.voir_base.partenaire" unused="true"></phrase>
+    <phrase key="gseaprincipal.voir_base.partenaire.attribut" unused="true"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.commande"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.facture"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.reglement"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.reversement"></phrase>
+    <phrase key="gseaprincipal.voir_gestsea.juridique.dossier"></phrase>
+    <phrase key="_.new_"></phrase>
+    <phrase key="_.edit_"></phrase>
+    <phrase key="_.delete_"></phrase>
+    <phrase key="gseaprincipal.basepartenairetype.base.partenaire.type" unused="true"></phrase>
+    <phrase key="_.search_"></phrase>
+    <phrase key="base_partenaire_type.nom_"></phrase>
+    <phrase key="base_partenaire_type.morale_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.masculin_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.actif_" unused="true"></phrase>
+    <phrase key="base_partenaire_type.titre_"></phrase>
+    <phrase key="base_partenaire_type.civilites_" unused="true"></phrase>
+    <phrase key="list.base_partenaire_type.base.partenaire" unused="true"></phrase>
+    <phrase key="base_partenaire.id_"></phrase>
+    <phrase key="base_partenaire.libelle_"></phrase>
+    <phrase key="_.accept_"></phrase>
+    <phrase key="_.cancel_"></phrase>
+    <phrase key="_._number_of_records_"></phrase>
+    <phrase key="gseaprincipal.basepartenaire.base.partenaire"></phrase>
+    <phrase key="base_partenaire.nom_"></phrase>
+    <phrase key="base_partenaire.actif_"></phrase>
+    <phrase key="base_partenaire.prenom_"></phrase>
+    <phrase key="base_partenaire.morale_"></phrase>
+    <phrase key="base_partenaire.titre_"></phrase>
+    <phrase key="base_partenaire.debit_limite_"></phrase>
+    <phrase key="base_partenaire.credit_limite_"></phrase>
+    <phrase key="base_partenaire.site_web_"></phrase>
+    <phrase key="base_partenaire.naissance_date_"></phrase>
+    <phrase key="base_partenaire.ean13_"></phrase>
+    <phrase key="base_partenaire.nom_soundex2_" unused="true"></phrase>
+    <phrase key="base_partenaire.nom_phonex_" unused="true"></phrase>
+    <phrase key="base_partenaire.note_"></phrase>
+    <phrase key="base_langue.code_" unused="true"></phrase>
+    <phrase key="base_langue.nom_" unused="true"></phrase>
+    <phrase key="base_partenaire.langue_id_"></phrase>
+    <phrase key="base_partenaire.parent_id_"></phrase>
+    <phrase key="systeme_utilisateur.login_"></phrase>
+    <phrase key="base_societe_employe.utilisateur_login_"></phrase>
+    <phrase key="base_societe_employe.nom_"></phrase>
+    <phrase key="base_societe_employe.prenom_"></phrase>
+    <phrase key="base_societe_employe.initiales_"></phrase>
+    <phrase key="base_partenaire.responsable_id_"></phrase>
+    <phrase key="base_partenaire.type_id_"></phrase>
+    <phrase key="list.base_partenaire.base.partenaire" unused="true"></phrase>
+    <phrase key="list.base_partenaire.base.partenaire.contact"></phrase>
+    <phrase key="base_partenaire_contact_type.code_"></phrase>
+    <phrase key="base_partenaire_contact_type.nom_"></phrase>
+    <phrase key="base_partenaire_contact.codepostal_"></phrase>
+    <phrase key="base_partenaire_contact.commune_"></phrase>
+    <phrase key="base_partenaire_contact.telephone_"></phrase>
+    <phrase key="list.base_partenaire.base.partenaire.observation"></phrase>
+    <phrase key="base_partenaire_observation.contenu_"></phrase>
+    <phrase key="list.base_partenaire.base.partenaire.attribut"></phrase>
+    <phrase key="base_partenaire_attribut.type_nom_"></phrase>
+    <phrase key="base_partenaire_attribut.categorie_nom_"></phrase>
+    <phrase key="list.base_partenaire.compta.compteperm.partenaire.rel"></phrase>
+    <phrase key="compta_compteperm.nom_"></phrase>
+    <phrase key="compta_compteperm.numero_"></phrase>
+    <phrase key="list.base_partenaire.compta.banque" unused="true"></phrase>
+    <phrase key="compta_banque.code_" unused="true"></phrase>
+    <phrase key="compta_banque.nom_" unused="true"></phrase>
+    <phrase key="list.base_partenaire.gestion.produit.prix" unused="true"></phrase>
+    <phrase key="gestion_produit_prix.nom_" unused="true"></phrase>
+    <phrase key="gestion_produit.code_"></phrase>
+    <phrase key="gestion_produit.nom_"></phrase>
+    <phrase key="gestion_produit_prix.achat_"></phrase>
+    <phrase key="list.base_partenaire.gestion.lien"></phrase>
+    <phrase key="gestion_lien.libelle_"></phrase>
+    <phrase key="list.base_partenaire.gestion.adhesion"></phrase>
+    <phrase key="gestion_adhesion.id_"></phrase>
+    <phrase key="gestion_adhesion.type_nom_"></phrase>
+    <phrase key="gestion_adhesion.produit_nom_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.commande"></phrase>
+    <phrase key="gestion_ventes_commande.numero_"></phrase>
+    <phrase key="gestion_ventes_commande.date_"></phrase>
+    <phrase key="gestion_ventes_commande.montant_ttc_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.facture"></phrase>
+    <phrase key="gestion_ventes_facture.numero_"></phrase>
+    <phrase key="gestion_ventes_facture.montant_ttc_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.avoir"></phrase>
+    <phrase key="gestion_ventes_avoir.numero_"></phrase>
+    <phrase key="gestion_ventes_avoir.montant_ttc_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.relance.lettre" unused="true"></phrase>
+    <phrase key="gestion_ventes_relance_lettre.id_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.id_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.prevision_montant_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.date_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.part_montant_"></phrase>
+    <phrase key="list.base_partenaire.gestion.ventes.reglement"></phrase>
+    <phrase key="gestion_ventes_reglement.id_"></phrase>
+    <phrase key="gestion_ventes_reglement.date_reglement_"></phrase>
+    <phrase key="gestion_ventes_reglement.montant_"></phrase>
+    <phrase key="list.base_partenaire.gestion.achats.facture" unused="true"></phrase>
+    <phrase key="gestion_achats_facture.numero_" unused="true"></phrase>
+    <phrase key="gestion_achats_facture.date_" unused="true"></phrase>
+    <phrase key="gestion_achats_facture.montant_ttc_" unused="true"></phrase>
+    <phrase key="list.base_partenaire.gestion.achats.reglement" unused="true"></phrase>
+    <phrase key="gestion_achats_reglement.id_" unused="true"></phrase>
+    <phrase key="gestion_achats_reglement.date_reglement_" unused="true"></phrase>
+    <phrase key="gestion_achats_reglement.montant_" unused="true"></phrase>
+    <phrase key="list.base_partenaire.gestsea.structure" unused="true"></phrase>
+    <phrase key="gestsea_structure.code_etendu_"></phrase>
+    <phrase key="gestsea_structure.nom_"></phrase>
+    <phrase key="list.base_partenaire.gestsea.juridique.tache"></phrase>
+    <phrase key="gestsea_juridique_tache.id_"></phrase>
+    <phrase key="gestsea_juridique_tache.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.date_"></phrase>
+    <phrase key="gestsea_juridique_tache.duree_"></phrase>
+    <phrase key="list.base_partenaire.gestsea.publication.abonnement.commande" unused="true"></phrase>
+    <phrase key="gestsea_publication_abonnement_commande.id_"></phrase>
+    <phrase key="list.base_partenaire.gestsea.publication.abonnement.routage"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.id_"></phrase>
+    <phrase key="gestsea_publication.code_"></phrase>
+    <phrase key="gestsea_publication.nom_"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.nb_exemplaires_"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.numero_debut_"></phrase>
+    <phrase key="gestsea_publication_abonnement_routage.numero_fin_"></phrase>
+    <phrase key="gseaprincipal.basepartenairecontact.base.partenaire.contact"></phrase>
+    <phrase key="base_partenaire_contact.actif_"></phrase>
+    <phrase key="base_partenaire_contact.date_fin_"></phrase>
+    <phrase key="base_partenaire_contact.complement_"></phrase>
+    <phrase key="base_partenaire_contact.ligne3_"></phrase>
+    <phrase key="base_partenaire_contact.numero_"></phrase>
+    <phrase key="base_partenaire_contact.voie_"></phrase>
+    <phrase key="base_partenaire_contact.ligne5_"></phrase>
+    <phrase key="base_partenaire_contact.fax_"></phrase>
+    <phrase key="base_partenaire_contact.email_"></phrase>
+    <phrase key="base_partenaire_contact.mobile_"></phrase>
+    <phrase key="base_partenaire_contact.partenaire_id"></phrase>
+    <phrase key="base_partenaire_contact.type_id"></phrase>
+    <phrase key="base_codepostal_commune_rel.nom_"></phrase>
+    <phrase key="base_partenaire_contact.codepostal_commune_id_"></phrase>
+    <phrase key="base_codepostal.numero_"></phrase>
+    <phrase key="base_partenaire_contact.codepostal_id_"></phrase>
+    <phrase key="base_commune.nom_"></phrase>
+    <phrase key="base_partenaire_contact.commune_id_"></phrase>
+    <phrase key="list.base_partenaire_contact.base.societe.etablissement" unused="true"></phrase>
+    <phrase key="base_societe_etablissement.code_" unused="true"></phrase>
+    <phrase key="base_societe_etablissement.nom_" unused="true"></phrase>
+    <phrase key="list.base_partenaire_contact.gestion.ventes.commande"></phrase>
+    <phrase key="list.base_partenaire_contact.gestsea.publication.abonnement.commande"></phrase>
+    <phrase key="list.base_partenaire_contact.gestsea.publication.abonnement.routage"></phrase>
+    <phrase key="base_partenaire_contact.partenaire_id_"></phrase>
+    <phrase key="base_partenaire_contact.type_id_"></phrase>
+    <phrase key="gseaprincipal.basepartenaireobservation.base.partenaire.observation"></phrase>
+    <phrase key="base_partenaire_observation.niveau_" unused="true"></phrase>
+    <phrase key="base_partenaire_observation.partenaire_id"></phrase>
+    <phrase key="base_partenaire_observation.partenaire_id_"></phrase>
+    <phrase key="gseaprincipal.basepartenaireattribut.base.partenaire.attribut"></phrase>
+    <phrase key="base_partenaire_attribut.note_"></phrase>
+    <phrase key="base_partenaire_attribut_categorie.code_"></phrase>
+    <phrase key="base_partenaire_attribut_categorie.nom_"></phrase>
+    <phrase key="base_partenaire_attribut.categorie_id_"></phrase>
+    <phrase key="base_partenaire_attribut.partenaire_id_"></phrase>
+    <phrase key="base_partenaire_attribut_type.code_"></phrase>
+    <phrase key="base_partenaire_attribut_type.nom_"></phrase>
+    <phrase key="base_partenaire_attribut.type_id_"></phrase>
+    <phrase key="gseaprincipal.gestionlien.gestion.lien"></phrase>
+    <phrase key="gestion_lien.date_debut_"></phrase>
+    <phrase key="gestion_lien.date_fin_"></phrase>
+    <phrase key="gestion_lien.note_"></phrase>
+    <phrase key="gestion_lien.partenaire1_id_"></phrase>
+    <phrase key="gestion_lien.partenaire2_id_"></phrase>
+    <phrase key="gestion_lien_role.code_"></phrase>
+    <phrase key="gestion_lien_role.nom_etendu_"></phrase>
+    <phrase key="gestion_lien.role_id_"></phrase>
+    <phrase key="gestion_lien_type.code_"></phrase>
+    <phrase key="gestion_lien_type.nom_"></phrase>
+    <phrase key="gestion_lien.type_id_"></phrase>
+    <phrase key="gseaprincipal.gestionventescommande.gestion.ventes.commande"></phrase>
+    <phrase key="gestion_ventes_commande.delai_date_" unused="true"></phrase>
+    <phrase key="gestion_ventes_commande.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_commande.avec_bons_livraison_"></phrase>
+    <phrase key="gestion_ventes_commande.reduction_taux_"></phrase>
+    <phrase key="gestion_ventes_commande.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_commande.acompte_"></phrase>
+    <phrase key="gestion_ventes_commande.objet_"></phrase>
+    <phrase key="gestion_ventes_commande.civilites_"></phrase>
+    <phrase key="gestion_ventes_commande.introduction_"></phrase>
+    <phrase key="gestion_ventes_commande.conclusion_"></phrase>
+    <phrase key="gestion_ventes_commande.note_"></phrase>
+    <phrase key="gestion_ventes_commande.partenaire_id"></phrase>
+    <phrase key="gestion_ventes_commande.commande_contact_id_"></phrase>
+    <phrase key="gestion_ventes_commande.delai_id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_commande.employe_id_"></phrase>
+    <phrase key="gestion_ventes_commande.facture_contact_id_"></phrase>
+    <phrase key="base_impression.code_"></phrase>
+    <phrase key="base_impression.nom_"></phrase>
+    <phrase key="gestion_ventes_commande.impression_id_"></phrase>
+    <phrase key="gestion_ventes_commande.livraison_contact_id_"></phrase>
+    <phrase key="base_impression_modele.id_"></phrase>
+    <phrase key="gestion_ventes_commande.modele_id_"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.commande.ligne"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.nom_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.quantite_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_ttc_"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.facture"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestion.ventes.avoir"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestsea.juridique.procedure.commande.rel"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.id_"></phrase>
+    <phrase key="list.gestion_ventes_commande.gestsea.juridique.dossier.commande"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.id_"></phrase>
+    <phrase key="gestion_ventes_commande.partenaire_id_"></phrase>
+    <phrase key="gseaprincipal.gestionventescommandeligne.gestion.ventes.commande.ligne"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.a_inclure_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.inclus_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.reduction_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_unitaire_ttc_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_unitaire_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_brut_ttc_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_brut_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.description_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.note_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.commande_id_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.prix_id_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.produit_id_"></phrase>
+    <phrase key="gestion_stock.nom_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.stock_id_"></phrase>
+    <phrase key="gestion_stock_mouvement.id_"></phrase>
+    <phrase key="gestion_stock_mouvement.quantite_"></phrase>
+    <phrase key="gestion_stock_mouvement.date_"></phrase>
+    <phrase key="gestion_ventes_commande_ligne.stock_mouvement_id_"></phrase>
+    <phrase key="list.gestion_ventes_commande_ligne.gestion.ventes.facture.ligne"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.nom_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.quantite_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_ttc_"></phrase>
+    <phrase key="list.gestion_ventes_commande_ligne.gestsea.publication.abonnement.commande"></phrase>
+    <phrase key="gseaprincipal.gestionventesfacture.gestion.ventes.facture"></phrase>
+    <phrase key="gestion_ventes_facture.date_"></phrase>
+    <phrase key="gestion_ventes_facture.delai_date_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_facture.reduction_taux_"></phrase>
+    <phrase key="gestion_ventes_facture.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_facture.objet_"></phrase>
+    <phrase key="gestion_ventes_facture.civilites_"></phrase>
+    <phrase key="gestion_ventes_facture.message_"></phrase>
+    <phrase key="gestion_ventes_facture.note_"></phrase>
+    <phrase key="gestion_ventes_facture.partenaire_id"></phrase>
+    <phrase key="gestion_ventes_facture.commande_id_"></phrase>
+    <phrase key="gestion_ventes_facture.employe_id_"></phrase>
+    <phrase key="gestion_ventes_facture.impression_id_"></phrase>
+    <phrase key="gestion_ventes_facture.modele_id_"></phrase>
+    <phrase key="compta_piece.date_"></phrase>
+    <phrase key="compta_piece.libelle_"></phrase>
+    <phrase key="compta_piece.debit_"></phrase>
+    <phrase key="compta_piece.credit_"></phrase>
+    <phrase key="gestion_ventes_facture.piece_id_"></phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.adhesion"></phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.facture.ligne"></phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.avoir"></phrase>
+    <phrase key="list.gestion_ventes_facture.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="list.gestion_ventes_facture.gestsea.publication.abonnement.routage"></phrase>
+    <phrase key="gestion_ventes_facture.partenaire_id_"></phrase>
+    <phrase key="gseaprincipal.gestionventesfactureligne.gestion.ventes.facture.ligne"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.immodifiable_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.a_inclure_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.inclus_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.reduction_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_unitaire_ttc_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_unitaire_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_brut_ttc_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_brut_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.montant_ht_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.description_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.note_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.commande_ligne_id_"></phrase>
+    <phrase key="compta_ecriture.libelle_"></phrase>
+    <phrase key="compta_ecriture.debit_"></phrase>
+    <phrase key="compta_ecriture.credit_"></phrase>
+    <phrase key="compta_ecriture.compte_numero_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.ecriture_id_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.facture_id_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.prix_id_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.produit_id_"></phrase>
+    <phrase key="gestion_ventes_facture_ligne.stock_mouvement_id_"></phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestion.adhesion"></phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestsea.publication.abonnement.routage"></phrase>
+    <phrase key="gseaprincipal.gestionventesfacturereglementecheance.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.partiel_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.facture_id_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.partenaire_id_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.reglement_id_"></phrase>
+    <phrase key="gestion_ventes_relance_mode.code_"></phrase>
+    <phrase key="gestion_ventes_relance_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_facture_reglement_echeance.relance_mode_id_"></phrase>
+    <phrase key="list.gestion_ventes_facture_reglement_echeance.gestion.ventes.relance.lettre"></phrase>
+    <phrase key="gseaprincipal.gestionventesreglement.gestion.ventes.reglement"></phrase>
+    <phrase key="gestion_ventes_reglement.banque_"></phrase>
+    <phrase key="gestion_ventes_reglement.numero_compte_"></phrase>
+    <phrase key="gestion_ventes_reglement.reference_"></phrase>
+    <phrase key="gestion_ventes_reglement.date_saisie_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_reglement.mode_id_"></phrase>
+    <phrase key="gestion_ventes_reglement.partenaire_id_"></phrase>
+    <phrase key="list.gestion_ventes_reglement.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="list.gestion_ventes_reglement.gestion.ventes.reversement"></phrase>
+    <phrase key="gestion_ventes_reversement.id_"></phrase>
+    <phrase key="gestion_ventes_reversement.montant_"></phrase>
+    <phrase key="gseaprincipal.gestionventesreversement.gestion.ventes.reversement"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.code_"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.nom_"></phrase>
+    <phrase key="gestion_ventes_reversement.mode_id_"></phrase>
+    <phrase key="gestion_ventes_reversement.reglement_id_"></phrase>
+    <phrase key="gseaprincipal.gestseajuridiqueprocedurecommanderel.gestsea.juridique.procedure.commande.rel"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.ordre_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.complement_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.commande_id_"></phrase>
+    <phrase key="gestsea_juridique_procedure.code_"></phrase>
+    <phrase key="gestsea_juridique_procedure_commande_rel.procedure_id_"></phrase>
+    <phrase key="gseaprincipal.gestseajuridiqueprocedure.gestsea.juridique.procedure"></phrase>
+    <phrase key="gestsea_juridique_procedure.description_"></phrase>
+    <phrase key="list.gestsea_juridique_procedure.gestsea.juridique.procedure.commande.rel"></phrase>
+    <phrase key="gseaprincipal.gestseajuridiquetache.gestsea.juridique.tache"></phrase>
+    <phrase key="gestsea_juridique_tache.description_"></phrase>
+    <phrase key="gestsea_juridique_tache.employe_id"></phrase>
+    <phrase key="gestsea_juridique_tache.partenaire_id"></phrase>
+    <phrase key="gestsea_juridique_dossier.nom_"></phrase>
+    <phrase key="gestsea_juridique_dossier_etat.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.dossier_id_"></phrase>
+    <phrase key="gestsea_juridique_tache_type.code_"></phrase>
+    <phrase key="gestsea_juridique_tache_type.nom_"></phrase>
+    <phrase key="gestsea_juridique_tache.type_id_"></phrase>
+    <phrase key="gestsea_juridique_tache.partenaire_id_"></phrase>
+    <phrase key="gestsea_juridique_tache.employe_id_"></phrase>
+    <phrase key="gseaprincipal.gestseajuridiquedossier.gestsea.juridique.dossier"></phrase>
+    <phrase key="gestsea_juridique_dossier.complement_"></phrase>
+    <phrase key="gestsea_juridique_dossier.date_ouverture_"></phrase>
+    <phrase key="gestsea_juridique_dossier.date_cloture_"></phrase>
+    <phrase key="gestsea_juridique_dossier.description_"></phrase>
+    <phrase key="gestsea_juridique_dossier.employe_id"></phrase>
+    <phrase key="gestsea_juridique_dossier.etat_id"></phrase>
+    <phrase key="gestsea_juridique_dossier_type.nom_"></phrase>
+    <phrase key="gestsea_juridique_dossier.type_id_"></phrase>
+    <phrase key="list.gestsea_juridique_dossier.gestsea.juridique.tache"></phrase>
+    <phrase key="list.gestsea_juridique_dossier.gestsea.juridique.dossier.commande"></phrase>
+    <phrase key="gestsea_juridique_dossier.employe_id_"></phrase>
+    <phrase key="gestsea_juridique_dossier.etat_id_"></phrase>
+    <phrase key="gseaprincipal.gestseajuridiquedossiercommande.gestsea.juridique.dossier.commande"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.ordre_"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.note_"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.commande_id_"></phrase>
+    <phrase key="gestsea_juridique_dossier_commande.dossier_id_"></phrase>
+    <phrase key="_.menu_"></phrase>
+    <phrase key="_.quit_"></phrase>
+    <phrase key="_.back_"></phrase>
+    <phrase key="_.forward_"></phrase>
+    <phrase key="_.home_"></phrase>
+    <phrase key="base_delai.nom_"></phrase>
+    <phrase key="_.print_" unused="true"></phrase>
+    <phrase key="_.export_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.title_" unused="true"></phrase>
+    <phrase key="dico.contact_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.telephone_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.fax_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.mobile_" unused="true"></phrase>
+    <phrase key="gestsea.gestseapartenaire.email_" unused="true"></phrase>
+    <phrase key="dico.adresse_" unused="true"></phrase>
+    <phrase key="gestsea.partenaire.observations_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.auxiliaires.numero_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.acces_" unused="true"></phrase>
+    <phrase key="gestsea.comptacompte.auxiliaires.nom_" unused="true"></phrase>
+    <phrase key="compta_compte.debit_" unused="true"></phrase>
+    <phrase key="compta_compte.credit_" unused="true"></phrase>
+    <phrase key="compta_compte.solde_" unused="true"></phrase>
+    <phrase key="dico.titre_" unused="true"></phrase>
+    <phrase key="dico.nom_" unused="true"></phrase>
+    <phrase key="dico.prenom_" unused="true"></phrase>
+    <phrase key="dico.codepostal_"></phrase>
+    <phrase key="dico.commune_"></phrase>
+    <phrase key="dico.telephone_"></phrase>
+    <phrase key="dico.fax_"></phrase>
+    <phrase key="dico.mobile_"></phrase>
+    <phrase key="dico.email_"></phrase>
+    <phrase key="base_partenaire_observation.importance_id"></phrase>
+    <phrase key="base_partenaire_observation_importance.code_"></phrase>
+    <phrase key="base_partenaire_observation_importance.nom_"></phrase>
+    <phrase key="base_partenaire_observation.importance_id_"></phrase>
+    <phrase key="gestsea.basepartenairecontact.base.partenaire.contact" unused="true"></phrase>
+    <phrase key="base_partenaire_contact.adresse" unused="true"></phrase>
+    <phrase key="base_partenaire_contact.contact" unused="true"></phrase>
+    <phrase key="base_partenaire_contact_version.codepostal_"></phrase>
+    <phrase key="base_partenaire_contact_version.commune_"></phrase>
+    <phrase key="base_partenaire_contact_version.telephone_"></phrase>
+    <phrase key="base_partenaire_contact_version.fax_"></phrase>
+    <phrase key="gestion_ventes_commande.commande_version_id_"></phrase>
+    <phrase key="gestion_produit_prix.libelle_"></phrase>
+    <phrase key="gestion_produit_prix.actif_"></phrase>
+    <phrase key="gestion_produit_prix.date_debut_"></phrase>
+    <phrase key="gestion_produit_prix.date_fin_"></phrase>
+    <phrase key="gestion_ventes_commande.validite_date_"></phrase>
+    <phrase key="gestion_ventes_commande.avec_signature_"></phrase>
+    <phrase key="gestion_ventes_commande.signature_client_"></phrase>
+    <phrase key="gestion_ventes_commande_type.nom_"></phrase>
+    <phrase key="gestion_ventes_commande.type_id_"></phrase>
+    <phrase key="gestion_ventes_commande.validite_delai_id_"></phrase>
+    <phrase key="list.base_partenaire_contact.base.partenaire.contact.version"></phrase>
+    <phrase key="gseaprincipal.voir_gestion.ventes.relance.mode" unused="true"></phrase>
+    <phrase key="gseaprincipal.voir_gestsea.structure" unused="true"></phrase>
+    <phrase key="gseaprincipal.gestionlienrole.gestion.lien.role"></phrase>
+    <phrase key="gestion_lien_role.prefixe_"></phrase>
+    <phrase key="gestion_lien_role.suffixe_"></phrase>
+    <phrase key="gestion_lien_role.nom_"></phrase>
+    <phrase key="gestion_lien_role.type_id_"></phrase>
+    <phrase key="list.gestion_lien_role.gestion.lien"></phrase>
+    <phrase key="gseaprincipal.gestionlientype.gestion.lien.type"></phrase>
+    <phrase key="gestion_lien_type.phrase_directe_"></phrase>
+    <phrase key="gestion_lien_type.phrase_inverse_"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.lien"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.lien.role"></phrase>
+    <phrase key="list.gestion_lien_type.gestion.adhesion.transmission"></phrase>
+    <phrase key="gestion_adhesion_transmission.id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.paiement_date_"></phrase>
+    <phrase key="gestion_ventes_facture.facture_version_id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.livraison_version_id_" unused="true"></phrase>
+    <phrase key="gestion_ventes_facture.paiement_delai_id_"></phrase>
+    <phrase key="list.gestion_ventes_facture_ligne.gestion.ventes.avoir.ligne"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.nom_" unused="true"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.quantite_" unused="true"></phrase>
+    <phrase key="gestion_ventes_avoir_ligne.montant_ttc_" unused="true"></phrase>
+    <phrase key="gseaprincipal.gestionventesrelancemode.gestion.ventes.relance.mode"></phrase>
+    <phrase key="gestion_ventes_relance_mode.defaut_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode.gestion.ventes.relance.mode.etape"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.nb_jours_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode.gestion.ventes.facture.reglement.echeance"></phrase>
+    <phrase key="gseaprincipal.gestionventesrelancemodeetape.gestion.ventes.relance.mode.etape"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.message_"></phrase>
+    <phrase key="gestion_ventes_relance_mode_etape.relance_mode_id_"></phrase>
+    <phrase key="list.gestion_ventes_relance_mode_etape.gestion.ventes.relance.lettre"></phrase>
+    <phrase key="gseaprincipal.gestionventesreglementmode.gestion.ventes.reglement.mode"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.actif_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.note_"></phrase>
+    <phrase key="compta_banque_compte.numero_" unused="true"></phrase>
+    <phrase key="compta_banque_compte.nom_" unused="true"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.banque_compte_id_"></phrase>
+    <phrase key="gestion_ventes_reglement_mode.compteperm_id_"></phrase>
+    <phrase key="list.gestion_ventes_reglement_mode.gestion.ventes.reglement"></phrase>
+    <phrase key="gseaprincipal.gestionventesreversementmode.gestion.ventes.reversement.mode"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.actif_"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.compteperm_id_"></phrase>
+    <phrase key="base_societe.code_" unused="true"></phrase>
+    <phrase key="base_societe.nom_" unused="true"></phrase>
+    <phrase key="base_societe.nui_" unused="true"></phrase>
+    <phrase key="gestion_ventes_reversement_mode.societe_id_"></phrase>
+    <phrase key="list.gestion_ventes_reversement_mode.gestion.ventes.reversement"></phrase>
+    <phrase key="gseaprincipal.gestseastructure.gestsea.structure"></phrase>
+    <phrase key="gestsea_structure.code_"></phrase>
+    <phrase key="gestsea_structure.externe_"></phrase>
+    <phrase key="gestsea_structure.parent_structure_id_"></phrase>
+    <phrase key="gestsea_structure.partenaire_id_"></phrase>
+    <phrase key="list.gestsea_structure.gestsea.structure"></phrase>
+    <phrase key="list.gestsea_structure.gestsea.structure.commune.rel"></phrase>
+    <phrase key="gestsea_structure_commune_rel.id_"></phrase>
+    <phrase key="gseaprincipal.gestseastructurecommunerel.gestsea.structure.commune.rel"></phrase>
+    <phrase key="gestsea_structure_commune_rel.commune_id_"></phrase>
+    <phrase key="gestsea_structure_commune_rel.structure_id_"></phrase>
+  </language>
+</languages>

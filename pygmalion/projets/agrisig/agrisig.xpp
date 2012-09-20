@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projet>
+  <sorties>
+    <sortie src="devis.xps"/>
+    <sortie src="facture.xps"/>
+    <sortie src="avoir.xps"/>
+  </sorties>
+  <collections>
+    <collection src="agrisig.xpf"/>
+    <collection systeme="true" src="thunderbird.xpf"/>
+  </collections>
+  <navigation src="agrisig.xpn"/>
+  <analyse src="agrisig.xpa"/>
+  <theme src="../agrisig.xpt"/>
+  <generation src="agrisig.xpg"/>
+  
+  
+  
+</projet>

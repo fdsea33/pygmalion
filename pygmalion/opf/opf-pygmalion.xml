@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<extend name="Pygmalion SQL Methods">
+
+  <method name="getQueryCode" element="from">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  PRUint32 pIndex;
+  nsAutoString pCode;
+
+  aCode = NS_LITERAL_STRING(" FROM ");
+  for(pIndex=0;pIndex<mFromElementArray.Count();pIndex++) {
+    //    rv = mFromElementArray[pIndex]->GetQueryCode(pCode);
+    //    NS_ENSURE_SUCCESS(rv,rv);
+    if (pIndex>0)
+      aCode += NS_LITERAL_STRING(", ");
+    aCode += pCode;
+  }
+  return NS_OK;
+]]></code>
+  </method>
+
+<!--
+  <method name="getQueryCode" element="from-element">
+    <parameter name="code" direction="out" type="string"/>
+    <code><![CDATA[
+  nsresult rv;
+  PRUint32 pCount=0;
+
+  if (mTheFromTable) pCount+=10;
+  if (mTheProcedure) pCount+=11;
+  if (mTheSelect)    pCount+=12;
+  if (mTheJoin)      pCount+=13;
+  if (pCount<10) {
+    nsCOMPtr<nsIPromptService> pPrompt = do_CreateInstance(NS_PROMPTSERVICE_CONTRACTID, &rv);
+    NS_ENSURE_SUCCESS(rv, rv);
+    pPrompt->Alert(nsnull, ToNewUnicode(NS_LITERAL_STRING("Erreur de syntaxe XML")), 
+		   ToNewUnicode(NS_LITERAL_STRING("Un élément from-élément ne contient pas de fils.")));
+    return NS_ERROR_FAILURE;
+  }
+  if (pCount>13) {
+    nsCOMPtr<nsIPromptService> pPrompt = do_CreateInstance(NS_PROMPTSERVICE_CONTRACTID, &rv);
+    NS_ENSURE_SUCCESS(rv, rv);
+    pPrompt->Alert(nsnull, ToNewUnicode(NS_LITERAL_STRING("Erreur de syntaxe XML")), 
+		   ToNewUnicode(NS_LITERAL_STRING("Un élément from-élément contient plus qu'un fils.")));
+    return NS_ERROR_FAILURE;
+  }
+  
+  aCode = NS_LITERAL_STRING("(from-element)");
+  /*
+  switch(pCount) {
+  case 10: rv = mTheFromTable->GetQueryCode(aCode); break;
+  case 11: rv = mTheProcedure->GetQueryCode(aCode); break;
+  case 12: rv = mTheSelect->GetQueryCode(aCode); break;
+  case 13: rv = mTheJoin->GetQueryCode(aCode); break;
+  }
+  NS_ENSURE_SUCCESS(rv);
+  */
+  return NS_OK;
+]]></code>
+  </method>
+-->
+
+</extend>

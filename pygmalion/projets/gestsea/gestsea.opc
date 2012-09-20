@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project label="GestSEA" name="gestsea" version="3.0.2" uuid="94c4a73a-37d7-40af-b236-13cf291109fb" languages-file="../dico.opl">
+  <authors>
+    <author id="BT" organization="FDSEA 33" email="brice@fdsea33.fr">Brice Texier</author>
+  </authors>
+  <languages _load="../dico.opl"/>
+  <descriptions>
+    <description code="fr-FR">Gestion et comptabilité multi-societes et multi-utilisateurs.</description>
+    <description code="en-US">Multi-user and multi-company comptability.</description>
+  </descriptions>
+  <navigation version="3.0.0" guuid="f845eb9f-df7a-4d35-9422-15abeeb186d1" nuuid="3c3d5c14-a1e9-4a0e-99a1-384a8f75a0ad">
+    <windows>
+<!--      <window _load="../base/base.opi"/>-->
+<!--      <window _load="../compta/compta.opi"/>-->
+      <window _load="gestsea.opi"/>
+    </windows>
+  </navigation>
+  <analyses version="1.0.2">
+    <modules  _load="gestsea.opm"/>
+    <analysis _load="../systeme/systeme.opa"/>
+    <analysis _load="../base/base.opa"/>
+    <analysis _load="../compta/compta.opa"/>
+    <analysis _load="../gestion/gestion.opa"/>
+    <analysis _load="gestsea.opa"/>
+  </analyses>
+  <generations>
+    <generation name="Standard" generator="@fdsea33.fr/pygmalion/pygen;1" language-code="fr-FR">
+      <option name="icon">gestsea.png</option>
+      <option name="extension-directory">/home/brice/Moz/extensions</option>
+      <option name="server-directory">/home/brice/pygmalion/servers</option>
+      <option name="xpcom-prefix">@brice.fr</option>
+      <option name="short-name">gsea</option>
+      <option name="project-module">Gestsea</option>
+      <option name="uuid1">ba708d04-634c-47ba-a3fa-02d455ad77bc</option>
+      <option name="uuid2">7f555b14-3b84-4733-947d-91e9fc7e0279</option>
+      <option name="update-url">http://192.168.0.253/update/gestsea_update.rdf</option>
+    </generation>
+  </generations>
+  <themes>
+    <theme _load="../standard.opt"/>
+    <theme _load="../standard-menu.opt"/>
+  </themes>
+
+</project>
+

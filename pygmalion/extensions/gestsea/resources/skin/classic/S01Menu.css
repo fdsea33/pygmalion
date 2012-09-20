@@ -1,0 +1,22 @@
+/* 'Menu' Style Sheet */
+
+.part-menu-gestsea {
+  background-image:url(chrome://gestsea/skin/f_gestsea.png);
+  background-repeat:no-repeat;
+}
+
+.part-menu-gestx {
+  background-image:url(chrome://gestsea/skin/f_gestx.png);
+  background-repeat:no-repeat;
+}
+
+.part-menu-comptax {
+  background-image:url(chrome://gestsea/skin/f_comptax.png);
+  background-repeat:no-repeat;
+}
+
+.part-menu-admin {
+  background-image:url(chrome://gestsea/skin/f_admin.png);
+  background-repeat:no-repeat;
+}
+

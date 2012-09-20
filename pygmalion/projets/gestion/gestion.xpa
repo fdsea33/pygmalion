@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysis name="Gestion" version="0.0.0" 
+  xmlns:typens="urn:Pygmalion"
+  xmlns="http://www.pygmalion.org/analysis/">
+
+  <classes>
+
+    <class name="TypeAdhesion" abbr="TA" inherits="Type">
+      <details>
+        <detail code="fr-FR">
+          <label>Types d'adhésion</label>
+	  <represent>un type d'adhésion<represent>
+        </detail>
+        <detail code="en-US">
+          <label>Means of adhesion</label>
+	  <represent>a means of adhesion<represent>
+        </detail>
+      <details>
+      <properties>
+        <property name="AD_Numero"     type="integer" size="8"  notnull="true">
+          <label code="fr-FR">Numéro</label>
+          <label code="en-US">Number</label>
+        </property>
+        <property name="PE_Numero"     type="integer" size="8" >
+          <label code="fr-FR">Personne</label>
+          <label code="en-US">Person</label>
+        </property>
+        <property name="AD_Ligne1"     type="varchar" size="64" notnull="true">
+          <label code="fr-FR">Ligne 1</label>
+          <label code="en-US">Line 1</label>
+        </property>
+        <property name="AD_Ligne2"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 2</label>
+          <label code="en-US">Line 2</label>
+        </property>
+        <property name="AD_Ligne3"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 3</label>
+          <label code="en-US">Line 3</label>
+        </property>
+        <property name="CP_Numero"     type="integer" size="16">
+          <label code="fr-FR">Code postal</label>
+          <label code="en-US">Zip code</label>
+        </property>
+        <property name="VI_Numero"     type="integer" size="16">
+          <label code="fr-FR">Ville</label>
+          <label code="en-US">City</label>
+        </property>
+      </properties>
+      <constraints>
+        <constraint name="FK_Personne_Numero" type="foreign_key" references="Personne(PE_Numero)"  columns="PE_Numero" match="simple" ondelete="cascade" onupdate="cascade"/>
+	<constraint name="CK_NaissanceFuture" type="check"       expr="PE_Naissance<=CURRENT_DATE"/>
+      </constraints>
+      <methods>
+        <method name="FC_Validation">
+          <parameters>
+            </parameter name="Numero" type="integer" size="8"/>
+	  </parameters>
+	  <code type="PLPGSQL">
+          </code>
+	</method>
+      </methods>
+    </class>
+
+    <class name="MoyenAdhesion" abbr="MA">
+      <details>
+        <detail code="fr-FR">
+          <label>Moyens d'adhésion</label>
+	  <represent>une moyen d'adhésion<represent>
+        </detail>
+        <detail code="en-US">
+          <label>Means of adhesion</label>
+	  <represent>a means of adhesion<represent>
+        </detail>
+      <details>
+      <properties>
+        <property name="AD_Numero"     type="integer" size="8"  notnull="true">
+          <label code="fr-FR">Numéro</label>
+          <label code="en-US">Number</label>
+        </property>
+        <property name="PE_Numero"     type="integer" size="8" >
+          <label code="fr-FR">Personne</label>
+          <label code="en-US">Person</label>
+        </property>
+        <property name="AD_Ligne1"     type="varchar" size="64" notnull="true">
+          <label code="fr-FR">Ligne 1</label>
+          <label code="en-US">Line 1</label>
+        </property>
+        <property name="AD_Ligne2"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 2</label>
+          <label code="en-US">Line 2</label>
+        </property>
+        <property name="AD_Ligne3"     type="varchar" size="64">
+          <label code="fr-FR">Ligne 3</label>
+          <label code="en-US">Line 3</label>
+        </property>
+        <property name="CP_Numero"     type="integer" size="16">
+          <label code="fr-FR">Code postal</label>
+          <label code="en-US">Zip code</label>
+        </property>
+        <property name="VI_Numero"     type="integer" size="16">
+          <label code="fr-FR">Ville</label>
+          <label code="en-US">City</label>
+        </property>
+      </properties>
+      <constraints>
+        <constraint name="FK_Personne_Numero" type="foreign_key" references="Personne(PE_Numero)"  columns="PE_Numero" match="simple" ondelete="cascade" onupdate="cascade"/>
+	<constraint name="CK_NaissanceFuture" type="check"       expr="PE_Naissance<=CURRENT_DATE"/>
+      </constraints>
+      <methods>
+        <method name="FC_Validation">
+          <parameters>
+            </parameter name="Numero" type="integer" size="8"/>
+	  </parameters>
+	  <code type="PLPGSQL">
+          </code>
+	</method>
+      </methods>
+    </class>
+
+
+  </classes>
+
+  <links>
+    <link/>
+  </links>
+
+</analysis>

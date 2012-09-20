@@ -1,0 +1,17 @@
+DEPTH=../../../..
+topsrcdir=@top_srcdir@
+srcdir=@srcdir@
+VPATH=@srcdir@
+
+include $(DEPTH)/config/autoconf.mk
+
+MODULE = gestsea
+XPIDL_MODULE = gestsea
+ifdef MOZ_XUL_APP
+XPI_NAME = gestsea
+endif
+
+XPIDLSRCS = mozIC00gestsea.idl mozIC01step.idl mozIC02gestsea.idl $(NULL)
+
+include $(topsrcdir)/config/rules.mk
+

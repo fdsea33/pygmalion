@@ -1,0 +1,2336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://gestsea/skin/S00debug.css" type="text/css"?>
+<?xml-stylesheet href="chrome://gestsea/skin/S01Menu.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://gestsea/locale/gestsea.dtd">
+
+<window orient="vertical" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" sizemode="normal"  onload="init_Trees(); if (!C02gestsea___.init(this.self)) window.close();" onclose="if (C02gestsea___) C02gestsea___.quit();" title="GestSEA::gestsea">
+
+<script>
+C02gestsea___ = Components.classes['@brice.fr/gestsea/C02gestsea;1'].getService(Components.interfaces.mozIC02gestsea);
+
+
+function init_Trees() {
+  var boxobject;
+  boxobject = document.getElementById("I0017d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0017dSet(boxobject);
+  boxobject = document.getElementById("I001Fd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI001FdSet(boxobject);
+  boxobject = document.getElementById("I002Ad").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI002AdSet(boxobject);
+  boxobject = document.getElementById("I0030d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0030dSet(boxobject);
+  boxobject = document.getElementById("I00CBd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI00CBdSet(boxobject);
+  boxobject = document.getElementById("I00D4d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI00D4dSet(boxobject);
+  boxobject = document.getElementById("I00DBd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI00DBdSet(boxobject);
+  boxobject = document.getElementById("I00E2d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI00E2dSet(boxobject);
+  boxobject = document.getElementById("I00E6d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI00E6dSet(boxobject);
+  boxobject = document.getElementById("I011Dd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI011DdSet(boxobject);
+  boxobject = document.getElementById("I014Dd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI014DdSet(boxobject);
+  boxobject = document.getElementById("I0153d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0153dSet(boxobject);
+  boxobject = document.getElementById("I0181d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0181dSet(boxobject);
+  boxobject = document.getElementById("I018Ed").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI018EdSet(boxobject);
+  boxobject = document.getElementById("I0197d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0197dSet(boxobject);
+  boxobject = document.getElementById("I019Ed").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI019EdSet(boxobject);
+  boxobject = document.getElementById("I01A3d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01A3dSet(boxobject);
+  boxobject = document.getElementById("I01A7d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01A7dSet(boxobject);
+  boxobject = document.getElementById("I01AEd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01AEdSet(boxobject);
+  boxobject = document.getElementById("I01B7d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01B7dSet(boxobject);
+  boxobject = document.getElementById("I01BCd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01BCdSet(boxobject);
+  boxobject = document.getElementById("I01C1d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01C1dSet(boxobject);
+  boxobject = document.getElementById("I01C8d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01C8dSet(boxobject);
+  boxobject = document.getElementById("I01CEd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01CEdSet(boxobject);
+  boxobject = document.getElementById("I01DAd").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI01DAdSet(boxobject);
+  boxobject = document.getElementById("I0208d").boxObject;
+  boxobject.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  C02gestsea___.treeI0208dSet(boxobject);
+}
+
+</script>
+
+<toolbox orient="vertical">
+  <toolbar id="I0000d" flex="1">
+    <toolbarbutton label="&_.menu_;" class="menu-button" type="menu">
+      <menupopup minwidth="192">
+<menuitem class="menuitem-iconic goto-button" label="&gestsea.menu_;" oncommand="C02gestsea___.menuMenuGestseaDisplay()"/>
+<menuitem class="menuitem-iconic goto-button" label="&menu.gseaprincipal_;" oncommand="C02gestsea___.menuMenuGseaPrincipalDisplay()"/>
+        <menuseparator/>
+        <menuitem class="menuitem-iconic close-button" label="&_.quit_;" oncommand="C02gestsea___.quit(); window.close();"/>
+      </menupopup>
+    </toolbarbutton>
+    <toolbarbutton id="I0216d" label="&_.back_;" class="back-button" disabled="true" oncommand="C02gestsea___.back();"/>
+    <toolbarbutton id="I0217d" label="&_.forward_;" class="forward-button" disabled="true" oncommand="C02gestsea___.forward();"/>
+    <toolbarbutton label="&_.home_;" class="home-button" oncommand="C02gestsea___.home();"/>
+    <toolbaritem align="center">
+      <textbox id="pm-panel-deck-index" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) document.getElementById('theMasterDeck').selectedIndex=this.value;"/>
+    </toolbaritem>
+    <toolbaritem align="center" flex="1">
+      <hbox flex="1"/>
+      <label class="extension-title-toolbar" value="GestSEA 3.0.0"/>
+    </toolbaritem>
+  </toolbar>
+</toolbox>
+
+<deck id="theMasterDeck" selectedIndex="0" flex="1">
+<vbox style="overflow:auto" class="part-menu-gestsea" flex="1" align="center" pack="center">
+<expander class="actions" open="true" clearhidden="true" label="&gestsea.menu.suivi_;">
+<hbox align="center">
+<label class="action" value="&gestsea.menu.personnes.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailBasePartenaireSearch(this.value);"/>
+</hbox>
+<hbox align="center">
+<label class="action" value="&gestsea.menu.dossier.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailGestseaJuridiqueDossierSearch(this.value);"/>
+</hbox>
+</expander>
+<expander class="actions" open="true" clearhidden="true" label="&gestsea.menu.facturation_;">
+<hbox align="center">
+<label class="action" value="&gestsea.menu.commande.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailGestionVentesCommandeSearch(this.value);"/>
+</hbox>
+<hbox align="center">
+<label class="action" value="&gestsea.menu.facture.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailGestionVentesFactureSearch(this.value);"/>
+</hbox>
+</expander>
+</vbox>
+<vbox style="overflow:auto" class="part-menu-gestsea" flex="1" align="center" pack="center">
+<expander class="actions" open="true" clearhidden="true" label="&_.general_;">
+<hbox align="center">
+<label class="action" value="&gseaprincipal.voir_gestion.ventes.commande;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailGestionVentesCommandeSearch(this.value);"/>
+</hbox>
+</expander>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailBasePartenaireContactInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailBasePartenaireContactUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailBasePartenaireContactDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.basepartenairecontact.base.partenaire.contact;"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <checkbox oncommand="this.checked=!this.checked" label="&base_partenaire_contact.actif_;" id="I0001d" class=" box-field select label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.date_fin_;" control="I0002d" class=" label"/>
+            <label flex="17" id="I0002d" class=" value" value="I0040d.date_fin"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.complement_;" control="I0003d" class=" label"/>
+            <label flex="38" id="I0003d" class=" value" value="I0040d.complement"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne3_;" control="I0004d" class=" label"/>
+            <label flex="38" id="I0004d" class=" value" value="I0040d.ligne3"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.numero_;" control="I0005d" class=" label"/>
+            <label flex="17" id="I0005d" class=" value" value="I0040d.numero"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.voie_;" control="I0006d" class=" label"/>
+            <label flex="32" id="I0006d" class=" value" value="I0040d.voie"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne5_;" control="I0007d" class=" label"/>
+            <label flex="38" id="I0007d" class=" value" value="I0040d.ligne5"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.codepostal_;" control="I0008d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I0008d" class="detail-important hyperlink value" value="I0040d.codepostal"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.commune_;" control="I0009d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="32" id="I0009d" class="detail-important hyperlink value" value="I0040d.commune"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I000Ad" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I000Ad" class="detail-important hyperlink value" value="I0040d.telephone"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.mobile_;" control="I000Bd" class=" label"/>
+            <label flex="17" id="I000Bd" class=" value" value="I0040d.mobile"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.fax_;" control="I000Cd" class=" label"/>
+            <label flex="17" id="I000Cd" class=" value" value="I0040d.fax"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.email_;" control="I000Dd" class=" label"/>
+            <label flex="128" id="I000Dd" class=" value" value="I0040d.email"/>
+          </box>
+<box orient="horizontal" flex="1">
+<groupbox orient="vertical" flex="1">
+  <caption label="&base_partenaire_contact.partenaire_id;"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I000Ed" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I000Ed" class="detail-important hyperlink value" value="I0068d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I000Fd" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I000Fd" class=" hyperlink value" value="I0068d.libelle"/>
+          </box>
+</groupbox>
+<groupbox orient="vertical" flex="1">
+  <caption label="&base_partenaire_contact.type_id;"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.code_;" control="I0010d" class="detail-important label"/>
+            <label flex="17" id="I0010d" class="detail-important value" value="I006Bd.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.nom_;" control="I0011d" class=" label"/>
+            <label flex="64" id="I0011d" class=" value" value="I006Bd.nom"/>
+          </box>
+</groupbox>
+</box>
+</box>
+  <expander label="&base_partenaire_contact.codepostal_commune_id_;" clearhidden="true">
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_codepostal_commune_rel.nom_;" control="I0012d" class="detail-important label"/>
+            <label flex="128" id="I0012d" class="detail-important value" value="I006Ed.nom"/>
+          </box>
+  </expander>
+  <expander label="&base_partenaire_contact.codepostal_id_;" clearhidden="true">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_codepostal.numero_;" control="I0013d" class="detail-important label"/>
+            <label flex="17" id="I0013d" class="detail-important value" value="I0070d.numero"/>
+          </box>
+  </expander>
+  <expander label="&base_partenaire_contact.commune_id_;" clearhidden="true">
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_commune.nom_;" control="I0014d" class="detail-important label"/>
+            <label flex="128" id="I0014d" class="detail-important value" value="I0072d.nom"/>
+          </box>
+  </expander>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  <splitter/>
+  <vbox flex="1">
+<hbox style="display:inline; padding: 1px;">
+    <button class="list-button16" oncommand="C02gestsea___.detailListI0016dSelect();" label="&list.base_partenaire_contact.base.partenaire.contact.version;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI001DdSelect();" label="&list.base_partenaire_contact.gestion.ventes.commande;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI0029dSelect();" label="&list.base_partenaire_contact.gestsea.publication.abonnement.commande;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI002FdSelect();" label="&list.base_partenaire_contact.gestsea.publication.abonnement.routage;"/>
+</hbox>
+<vbox flex="1" style="overflow:auto; min-height:6em;">
+  <deck flex="1" id="I0015d">
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire_contact.base.partenaire.contact.version;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I0017d" minheight="100" onmousedown="C02gestsea___.treeI0017dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&base_partenaire_contact_version.codepostal_;" id="I0019d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact_version.commune_;" id="I001Ad" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact_version.telephone_;" id="I001Bd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact_version.fax_;" id="I001Cd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I0018d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I001Ed" label="&_.new_;" oncommand="C02gestsea___.detailListI001DdInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire_contact.gestion.ventes.commande;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I001Fd" minheight="100" onmousedown="C02gestsea___.treeI001FdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_commande.numero_;" id="I0021d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.date_;" id="I0022d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I0023d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I0024d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ttc_;" id="I0025d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ht_;" id="I0026d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I0027d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I0028d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I0020d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire_contact.gestsea.publication.abonnement.commande;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I002Ad" minheight="100" onmousedown="C02gestsea___.treeI002AdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_publication_abonnement_commande.id_;" id="I002Cd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I002Dd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I002Ed" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I002Bd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire_contact.gestsea.publication.abonnement.routage;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I0030d" minheight="100" onmousedown="C02gestsea___.treeI0030dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_publication_abonnement_routage.id_;" id="I0032d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I0033d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I0034d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication.code_;" id="I0035d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication.nom_;" id="I0036d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.nb_exemplaires_;" id="I0037d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.numero_debut_;" id="I0038d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.numero_fin_;" id="I0039d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I0031d"/>
+</tree>
+      </vbox>
+    </vbox>
+  </deck>
+</vbox>
+</vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenairecontact.base.partenaire.contact;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <checkbox label="&base_partenaire_contact.actif_;" id="I003Bd" class=" notnull semi-auto box-field insert update label"/>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.partenaire_id_;" control="I003Cd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI003CdRefresh(event);" flex="1" id="I003Cd" class=" notnull value" value="base_partenaire_contact.partenaire_id">
+              <menupopup id="I003Dd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.type_id_;" control="I003Ed" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI003EdRefresh(event);" flex="1" id="I003Ed" class=" notnull value" value="base_partenaire_contact.type_id">
+              <menupopup id="I003Fd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.complement_;" control="I0040d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0040d" class=" maxlen value" value="base_partenaire_contact.complement"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne3_;" control="I0041d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0041d" class=" maxlen value" value="base_partenaire_contact.ligne3"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.numero_;" control="I0042d" class=" label"/>
+            <textbox            maxlength="5" style="max-width:4em;" flex="17" id="I0042d" class=" maxlen value" value="base_partenaire_contact.numero"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.voie_;" control="I0043d" class=" label"/>
+            <textbox            maxlength="32" style="max-width:25em;" flex="32" id="I0043d" class=" maxlen value" value="base_partenaire_contact.voie"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne5_;" control="I0044d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0044d" class=" maxlen value" value="base_partenaire_contact.ligne5"/>
+          </box>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.codepostal_commune_id_;" control="I0045d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0045dRefresh(event);" flex="1" id="I0045d" class=" notnull value" value="base_partenaire_contact.codepostal_commune_id">
+              <menupopup id="I0046d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I0047d" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I0047d" class=" maxlen value" value="base_partenaire_contact.telephone"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.mobile_;" control="I0048d" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I0048d" class=" maxlen value" value="base_partenaire_contact.mobile"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.fax_;" control="I0049d" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I0049d" class=" maxlen value" value="base_partenaire_contact.fax"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.email_;" control="I004Ad" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I004Ad" class=" value" value="base_partenaire_contact.email"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I004Bd" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireContactUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireContactCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenairecontact.base.partenaire.contact;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <checkbox label="&base_partenaire_contact.actif_;" id="I004Cd" class=" notnull semi-auto box-field insert update label"/>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.partenaire_id_;" control="I004Dd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI004DdRefresh(event);" flex="1" id="I004Dd" class=" notnull value" value="base_partenaire_contact.partenaire_id">
+              <menupopup id="I004Ed"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.type_id_;" control="I004Fd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI004FdRefresh(event);" flex="1" id="I004Fd" class=" notnull value" value="base_partenaire_contact.type_id">
+              <menupopup id="I0050d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.complement_;" control="I0051d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0051d" class=" maxlen value" value="base_partenaire_contact.complement"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne3_;" control="I0052d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0052d" class=" maxlen value" value="base_partenaire_contact.ligne3"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.numero_;" control="I0053d" class=" label"/>
+            <textbox            maxlength="5" style="max-width:4em;" flex="17" id="I0053d" class=" maxlen value" value="base_partenaire_contact.numero"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.voie_;" control="I0054d" class=" label"/>
+            <textbox            maxlength="32" style="max-width:25em;" flex="32" id="I0054d" class=" maxlen value" value="base_partenaire_contact.voie"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.ligne5_;" control="I0055d" class=" label"/>
+            <textbox            maxlength="38" style="max-width:30em;" flex="38" id="I0055d" class=" maxlen value" value="base_partenaire_contact.ligne5"/>
+          </box>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_contact.codepostal_commune_id_;" control="I0056d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0056dRefresh(event);" flex="1" id="I0056d" class=" notnull value" value="base_partenaire_contact.codepostal_commune_id">
+              <menupopup id="I0057d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I0058d" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I0058d" class=" maxlen value" value="base_partenaire_contact.telephone"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.mobile_;" control="I0059d" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I0059d" class=" maxlen value" value="base_partenaire_contact.mobile"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.fax_;" control="I005Ad" class=" label"/>
+            <textbox            maxlength="16" style="max-width:12em;" flex="17" id="I005Ad" class=" maxlen value" value="base_partenaire_contact.fax"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.email_;" control="I005Bd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I005Bd" class=" value" value="base_partenaire_contact.email"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I005Cd" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireContactInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireContactCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailBasePartenaireObservationInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailBasePartenaireObservationUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailBasePartenaireObservationDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.basepartenaireobservation.base.partenaire.observation;"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_observation.contenu_;" control="I005Dd" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireObservationSelect(this.getAttribute('key'));" flex="128" id="I005Dd" class="detail-title hyperlink value" value="I0040d.contenu"/>
+          </box>
+<box orient="horizontal" flex="1">
+<groupbox orient="vertical" flex="1">
+  <caption label="&base_partenaire_observation.importance_id;"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_observation_importance.code_;" control="I005Ed" class=" label"/>
+            <label flex="17" id="I005Ed" class=" value" value="I007Fd.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_observation_importance.nom_;" control="I005Fd" class="detail-important label"/>
+            <label flex="128" id="I005Fd" class="detail-important value" value="I007Fd.nom"/>
+          </box>
+</groupbox>
+<groupbox orient="vertical" flex="1">
+  <caption label="&base_partenaire_observation.partenaire_id;"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I0060d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I0060d" class="detail-important hyperlink value" value="I0082d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I0061d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I0061d" class=" hyperlink value" value="I0082d.libelle"/>
+          </box>
+</groupbox>
+</box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaireobservation.base.partenaire.observation;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_observation.partenaire_id_;" control="I0063d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0063dRefresh(event);" flex="1" id="I0063d" class=" notnull value" value="base_partenaire_observation.partenaire_id">
+              <menupopup id="I0064d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_observation.importance_id_;" control="I0065d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0065dRefresh(event);" flex="1" id="I0065d" class=" notnull value" value="base_partenaire_observation.importance_id">
+              <menupopup id="I0066d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_observation.contenu_;" control="I0067d" class=" notnull label"/>
+            <textbox            maxlength="128" flex="128" id="I0067d" class=" notnull value" value="base_partenaire_observation.contenu"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0068d" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireObservationUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireObservationCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaireobservation.base.partenaire.observation;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_observation.partenaire_id_;" control="I0069d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0069dRefresh(event);" flex="1" id="I0069d" class=" notnull value" value="base_partenaire_observation.partenaire_id">
+              <menupopup id="I006Ad"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_observation.importance_id_;" control="I006Bd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI006BdRefresh(event);" flex="1" id="I006Bd" class=" notnull value" value="base_partenaire_observation.importance_id">
+              <menupopup id="I006Cd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_observation.contenu_;" control="I006Dd" class=" notnull label"/>
+            <textbox            maxlength="128" flex="128" id="I006Dd" class=" notnull value" value="base_partenaire_observation.contenu"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I006Ed" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireObservationInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireObservationCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailBasePartenaireAttributInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailBasePartenaireAttributUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailBasePartenaireAttributDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.basepartenaireattribut.base.partenaire.attribut;"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut.type_nom_;" control="I006Fd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireAttributSelect(this.getAttribute('key'));" flex="64" id="I006Fd" class="detail-important hyperlink value" value="I0040d.type_nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut.categorie_nom_;" control="I0070d" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireAttributSelect(this.getAttribute('key'));" flex="64" id="I0070d" class="detail-title hyperlink value" value="I0040d.categorie_nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut.note_;" control="I0071d" class=" label"/>
+            <label flex="128" id="I0071d" class=" value" value="I0040d.note"/>
+          </box>
+</box>
+  <expander label="&base_partenaire_attribut.categorie_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut_categorie.code_;" control="I0072d" class="detail-important label"/>
+            <label flex="17" id="I0072d" class="detail-important value" value="I0090d.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut_categorie.nom_;" control="I0073d" class=" label"/>
+            <label flex="64" id="I0073d" class=" value" value="I0090d.nom"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&base_partenaire_attribut.partenaire_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I0074d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I0074d" class="detail-important hyperlink value" value="I0093d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I0075d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I0075d" class=" hyperlink value" value="I0093d.libelle"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&base_partenaire_attribut.type_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut_type.code_;" control="I0076d" class="detail-important label"/>
+            <label flex="17" id="I0076d" class="detail-important value" value="I0096d.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut_type.nom_;" control="I0077d" class=" label"/>
+            <label flex="64" id="I0077d" class=" value" value="I0096d.nom"/>
+          </box>
+</box>
+  </expander>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaireattribut.base.partenaire.attribut;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.partenaire_id_;" control="I0079d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0079dRefresh(event);" flex="1" id="I0079d" class=" notnull value" value="base_partenaire_attribut.partenaire_id">
+              <menupopup id="I007Ad"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.type_id_;" control="I007Bd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI007BdRefresh(event);" flex="1" id="I007Bd" class=" notnull value" value="base_partenaire_attribut.type_id">
+              <menupopup id="I007Cd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.categorie_id_;" control="I007Dd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI007DdRefresh(event);" flex="1" id="I007Dd" class=" notnull value" value="base_partenaire_attribut.categorie_id">
+              <menupopup id="I007Ed"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut.note_;" control="I007Fd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I007Fd" class=" value" value="base_partenaire_attribut.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0080d" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireAttributUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireAttributCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaireattribut.base.partenaire.attribut;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.partenaire_id_;" control="I0081d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0081dRefresh(event);" flex="1" id="I0081d" class=" notnull value" value="base_partenaire_attribut.partenaire_id">
+              <menupopup id="I0082d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.type_id_;" control="I0083d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0083dRefresh(event);" flex="1" id="I0083d" class=" notnull value" value="base_partenaire_attribut.type_id">
+              <menupopup id="I0084d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire_attribut.categorie_id_;" control="I0085d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0085dRefresh(event);" flex="1" id="I0085d" class=" notnull value" value="base_partenaire_attribut.categorie_id">
+              <menupopup id="I0086d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_attribut.note_;" control="I0087d" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I0087d" class=" value" value="base_partenaire_attribut.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0088d" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireAttributInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireAttributCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailGestionVentesCommandeInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailGestionVentesCommandeUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailGestionVentesCommandeDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.gestionventescommande.gestion.ventes.commande;"/>
+    <textbox id="I0089d" class="find-textbox" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailGestionVentesCommandeSearch(this.value);"/>
+    <toolbarbutton label="&_.search_;" class="find-button" oncommand="C02gestsea___.detailGestionVentesCommandeSearch(document.getElementById('I0089d').value);"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.numero_;" control="I008Ad" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I008Ad" class="detail-title hyperlink value" value="I0040d.numero"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.date_;" control="I008Bd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I008Bd" class="detail-important hyperlink value" value="I0040d.date"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.validite_date_;" control="I008Cd" class=" label"/>
+            <label flex="17" id="I008Cd" class=" value" value="I0040d.validite_date"/>
+          </box>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande.avec_signature_;" id="I008Dd" class=" box-field select label"/>
+</box>
+<box orient="horizontal" flex="1">
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande.signature_client_;" id="I008Ed" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande.immodifiable_;" id="I008Fd" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande.avec_bons_livraison_;" id="I0090d" class=" box-field select label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.reduction_taux_;" control="I0091d" class=" label"/>
+            <label flex="17" id="I0091d" class=" value" value="I0040d.reduction_taux"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.montant_ttc_;" control="I0092d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0092d" class="detail-important hyperlink value" value="I0040d.montant_ttc"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.montant_ht_;" control="I0093d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0093d" class="detail-important hyperlink value" value="I0040d.montant_ht"/>
+          </box>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande.acompte_;" id="I0094d" class=" box-field select label"/>
+</box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.objet_;" control="I0095d" class=" label"/>
+            <label flex="128" id="I0095d" class=" value" value="I0040d.objet"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.civilites_;" control="I0096d" class=" label"/>
+            <label flex="128" id="I0096d" class=" value" value="I0040d.civilites"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.introduction_;" control="I0097d" class=" label"/>
+            <textbox readonly="true" multiline="true" rows="8" flex="512" id="I0097d" class=" plain value" value="I0040d.introduction"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.conclusion_;" control="I0098d" class=" label"/>
+            <textbox readonly="true" multiline="true" rows="8" flex="512" id="I0098d" class=" plain value" value="I0040d.conclusion"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.note_;" control="I0099d" class=" label"/>
+            <textbox readonly="true" multiline="true" rows="8" flex="512" id="I0099d" class=" plain value" value="I0040d.note"/>
+          </box>
+<groupbox orient="vertical" flex="1">
+  <caption label="&gestion_ventes_commande.partenaire_id;"/>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I009Ad" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I009Ad" class="detail-important hyperlink value" value="I00CCd.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I009Bd" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I009Bd" class=" hyperlink value" value="I00CCd.libelle"/>
+          </box>
+</box>
+</groupbox>
+</box>
+  <expander label="&gestion_ventes_commande.commande_contact_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I009Cd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I009Cd" class="detail-important hyperlink value" value="I00D0d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I009Dd" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I009Dd" class=" hyperlink value" value="I00D0d.libelle"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.code_;" control="I009Ed" class="detail-important label"/>
+            <label flex="17" id="I009Ed" class="detail-important value" value="I00D1d.code"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.nom_;" control="I009Fd" class=" label"/>
+            <label flex="64" id="I009Fd" class=" value" value="I00D1d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.codepostal_;" control="I00A0d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00A0d" class=" hyperlink value" value="I00CFd.codepostal"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.commune_;" control="I00A1d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="32" id="I00A1d" class=" hyperlink value" value="I00CFd.commune"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I00A2d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00A2d" class=" hyperlink value" value="I00CFd.telephone"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.commande_version_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I00A3d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I00A3d" class="detail-important hyperlink value" value="I00DBd.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I00A4d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I00A4d" class=" hyperlink value" value="I00DBd.libelle"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.code_;" control="I00A5d" class="detail-important label"/>
+            <label flex="17" id="I00A5d" class="detail-important value" value="I00DCd.code"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.nom_;" control="I00A6d" class=" label"/>
+            <label flex="64" id="I00A6d" class=" value" value="I00DCd.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.codepostal_;" control="I00A7d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00A7d" class=" hyperlink value" value="I00DAd.codepostal"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.commune_;" control="I00A8d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="32" id="I00A8d" class=" hyperlink value" value="I00DAd.commune"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I00A9d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00A9d" class=" hyperlink value" value="I00DAd.telephone"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_version.codepostal_;" control="I00AAd" class=" label"/>
+            <label flex="17" id="I00AAd" class=" value" value="I00D9d.codepostal"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_version.commune_;" control="I00ABd" class=" label"/>
+            <label flex="32" id="I00ABd" class=" value" value="I00D9d.commune"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_version.telephone_;" control="I00ACd" class=" label"/>
+            <label flex="128" id="I00ACd" class=" value" value="I00D9d.telephone"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_version.fax_;" control="I00ADd" class=" label"/>
+            <label flex="128" id="I00ADd" class=" value" value="I00D9d.fax"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.employe_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&systeme_utilisateur.login_;" control="I00AEd" class="detail-important label"/>
+            <label flex="32" id="I00AEd" class="detail-important value" value="I00E9d.login"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.utilisateur_login_;" control="I00AFd" class=" label"/>
+            <label flex="32" id="I00AFd" class=" value" value="I00E8d.utilisateur_login"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.nom_;" control="I00B0d" class="detail-important label"/>
+            <label flex="64" id="I00B0d" class="detail-important value" value="I00E8d.nom"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.prenom_;" control="I00B1d" class=" label"/>
+            <label flex="64" id="I00B1d" class=" value" value="I00E8d.prenom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.initiales_;" control="I00B2d" class="detail-important label"/>
+            <label flex="17" id="I00B2d" class="detail-important value" value="I00E8d.initiales"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.facture_contact_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I00B3d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I00B3d" class="detail-important hyperlink value" value="I00F0d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I00B4d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I00B4d" class=" hyperlink value" value="I00F0d.libelle"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.code_;" control="I00B5d" class="detail-important label"/>
+            <label flex="17" id="I00B5d" class="detail-important value" value="I00F1d.code"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.nom_;" control="I00B6d" class=" label"/>
+            <label flex="64" id="I00B6d" class=" value" value="I00F1d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.codepostal_;" control="I00B7d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00B7d" class=" hyperlink value" value="I00EFd.codepostal"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.commune_;" control="I00B8d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="32" id="I00B8d" class=" hyperlink value" value="I00EFd.commune"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I00B9d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00B9d" class=" hyperlink value" value="I00EFd.telephone"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.impression_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_impression.code_;" control="I00BAd" class="detail-important label"/>
+            <label flex="17" id="I00BAd" class="detail-important value" value="I00F9d.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_impression.nom_;" control="I00BBd" class=" label"/>
+            <label flex="64" id="I00BBd" class=" value" value="I00F9d.nom"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.livraison_contact_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I00BCd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I00BCd" class="detail-important hyperlink value" value="I00FDd.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I00BDd" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I00BDd" class=" hyperlink value" value="I00FDd.libelle"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.code_;" control="I00BEd" class="detail-important label"/>
+            <label flex="17" id="I00BEd" class="detail-important value" value="I00FEd.code"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact_type.nom_;" control="I00BFd" class=" label"/>
+            <label flex="64" id="I00BFd" class=" value" value="I00FEd.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.codepostal_;" control="I00C0d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00C0d" class=" hyperlink value" value="I00FCd.codepostal"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.commune_;" control="I00C1d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="32" id="I00C1d" class=" hyperlink value" value="I00FCd.commune"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_contact.telephone_;" control="I00C2d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireContactSelect(this.getAttribute('key'));" flex="17" id="I00C2d" class=" hyperlink value" value="I00FCd.telephone"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.modele_id_;" clearhidden="true">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_impression_modele.id_;" control="I00C3d" class="detail-important label"/>
+            <label flex="17" id="I00C3d" class="detail-important value" value="I0106d.id"/>
+          </box>
+  </expander>
+  <expander label="&gestion_ventes_commande.type_id_;" clearhidden="true">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_type.nom_;" control="I00C4d" class="detail-important label"/>
+            <label flex="64" id="I00C4d" class="detail-important value" value="I0108d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_delai.nom_;" control="I00C5d" class="detail-important label"/>
+            <label flex="64" id="I00C5d" class="detail-important value" value="I0109d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_delai.nom_;" control="I00C6d" class="detail-important label"/>
+            <label flex="64" id="I00C6d" class="detail-important value" value="I0109d.nom"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande.validite_delai_id_;" clearhidden="true">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_delai.nom_;" control="I00C7d" class="detail-important label"/>
+            <label flex="64" id="I00C7d" class="detail-important value" value="I010Dd.nom"/>
+          </box>
+  </expander>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  <splitter/>
+  <vbox flex="1">
+<hbox style="display:inline; padding: 1px;">
+    <button class="list-button16" oncommand="C02gestsea___.detailListI00C9dSelect();" label="&list.gestion_ventes_commande.gestion.ventes.commande.ligne;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI00D3dSelect();" label="&list.gestion_ventes_commande.gestion.ventes.facture;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI00DAdSelect();" label="&list.gestion_ventes_commande.gestion.ventes.avoir;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI00E1dSelect();" label="&list.gestion_ventes_commande.gestsea.juridique.procedure.commande.rel;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI00E5dSelect();" label="&list.gestion_ventes_commande.gestsea.juridique.dossier.commande;"/>
+</hbox>
+<vbox flex="1" style="overflow:auto; min-height:6em;">
+  <deck flex="1" id="I00C8d">
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I00CAd" label="&_.new_;" oncommand="C02gestsea___.detailListI00C9dInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande.gestion.ventes.commande.ligne;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I00CBd" minheight="100" onmousedown="C02gestsea___.treeI00CBdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_commande_ligne.nom_;" id="I00CDd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande_ligne.immodifiable_;" id="I00CEd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande_ligne.quantite_;" id="I00CFd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande_ligne.montant_ttc_;" id="I00D0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I00D1d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I00D2d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I00CCd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande.gestion.ventes.facture;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I00D4d" minheight="100" onmousedown="C02gestsea___.treeI00D4dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_facture.numero_;" id="I00D6d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I00D7d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I00D8d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture.montant_ttc_;" id="I00D9d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I00D5d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande.gestion.ventes.avoir;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I00DBd" minheight="100" onmousedown="C02gestsea___.treeI00DBdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_avoir.numero_;" id="I00DDd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I00DEd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I00DFd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_avoir.montant_ttc_;" id="I00E0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I00DCd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande.gestsea.juridique.procedure.commande.rel;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I00E2d" minheight="100" onmousedown="C02gestsea___.treeI00E2dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_juridique_procedure_commande_rel.id_;" id="I00E4d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I00E3d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande.gestsea.juridique.dossier.commande;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I00E6d" minheight="100" onmousedown="C02gestsea___.treeI00E6dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_juridique_dossier_commande.id_;" id="I00E8d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I00E7d"/>
+</tree>
+      </vbox>
+    </vbox>
+  </deck>
+</vbox>
+</vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.gestionventescommande.gestion.ventes.commande;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.date_;" control="I00EAd" class=" notnull label"/>
+            <textbox  flex="17" id="I00EAd" class=" notnull value" value="gestion_ventes_commande.date"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.type_id_;" control="I00EBd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00EBdRefresh(event);" flex="1" id="I00EBd" class=" notnull value" value="gestion_ventes_commande.type_id">
+              <menupopup id="I00ECd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&gestion_ventes_commande.signature_client_;" id="I00EDd" class=" notnull box-field insert update label"/>
+          <checkbox label="&gestion_ventes_commande.immodifiable_;" id="I00EEd" class=" notnull box-field insert update label"/>
+          <checkbox label="&gestion_ventes_commande.avec_bons_livraison_;" id="I00EFd" class=" notnull box-field insert update label"/>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.employe_id_;" control="I00F0d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00F0dRefresh(event);" flex="1" id="I00F0d" class=" notnull value" value="gestion_ventes_commande.employe_id">
+              <menupopup id="I00F1d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.partenaire_id_;" control="I00F2d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00F2dRefresh(event);" flex="1" id="I00F2d" class=" notnull value" value="gestion_ventes_commande.partenaire_id">
+              <menupopup id="I00F3d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.commande_contact_id_;" control="I00F4d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00F4dRefresh(event);" flex="1" id="I00F4d" class=" value" value="gestion_ventes_commande.commande_contact_id">
+              <menupopup id="I00F5d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.facture_contact_id_;" control="I00F6d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00F6dRefresh(event);" flex="1" id="I00F6d" class=" value" value="gestion_ventes_commande.facture_contact_id">
+              <menupopup id="I00F7d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.livraison_contact_id_;" control="I00F8d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00F8dRefresh(event);" flex="1" id="I00F8d" class=" value" value="gestion_ventes_commande.livraison_contact_id">
+              <menupopup id="I00F9d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.impression_id_;" control="I00FAd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI00FAdRefresh(event);" flex="1" id="I00FAd" class=" notnull value" value="gestion_ventes_commande.impression_id">
+              <menupopup id="I00FBd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <checkbox label="&gestion_ventes_commande.acompte_;" id="I00FCd" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.objet_;" control="I00FDd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I00FDd" class=" value" value="gestion_ventes_commande.objet"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.civilites_;" control="I00FEd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I00FEd" class=" value" value="gestion_ventes_commande.civilites"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.introduction_;" control="I00FFd" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I00FFd" class=" value" value="gestion_ventes_commande.introduction"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.conclusion_;" control="I0100d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0100d" class=" value" value="gestion_ventes_commande.conclusion"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.note_;" control="I0101d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0101d" class=" value" value="gestion_ventes_commande.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0102d" label="&_.accept_;" oncommand="C02gestsea___.detailGestionVentesCommandeUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailGestionVentesCommandeCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.gestionventescommande.gestion.ventes.commande;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.date_;" control="I0103d" class=" notnull label"/>
+            <textbox  flex="17" id="I0103d" class=" notnull value" value="gestion_ventes_commande.date"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.type_id_;" control="I0104d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0104dRefresh(event);" flex="1" id="I0104d" class=" notnull value" value="gestion_ventes_commande.type_id">
+              <menupopup id="I0105d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&gestion_ventes_commande.signature_client_;" id="I0106d" class=" notnull box-field insert update label"/>
+          <checkbox label="&gestion_ventes_commande.immodifiable_;" id="I0107d" class=" notnull box-field insert update label"/>
+          <checkbox label="&gestion_ventes_commande.avec_bons_livraison_;" id="I0108d" class=" notnull box-field insert update label"/>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.employe_id_;" control="I0109d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0109dRefresh(event);" flex="1" id="I0109d" class=" notnull value" value="gestion_ventes_commande.employe_id">
+              <menupopup id="I010Ad"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.partenaire_id_;" control="I010Bd" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI010BdRefresh(event);" flex="1" id="I010Bd" class=" notnull value" value="gestion_ventes_commande.partenaire_id">
+              <menupopup id="I010Cd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.commande_contact_id_;" control="I010Dd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI010DdRefresh(event);" flex="1" id="I010Dd" class=" value" value="gestion_ventes_commande.commande_contact_id">
+              <menupopup id="I010Ed"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.facture_contact_id_;" control="I010Fd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI010FdRefresh(event);" flex="1" id="I010Fd" class=" value" value="gestion_ventes_commande.facture_contact_id">
+              <menupopup id="I0110d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.livraison_contact_id_;" control="I0111d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0111dRefresh(event);" flex="1" id="I0111d" class=" value" value="gestion_ventes_commande.livraison_contact_id">
+              <menupopup id="I0112d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande.impression_id_;" control="I0113d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0113dRefresh(event);" flex="1" id="I0113d" class=" notnull value" value="gestion_ventes_commande.impression_id">
+              <menupopup id="I0114d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <checkbox label="&gestion_ventes_commande.acompte_;" id="I0115d" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.objet_;" control="I0116d" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I0116d" class=" value" value="gestion_ventes_commande.objet"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.civilites_;" control="I0117d" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I0117d" class=" value" value="gestion_ventes_commande.civilites"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.introduction_;" control="I0118d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0118d" class=" value" value="gestion_ventes_commande.introduction"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.conclusion_;" control="I0119d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0119d" class=" value" value="gestion_ventes_commande.conclusion"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande.note_;" control="I011Ad" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I011Ad" class=" value" value="gestion_ventes_commande.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I011Bd" label="&_.accept_;" oncommand="C02gestsea___.detailGestionVentesCommandeInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailGestionVentesCommandeCancel();"/>
+    </hbox>
+</vbox>
+<vbox style="overflow:auto">
+  <vbox class="panel-work" flex="1">
+    <hbox flex="1">
+<tree flex="1" id="I011Dd" minheight="100" onmousedown="C02gestsea___.treeI011DdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_commande.numero_;" id="I011Fd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.date_;" id="I0120d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I0121d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I0122d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ttc_;" id="I0123d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ht_;" id="I0124d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I011Ed"/>
+</tree>
+    </hbox>
+  </vbox>
+  <hbox class="panel-action">
+      <hbox pack="start" flex="1" align="center">
+        <label class="label" value="&_._number_of_records_;"/>
+        <label class="value" id="I011Cd"/>
+      </hbox>
+      <button class="new-button" label="&_.new_;" oncommand="C02gestsea___.detailGestionVentesCommandeInsert();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.back();"/>
+  </hbox>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailGestionVentesCommandeLigneInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailGestionVentesCommandeLigneUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailGestionVentesCommandeLigneDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.gestionventescommandeligne.gestion.ventes.commande.ligne;"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.nom_;" control="I0125d" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeLigneSelect(this.getAttribute('key'));" flex="64" id="I0125d" class="detail-title hyperlink value" value="I0040d.nom"/>
+          </box>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande_ligne.immodifiable_;" id="I0126d" class="detail-important box-field select label"/>
+</box>
+<box orient="horizontal" flex="1">
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande_ligne.a_inclure_;" id="I0127d" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande_ligne.inclus_;" id="I0128d" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_ventes_commande_ligne.reduction_;" id="I0129d" class=" box-field select label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_unitaire_ttc_;" control="I012Ad" class=" label"/>
+            <label flex="17" id="I012Ad" class=" value" value="I0040d.montant_unitaire_ttc"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_unitaire_ht_;" control="I012Bd" class=" label"/>
+            <label flex="17" id="I012Bd" class=" value" value="I0040d.montant_unitaire_ht"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.quantite_;" control="I012Cd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeLigneSelect(this.getAttribute('key'));" flex="17" id="I012Cd" class="detail-important hyperlink value" value="I0040d.quantite"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_brut_ttc_;" control="I012Dd" class=" label"/>
+            <label flex="17" id="I012Dd" class=" value" value="I0040d.montant_brut_ttc"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_brut_ht_;" control="I012Ed" class=" label"/>
+            <label flex="17" id="I012Ed" class=" value" value="I0040d.montant_brut_ht"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_ttc_;" control="I012Fd" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeLigneSelect(this.getAttribute('key'));" flex="17" id="I012Fd" class="detail-important hyperlink value" value="I0040d.montant_ttc"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.montant_ht_;" control="I0130d" class=" label"/>
+            <label flex="17" id="I0130d" class=" value" value="I0040d.montant_ht"/>
+          </box>
+</box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.description_;" control="I0131d" class=" label"/>
+            <textbox readonly="true" multiline="true" rows="8" flex="512" id="I0131d" class=" plain value" value="I0040d.description"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.note_;" control="I0132d" class=" label"/>
+            <textbox readonly="true" multiline="true" rows="8" flex="512" id="I0132d" class=" plain value" value="I0040d.note"/>
+          </box>
+</box>
+  <expander label="&gestion_ventes_commande_ligne.commande_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.numero_;" control="I0133d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0133d" class="detail-important hyperlink value" value="I012Dd.numero"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.date_;" control="I0134d" class=" label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0134d" class=" hyperlink value" value="I012Dd.date"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I0135d" class="detail-important label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I0135d" class="detail-important hyperlink value" value="I012Ed.id"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I0136d" class=" label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I0136d" class=" hyperlink value" value="I012Ed.libelle"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.montant_ttc_;" control="I0137d" class=" label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0137d" class=" hyperlink value" value="I012Dd.montant_ttc"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande.montant_ht_;" control="I0138d" class=" label"/>
+            <label onclick="C02gestsea___.detailGestionVentesCommandeSelect(this.getAttribute('key'));" flex="17" id="I0138d" class=" hyperlink value" value="I012Dd.montant_ht"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande_ligne.prix_id_;" clearhidden="true">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&gestion_produit_prix.libelle_;" control="I0139d" class="detail-important label"/>
+            <label flex="128" id="I0139d" class="detail-important value" value="I0135d.libelle"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.code_;" control="I013Ad" class="detail-important label"/>
+            <label flex="17" id="I013Ad" class="detail-important value" value="I0136d.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.nom_;" control="I013Bd" class=" label"/>
+            <label flex="64" id="I013Bd" class=" value" value="I0136d.nom"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_produit_prix.achat_;" id="I013Cd" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&gestion_produit_prix.actif_;" id="I013Dd" class=" box-field select label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit_prix.date_debut_;" control="I013Ed" class=" label"/>
+            <label flex="17" id="I013Ed" class=" value" value="I0135d.date_debut"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit_prix.date_fin_;" control="I013Fd" class=" label"/>
+            <label flex="17" id="I013Fd" class=" value" value="I0135d.date_fin"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande_ligne.produit_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.code_;" control="I0140d" class="detail-important label"/>
+            <label flex="17" id="I0140d" class="detail-important value" value="I013Ed.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.nom_;" control="I0141d" class=" label"/>
+            <label flex="64" id="I0141d" class=" value" value="I013Ed.nom"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande_ligne.stock_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_stock.nom_;" control="I0142d" class="detail-important label"/>
+            <label flex="64" id="I0142d" class="detail-important value" value="I0141d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.code_;" control="I0143d" class="detail-important label"/>
+            <label flex="17" id="I0143d" class="detail-important value" value="I0142d.code"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.nom_;" control="I0144d" class=" label"/>
+            <label flex="64" id="I0144d" class=" value" value="I0142d.nom"/>
+          </box>
+</box>
+  </expander>
+  <expander label="&gestion_ventes_commande_ligne.stock_mouvement_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_stock_mouvement.id_;" control="I0145d" class="detail-important label"/>
+            <label flex="17" id="I0145d" class="detail-important value" value="I0146d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_stock.nom_;" control="I0146d" class="detail-important label"/>
+            <label flex="64" id="I0146d" class="detail-important value" value="I0147d.nom"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.code_;" control="I0147d" class="detail-important label"/>
+            <label flex="17" id="I0147d" class="detail-important value" value="I0148d.code"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&gestion_produit.nom_;" control="I0148d" class=" label"/>
+            <label flex="64" id="I0148d" class=" value" value="I0148d.nom"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_stock_mouvement.quantite_;" control="I0149d" class=" label"/>
+            <label flex="17" id="I0149d" class=" value" value="I0146d.quantite"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_stock_mouvement.date_;" control="I014Ad" class=" label"/>
+            <label flex="17" id="I014Ad" class=" value" value="I0146d.date"/>
+          </box>
+</box>
+</box>
+  </expander>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  <splitter/>
+  <vbox flex="1">
+<hbox style="display:inline; padding: 1px;">
+    <button class="list-button16" oncommand="C02gestsea___.detailListI014CdSelect();" label="&list.gestion_ventes_commande_ligne.gestion.ventes.facture.ligne;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI0152dSelect();" label="&list.gestion_ventes_commande_ligne.gestsea.publication.abonnement.commande;"/>
+</hbox>
+<vbox flex="1" style="overflow:auto; min-height:6em;">
+  <deck flex="1" id="I014Bd">
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande_ligne.gestion.ventes.facture.ligne;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I014Dd" minheight="100" onmousedown="C02gestsea___.treeI014DdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_facture_ligne.nom_;" id="I014Fd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture_ligne.quantite_;" id="I0150d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture_ligne.montant_ttc_;" id="I0151d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I014Ed"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.gestion_ventes_commande_ligne.gestsea.publication.abonnement.commande;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I0153d" minheight="100" onmousedown="C02gestsea___.treeI0153dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_publication_abonnement_commande.id_;" id="I0155d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.id_;" id="I0156d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.libelle_;" id="I0157d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I0154d"/>
+</tree>
+      </vbox>
+    </vbox>
+  </deck>
+</vbox>
+</vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.gestionventescommandeligne.gestion.ventes.commande.ligne;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <checkbox label="&gestion_ventes_commande_ligne.a_inclure_;" id="I0159d" class=" notnull box-field insert update label"/>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande_ligne.prix_id_;" control="I015Ad" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI015AdRefresh(event);" flex="1" id="I015Ad" class=" notnull value" value="gestion_ventes_commande_ligne.prix_id">
+              <menupopup id="I015Bd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande_ligne.stock_id_;" control="I015Cd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI015CdRefresh(event);" flex="1" id="I015Cd" class=" value" value="gestion_ventes_commande_ligne.stock_id">
+              <menupopup id="I015Dd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&gestion_ventes_commande_ligne.reduction_;" id="I015Ed" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.quantite_;" control="I015Fd" class=" notnull label"/>
+            <textbox  flex="17" id="I015Fd" class=" notnull value" value="gestion_ventes_commande_ligne.quantite"/>
+          </box>
+</box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.description_;" control="I0160d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0160d" class=" value" value="gestion_ventes_commande_ligne.description"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.note_;" control="I0161d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0161d" class=" value" value="gestion_ventes_commande_ligne.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0162d" label="&_.accept_;" oncommand="C02gestsea___.detailGestionVentesCommandeLigneUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailGestionVentesCommandeLigneCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.gestionventescommandeligne.gestion.ventes.commande.ligne;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <checkbox label="&gestion_ventes_commande_ligne.a_inclure_;" id="I0163d" class=" notnull box-field insert update label"/>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande_ligne.prix_id_;" control="I0164d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0164dRefresh(event);" flex="1" id="I0164d" class=" notnull value" value="gestion_ventes_commande_ligne.prix_id">
+              <menupopup id="I0165d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&gestion_ventes_commande_ligne.stock_id_;" control="I0166d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0166dRefresh(event);" flex="1" id="I0166d" class=" value" value="gestion_ventes_commande_ligne.stock_id">
+              <menupopup id="I0167d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&gestion_ventes_commande_ligne.reduction_;" id="I0168d" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&gestion_ventes_commande_ligne.quantite_;" control="I0169d" class=" notnull label"/>
+            <textbox  flex="17" id="I0169d" class=" notnull value" value="gestion_ventes_commande_ligne.quantite"/>
+          </box>
+</box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.description_;" control="I016Ad" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I016Ad" class=" value" value="gestion_ventes_commande_ligne.description"/>
+          </box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&gestion_ventes_commande_ligne.note_;" control="I016Bd" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I016Bd" class=" value" value="gestion_ventes_commande_ligne.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I016Cd" label="&_.accept_;" oncommand="C02gestsea___.detailGestionVentesCommandeLigneInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailGestionVentesCommandeLigneCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <toolbar class="detail-name-box" align="center">
+    <toolbarbutton label="&_.new_;" class="new-button" oncommand="C02gestsea___.detailBasePartenaireInsert();" />
+    <toolbarbutton label="&_.edit_;" class="edit-button" oncommand="C02gestsea___.detailBasePartenaireUpdate('');"/>
+    <toolbarbutton label="&_.delete_;" class="delete-button" oncommand="C02gestsea___.detailBasePartenaireDelete('',true);"/>
+    <label class="detail-name-text" flex="1" value="&gseaprincipal.basepartenaire.base.partenaire;"/>
+    <textbox id="I016Dd" class="find-textbox" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C02gestsea___.detailBasePartenaireSearch(this.value);"/>
+    <toolbarbutton label="&_.search_;" class="find-button" oncommand="C02gestsea___.detailBasePartenaireSearch(document.getElementById('I016Dd').value);"/>
+  </toolbar>
+  <vbox flex="1">
+    <vbox flex="1" style="overflow:auto; min-height:6em; max-height: 36em;">
+  <vbox class="detail-center" flex="1">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.id_;" control="I016Ed" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="17" id="I016Ed" class="detail-title hyperlink value" value="I0040d.id"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="38" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.libelle_;" control="I016Fd" class="detail-title label"/>
+            <label onclick="C02gestsea___.detailBasePartenaireSelect(this.getAttribute('key'));" flex="38" id="I016Fd" class="detail-title hyperlink value" value="I0040d.libelle"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <checkbox oncommand="this.checked=!this.checked" label="&base_partenaire.actif_;" id="I0170d" class=" box-field select label"/>
+          <checkbox oncommand="this.checked=!this.checked" label="&base_partenaire.morale_;" id="I0171d" class=" box-field select label"/>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.debit_limite_;" control="I0172d" class=" label"/>
+            <label flex="17" id="I0172d" class=" value" value="I0040d.debit_limite"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.credit_limite_;" control="I0173d" class=" label"/>
+            <label flex="17" id="I0173d" class=" value" value="I0040d.credit_limite"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.site_web_;" control="I0174d" class=" label"/>
+            <label flex="128" id="I0174d" class=" value" value="I0040d.site_web"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.naissance_date_;" control="I0175d" class=" label"/>
+            <label flex="17" id="I0175d" class=" value" value="I0040d.naissance_date"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.ean13_;" control="I0176d" class=" label"/>
+            <label flex="17" id="I0176d" class=" value" value="I0040d.ean13"/>
+          </box>
+</box>
+</box>
+  <expander label="&base_partenaire.responsable_id_;" clearhidden="true">
+<box orient="vertical">
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&systeme_utilisateur.login_;" control="I0177d" class="detail-important label"/>
+            <label flex="32" id="I0177d" class="detail-important value" value="I0070d.login"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="32" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.utilisateur_login_;" control="I0178d" class=" label"/>
+            <label flex="32" id="I0178d" class=" value" value="I006Fd.utilisateur_login"/>
+          </box>
+</box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.nom_;" control="I0179d" class="detail-important label"/>
+            <label flex="64" id="I0179d" class="detail-important value" value="I006Fd.nom"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.prenom_;" control="I017Ad" class=" label"/>
+            <label flex="64" id="I017Ad" class=" value" value="I006Fd.prenom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_societe_employe.initiales_;" control="I017Bd" class="detail-important label"/>
+            <label flex="17" id="I017Bd" class="detail-important value" value="I006Fd.initiales"/>
+          </box>
+</box>
+</box>
+  </expander>
+  <expander label="&base_partenaire.type_id_;" clearhidden="true">
+<box orient="horizontal">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_type.nom_;" control="I017Cd" class=" label"/>
+            <label flex="64" id="I017Cd" class=" value" value="I0076d.nom"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire_type.titre_;" control="I017Dd" class=" label"/>
+            <label flex="64" id="I017Dd" class=" value" value="I0076d.titre"/>
+          </box>
+</box>
+  </expander>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+  </vbox>
+  <splitter/>
+  <vbox flex="1">
+<hbox style="display:inline; padding: 1px;">
+    <button class="list-button16" oncommand="C02gestsea___.detailListI017FdSelect();" label="&list.base_partenaire.base.partenaire.contact;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI018CdSelect();" label="&list.base_partenaire.base.partenaire.observation;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI0195dSelect();" label="&list.base_partenaire.base.partenaire.attribut;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI019DdSelect();" label="&list.base_partenaire.compta.compteperm.partenaire.rel;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01A2dSelect();" label="&list.base_partenaire.gestion.lien;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01A6dSelect();" label="&list.base_partenaire.gestion.adhesion;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01ACdSelect();" label="&list.base_partenaire.gestion.ventes.commande;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01B6dSelect();" label="&list.base_partenaire.gestion.ventes.facture;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01BBdSelect();" label="&list.base_partenaire.gestion.ventes.avoir;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01C0dSelect();" label="&list.base_partenaire.gestion.ventes.facture.reglement.echeance;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01C7dSelect();" label="&list.base_partenaire.gestion.ventes.reglement;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01CDdSelect();" label="&list.base_partenaire.gestsea.juridique.tache;"/>
+    <button class="list-button16" oncommand="C02gestsea___.detailListI01D9dSelect();" label="&list.base_partenaire.gestsea.publication.abonnement.routage;"/>
+</hbox>
+<vbox flex="1" style="overflow:auto; min-height:6em;">
+  <deck flex="1" id="I017Ed">
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I0180d" label="&_.new_;" oncommand="C02gestsea___.detailListI017FdInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.base.partenaire.contact;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I0181d" minheight="100" onmousedown="C02gestsea___.treeI0181dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&base_partenaire_contact_type.code_;" id="I0183d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact_type.nom_;" id="I0184d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact.codepostal_;" id="I0185d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact.commune_;" id="I0186d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact.telephone_;" id="I0187d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact.fax_;" id="I0188d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_contact.email_;" id="I0189d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I018Ad" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I018Bd" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I0182d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I018Dd" label="&_.new_;" oncommand="C02gestsea___.detailListI018CdInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.base.partenaire.observation;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I018Ed" minheight="100" onmousedown="C02gestsea___.treeI018EdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&base_partenaire_observation_importance.code_;" id="I0190d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_observation_importance.nom_;" id="I0191d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_observation.contenu_;" id="I0192d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I0193d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I0194d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I018Fd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I0196d" label="&_.new_;" oncommand="C02gestsea___.detailListI0195dInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.base.partenaire.attribut;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I0197d" minheight="100" onmousedown="C02gestsea___.treeI0197dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&base_partenaire_attribut.type_nom_;" id="I0199d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire_attribut.categorie_nom_;" id="I019Ad" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I019Bd" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I019Cd" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I0198d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.compta.compteperm.partenaire.rel;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I019Ed" minheight="100" onmousedown="C02gestsea___.treeI019EdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&compta_compteperm.nom_;" id="I01A0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&compta_compteperm.numero_;" id="I01A1d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I019Fd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.lien;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01A3d" minheight="100" onmousedown="C02gestsea___.treeI01A3dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_lien.libelle_;" id="I01A5d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01A4d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.adhesion;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01A7d" minheight="100" onmousedown="C02gestsea___.treeI01A7dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_adhesion.id_;" id="I01A9d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_adhesion.type_nom_;" id="I01AAd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_adhesion.produit_nom_;" id="I01ABd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01A8d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <toolbarbutton id="I01ADd" label="&_.new_;" oncommand="C02gestsea___.detailListI01ACdInsert();" class="new-button"/>
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.ventes.commande;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01AEd" minheight="100" onmousedown="C02gestsea___.treeI01AEdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_commande.numero_;" id="I01B0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.date_;" id="I01B1d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ttc_;" id="I01B2d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_commande.montant_ht_;" id="I01B3d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I01B4d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I01B5d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I01AFd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.ventes.facture;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01B7d" minheight="100" onmousedown="C02gestsea___.treeI01B7dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_facture.numero_;" id="I01B9d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture.montant_ttc_;" id="I01BAd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01B8d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.ventes.avoir;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01BCd" minheight="100" onmousedown="C02gestsea___.treeI01BCdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_avoir.numero_;" id="I01BEd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_avoir.montant_ttc_;" id="I01BFd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01BDd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.ventes.facture.reglement.echeance;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01C1d" minheight="100" onmousedown="C02gestsea___.treeI01C1dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_facture_reglement_echeance.id_;" id="I01C3d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture_reglement_echeance.prevision_montant_;" id="I01C4d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture_reglement_echeance.date_;" id="I01C5d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_facture_reglement_echeance.part_montant_;" id="I01C6d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01C2d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestion.ventes.reglement;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01C8d" minheight="100" onmousedown="C02gestsea___.treeI01C8dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestion_ventes_reglement.id_;" id="I01CAd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_reglement.date_reglement_;" id="I01CBd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestion_ventes_reglement.montant_;" id="I01CCd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01C9d"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestsea.juridique.tache;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01CEd" minheight="100" onmousedown="C02gestsea___.treeI01CEdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_juridique_tache.id_;" id="I01D0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_juridique_tache.nom_;" id="I01D1d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_juridique_tache.date_;" id="I01D2d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_juridique_tache.duree_;" id="I01D3d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&systeme_utilisateur.login_;" id="I01D4d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_societe_employe.utilisateur_login_;" id="I01D5d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_societe_employe.nom_;" id="I01D6d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_societe_employe.prenom_;" id="I01D7d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_societe_employe.initiales_;" id="I01D8d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01CFd"/>
+</tree>
+      </vbox>
+    </vbox>
+    <vbox flex="1">
+      <toolbar class="detail-list-name-box" align="center">
+        <label class="detail-list-name-text" flex="1" value="&list.base_partenaire.gestsea.publication.abonnement.routage;"/>
+      </toolbar>
+      <vbox flex="1" class="detail-list">
+<tree flex="1" id="I01DAd" minheight="100" onmousedown="C02gestsea___.treeI01DAdOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&gestsea_publication_abonnement_routage.id_;" id="I01DCd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication.code_;" id="I01DDd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication.nom_;" id="I01DEd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.nb_exemplaires_;" id="I01DFd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.numero_debut_;" id="I01E0d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&gestsea_publication_abonnement_routage.numero_fin_;" id="I01E1d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren id="I01DBd"/>
+</tree>
+      </vbox>
+    </vbox>
+  </deck>
+</vbox>
+</vbox>
+  </vbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaire.base.partenaire;" flex="1"/>
+    <label style="text-align:left" value="[Modification]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.nom_;" control="I01E3d" class=" notnull label"/>
+            <textbox            maxlength="64" flex="64" id="I01E3d" class=" notnull value" value="base_partenaire.nom"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.type_id_;" control="I01E4d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01E4dRefresh(event);" flex="1" id="I01E4d" class=" notnull value" value="base_partenaire.type_id">
+              <menupopup id="I01E5d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&base_partenaire.actif_;" id="I01E6d" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.prenom_;" control="I01E7d" class=" label"/>
+            <textbox            maxlength="64" flex="64" id="I01E7d" class=" value" value="base_partenaire.prenom"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.debit_limite_;" control="I01E8d" class=" label"/>
+            <textbox  flex="17" id="I01E8d" class=" value" value="base_partenaire.debit_limite"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.credit_limite_;" control="I01E9d" class=" label"/>
+            <textbox  flex="17" id="I01E9d" class=" value" value="base_partenaire.credit_limite"/>
+          </box>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.langue_id_;" control="I01EAd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01EAdRefresh(event);" flex="1" id="I01EAd" class=" value" value="base_partenaire.langue_id">
+              <menupopup id="I01EBd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.site_web_;" control="I01ECd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I01ECd" class=" value" value="base_partenaire.site_web"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.parent_id_;" control="I01EDd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01EDdRefresh(event);" flex="1" id="I01EDd" class=" value" value="base_partenaire.parent_id">
+              <menupopup id="I01EEd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.responsable_id_;" control="I01EFd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01EFdRefresh(event);" flex="1" id="I01EFd" class=" value" value="base_partenaire.responsable_id">
+              <menupopup id="I01F0d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.naissance_date_;" control="I01F1d" class=" label"/>
+            <textbox  flex="17" id="I01F1d" class=" value" value="base_partenaire.naissance_date"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.ean13_;" control="I01F2d" class=" label"/>
+            <textbox            maxlength="13" style="max-width:10em;" flex="17" id="I01F2d" class=" maxlen value" value="base_partenaire.ean13"/>
+          </box>
+</box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&base_partenaire.note_;" control="I01F3d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I01F3d" class=" value" value="base_partenaire.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox flex="1" class="detail-center"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I01F4d" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireUpdateAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireCancel();"/>
+    </hbox>
+</vbox>
+<vbox>
+  <hbox class="state-label">
+    <label style="text-align:right" value="&gseaprincipal.basepartenaire.base.partenaire;" flex="1"/>
+    <label style="text-align:left" value="[Nouveau]" flex="1"/>
+  </hbox>
+  <vbox class="detail-center" flex="1" style="overflow:auto;">
+<box orient="vertical">
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.nom_;" control="I01F5d" class=" notnull label"/>
+            <textbox            maxlength="64" flex="64" id="I01F5d" class=" notnull value" value="base_partenaire.nom"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.type_id_;" control="I01F6d" class=" notnull label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01F6dRefresh(event);" flex="1" id="I01F6d" class=" notnull value" value="base_partenaire.type_id">
+              <menupopup id="I01F7d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <checkbox label="&base_partenaire.actif_;" id="I01F8d" class=" notnull box-field insert update label"/>
+          <box class="box-field" orient="horizontal" flex="64" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.prenom_;" control="I01F9d" class=" label"/>
+            <textbox            maxlength="64" flex="64" id="I01F9d" class=" value" value="base_partenaire.prenom"/>
+          </box>
+</box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.debit_limite_;" control="I01FAd" class=" label"/>
+            <textbox  flex="17" id="I01FAd" class=" value" value="base_partenaire.debit_limite"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.credit_limite_;" control="I01FBd" class=" label"/>
+            <textbox  flex="17" id="I01FBd" class=" value" value="base_partenaire.credit_limite"/>
+          </box>
+</box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.langue_id_;" control="I01FCd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01FCdRefresh(event);" flex="1" id="I01FCd" class=" value" value="base_partenaire.langue_id">
+              <menupopup id="I01FDd"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="128" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.site_web_;" control="I01FEd" class=" label"/>
+            <textbox            maxlength="128" flex="128" id="I01FEd" class=" value" value="base_partenaire.site_web"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.parent_id_;" control="I01FFd" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI01FFdRefresh(event);" flex="1" id="I01FFd" class=" value" value="base_partenaire.parent_id">
+              <menupopup id="I0200d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+          <box class="box-field" align="center" orient="horizontal" flex="180">
+            <label crop="end" value="&base_partenaire.responsable_id_;" control="I0201d" class=" label"/>
+            <menulist editable="true" onkeypress="C02gestsea___.menulistI0201dRefresh(event);" flex="1" id="I0201d" class=" value" value="base_partenaire.responsable_id">
+              <menupopup id="I0202d"/>
+            </menulist>
+            <toolbarbutton class="new-button16" oncommand="C02gestsea___.detailInsert();"/>
+          </box>
+<box orient="horizontal" flex="1">
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.naissance_date_;" control="I0203d" class=" label"/>
+            <textbox  flex="17" id="I0203d" class=" value" value="base_partenaire.naissance_date"/>
+          </box>
+          <box class="box-field" orient="horizontal" flex="17" align="center" pack="start">
+            <label crop="end" value="&base_partenaire.ean13_;" control="I0204d" class=" label"/>
+            <textbox            maxlength="13" style="max-width:10em;" flex="17" id="I0204d" class=" maxlen value" value="base_partenaire.ean13"/>
+          </box>
+</box>
+          <box class="box-field" orient="vertical" flex="512">
+            <label crop="end" value="&base_partenaire.note_;" control="I0205d" class=" label"/>
+            <textbox multiline="true" rows="8" flex="512" id="I0205d" class=" value" value="base_partenaire.note"/>
+          </box>
+</box>
+  </vbox>
+  <vbox class="detail-center" flex="1"/>
+    <hbox class="panel-action" pack="end">
+      <button class="accept-button" id="I0206d" label="&_.accept_;" oncommand="C02gestsea___.detailBasePartenaireInsertAccept();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.detailBasePartenaireCancel();"/>
+    </hbox>
+</vbox>
+<vbox style="overflow:auto">
+  <vbox class="panel-work" flex="1">
+    <hbox flex="1">
+<tree flex="1" id="I0208d" minheight="100" onmousedown="C02gestsea___.treeI0208dOnClick(event);" editable="true">
+  <treecols>
+    <treecol label="&base_partenaire.id_;" id="I020Ad" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.titre_;" id="I020Bd" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.nom_;" id="I020Cd" persist="hidden width" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&base_partenaire.prenom_;" id="I020Dd" persist="hidden width" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.codepostal_;" id="I020Ed" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.commune_;" id="I020Fd" persist="hidden width" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.telephone_;" id="I0210d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.fax_;" id="I0211d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.mobile_;" id="I0212d" persist="hidden width" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="&dico.email_;" id="I0213d" persist="hidden width" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <treecol id="I0214d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+    <treecol id="I0215d" width="24" fixed="true" hideheader="true" ignoreincolumnpicker="true"/>
+  </treecols>
+  <treechildren id="I0209d"/>
+</tree>
+    </hbox>
+  </vbox>
+  <hbox class="panel-action">
+      <hbox pack="start" flex="1" align="center">
+        <label class="label" value="&_._number_of_records_;"/>
+        <label class="value" id="I0207d"/>
+      </hbox>
+      <button class="new-button" label="&_.new_;" oncommand="C02gestsea___.detailBasePartenaireInsert();"/>
+      <button class="cancel-button" label="&_.cancel_;" oncommand="C02gestsea___.back();"/>
+  </hbox>
+</vbox>
+</deck>
+
+<statusbar id="pm-statusbar">
+  <statusbarpanel  flex="1">
+  </statusbarpanel>
+</statusbar>
+</window>
+

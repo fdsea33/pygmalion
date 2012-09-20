@@ -1,0 +1,109 @@
+
+
+  <style target=".detail-icon">
+    <styledef name="list-style-image" value="url(%%media-dir%%/boutons.png)"/>
+  </style>
+
+  <!-- Hover -->
+  <style target=".new-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px,  24px, 24px,   0px)"/>
+  </style>
+  <style target=".edit-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px,  48px, 24px,   24px)"/>
+  </style>
+  <style target=".delete-button:hover, .cancel-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px,  72px, 24px,   48px)"/>
+  </style>
+  <style target=".find-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px,  96px, 24px,   72px)"/>
+  </style>
+  <style target=".back-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 120px, 24px,   96px)"/>
+  </style>
+  <style target=".forward-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 144px, 24px,   120px)"/>
+  </style>
+  <style target=".home-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 168px, 24px,   144px)"/>
+  </style>
+  <style target=".menu-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 192px, 24px,   168px)"/>
+  </style>
+  <style target=".list-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 216px, 24px,   192px)"/>
+  </style>
+  <style target=".accept-button:hover">
+    <styledef name="-moz-image-region" value="rect(0px, 240px, 24px,   216px)"/>
+  </style>
+
+  <!-- Normal -->
+  <style target=".new-button">
+    <styledef name="-moz-image-region" value="rect(24px,  24px, 48px,   0px)"/>
+  </style>
+  <style target=".edit-button">
+    <styledef name="-moz-image-region" value="rect(24px,  48px, 48px,   24px)"/>
+  </style>
+  <style target=".delete-button, .cancel-button">
+    <styledef name="-moz-image-region" value="rect(24px,  72px, 48px,   48px)"/>
+  </style>
+  <style target=".find-button">
+    <styledef name="-moz-image-region" value="rect(24px,  96px, 48px,   72px)"/>
+  </style>
+  <style target=".back-button">
+    <styledef name="-moz-image-region" value="rect(24px, 120px, 48px,   96px)"/>
+  </style>
+  <style target=".forward-button">
+    <styledef name="-moz-image-region" value="rect(24px, 144px, 48px,   120px)"/>
+  </style>
+  <style target=".home-button">
+    <styledef name="-moz-image-region" value="rect(24px, 168px, 48px,   144px)"/>
+  </style>
+  <style target=".menu-button">
+    <styledef name="-moz-image-region" value="rect(24px, 192px, 48px,   168px)"/>
+  </style>
+  <style target=".list-button">
+    <styledef name="-moz-image-region" value="rect(24px, 216px, 48px,   192px)"/>
+  </style>
+  <style target=".accept-button">
+    <styledef name="-moz-image-region" value="rect(24px, 240px, 48px,   216px)"/>
+  </style>
+
+  <!-- Disabled -->
+  <style target=".new-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px,  24px, 72px,   0px)"/>
+  </style>
+  <style target=".edit-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px,  48px, 72px,   24px)"/>
+  </style>
+  <style target=".delete-button[disabled], .cancel-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px,  72px, 72px,   48px)"/>
+  </style>
+  <style target=".find-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px,  96px, 72px,   72px)"/>
+  </style>
+  <style target=".back-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 120px, 72px,   96px)"/>
+  </style>
+  <style target=".forward-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 144px, 72px,   120px)"/>
+  </style>
+  <style target=".home-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 168px, 72px,   144px)"/>
+  </style>
+  <style target=".menu-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 192px, 72px,   168px)"/>
+  </style>
+  <style target=".list-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 216px, 72px,   192px)"/>
+  </style>
+  <style target=".accept-button[disabled]">
+    <styledef name="-moz-image-region" value="rect(48px, 240px, 72px,   216px)"/>
+  </style>
+
+  <!-- Checked -->
+  <style target=".list-button[checked]">
+    <styledef name="-moz-image-region" value="rect(72px, 216px, 96px,   192px)"/>
+  </style>
+
+
+

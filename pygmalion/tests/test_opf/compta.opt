@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<theme name="ThemeCompta">
+  <media>
+    <medium path="images/f_compta.png"/>
+  </media>
+
+  <style target=".part-menu">
+    <styledef name="background-image" value="url(%%media-dir%%/f_compta.png)"/>
+    <styledef name="background-repeat" value="no-repeat"/>
+  </style>
+
+
+</theme>

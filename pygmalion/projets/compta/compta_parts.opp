@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <parts>
+
+    <part-menu title="comptax.demarrage_" name="MenuComptax">
+      <menugroup title="comptax.demarrage.journaux_">
+        <menuitem title="comptax.demarrage.journaux.voir_" action="execute"/>
+        <menuitem title="comptax.demarrage.journaux.voir_" action="search-detail">
+          <with-param name="detail-name" value="compta_journal"/>
+        </menuitem>
+      </menugroup>
+      <menugroup title="comptax.demarrage.comptes_">
+        <menuitem title="comptax.demarrage.comptes.voir_" action="search-detail">
+          <with-param name="detail-name" value="ComptaCompte"/>
+        </menuitem>
+        <menuitem title="comptax.demarrage.compteperm.voir_" action="search-detail">
+          <with-param name="detail-name" value="ComptaCompteperm"/>
+        </menuitem>
+        <menuitem title="comptax.demarrage.acces.voir_" action="search-detail">
+          <with-param name="detail-name" value="ComptaAcces"/>
+        </menuitem>
+      </menugroup>
+    </part-menu>
+
+
+    <part-detail title="comptax.comptacompte.title_" class="compta_compte" name="ComptaCompte">
+      <keyproperties>
+        <keyproperty name="id"/>
+        <keyproperty name="numero"/>
+        <keyproperty name="nom"/>
+      </keyproperties>
+
+      <plan-search>
+
+        <columns default-class="compta_compte" target-part="ComptaCompte">
+          <column label="compta_compte.numero_" value="numero"/>
+          <column label="compta_compte.nom_"    value="nom" flex="6"/>
+          <column label="compta_compte.debit_"  value="debit"/>
+          <column label="compta_compte.credit_" value="credit"/>
+        </columns>
+
+        <search-steps>
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="starting-with" target="$1" />
+            </where>
+          </search-step>
+
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="equals-to" target="$1"/>
+            </where>
+          </search-step>
+
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="containing" target="$1"/>
+            </where>
+          </search-step>
+
+          <search-step orderby="2">
+            <where>
+              <comparison value="nom" is="containing" target="$1"/>
+            </where>
+          </search-step>
+        </search-steps>
+      </plan-search>
+
+      <plan-select>   
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="7" class="compta_compte" value="nom" align="start"/>
+              <databox style="detail-title" flex="1" class="compta_compte" value="numero" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <box flex="2">
+                <databox label="comptax.comptacompte.debit_"  class="compta_compte" value="debit"  flex="1" align="end"/>
+                <databox label="comptax.comptacompte.credit_" class="compta_compte" value="credit" flex="1" align="end"/>
+                <databox label="comptax.comptacompte.solde_"  class="compta_compte" value="solde" align="end"/>
+                <databox label="comptax.comptacompte.nbecritures_" class="compta_compte" value="nb_ecritures" align="start"/>
+              </box>
+              <box>
+                <databox label="comptax.comptacompte.estdebit_"   type="checkbox" class="compta_compte" value="signe" align="end"/>
+                <databox label="comptax.comptacompte.general_"    type="checkbox" class="compta_compte" value="general" align="end"/>
+                <databox label="comptax.comptacompte.acceptaux_"  type="checkbox" class="compta_compte" value="accept_aux" align="end"/>
+                <databox label="comptax.comptacompte.utilisable_" type="checkbox" class="compta_compte" value="utilisable" align="start"/>
+              </box>
+              <box>
+                <databox label="comptax.comptacompte.lettrable_"  type="checkbox" class="compta_compte" value="lettrable" align="start"/>
+                <databox label="comptax.comptacompte.pointable_"  type="checkbox" class="compta_compte" value="pointable" align="start"/>
+                <databox label="comptax.comptacompte.groupable_"  type="checkbox" class="compta_compte" value="groupable" align="start"/>
+              </box>
+            </box>
+          </box>
+        </detail-block>
+
+
+        <detail-block label="comptax.comptacompte.block1_">
+          <box>
+            <databox label="comptax.comptacompte.acces_" class="compta_acces" value="nom" flex="5" align="start"/>
+          </box>
+          <from>
+            <join type="join">
+              <from-table name="compta_compte"/>
+              <from-table name="compta_acces"/>
+              <on>
+                <comparison value="compta_acces.id" is="equals-to" target="acces_id"/>
+              </on>
+            </join>
+          </from>
+        </detail-block>
+
+
+        <detail-block label="comptax.comptacompte.parent_">
+          <box>
+            <box orient="horizontal" flex="3">
+              <databox label="comptax.comptacompte.parent.nom_" class="compta_compte" alias="parent" value="nom" flex="5" align="start"/>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompte.debit_"  class="compta_compte" alias="parent" value="debit"  flex="1" align="end"/>
+                <databox label="comptax.comptacompte.credit_" class="compta_compte" alias="parent" value="credit" flex="1" align="end"/>
+                <databox label="comptax.comptacompte.solde_"  class="compta_compte" alias="parent" value="solde" align="end"/>
+              </box>
+            </box>
+            <box>
+              <databox label="comptax.comptacompte.parent.numcompte_" class="compta_compte" alias="parent" value="numero" align="end"/>
+              <databox label="comptax.comptacompte.nbecritures_" class="compta_compte" alias="parent" value="nb_ecritures" align="start"/>
+            </box>
+          </box>
+          <from>
+            <join type="join">
+              <from-table name="compta_compte">
+                <as-table name="fils"/>
+              </from-table>
+              <from-table name="compta_compte">
+                <as-table name="parent"/>
+              </from-table>
+              <on>
+                <comparison value="fils.parent_compte_id" is="equals-to" target="parent.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="fils.id" is="equals-to" target="$1"/>
+          </where>
+        </detail-block>
+    
+        <list label="comptax.comptacompte.auxiliaires_" target-part="ComptaCompte" target-property="parent_compte_id">
+          <columns default-class="compta_compte" target-part="ComptaCompte" local-key="fils.id">
+            <column label="comptax.comptacompte.auxiliaires.numero_" class="compta_compte" alias="fils" value="numero"/>
+            <column label="comptax.comptacompte.acces_" class="compta_acces" value="nom"/>
+            <column label="comptax.comptacompte.auxiliaires.nom_" class="compta_compte" alias="fils" value="nom" flex="6"/>
+            <column label="compta_compte.debit_"  class="compta_compte" alias="fils" value="debit"/>
+            <column label="compta_compte.credit_" class="compta_compte" alias="fils" value="credit"/>
+            <column label="compta_compte.solde_"  class="compta_compte" alias="fils" value="solde"/>
+          </columns>
+          <from>
+            <join type="join">
+              <join type="join">
+                <from-table name="compta_compte">
+                  <as-table name="parent"/>
+                </from-table>
+                <from-table name="compta_compte">
+                  <as-table name="fils"/>
+                </from-table>
+                <on>
+                  <comparison value="fils.parent_compte_id" is="equals-to" target="parent.id"/>
+                </on>
+              </join>
+              <from-table name="compta_acces"/>
+              <on>
+                <comparison value="fils.acces_id" is="equals-to" target="compta_acces.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="parent.id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+    
+        <list label="comptax.comptacompte.ecritures_">
+          <columns default-class="compta_ecriture">
+            <column label="compta_piece.numero_"      class="compta_piece"    value="numero"/>
+            <column label="compta_piece.date_"        class="compta_piece"    value="date" flex="2"/>
+            <column label="compta_ecriture.libelle_"  class="compta_ecriture" value="libelle" flex="5"/>
+            <column label="compta_ecriture.debit_"    class="compta_ecriture" value="debit"/>
+            <column label="compta_ecriture.credit_"   class="compta_ecriture" value="credit"/>
+            <column label="compta_ecriture.lettrage_" class="compta_ecriture" value="lettrage"/>
+            <column label="compta_pointage.code_"     class="compta_pointage" value="code" flex="2"/>
+          </columns>
+          <from>
+            <join type="join">
+              <join type="join">
+                <from-table name="compta_ecriture"/>
+                <from-table name="compta_pointage"/>
+                <on>
+                  <comparison value="pointage_id" is="equals-to" target="compta_pointage.id"/>
+                </on>
+              </join>
+              <from-table name="compta_piece"/>
+              <on>
+                <comparison value="piece_id" is="equals-to" target="compta_piece.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="compte_id" is="equals-to" target="$1" />
+          </where>
+        </list>
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+	  <box>
+            <box>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompte.parent.nom_" flex="7" value="nom" align="start"/>
+                <databox label="comptax.comptacompte.parent.numcompte_" flex="1" value="numero" align="end"/>
+              </box>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompte.parent_"  type="menulist" value="parent_compte_id" foreign-value="nom||' ('||numero||')'" align="start" foreign-key="id" foreign-table="compta_compte"/>
+              </box>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompte.parent_"  type="menulist" value="acces_id" foreign-value="nom||' ('||valeur||')'" align="start" foreign-key="id" foreign-table="compta_acces"/>
+                <databox label="comptax.comptacompte.parent_"  type="menulist" value="exercice_id" foreign-value="code" align="start" foreign-key="id" foreign-table="compta_exercice"/>
+              </box>
+            </box>
+            <box orient="horizontal">
+              <box>
+                <databox label="comptax.comptacompte.estdebit_"   type="checkbox" value="signe" align="end"/>
+                <databox label="comptax.comptacompte.general_"    type="checkbox" value="general" align="end"/>
+                <databox label="comptax.comptacompte.acceptaux_"  type="checkbox" value="accept_aux" align="end"/>
+                <databox label="comptax.comptacompte.utilisable_" type="checkbox" value="utilisable" align="start"/>
+              </box>
+              <box>
+                <databox label="comptax.comptacompte.lettrable_"  type="checkbox" value="lettrable" align="start"/>
+                <databox label="comptax.comptacompte.pointable_"  type="checkbox" value="pointable" align="start"/>
+                <databox label="comptax.comptacompte.groupable_"  type="checkbox" value="groupable" align="start"/>
+              </box>
+            </box>
+          </box>
+        </detail-block>
+        
+      </plan-update>
+
+    </part-detail>
+
+
+
+
+
+
+
+    <part-detail title="comptax.comptacompteperm.title_" class="compta_compteperm" name="ComptaCompteperm">
+      <keyproperties>
+        <keyproperty name="id"/>
+        <keyproperty name="numero"/>
+        <keyproperty name="nom"/>
+      </keyproperties>
+
+      <plan-search>
+
+        <columns default-class="compta_compteperm" target-part="ComptaCompteperm">
+          <column label="compta_compteperm.numero_" value="numero"/>
+          <column label="compta_compteperm.nom_"    value="nom" flex="6"/>
+        </columns>
+
+        <search-steps>
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="starting-with" target="$1" />
+            </where>
+          </search-step>
+
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="equals-to" target="$1"/>
+            </where>
+          </search-step>
+
+          <search-step orderby="1">
+            <where>
+              <comparison value="numero" is="containing" target="$1"/>
+            </where>
+          </search-step>
+
+          <search-step orderby="2">
+            <where>
+              <comparison value="nom" is="containing" target="$1"/>
+            </where>
+          </search-step>
+        </search-steps>
+      </plan-search>
+
+      <plan-select>   
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="7" class="compta_compteperm" value="nom" align="start"/>
+              <databox style="detail-title" flex="1" class="compta_compteperm" value="numero" align="end"/>
+            </box>
+            <box orient="horizontal">
+              <box>
+                <databox label="comptax.comptacompteperm.estdebit_"   type="checkbox" class="compta_compteperm" value="signe" align="end"/>
+                <databox label="comptax.comptacompteperm.general_"    type="checkbox" class="compta_compteperm" value="general" align="end"/>
+                <databox label="comptax.comptacompteperm.acceptaux_"  type="checkbox" class="compta_compteperm" value="accept_aux" align="end"/>
+                <databox label="comptax.comptacompteperm.utilisable_" type="checkbox" class="compta_compteperm" value="utilisable" align="start"/>
+              </box>
+              <box>
+                <databox label="comptax.comptacompteperm.lettrable_"  type="checkbox" class="compta_compteperm" value="lettrable" align="start"/>
+                <databox label="comptax.comptacompteperm.pointable_"  type="checkbox" class="compta_compteperm" value="pointable" align="start"/>
+                <databox label="comptax.comptacompteperm.groupable_"  type="checkbox" class="compta_compteperm" value="groupable" align="start"/>
+              </box>
+            </box>
+          </box>
+        </detail-block>
+
+
+        <detail-block label="comptax.comptacompteperm.parent_">
+          <box orient="horizontal">
+            <databox label="comptax.comptacompteperm.parent.nom_" class="compta_compteperm" alias="parent" value="nom" flex="5" align="start"/>
+            <databox label="comptax.comptacompteperm.parent.numcompte_" class="compta_compteperm" alias="parent" value="numero" align="end"/>
+          </box>
+          <from>
+            <join type="join">
+              <from-table name="compta_compteperm">
+                <as-table name="fils"/>
+              </from-table>
+              <from-table name="compta_compteperm">
+                <as-table name="parent"/>
+              </from-table>
+              <on>
+                <comparison value="fils.parent_compteperm_id" is="equals-to" target="parent.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="fils.id" is="equals-to" target="$1"/>
+          </where>
+        </detail-block>
+    
+        <list label="comptax.comptacompteperm.auxiliaires_" target-part="ComptaCompteperm" target-property="parent_compteperm_id">
+          <columns default-class="compta_compteperm" target-part="ComptaCompteperm" local-key="fils.id">
+            <column label="comptax.comptacompteperm.auxiliaires.numero_" class="compta_compteperm" alias="fils" value="numero"/>
+            <column label="comptax.comptacompteperm.auxiliaires.nom_" class="compta_compteperm" alias="fils" value="nom" flex="6"/>
+          </columns>
+          <from>
+            <join type="join">
+              <from-table name="compta_compteperm">
+                <as-table name="parent"/>
+              </from-table>
+              <from-table name="compta_compteperm">
+                <as-table name="fils"/>
+              </from-table>
+              <on>
+                <comparison value="fils.parent_compteperm_id" is="equals-to" target="parent.id"/>
+              </on>
+            </join>
+          </from>
+          <where>
+            <comparison value="parent.id" is="equals-to" target="$1"/>
+          </where>
+        </list>
+    
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+	  <box>
+            <box>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompteperm.parent.nom_" flex="7" value="nom" align="start"/>
+                <databox label="comptax.comptacompteperm.parent.numcompte_" flex="1" value="numero" align="end"/>
+              </box>
+              <box orient="horizontal">
+                <databox label="comptax.comptacompteperm.parent_"  type="menulist" value="parent_compteperm_id" foreign-value="nom||' ('||numero||')'" align="start" foreign-key="id" foreign-table="compta_compteperm"/>
+              </box>
+            </box>
+            <box orient="horizontal">
+              <box>
+                <databox label="comptax.comptacompteperm.estdebit_"   type="checkbox" value="signe" align="end"/>
+                <databox label="comptax.comptacompteperm.general_"    type="checkbox" value="general" align="end"/>
+                <databox label="comptax.comptacompteperm.acceptaux_"  type="checkbox" value="accept_aux" align="end"/>
+                <databox label="comptax.comptacompteperm.utilisable_" type="checkbox" value="utilisable" align="start"/>
+              </box>
+              <box>
+                <databox label="comptax.comptacompteperm.lettrable_"  type="checkbox" value="lettrable" align="start"/>
+                <databox label="comptax.comptacompteperm.pointable_"  type="checkbox" value="pointable" align="start"/>
+                <databox label="comptax.comptacompteperm.groupable_"  type="checkbox" value="groupable" align="start"/>
+              </box>
+            </box>
+          </box>
+        </detail-block>
+        
+      </plan-update>
+
+    </part-detail>
+
+
+
+
+
+    <part-detail title="comptax.comptaacces.title_" class="compta_acces" name="ComptaAcces">
+      <keyproperties>
+        <keyproperty name="id"/>
+        <keyproperty name="code"/>
+        <keyproperty name="nom"/>
+      </keyproperties>
+
+      <plan-search>
+        <columns default-class="compta_acces">
+          <column label="compta.acces.code_"   value="code"/>
+          <column label="compta.acces.nom_"    value="nom" flex="5"/>
+          <column label="compta.acces.valeur_" value="valeur"/>
+        </columns>
+
+        <search-steps>
+          <search-step orderby="1">
+            <where>
+              <comparison value="code" is="containing" target="$1" />
+            </where>
+          </search-step>
+
+          <search-step orderby="1">
+            <where>
+              <comparison value="nom" is="containing" target="$1" />
+            </where>
+          </search-step>
+
+          <search-step orderby="2">
+            <where>
+              <comparison value="valeur" is="containing" target="$1" />
+            </where>
+          </search-step>
+
+        </search-steps>
+      </plan-search>
+
+      <plan-select>
+        <detail-block label="_.general_">
+          <box>
+            <box orient="horizontal">
+              <databox style="detail-title" flex="7" value="nom" align="start"/>
+            </box>
+            <box orient="horizontal">
+              <databox label="comptax.comptaacces.value_" flex="1" value="valeur" align="end"/>
+            </box>
+          </box>
+        </detail-block>
+      </plan-select>
+
+      <plan-update>
+        <detail-block label="_.general_">
+          <box orient="horizontal">
+            <databox label="comptax.comptaacces.nom_"  flex="2" value="nom" align="start"/>
+            <databox label="comptax.comptaacces.valeur_" value="valeur" align="end"/>
+          </box>
+        </detail-block>
+      </plan-update>
+
+    </part-detail>
+
+      
+<!--
+    <part-navigation title="comptax.navigation.journal_">
+
+      <level depth="0" type="index" treehidden="true">
+        <item label="comptax.navigation.journal.level0.label_"/>
+        <tree>
+          <treecolumns>
+            <treecolumn label="comptax.navigation.journal.level0.columns.journal_"/>
+            <treecolumn label="comptax.navigation.journal.level0.columns.debit_"/>
+            <treecolumn label="comptax.navigation.journal.level0.columns.credit_"/>
+            <treecolumn label="comptax.navigation.journal.level0.columns.solde_"/>
+          </treecolumns>
+          <treerows number="2">
+            <treerow depth="1">
+              <treecell>
+                <string value="TJ_Nom" data="true" onclick="select" table="TypeJournal"/>
+                <string value=" ("/>
+                <string value="TJ_Numero" data="true"/>
+                <string value=")"/>
+              </treecell>
+              <treecell label="TJ_Debit"  data="true"/>
+              <treecell label="TJ_Credit" data="true"/>
+              <treecell label="TJ_Credit-TJ_Debit" data="true"/>
+            </treerow>
+
+            <treerow depth="2" using="TJ_Numero">
+              <treecell label="JO_Libelle" data="true" onclick=""/>
+              <treecell label="JO_Debit"  data="true"/>
+              <treecell label="JO_Credit" data="true"/>
+              <treecell label="JO_Credit-JO_Debit" data="true"/>
+            </treerow>
+          </treerows>
+        </tree>
+      </level>
+
+      <level depth="1" type="index" treehidden="true">
+        <item label="comptax.navigation.journal.level1.label_"/>
+        <tree>
+          <treecolumns>
+            <treecolumn label="comptax.navigation.journal.level1.columns.journal_"/>
+            <treecolumn label="comptax.navigation.journal.level1.columns.debit_"/>
+            <treecolumn label="comptax.navigation.journal.level1.columns.credit_"/>
+            <treecolumn label="comptax.navigation.journal.level1.columns.solde_"/>
+          </treecolumns>
+          <treerows number="2">
+            <treerow depth="1">
+              <treecell label="JO_Libelle" data="true" onclick="select" table="Journal"/>
+              <treecell label="JO_Debit"  data="true"/>
+              <treecell label="JO_Credit" data="true"/>
+              <treecell label="JO_Credit-JO_Debit" data="true"/>
+            </treerow>
+            <treerow depth="2" using="JO_Numero">
+              <treecell label="MoisEnLettre(((EXTRACT(MONTH FROM PI_Date))-1)::INTEGER)" data="true" onclick=""/>
+              <treecell label="SUM(PI_Debit)"  data="true"/>
+              <treecell label="SUM(PI_Credit)" data="true"/>
+              <treecell label="SUM(PI_Credit-PI_Debit)" data="true"/>
+            </treerow>
+          </treerows>
+        </tree>
+      </level>
+
+      <level depth="2" type="index" treehidden="true">
+        <item label="comptax.navigation.journal.level2.label_"/>
+        <tree>
+          <treecolumns>
+            <treecolumn label="comptax.navigation.journal.level2.columns.mois_"/>
+            <treecolumn label="comptax.navigation.journal.level2.columns.debit_"/>
+            <treecolumn label="comptax.navigation.journal.level2.columns.credit_"/>
+            <treecolumn label="comptax.navigation.journal.level2.columns.solde_"/>
+          </treecolumns>
+          <treerows number="1">
+            <treerow depth="1">
+              <treecell label="MoisEnLettre(((EXTRACT(MONTH FROM PI_Date))-1)::INTEGER)" data="true" onclick=""/>
+              <treecell label="SUM(PI_Debit)"  data="true"/>
+              <treecell label="SUM(PI_Credit)" data="true"/>
+              <treecell label="SUM(PI_Credit-PI_Debit)" data="true"/>
+            </treerow>
+            <treerow depth="2">
+              <treecell label="PI_Libelle" data="true" onclick="select" table="Piece"/>
+              <treecell label="PI_Debit"  data="true"/>
+              <treecell label="PI_Credit" data="true"/>
+              <treecell label="PI_Credit-PI_Debit" data="true"/>
+            </treerow>
+          </treerows>
+        </tree>
+      </level>
+
+
+      <level depth="3" type="index" treehidden="true">
+        <item label="comptax.navigation.journal.level3.label_"/>
+        <tree>
+          <treecolumns>
+            <treecolumn label="comptax.navigation.journal.level3.columns.numero_"/>
+            <treecolumn label="comptax.navigation.journal.level3.columns.libelle_"/>
+            <treecolumn label="comptax.navigation.journal.level3.columns.debit_"/>
+            <treecolumn label="comptax.navigation.journal.level3.columns.credit_"/>
+            <treecolumn label="comptax.navigation.journal.level3.columns.solde_"/>
+          </treecolumns>
+          <treerows number="2">
+            <treerow depth="1">
+              <treecell label="PI_NumPiece" data="true" onclick=""/>
+              <treecell label="PI_Libelle" data="true" onclick=""/>
+              <treecell label="PI_Debit"  data="true"/>
+              <treecell label="PI_Credit" data="true"/>
+              <treecell label="PI_Credit-PI_Debit" data="true"/>
+            </treerow>
+            <treerow depth="2">
+              <treecell label="EC_NumEcriture" data="true" onclick="select" table="Ecriture"/>
+              <treecell label="EC_Libelle" data="true" onclick="select" table="Ecriture"/>
+              <treecell label="EC_Debit"  data="true"/>
+              <treecell label="EC_Credit" data="true"/>
+              <treecell label="EC_Credit-EC_Debit" data="true"/>
+            </treerow>
+          </treerows>
+        </tree>
+      </level>
+
+    </part-navigation>
+-->
+  </parts>

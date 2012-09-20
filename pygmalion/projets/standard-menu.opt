@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<theme name="Menu">
+  <media>
+    <medium path="images/f_gestsea.png"/>
+    <medium path="images/f_gestx.png"/>
+    <medium path="images/f_comptax.png"/>
+    <medium path="images/f_admin.png"/>
+  </media>
+
+  <style target=".part-menu-gestsea">
+    <styledef name="background-image" value="url(%%media-dir%%/f_gestsea.png)"/>
+    <styledef name="background-repeat" value="no-repeat"/>
+  </style>
+
+  <style target=".part-menu-gestx">
+    <styledef name="background-image" value="url(%%media-dir%%/f_gestx.png)"/>
+    <styledef name="background-repeat" value="no-repeat"/>
+  </style>
+
+  <style target=".part-menu-comptax">
+    <styledef name="background-image" value="url(%%media-dir%%/f_comptax.png)"/>
+    <styledef name="background-repeat" value="no-repeat"/>
+  </style>
+
+  <style target=".part-menu-admin">
+    <styledef name="background-image" value="url(%%media-dir%%/f_admin.png)"/>
+    <styledef name="background-repeat" value="no-repeat"/>
+  </style>
+
+
+</theme>

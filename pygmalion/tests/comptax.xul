@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin" type="text/css"?>
+<?xml-stylesheet href="g0000_debug.css" type="text/css"?>
+
+<window orient="vertical" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" sizemode="normal"  onload=" init_Trees(); " onclose="" title="Comptax">
+
+<script>
+
+function init_Trees() { alert('OK');
+
+  var box=top.document.getElementById("A10009F2719D").boxObject;
+  alert(box);
+  box.QueryInterface(Components.interfaces.nsITreeBoxObject);
+  alert(box.view);
+//  alert(Components.interfaces.nsITreeBoxObject);
+}
+
+</script>
+
+<toolbox orient="vertical">
+  <toolbar id="pm-tool">
+    <toolbarbutton id="back-button"    class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton id="forward-button" class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton id="reload-button"  class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton id="stop-button"    class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton id="home-button"    class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbaritem  id="pm-panel-title-box" flex="1" align="center">
+      <textbox id="pm-panel-title" flex="1" disabled="true"/>
+    </toolbaritem>
+    <toolbaritem align="center">
+      <textbox id="pm-panel-deck-index"/>
+      <toolbarbutton id="go-button" value="0" class="toolbarbutton-1 chromeclass-toolbar-additional" onclick="document.getElementById('theMasterDeck').selectedIndex=document.getElementById('pm-panel-deck-index').value"/>
+    </toolbaritem>
+  </toolbar>
+</toolbox>
+
+<deck id="theMasterDeck" selectedIndex="0" flex="1">
+<vbox flex="1" align="center" pack="center" style="background-image:url(media/f_compta.png); background-repeat:no-repeat;" title="f_compta.demarrage_;">
+<expander class="actions" open="true" clearhidden="true" label="f_compta.demarrage.journaux_;">
+<hbox align="center">
+<button class="action" flex="1" label="f_compta.demarrage.journaux.voir_;"/>
+</hbox>
+<hbox align="center">
+<label class="action" value="f_compta.demarrage.journaux.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C0001_comptax___.searchDetailcompta_journal(this.value);"/>
+</hbox>
+</expander>
+<expander class="actions" open="true" clearhidden="true" label="f_compta.demarrage.comptes_;">
+<hbox align="center">
+<label class="action" value="f_compta.demarrage.comptes.voir_;"/>
+<textbox class="text-action" onkeypress="if (event.keyCode==event.DOM_VK_RETURN) C0001_comptax___.searchDetailComptaCompte(this.value);"/>
+</hbox>
+</expander>
+</vbox>
+<vbox>
+  <hbox class="detail-name" align="center">
+    <label flex="1" value="f_compta.detail.compte.title_;"/>
+    <toolbarbutton label="Edit"/>
+  </hbox>
+  <vbox style="padding:.7em;">
+  <box orient="horizontal">
+    <box orient="vertical" flex="1">
+      <box orient="horizontal" flex="1">
+        <box class="box-field" orient="horizontal" flex="7">
+          <label crop="end" onclick="C0001_comptax___.showDetailComptaCompte(this.getAttribute('key'));" flex="1" id="A10000F2710D" class="detail-title hyperlink value" value="CM_Nom"/>
+        </box>
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" onclick="C0001_comptax___.showDetailComptaCompte(this.getAttribute('key'));" flex="1" id="A10001F2711D" class="detail-title hyperlink value" value="CM_NumCompte"/>
+        </box>
+      </box>
+      <box orient="horizontal" flex="1">
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" value="f_compta.detail.compte.debit_;" control="A10002F2712D" class=" label"/>
+          <label crop="end" flex="1" id="A10002F2712D" class=" value" value="CM_Debit"/>
+        </box>
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" value="f_compta.detail.compte.credit_;" control="A10003F2713D" class=" label"/>
+          <label crop="end" flex="1" id="A10003F2713D" class=" value" value="CM_Credit"/>
+        </box>
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" value="f_compta.detail.compte.solde_;" control="A10004F2714D" class=" label"/>
+          <label crop="end" flex="1" id="A10004F2714D" class=" value" value="CM_Credit-CM_Debit"/>
+        </box>
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" value="f_compta.detail.compte.nbecritures_;" control="A10005F2715D" class=" label"/>
+          <label crop="end" flex="1" id="A10005F2715D" class=" value" value="CM_NbEcritures"/>
+        </box>
+      </box>
+    </box>
+  </box>
+  <expander label="f_compta.detail.compte.block1_;" clearhidden="true">
+  <box orient="horizontal">
+    <box orient="vertical" flex="1">
+      <box orient="horizontal" flex="1">
+        <box class="box-field" orient="horizontal" flex="5">
+          <label crop="end" value="f_compta.detail.compte.acces_;" control="A10006F2716D" class=" label"/>
+          <label crop="end" onclick="C0001_comptax___.showDetailComptaAcces(this.getAttribute('key'));" flex="1" id="A10006F2716D" class=" hyperlink value" value="AC_Nom"/>
+        </box>
+      </box>
+    </box>
+  </box>
+  </expander>
+  </vbox>
+<separator class="groove-thin"/>
+<vbox flex="1" style="overflow:auto;">
+  <vbox class="detail-list-menu">
+    <hbox style="display:inline;">
+    <button class="detail-list-button" oncommand="C0001_comptax___.showDetailTheTreeA10008F2718D();" label="f_compta.detail.compte.auxiliaires_;"/>
+    <button class="detail-list-button" oncommand="C0001_comptax___.showDetailTheTreeA10015F271fD();" label="f_compta.detail.compte.ecritures_;"/>
+    </hbox>
+  </vbox>
+  <deck flex="1" id="A10007F2717D">
+    <vbox flex="1">
+      <hbox class="detail-list-name" align="center">
+        <label flex="1" value="f_compta.detail.compte.auxiliaires_;"/>
+        <toolbarbutton label="+"/>
+      </hbox>
+<tree flex="1" id="A10009F2719D" onclick="C0001_comptax___.showDetailFromTreeA10009F2719D(this.treeBoxObject,event);" editable="true">
+  <treecols>
+    <treecol label="f_compta.detail.compte.auxiliaires.cm_numcompte_;" id="A10010F271aD" flex="3" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="f_compta.detail.compte.acces_;" id="A10011F271bD" flex="3" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="f_compta.detail.compte.auxiliaires.cm_nom_;" id="A10012F271cD" flex="5" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.compte.cm_debit_;" id="A10013F271dD" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.compte.cm_credit_;" id="A10014F271eD" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+  <treechildren/>
+</tree>
+    </vbox>
+    <vbox flex="1">
+      <hbox class="detail-list-name" align="center">
+        <label flex="1" value="f_compta.detail.compte.ecritures_;"/>
+        <toolbarbutton label="+"/>
+      </hbox>
+<tree flex="1" id="A10016F2720D" onclick="C0001_comptax___.showDetailFromTreeA10016F2720D(this.treeBoxObject,event);" editable="true">
+  <treecols>
+    <treecol label="compta.piece.pi_numpiece_;" id="A10017F2721D" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.piece.pi_date_;" id="A10018F2722D" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.ecriture.ec_libelle_;" id="A10019F2723D" flex="5" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.ecriture.ec_debit_;" id="A10020F2724D" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.ecriture.ec_credit_;" id="A10021F2725D" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.ecriture.ec_lettrage_;" id="A10022F2726D" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.pointage.pt_releve_;" id="A10023F2727D" flex="2" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+</tree>
+    </vbox>
+  </deck>
+</vbox>
+</vbox>
+<vbox>
+  <vbox class="panel-work" flex="1">
+    <hbox flex="1">
+<tree flex="1" id="A10025F2729D" onclick="C0001_comptax___.showDetailFromTreeA10025F2729D(this.treeBoxObject,event);" editable="true">
+  <treecols>
+    <treecol label="compta.compte.cm_numcompte_;" id="A10026F272aD" flex="2" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.compte.cm_nom_;" id="A10027F272bD" flex="5" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.compte.cm_debit_;" id="A10028F272cD" flex="1" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.compte.cm_credit_;" id="A10029F272dD" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+</tree>
+    </hbox>
+  </vbox>
+  <hbox class="panel-action" align="center">
+    <hbox pack="start" flex="1" align="center">
+      <label class="label" value="Nombre d'enregistrements :"/>
+      <label class="value" id="A10024F2728D"/>
+    </hbox>
+    <hbox pack="end"   flex="1">
+      <button class="button-wrong" label="_.cancel_;"/>
+    </hbox>
+  </hbox>
+</vbox>
+<vbox>
+  <hbox class="detail-name" align="center">
+    <label flex="1" value="f_compta.detail.acces.title_;"/>
+    <toolbarbutton label="Edit"/>
+  </hbox>
+  <vbox style="padding:.7em;">
+  <box orient="horizontal">
+    <box orient="vertical" flex="1">
+      <box orient="horizontal" flex="1">
+        <box class="box-field" orient="horizontal" flex="7">
+          <label crop="end" onclick="C0001_comptax___.showDetailComptaAcces(this.getAttribute('key'));" flex="1" id="A10030F272eD" class="detail-title hyperlink value" value="AC_Nom"/>
+        </box>
+      </box>
+      <box orient="horizontal" flex="1">
+        <box class="box-field" orient="horizontal" flex="1">
+          <label crop="end" value="f_compta.detail.acces.value_;" control="A10031F272fD" class=" label"/>
+          <label crop="end" flex="1" id="A10031F272fD" class=" value" value="AC_Valeur"/>
+        </box>
+      </box>
+    </box>
+  </box>
+  </vbox>
+</vbox>
+<vbox>
+  <vbox class="panel-work" flex="1">
+    <hbox flex="1">
+<tree flex="1" id="A10033F2731D" onclick="C0001_comptax___.showDetailFromTreeA10033F2731D(this.treeBoxObject,event);" editable="true">
+  <treecols>
+    <treecol label="compta.acces.ac_nom_;" id="A10034F2732D" flex="5" onclick="alert('treecol');" sortActive="true"/>
+    <splitter class="tree-splitter"/>
+    <treecol label="compta.acces.ac_valeur_;" id="A10035F2733D" flex="1" onclick="alert('treecol');" sortActive="true"/>
+  </treecols>
+</tree>
+    </hbox>
+  </vbox>
+  <hbox class="panel-action" align="center">
+    <hbox pack="start" flex="1" align="center">
+      <label class="label" value="Nombre d'enregistrements :"/>
+      <label class="value" id="A10032F2730D"/>
+    </hbox>
+    <hbox pack="end"   flex="1">
+      <button class="button-wrong" label="_.cancel_;"/>
+    </hbox>
+  </hbox>
+</vbox>
+<hbox flex="1">
+  <vbox flex="1" persist="width">
+    <sidebarheader align="center">
+      <label persist="value" flex="1" crop="end" class="sidebar-title" value="f_compta.navigation.journal_;" />
+      <toolbarbutton class="tabs-closebutton" crop="end"/>    </sidebarheader>
+    <vbox flex="1">
+      <tree flex="1" hidecolumnpicker="true">
+        <treecols>
+          <treecol flex="1" hideheader="true"/>
+        </treecols>
+        <treechildren>
+          <treeitem container="true" open="false">
+            <treerow>
+              <treecell label="f_compta.navigation.journal.level0.label_;" />
+            </treerow>
+            <treechildren/>
+          </treeitem>
+        </treechildren>
+      </tree>
+    </vbox>
+  </vbox>
+  <splitter class="standard-splitter" collapse="none"/>
+  <vbox flex="9">
+    <deck flex="1" id="A10036F2734D">
+      <vbox flex="1">
+        <toolbar id="pm-tool-test">
+          <arrowscrollbox flex="1" orient="horizontal">
+            <toolbarbutton label="Plier" type="menu-button"/>
+            <toolbarbutton label="Deplier" type="menu-button"/>
+            <toolbarbutton label="Precedent" onclick="document.getElementById('A10036F2734D').selectedIndex--;"/>
+            <toolbarbutton label="Suivant"   onclick="document.getElementById('A10036F2734D').selectedIndex++;"/>
+          </arrowscrollbox>
+        </toolbar>
+        <vbox flex="8">
+          <grid >
+            <columns>
+              <column/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+            </columns>
+            <rows>
+              <row>
+                <label/>
+                <label value="f_compta.navigation.journal.level0.columns.journal_;"/>
+                <label value="f_compta.navigation.journal.level0.columns.debit_;"/>
+                <label value="f_compta.navigation.journal.level0.columns.credit_;"/>
+                <label value="f_compta.navigation.journal.level0.columns.solde_;"/>
+              </row>
+            </rows>
+          </grid>
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+            </columns>
+            <rows/>
+          </grid>
+        </vbox>
+        <splitter class="standard-splitter" collapse="none"/>
+        <groupbox flex="2">
+        </groupbox>
+      </vbox>
+      <vbox flex="1">
+        <toolbar id="pm-tool-test">
+          <arrowscrollbox flex="1" orient="horizontal">
+            <toolbarbutton label="Plier" type="menu-button"/>
+            <toolbarbutton label="Deplier" type="menu-button"/>
+            <toolbarbutton label="Precedent" onclick="document.getElementById('A10036F2734D').selectedIndex--;"/>
+            <toolbarbutton label="Suivant"   onclick="document.getElementById('A10036F2734D').selectedIndex++;"/>
+          </arrowscrollbox>
+        </toolbar>
+        <vbox flex="8">
+          <grid >
+            <columns>
+              <column/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+            </columns>
+            <rows>
+              <row>
+                <label/>
+                <label value="f_compta.navigation.journal.level1.columns.journal_;"/>
+                <label value="f_compta.navigation.journal.level1.columns.debit_;"/>
+                <label value="f_compta.navigation.journal.level1.columns.credit_;"/>
+                <label value="f_compta.navigation.journal.level1.columns.solde_;"/>
+              </row>
+            </rows>
+          </grid>
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+            </columns>
+            <rows/>
+          </grid>
+        </vbox>
+        <splitter class="standard-splitter" collapse="none"/>
+        <groupbox flex="2">
+        </groupbox>
+      </vbox>
+      <vbox flex="1">
+        <toolbar id="pm-tool-test">
+          <arrowscrollbox flex="1" orient="horizontal">
+            <toolbarbutton label="Plier" type="menu-button"/>
+            <toolbarbutton label="Deplier" type="menu-button"/>
+            <toolbarbutton label="Precedent" onclick="document.getElementById('A10036F2734D').selectedIndex--;"/>
+            <toolbarbutton label="Suivant"   onclick="document.getElementById('A10036F2734D').selectedIndex++;"/>
+          </arrowscrollbox>
+        </toolbar>
+        <vbox flex="8">
+          <grid >
+            <columns>
+              <column/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+            </columns>
+            <rows>
+              <row>
+                <label/>
+                <label value="f_compta.navigation.journal.level2.columns.mois_;"/>
+                <label value="f_compta.navigation.journal.level2.columns.debit_;"/>
+                <label value="f_compta.navigation.journal.level2.columns.credit_;"/>
+                <label value="f_compta.navigation.journal.level2.columns.solde_;"/>
+              </row>
+            </rows>
+          </grid>
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+            </columns>
+            <rows/>
+          </grid>
+        </vbox>
+        <splitter class="standard-splitter" collapse="none"/>
+        <groupbox flex="2">
+        </groupbox>
+      </vbox>
+      <vbox flex="1">
+        <toolbar id="pm-tool-test">
+          <arrowscrollbox flex="1" orient="horizontal">
+            <toolbarbutton label="Plier" type="menu-button"/>
+            <toolbarbutton label="Deplier" type="menu-button"/>
+            <toolbarbutton label="Precedent" onclick="document.getElementById('A10036F2734D').selectedIndex--;"/>
+            <toolbarbutton label="Suivant"   onclick="document.getElementById('A10036F2734D').selectedIndex++;"/>
+          </arrowscrollbox>
+        </toolbar>
+        <vbox flex="8">
+          <grid >
+            <columns>
+              <column/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+              <splitter/>
+              <column flex="1"/>
+            </columns>
+            <rows>
+              <row>
+                <label/>
+                <label value="f_compta.navigation.journal.level3.columns.numero_;"/>
+                <label value="f_compta.navigation.journal.level3.columns.libelle_;"/>
+                <label value="f_compta.navigation.journal.level3.columns.debit_;"/>
+                <label value="f_compta.navigation.journal.level3.columns.credit_;"/>
+                <label value="f_compta.navigation.journal.level3.columns.solde_;"/>
+              </row>
+            </rows>
+          </grid>
+          <grid flex="1">
+            <columns>
+              <column />
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+              <column flex="1"/>
+            </columns>
+            <rows/>
+          </grid>
+        </vbox>
+        <splitter class="standard-splitter" collapse="none"/>
+        <groupbox flex="2">
+        </groupbox>
+      </vbox>
+    </deck>
+  </vbox>
+</hbox>
+</deck>
+
+<statusbar id="pm-statusbar">
+  <statusbarpanel  flex="1">
+  </statusbarpanel>
+</statusbar>
+</window>
+
